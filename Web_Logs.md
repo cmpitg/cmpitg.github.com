@@ -1,7 +1,8 @@
 ### Mon, 06 Feb 2012 +0700
 
 * [Why Do All Movie Tickets Cost the Same?](http://www.theatlantic.com/business/archive/2012/01/why-do-all-movie-tickets-cost-the-same/250762/)
-
+* [Two decades of productivity: Vim's 20th anniversary](http://arstechnica.com/open-source/news/2011/11/two-decades-of-productivity-vims-20th-anniversary.ars)
+* [CFLAGS and -march=native](http://funnybutnot.wordpress.com/2011/11/26/) (revisited)
 
 ### Sat, 04 Feb 2012 +0700
 
