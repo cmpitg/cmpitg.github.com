@@ -1,3 +1,7 @@
+### Thu, 09 Feb 2012 +0700
+
+* [How to Think about Parallel Programming: Not!](http://www.infoq.com/presentations/Thinking-Parallel-Programming)
+
 ### Wed, 08 Feb 2012 +0700
 
 * [The Deadly #Linux #Commands](http://bit.ly/zAxrCw)
@@ -11,6 +15,8 @@
 
 * [SECCOMP as a Sandboxing solution?](http://bit.ly/xl2nOY)
 * [Why doesn't Linux need defragmenting?](http://bit.ly/yFuRdX) (revisited)
+* [Computer Language Design: What's List Comprehension and Why is It Harmful?](http://xahlee.org/comp/list_comprehension.html) (revisited)
+* [Running Wireshark as You](http://bit.ly/w3aJZb)
 
 ### Tue, 07 Feb 2012 +0700
 
