@@ -1,3 +1,17 @@
+### Wed, 08 Feb 2012 +0700
+
+* [The Deadly #Linux #Commands](http://bit.ly/zAxrCw)
+* [WHY I LOVE LINUX](http://bit.ly/x13kfB)
+* [Three #Sysadmin Rules You Can’t (And Shouldn’t) Break](http://bit.ly/wuiz57)
+* [12 Reasons Why Every #Linux #System #Administrator Should be Lazy](http://bit.ly/znXW6s)
+* [The Software Stack and Latency](http://bit.ly/xcwBX8)
+* ["Programmer" is an Overgeneralization](http://bit.ly/zOAv8x):
+
+  "Beware of bugs in the above code; I have only proved it correct, not tried it." - _Donald Knuth_
+
+* [SECCOMP as a Sandboxing solution?](http://bit.ly/xl2nOY)
+* [Why doesn't Linux need defragmenting?](http://bit.ly/yFuRdX) (revisited)
+
 ### Tue, 07 Feb 2012 +0700
 
 * [Why our brains make us laugh](http://b.globe.com/yM46UL)
