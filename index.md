@@ -3,6 +3,9 @@
 # Contents
 
 * My [web logs](Web_Logs.html)
+* My programming languages of choice:
+
+  - 2012: Clojure, Shen, Scala, Lua, Golang, Pharo/Smalltalk
 
 # License
 

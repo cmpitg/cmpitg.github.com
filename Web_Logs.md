@@ -1,6 +1,19 @@
+### Sun, 12 Feb 2012 +0700
+
+* [Foreign tongues don't always come easy](http://edition.cnn.com/2011/12/22/travel/speaking-the-language-tl/)
+* [á-lô, is it me you’re looking for?](http://blog.tbble.org/2011/12/29/a-lo-is-it-me-youre-looking-for/)
+* [communism: inconceivable!](http://blog.tbble.org/2011/12/18/communism-inconceivable/)
+* [FBI File Notes Steve Jobs' Reality Distortion Field](http://apple.slashdot.org/story/12/02/09/1659208/fbi-file-notes-steve-jobs-reality-distortion-field)
+* [Steve Jobs’s FBI File Notes Past Drug Use, Tendency to ‘Distort Reality’](http://www.bloomberg.com/news/2012-02-09/steve-jobs-fbi-file-notes-past-drug-use-tendency-to-distort-reality.html)
+* [FBI Records: The Vault - Steven Paul Jobs Part 01 of 01](http://vault.fbi.gov/steve-jobs/steve-jobs-part-01-of-01/view)
+* [Steve Jobs FBI File Confirms He Was a Jerk, Drug User, and Poor Student](http://www.theatlanticwire.com/technology/2012/02/steve-jobs-fbi-file-confirms-he-was-jerk-drug-user-and-poor-student/48506/)
+* [The science fiction effect](http://www.thebulletin.org/web-edition/columnists/laura-h-kahn/the-science-fiction-effect)
+* [Submit a patch](http://devlicio.us/blogs/hadi_hariri/archive/2012/02/06/submit-a-patch.aspx)
+
 ### Thu, 09 Feb 2012 +0700
 
 * [How to Think about Parallel Programming: Not!](http://www.infoq.com/presentations/Thinking-Parallel-Programming)
+* [Executing a command line program with clojure](http://bit.ly/weAvZU)
 
 ### Wed, 08 Feb 2012 +0700
 
