@@ -1,3 +1,9 @@
+### Tue, 14 Feb 2012 +0700
+
+* [Twitter Really, Really Hates Google’s New Google+ Integration](http://techcrunch.com/2012/01/10/twitter-really-really-hates-googles-new-google-integration/)
+* [Unsung Heroes of Linux, Part One](https://www.linux.com/learn/tutorials/543893:unsung-heroes-of-linux-part-one)
+* [The Fastest Webserver?](http://www.webperformance.com/load-testing/blog/2011/11/what-is-the-fastest-webserver/) - One of the stupidest performance benchmarks I've ever read.  What OS version and architecture? Running Apache, Lighttpd, Nginx on M$ Windows?  Single static-page serving?  No clear benchmarking tool?  Oh come on!  I doubt if he knows anything about benchmarking at all.
+
 ### Mon, 13 Feb 2012 +0700
 
 * [The lamest bug we ever encountered](http://joostdevblog.blogspot.com/2011/12/lamest-bug-we-ever-encountered.html)
