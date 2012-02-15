@@ -1,8 +1,16 @@
+### Wed, 15 Feb 2012 +0700
+
+* [Noir web framework](http://webnoir.org/) (Tutorials, API)
+* [10 người nổi tiếng đã chết vì AIDS (phần 1)](http://facts.baomoi.com/2012/02/07/10-ng%C6%B0%E1%BB%9Di-n%E1%BB%95i-ti%E1%BA%BFng-da-ch%E1%BA%BFt-vi-aids-ph%E1%BA%A7n-1/)
+* [They Write the Right Stuff](http://www.fastcompany.com/magazine/06/writestuff.html)
+* [The Problem With µ-Frameworks](http://rawsyntax.com/blog/the-problem-with-micro-frameworks/)
+
 ### Tue, 14 Feb 2012 +0700
 
 * [Twitter Really, Really Hates Google’s New Google+ Integration](http://techcrunch.com/2012/01/10/twitter-really-really-hates-googles-new-google-integration/)
 * [Unsung Heroes of Linux, Part One](https://www.linux.com/learn/tutorials/543893:unsung-heroes-of-linux-part-one)
 * [The Fastest Webserver?](http://www.webperformance.com/load-testing/blog/2011/11/what-is-the-fastest-webserver/) - One of the stupidest performance benchmarks I've ever read.  What OS version and architecture? Running Apache, Lighttpd, Nginx on M$ Windows?  Single static-page serving?  No clear benchmarking tool?  Oh come on!  I doubt if he knows anything about benchmarking at all.
+* [The key value store everyone ignored (Postgresql)](http://blog.creapptives.com/post/14062057061/the-key-value-store-everyone-ignored-postgresql)
 
 ### Mon, 13 Feb 2012 +0700
 
@@ -66,3 +74,11 @@
 * [The Power of Introverts: A Manifesto for Quiet Brilliance](http://www.scientificamerican.com/article.cfm?id=the-power-of-introverts)
 * [A Very Short Rant About "Copyrighted" Code](http://bit.ly/y4oiXf)
 * [More Systemd Fun: The Blame Game And Stopping Services With Prejudice - Carla Schroder](http://bit.ly/xjPIhN)
+
+## License
+
+![Creative Commons License][CC_BY-NC-SA_Image]
+
+[CC_BY-NC-SA_Image]: http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png "license"
+
+<div><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">cmpitg&#39;s page</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Dương &#34;Yang&#34; ヤン Nguyễn</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.</div>
