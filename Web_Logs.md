@@ -3,7 +3,7 @@
 * [Noir web framework](http://webnoir.org/) (Tutorials, API)
 * [10 người nổi tiếng đã chết vì AIDS (phần 1)](http://facts.baomoi.com/2012/02/07/10-ng%C6%B0%E1%BB%9Di-n%E1%BB%95i-ti%E1%BA%BFng-da-ch%E1%BA%BFt-vi-aids-ph%E1%BA%A7n-1/)
 * [They Write the Right Stuff](http://www.fastcompany.com/magazine/06/writestuff.html)
-* [The Problem With µ-Frameworks](http://rawsyntax.com/blog/the-problem-with-micro-frameworks/)
+* [The Problem With µ-Frameworks](http://rawsyntax.com/blog/the-problem-with-micro-frameworks/) (He has the point, and it's different from my thoughts about the pros and cons of complexity management)
 
 ### Tue, 14 Feb 2012 +0700
 
