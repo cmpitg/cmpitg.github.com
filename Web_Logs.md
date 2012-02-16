@@ -1,3 +1,11 @@
+### Thu, 16 Feb 2012 +0700
+
+* [Stackoverflow - Writing a multiplexing server in clojure?](http://bit.ly/zOOOy7)
+* [Rosetta Code - Echo server](http://rosettacode.org/wiki/Echo_server)
+* [My Extravagant Zsh Prompt](http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/)
+* [Is Ruby interpreted or compiled?](http://patshaughnessy.net/2012/2/15/is-ruby-interpreted-or-compiled)
+* [CMake Tutorial](http://www.cmake.org/cmake/help/cmake_tutorial.html)
+
 ### Wed, 15 Feb 2012 +0700
 
 * [Noir web framework](http://webnoir.org/) (Tutorials, API)
