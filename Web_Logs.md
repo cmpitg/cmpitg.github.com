@@ -1,3 +1,7 @@
+# My static web logs
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
 ### Fri, 17 Feb 2012 +0700
 
 * [Clojure - Lamina Channels](https://github.com/ztellman/lamina/wiki/Channels)
