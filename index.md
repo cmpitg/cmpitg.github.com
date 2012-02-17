@@ -1,21 +1,20 @@
-# Yet another personal page
-
 <title>Personal page</title>
-
 <link rel="stylesheet" type="text/css" href="style.css" />
 
-# Contents
+# Yet another personal page
+
+## Contents
 
 * My [static web logs](Web_Logs.html), [another (dynamic) one](https://cmpitg.wordpress.com).
 * My programming languages of choice:
 
   - 2012: Clojure, Shen, Scala, Lua, Golang, Pharo/Smalltalk
 
-# About me
+## About me
 
 Please have a look at my [Wordpress page](https://cmpitg.wordpress.com/about).
 
-# License
+## License
 
 ![Creative Commons License][CC_BY-NC-SA_Image]
 

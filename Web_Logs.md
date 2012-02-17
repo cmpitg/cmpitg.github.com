@@ -1,8 +1,8 @@
-# My static web logs
-
 <title>"My static web logs"</title>
 
 <link rel="stylesheet" type="text/css" href="style.css" />
+
+# My static web logs
 
 ## February 2012
 
