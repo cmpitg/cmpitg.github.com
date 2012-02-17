@@ -1,3 +1,7 @@
+# Yet another personal page
+
+<title>Personal page</title>
+
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 # Contents

@@ -1,6 +1,10 @@
 # My static web logs
 
+<title>"My static web logs"</title>
+
 <link rel="stylesheet" type="text/css" href="style.css" />
+
+## February 2012
 
 ### Fri, 17 Feb 2012 +0700
 
@@ -12,6 +16,7 @@
 * [Path uploads your entire iPhone address book to its servers](http://mclov.in/2012/02/08/path-uploads-your-entire-address-book-to-their-servers.html) - For those who trust iPhone and closed source.  I'm not sure how you feel with comments like "This is a good alternative solution", "This is currently the industry best practice", "if you would like ... please contact ...".
 * [Hashing for privacy in social apps](http://mattgemmell.com/2012/02/11/hashing-for-privacy-in-social-apps/)
 * [Why are ugly websites so successful?](http://www.gerrymcgovern.com/nt/2012/nt-2012-02-13-Why-ugly.htm) - I don't understand the this fellow's definition of "ugly", and his perspective is one-sided.  From my point of view, if a website *remains* ugly (by that I mean really horribly designed), they don't respect the readers.
+* [Clojure - Connections](https://github.com/ztellman/lamina/wiki/Connections)
 
 ### Thu, 16 Feb 2012 +0700
 
@@ -71,10 +76,10 @@
 
 * [The Deadly #Linux #Commands](http://bit.ly/zAxrCw)
 * [WHY I LOVE LINUX](http://bit.ly/x13kfB)
-* [Three #Sysadmin Rules You Can’t (And Shouldn’t) Break](http://bit.ly/wuiz57)
+* [Three #Sysadmin Rules You Can't (And Shouldn't) Break](http://bit.ly/wuiz57)
 * [12 Reasons Why Every #Linux #System #Administrator Should be Lazy](http://bit.ly/znXW6s)
 * [The Software Stack and Latency](http://bit.ly/xcwBX8)
-* ["Programmer" is an Overgeneralization](http://bit.ly/zOAv8x): "Beware of bugs in the above code; I have only proved it correct, not tried it." - _Donald Knuth_
+* ["Programmer" is an Over-generalization](http://bit.ly/zOAv8x): "Beware of bugs in the above code; I have only proved it correct, not tried it." - _Donald Knuth_
 * [SECCOMP as a Sandboxing solution?](http://bit.ly/xl2nOY)
 * [Why doesn't Linux need defragmenting?](http://bit.ly/yFuRdX) (revisited)
 * [Computer Language Design: What's List Comprehension and Why is It Harmful?](http://xahlee.org/comp/list_comprehension.html) (revisited)
