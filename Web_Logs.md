@@ -6,6 +6,19 @@
 
 ## February 2012
 
+### Mon, 20 Feb 2012 +0700
+
+* [First look: Mozilla's Boot2Gecko mobile platform and Gaia UI](http://arstechnica.com/business/news/2012/02/first-look-mozillas-boot2gecko-mobile-platform-and-gaia-ui.ars)
+* [Responsible Open Source Code Parenting](http://www.codinghorror.com/blog/2009/12/responsible-open-source-code-parenting.html)
+
+### Sun, 19 Feb 2012 +0700
+
+* [Jekyll - Usage](https://github.com/mojombo/jekyll/wiki/usage)
+* [Jekyll - YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter)
+* [Jekyll - Deployment](https://github.com/mojombo/jekyll/wiki/Deployment)
+* [Jekyll - Configuration](https://github.com/mojombo/jekyll/wiki/configuration)
+* [Clojure - Pattern Matching - core.match](https://github.com/clojure/core.match)
+
 ### Fri, 17 Feb 2012 +0700
 
 * [Clojure - Lamina Channels](https://github.com/ztellman/lamina/wiki/Channels)

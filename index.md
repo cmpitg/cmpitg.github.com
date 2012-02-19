@@ -1,4 +1,4 @@
-<title>Personal page</title>
+<title>"Yet another personal page"</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 # Yet another personal page
