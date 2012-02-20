@@ -12,6 +12,8 @@
 * [Responsible Open Source Code Parenting](http://www.codinghorror.com/blog/2009/12/responsible-open-source-code-parenting.html) - Really good points about nurturing an open source project.  Thanks, Jeff Atwood.
 * [Clojure - Lamina Channels](https://github.com/ztellman/lamina/wiki/Channels) (revisited)
 * [Clojure - Lamina Pipelines](https://github.com/ztellman/lamina/wiki/Pipelines) (revisited) - Again, this is a brilliant design!
+* [Clojure - Lamina Result Channel](https://github.com/ztellman/lamina/wiki/Result-Channels)
+* [Clojure - Lamin Async Programming](https://github.com/ztellman/lamina/wiki/Async-Programming)
 * [Clojure - Lamina Connections](https://github.com/ztellman/lamina/wiki/Connections) (revisited)
 * [Responsive UX: Taking Responsive Design a Step Further](http://www.ravelrumba.com/blog/responsive-ux/)
 * [Clojure - Aleph HTTP](https://github.com/ztellman/aleph/wiki/HTTP) - Need to review again.
