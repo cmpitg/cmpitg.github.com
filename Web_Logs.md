@@ -9,7 +9,12 @@
 ### Mon, 20 Feb 2012 +0700
 
 * [First look: Mozilla's Boot2Gecko mobile platform and Gaia UI](http://arstechnica.com/business/news/2012/02/first-look-mozillas-boot2gecko-mobile-platform-and-gaia-ui.ars)
-* [Responsible Open Source Code Parenting](http://www.codinghorror.com/blog/2009/12/responsible-open-source-code-parenting.html)
+* [Responsible Open Source Code Parenting](http://www.codinghorror.com/blog/2009/12/responsible-open-source-code-parenting.html) - Really good points about nurturing an open source project.  Thanks, Jeff Atwood.
+* [Clojure - Lamina Channels](https://github.com/ztellman/lamina/wiki/Channels) (revisited)
+* [Clojure - Lamina Pipelines](https://github.com/ztellman/lamina/wiki/Pipelines) (revisited) - Again, this is a brilliant design!
+* [Clojure - Lamina Connections](https://github.com/ztellman/lamina/wiki/Connections) (revisited)
+* [Responsive UX: Taking Responsive Design a Step Further](http://www.ravelrumba.com/blog/responsive-ux/)
+* [Clojure - Aleph HTTP](https://github.com/ztellman/aleph/wiki/HTTP) - Need to review again.
 
 ### Sun, 19 Feb 2012 +0700
 
@@ -22,14 +27,14 @@
 ### Fri, 17 Feb 2012 +0700
 
 * [Clojure - Lamina Channels](https://github.com/ztellman/lamina/wiki/Channels)
-* [Clojure - Pipelines](https://github.com/ztellman/lamina/wiki/Pipelines) (Worth revisited several times) - To some extent, the idea of pipeline is very much like Haskell's Monad
+* [Clojure - Lamina Pipelines](https://github.com/ztellman/lamina/wiki/Pipelines) (Worth revisited several times) - To some extent, the idea of pipeline is very much like Haskell's Monad
 * [Back on Linux](http://dywypi.org/2012/02/back-on-linux.html)
 * [Why I left Perl](http://www.leancrew.com/all-this/2012/02/why-i-left-perl/) - Quick thoughts: It's not that we don't understand Perl, pal, it's *Perl guys don't understand us*, and no nothing or little about programming paradigms, or the way human brain works, or the answer to the question: when programming, who are the slaves?  And you are taking things too personal.
 * [Don't say you weren't warned](http://www.roughtype.com/archives/2012/02/dont_say_you_we.php)
 * [Path uploads your entire iPhone address book to its servers](http://mclov.in/2012/02/08/path-uploads-your-entire-address-book-to-their-servers.html) - For those who trust iPhone and closed source.  I'm not sure how you feel with comments like "This is a good alternative solution", "This is currently the industry best practice", "if you would like ... please contact ...".
 * [Hashing for privacy in social apps](http://mattgemmell.com/2012/02/11/hashing-for-privacy-in-social-apps/)
 * [Why are ugly websites so successful?](http://www.gerrymcgovern.com/nt/2012/nt-2012-02-13-Why-ugly.htm) - I don't understand the this fellow's definition of "ugly", and his perspective is one-sided.  From my point of view, if a website *remains* ugly (by that I mean really horribly designed), they don't respect the readers.
-* [Clojure - Connections](https://github.com/ztellman/lamina/wiki/Connections)
+* [Clojure - Lamina Connections](https://github.com/ztellman/lamina/wiki/Connections)
 
 ### Thu, 16 Feb 2012 +0700
 
