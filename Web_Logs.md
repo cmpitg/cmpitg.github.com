@@ -16,6 +16,8 @@
 * [10 inventors of Internet technologies you may not have heard of](http://royal.pingdom.com/2011/11/14/10-inventors-of-internet-technologies-you-may-not-have-heard-of/)
 * [Top 10 reasons why Darth Vader was an amazing project manager](http://www.geekwire.com/2011/top-10-reasons-darth-vader-amazing-project-manager)
 * [Anonymous Cowards, Deanonymized](http://yro.slashdot.org/story/12/02/21/0216207/anonymous-cowards-deanonymized)
+* [How Can I Help You?](http://www.randsinrepose.com/archives/2011/11/13/how_can_i_help_you.html)
+* [In Defense Of The Stylus](http://techcrunch.com/2011/11/11/in-defense-of-the-stylus/)
 
 ### Wed, 22 Feb 2012 +0700
 
