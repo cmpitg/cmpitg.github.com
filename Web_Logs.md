@@ -6,6 +6,29 @@
 
 ## February 2012
 
+### Thu, 23 Feb 2012 +0700
+
+* [Splash screens == sloth](http://asserttrue.blogspot.com/2012/02/splash-screens-sloth.html)
+* [Slashdot - Best Language For Experimental GUI Demo Projects?](http://ask.slashdot.org/story/12/02/21/0114205/best-language-for-experimental-gui-demo-projects)
+* [A systemd-only Gentoo system](http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html) - Very interesting indeed.
+* [Asynchronous UIs - the future of web user interfaces](http://alexmaccaw.co.uk/posts/async_ui)
+* [Functional Programming Techniques With Ruby: Part I](http://rubysource.com/functional-programming-techniques-with-ruby-part-i/)
+* [10 inventors of Internet technologies you may not have heard of](http://royal.pingdom.com/2011/11/14/10-inventors-of-internet-technologies-you-may-not-have-heard-of/)
+* [Top 10 reasons why Darth Vader was an amazing project manager](http://www.geekwire.com/2011/top-10-reasons-darth-vader-amazing-project-manager)
+* [Anonymous Cowards, Deanonymized](http://yro.slashdot.org/story/12/02/21/0216207/anonymous-cowards-deanonymized)
+
+### Wed, 22 Feb 2012 +0700
+
+* [Clojure - Lamina Connections](https://github.com/ztellman/lamina/wiki/Connections) (revisited)
+* "Chuyện về dạy và học sử" - Nguyên Ngọc - "Học lịch sử tuyệt nhiên cũng không cần nhớ thuộc lòng đến mụ mị bất cứ ngày tháng phiền phức và vô ích nào, khi như lời ông Bộ trưởng, chúng ta đang sống trong “thời đại” này, cái thời đại chỉ cần nhẹ tay nhấp chuột là ra tất cả. Học sử là để có cái mà không bất cứ con chuột hiện đại nào nhấp ra được cho ta: nhận ra được biện chứng lạ lùng và tất yếu của lịch sử, để mà biết làm người cho xứng đáng người, làm công dân độc lập, tự chủ, sáng tạo, đầy trách nhiệm của nước Việt và của thế giới. Đặc biệt hôm nay, khi vận mệnh Tổ quốc một lần nữa lại đứng trước thử thách lớn." - Worth revisited!
+
+### Tue, 21 Feb 2012 +0700
+
+* [Don't cheat with the user interface](http://jimmynilsson.com/blog/posts/Chronicle4.htm)
+* [Overtone and ClojureScript](http://www.chris-granger.com/2012/02/20/overtone-and-clojurescript/)
+* [The Open/Closed Principle: Concerns about Change in Software Design](http://blog.symprise.net/2009/06/open-closed-principle-concerns-about-change-in-software-design/) - I have read this several times.  Definitely worth revisited many more.
+* [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) - SOLID - This one also!
+
 ### Mon, 20 Feb 2012 +0700
 
 * [First look: Mozilla's Boot2Gecko mobile platform and Gaia UI](http://arstechnica.com/business/news/2012/02/first-look-mozillas-boot2gecko-mobile-platform-and-gaia-ui.ars)
