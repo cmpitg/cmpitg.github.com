@@ -6,6 +6,26 @@
 
 ## February 2012
 
+### Sun, 26 Feb 2012 +0700
+
+* [Rotten Tomatoes - Best Animated Movies 2012](http://www.rottentomatoes.com/guides/best_animated_movies_2012/#newsletter)
+* [Total Recall: Worst-Reviewed Best Picture Nominees](http://bit.ly/yZAicE)
+
+### Sat, 25 Feb 2012 +0700
+
+* [Torture-testing Backup and Archive Programs: Things You Ought to Know But Probably Would Rather Not](http://www.coredumps.de/doc/dump/zwicky/testdump.doc.html) (revisited) - Very interesting article about backup technology
+* [It’s Faster Because It’s C](http://pl.atyp.us/wordpress/index.php/2010/07/its-faster-because-its-c/)
+* [Top 10 Performance Problems taken from Zappos, Monster, Thomson and Co](http://blog.dynatrace.com/2010/06/15/top-10-performance-problems-taken-from-zappos-monster-and-co/)
+
+### Fri, 24 Feb 2012 +0700
+
+* [A Coder Interview With Mike Ash](http://www.codeproject.com/Articles/334312/A-Coder-Interview-With-Mike-Ash)
+* [52 Things People Should Know To Do Cryptography](http://www.cs.bris.ac.uk/Research/CryptographySecurity/knowledge.html)
+* [Small coding mistake led to big Internet voting system failure](http://www.fiercegovernmentit.com/story/small-coding-mistake-led-big-internet-voting-system-failure/2012-02-22)
+* [The 7 habits of highly effective developers](http://css.dzone.com/articles/7-habits-highly-effective)
+* [Alan Turing's reading list (with readable links)](http://blog.jgc.org/2012/02/alan-turings-reading-list-with-readable.html)
+* [Why You Should Care about a "Scratch for HTML5"?](http://www.hackeducation.com/2012/02/21/why-you-should-care-about-a-scratch-for-html5/)
+
 ### Thu, 23 Feb 2012 +0700
 
 * [Splash screens == sloth](http://asserttrue.blogspot.com/2012/02/splash-screens-sloth.html)
