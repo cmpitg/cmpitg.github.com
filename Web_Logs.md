@@ -6,6 +6,15 @@
 
 ## February 2012
 
+### Tue, 28 Feb 2012 +0700
+
+* [Bret Victor - Inventing on Principle](http://vimeo.com/36579366)
+* [Live ClojureScript Game Editor](http://www.youtube.com/watch?v=7XUWpze_A_s&feature=youtu.be) - Really interesting video about live game editor and ClojureScript
+* [Connecting to your creation](http://www.chris-granger.com/2012/02/26/connecting-to-your-creation/)
+* [Lisp in 32 lines of Ruby](http://blog.fogus.me/2012/01/25/lisp-in-40-lines-of-ruby/)
+* [unity of interface - jwz](http://www-archive.mozilla.org/unity-of-interface.html)
+* [Re: why polipo?](http://archives.seul.org/or/talk/Feb-2010/msg00223.html)
+
 ### Mon, 27 Feb 2012 +0700
 
 * [Study: In Ear Headphones Increase Risk Of Hearing Loss](http://digital-lifestyles.info/2005/12/19/study-in-ear-headphones-increase-risk-of-hearing-loss/) - I'm not sure about the reliability of this information, but it's worth having concern.
@@ -14,6 +23,7 @@
 * [Preventing Hearing Damage When Listening With Headphones - (A HeadWize Headphone Guide)](http://gilmore2.chem.northwestern.edu/articles/hearing_art.htm)
 * [The Tiniest Lisp (in Python)](http://www.brool.com/index.php/the-tiniest-lisp-in-python)
 * [Unix and Node](http://dailyjs.com/2012/02/09/unix-node/)
+* [Android: A visual history](http://www.theverge.com/2011/12/7/2585779/android-history)
 
 ### Sun, 26 Feb 2012 +0700
 
