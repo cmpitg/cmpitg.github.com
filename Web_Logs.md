@@ -6,6 +6,16 @@
 
 ## February 2012
 
+### Wed, 29 Feb 2012 +0700
+
+* [Investigating the Plan 9 Operating System 1/2](http://www.osnews.com/story/15235/Investigating-the-Plan-9-Operating-System/)
+* [Investigating the Plan 9 Operating System 2/2](http://www.osnews.com/story/15235/Investigating_the_Plan_9_Operating_System/page2/)
+* [Hacker News - Plan 9: Why no compelling successor to Unix has got off the ground](http://news.ycombinator.com/item?id=447435)
+* [An Open Letter to Chris Dodd](http://esr.ibiblio.org/?p=4155) - Bravo ESR!
+* [The Markdown Mindset](http://hiltmon.com/blog/2012/02/20/the-markdown-mindset/)
+* [Learning coding from boredom](http://bitquabit.com/post/learning-coding-from-boredom/)
+* [Shame on the Rich](http://news.sciencemag.org/sciencenow/2012/02/shame-on-the-rich.html?ref=hp)
+
 ### Tue, 28 Feb 2012 +0700
 
 * [Bret Victor - Inventing on Principle](http://vimeo.com/36579366)
@@ -39,6 +49,7 @@
 * [Torture-testing Backup and Archive Programs: Things You Ought to Know But Probably Would Rather Not](http://www.coredumps.de/doc/dump/zwicky/testdump.doc.html) (revisited) - Very interesting article about backup technology
 * [It’s Faster Because It’s C](http://pl.atyp.us/wordpress/index.php/2010/07/its-faster-because-its-c/)
 * [Top 10 Performance Problems taken from Zappos, Monster, Thomson and Co](http://blog.dynatrace.com/2010/06/15/top-10-performance-problems-taken-from-zappos-monster-and-co/)
+* [Another look at Dropbox](http://scripting.com/stories/2012/02/27/dropboxRevisit.html) - Full of personal ideas which are, in my opinions, shallow and foolish.
 
 ### Fri, 24 Feb 2012 +0700
 
