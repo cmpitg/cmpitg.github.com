@@ -4,6 +4,31 @@
 
 # My static web logs
 
+## March 2012
+
+### Tue, 06 Mar 2012 +0700
+
+* [The Greatness of Git](https://www.linux.com/news/featured-blogs/158:jim-zemlin/549805:the-greatness-of-git)
+* [Unknown Bash Tips and Tricks For Linux](https://www.linux.com/learn/tutorials/550520:unknown-bash-tips-and-tricks-for-linux)
+* [Mozilla’s Boot 2 Gecko and why it could change the world](http://www.knowyourmobile.com/features/1267951/mozillas_boot_2_gecko_and_why_it_could_change_the_world.html) - Interesting but the arguments are really personal!
+* [Research in Programming Languages](http://tagide.com/blog/2012/03/research-in-programming-languages/)
+* [Play 'Angry Birds' with a real slingshot (video)](http://www.itworld.com/networking/255270/play-angry-birds-real-slingshot-video) - Super-interesting!
+* [GitHub Hacked - Slashdot](http://it.slashdot.org/story/12/03/05/1243235/github-hacked)
+* [GitHub hacked, millions of projects at risk of being modified or deleted](http://www.extremetech.com/computing/120981-github-hacked-millions-of-projects-at-risk-of-being-modified-or-deleted)
+* [Mass assignment in Rails applications](http://blog.mhartl.com/2008/09/21/mass-assignment-in-rails-applications/)
+
+
+### Mon, 05 Mar 2012 +0700
+
+* [Why Didn't the Internet Take Off In 1983?](http://tech.slashdot.org/story/12/03/02/0059249/why-didnt-the-internet-take-off-in-1983)
+* [Time Machine: Why didn't Internet on TV take off in 1983?](http://www.itworld.com/networking/254668/time-machine-why-didnt-internet-tv-take)
+
+
+### Thu, 01 Mar 2012 +0700
+
+* [Higher social class predicts increased unethical behavior](http://www.pnas.org/content/early/2012/02/21/1118373109)
+* [Consistent BackSpace and Delete Configuration](http://www.ibb.net/~anne/keyboard.html)
+
 ## February 2012
 
 ### Wed, 29 Feb 2012 +0700
@@ -15,6 +40,7 @@
 * [The Markdown Mindset](http://hiltmon.com/blog/2012/02/20/the-markdown-mindset/)
 * [Learning coding from boredom](http://bitquabit.com/post/learning-coding-from-boredom/)
 * [Shame on the Rich](http://news.sciencemag.org/sciencenow/2012/02/shame-on-the-rich.html?ref=hp)
+* All night hacking a Vietnamese IME ibus-unikey to disable preediting.
 
 ### Tue, 28 Feb 2012 +0700
 
