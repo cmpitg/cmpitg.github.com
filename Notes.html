@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC
+    "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xmlns:svg='http://www.w3.org/2000/svg' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head><meta http-equiv='Content-type' content='application/xhtml+xml;charset=utf-8' /><title></title></head>
+<body><title>"Notes"</title><link type='text/css' href='style.css' rel='stylesheet' />
+<h2 id='notes'>Notes</h2>
+
+<h3 id='gentoo_gnulinux'>Gentoo GNU/Linux</h3>
+
+<ul>
+<li>
+<p>Awesome WM <strong>3.4.9-r1</strong> has a bug setting the background, which may cause the <code>awsetbg</code> hang forever. Try to debug it with <em>Xephyr</em> and the default configuration <code>/etc/xdg/awesome/rc.lua</code> and <code>ps</code> to see. To summarize:</p>
+
+<pre><code>$ Xephyr -ac -br -noreset -screen 800x600 :1 &quot;$@&quot; &gt;/dev/null &amp; disown
+$ DISPLAY=:1.0
+$ awesome -c /etc/xdg/awesome/rc.lua</code></pre>
+
+<p>In another terminal:</p>
+
+<pre><code>$ ps aux | grep awesome</code></pre>
+</li>
+</ul>
+
+<h2 id='license'>License</h2>
+
+<p><img alt='Creative Commons License' src='http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png' /></p>
+<div><span xmlns:dct='http://purl.org/dc/terms/' property='dct:title' href='http://purl.org/dc/dcmitype/Text' rel='dct:type'>cmpitg&#39;s page</span> by <span property='cc:attributionName' xmlns:cc='http://creativecommons.org/ns#'>Dương &#34;Yang&#34; ヤン Nguyễn</span> is licensed under a <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/' rel='license'>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.</div></body></html>
