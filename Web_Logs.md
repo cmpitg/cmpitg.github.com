@@ -14,7 +14,7 @@
 * [Profile of a Real-Life Jedi Academy - Slashdot](http://news.slashdot.org/story/12/03/11/0527239/profile-of-a-real-life-jedi-academy)
 * [Training New Jedis in the Force](http://www.nytimes.com/2012/03/11/nyregion/flynn-michael-trains-new-jedis-in-the-ways-of-the-force.html)
 * [Did Benjamin Franklin Invent Daylight Saving Time? - Slashdot](http://news.slashdot.org/story/12/03/11/216238/did-benjamin-franklin-invent-daylight-saving-time)
-* [Why I Am Leaving Goldman Sachs](http://www.nytimes.com/2012/03/14/opinion/why-i-am-leaving-goldman-sachs.html?_r=1) - *
+* [Why I Am Leaving Goldman Sachs](http://www.nytimes.com/2012/03/14/opinion/why-i-am-leaving-goldman-sachs.html?_r=1) - \*
 
 ### Tue, 13 Mar 2012 +0700
 
