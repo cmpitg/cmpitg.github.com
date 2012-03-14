@@ -6,7 +6,10 @@
 
 ### Gentoo GNU/Linux
 
-* Awesome WM **3.4.9-r1** has a bug setting the background, which may cause the `awsetbg` hang forever.  Try to debug it with *Xephyr* and the default configuration `/etc/xdg/awesome/rc.lua` and `ps` to see.  To summarize:
+* Awesome WM **3.4.9-r1** has a bug setting the background, which may
+  cause the `awsetbg` hang forever.  Try to debug it with *Xephyr* and
+  the default configuration `/etc/xdg/awesome/rc.lua` and `ps` to see.
+  To summarize:
 
       $ Xephyr -ac -br -noreset -screen 800x600 :1 "$@" >/dev/null & disown
       $ DISPLAY=:1.0
@@ -15,6 +18,11 @@
   In another terminal:
 
       $ ps aux | grep awesome
+
+### Cmake
+
+* Checkout `FindPkgConfig.cmake` and `UsePkgConfig.cmake` if you want
+  to use `pkg-config` with **Cmake**.
 
 ## License
 

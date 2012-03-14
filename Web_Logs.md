@@ -6,6 +6,21 @@
 
 ## March 2012
 
+### Tue, 13 Mar 2012 +0700
+
+* [Duqu Trojan contains unknown programming language](http://www.networkworld.com/community/node/80008)
+* [Solving the Wrong Problem](http://prog21.dadgum.com/130.html)
+* [A “real” user proves Windows 8 fails on the desktop](http://www.geek.com/articles/geek-pick/a-real-user-proves-windows-8-fails-on-the-desktop-20120312/)
+* [A Better Way To Program](http://www.i-programmer.info/news/112-theory/3900-a-better-way-to-program.html) - Brilliant video!  Worth revisited several times.
+* [Rabbit holes: Why being smart hurts your productivity](http://sridattalabs.com/2012/02/06/rabbit-holes-being-smart-hurts-prod/)
+
+### Fri, 09 Mar 2012 +0700
+
+* [CMake FAQ](http://www.cmake.org/Wiki/CMake_FAQ)
+* [SconsVsOtherBuildTools](http://www.scons.org/wiki/SconsVsOtherBuildTools)
+* [Trying qmake and CMake](/usr/share/cmake/Modules/FindPkgConfig.cmake)
+* [10 things I hate about Git](http://steveko.wordpress.com/2012/02/24/10-things-i-hate-about-git/) - Personal ideas, different philosophy from mine (I wonder if he does have his own philosophy).
+
 ### Tue, 06 Mar 2012 +0700
 
 * [The Greatness of Git](https://www.linux.com/news/featured-blogs/158:jim-zemlin/549805:the-greatness-of-git)
