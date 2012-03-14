@@ -6,6 +6,16 @@
 
 ## March 2012
 
+### Wed, 14 Mar 2012 +0700
+
+* [XyProblem](http://mywiki.wooledge.org/XyProblem) - Very interesting indeed!
+* [When Are You Dead? - Slashdot](http://science.slashdot.org/story/12/03/11/2017202/when-are-you-dead) - Creepy :-|
+* [A Matter of Life and Death: What Every Anesthesiologist Should Know about the Medical, Legal, and Ethical Aspects of Declaring Brain Death](http://journals.lww.com/anesthesiology/Fulltext/1999/07000/A_Matter_of_Life_and_Death__What_Every.36.aspx)
+* [Profile of a Real-Life Jedi Academy - Slashdot](http://news.slashdot.org/story/12/03/11/0527239/profile-of-a-real-life-jedi-academy)
+* [Training New Jedis in the Force](http://www.nytimes.com/2012/03/11/nyregion/flynn-michael-trains-new-jedis-in-the-ways-of-the-force.html)
+* [Did Benjamin Franklin Invent Daylight Saving Time? - Slashdot](http://news.slashdot.org/story/12/03/11/216238/did-benjamin-franklin-invent-daylight-saving-time)
+* [Why I Am Leaving Goldman Sachs](http://www.nytimes.com/2012/03/14/opinion/why-i-am-leaving-goldman-sachs.html?_r=1) - *
+
 ### Tue, 13 Mar 2012 +0700
 
 * [Duqu Trojan contains unknown programming language](http://www.networkworld.com/community/node/80008)
