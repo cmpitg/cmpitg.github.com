@@ -6,6 +6,33 @@
 
 ## March 2012
 
+### Tue, 20 Mar 2012 +0700
+
+* [Julian Assange To Run For Australian Senate - Slashdot](http://yro.slashdot.org/story/12/03/18/0455231/julian-assange-to-run-for-australian-senate)
+* [TED Education — Video Lessons For Students - Slashdot](http://news.slashdot.org/story/12/03/18/058257/ted-education-video-lessons-for-students)
+* [TED offers free video lessons for high school and college students](http://wapo.st/w04X9n)
+* [Using Apps To 'Soft Control' People's Movements - Slashdot](http://tech.slashdot.org/story/12/03/18/1226202/using-apps-to-soft-control-peoples-movements)
+* [Mastering Engineer Explains Types of Compression, Effects On Today's Music - Slashdot](http://bit.ly/Af4vK8)
+* [Psychic Ability Claim Doesn't Hold Up In New Scientific Experiments - Slashdot](http://bit.ly/zbGvtx)
+
+
+### Mon, 19 Mar 2012 +0700
+
+* [Solving easy problems the hard way](http://www.cerebralmastication.com/2012/03/solving-easy-problems-the-hard-way/)
+* [The myth of the lone genius](http://www.bbc.com/future/story/20120316-the-myth-of-the-lone-genius)
+
+### Sun, 18 Mar 2012 +0700
+
+* Hacking ibus-unikey.
+
+### Sat, 17 Mar 2012 +0700
+
+* Hacking ibus-unikey.
+
+### Fri, 16 Mar 2012 +0700
+
+* Forking and hacking Unikey engine (for X).
+
 ### Wed, 14 Mar 2012 +0700
 
 * [XyProblem](http://mywiki.wooledge.org/XyProblem) - Very interesting indeed!
