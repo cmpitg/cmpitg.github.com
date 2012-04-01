@@ -8,7 +8,7 @@
 
 ### Fri, 30 Mar 2012 +0700
 
-* [Understanding the Clojure `trampoline'](http://pramode.net/clojure/2010/05/08/clojure-trampoline/)
+* [Understanding the Clojure trampoline](http://pramode.net/clojure/2010/05/08/clojure-trampoline/)
 * [Clojure Forward Declarations](http://www.fatvat.co.uk/2009/01/clojure-forward-declarations.html)
 * [Braceless Programming](http://blog.jayway.com/2012/03/23/braceless-programming/) - The term "braceless" seems raw and easily misunderstood.  His idea is actually good, thought it might be a double-edged knife.
 * [What Code Golf Taught Me About Python](http://lbrandy.com/blog/2008/09/what-code-golf-taught-me-about-python/)
