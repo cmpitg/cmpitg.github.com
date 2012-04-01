@@ -6,6 +6,22 @@
 
 ## March 2012
 
+### Fri, 30 Mar 2012 +0700
+
+* [Understanding the Clojure `trampoline'](http://pramode.net/clojure/2010/05/08/clojure-trampoline/)
+* [Clojure Forward Declarations](http://www.fatvat.co.uk/2009/01/clojure-forward-declarations.html)
+* [Braceless Programming](http://blog.jayway.com/2012/03/23/braceless-programming/) - The term "braceless" seems raw and easily misunderstood.  His idea is actually good, thought it might be a double-edged knife.
+* [What Code Golf Taught Me About Python](http://lbrandy.com/blog/2008/09/what-code-golf-taught-me-about-python/)
+
+### Thu, 29 Mar 2012 +0700
+
+* [JavaScript's Two Zeros](http://css.dzone.com/articles/javascripts-two-zeros)
+
+
+### Wed, 28 Mar 2012 +0700
+
+* [Singletons are Pathological Liars](http://misko.hevery.com/2008/08/17/singletons-are-pathological-liars/)
+
 ### Tue, 20 Mar 2012 +0700
 
 * [Julian Assange To Run For Australian Senate - Slashdot](http://yro.slashdot.org/story/12/03/18/0455231/julian-assange-to-run-for-australian-senate)
@@ -14,7 +30,8 @@
 * [Using Apps To 'Soft Control' People's Movements - Slashdot](http://tech.slashdot.org/story/12/03/18/1226202/using-apps-to-soft-control-peoples-movements)
 * [Mastering Engineer Explains Types of Compression, Effects On Today's Music - Slashdot](http://bit.ly/Af4vK8)
 * [Psychic Ability Claim Doesn't Hold Up In New Scientific Experiments - Slashdot](http://bit.ly/zbGvtx)
-
+* [A Vanished Programmer and His Curious Cartoons](http://www.slate.com/slideshows/business_and_tech/a-vanished-programmer-and-his-curious-cartoons.html)
+* [Passphrases only marginally more secure than passwords because of poor choices](http://bit.ly/GALCHc)
 
 ### Mon, 19 Mar 2012 +0700
 
