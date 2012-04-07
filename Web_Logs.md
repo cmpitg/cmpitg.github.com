@@ -19,9 +19,9 @@ Be<title>"My static web logs"</title>
 * [Ars browser shootout: which Web browser is best for business? (2)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/2)
 * [Ars browser shootout: which Web browser is best for business? (3)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/3)
 * [Ars browser shootout: which Web browser is best for business? (4)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/4)
-* [The True Cost of an iPhone](http://www.mbaonline.com/cost-of-iphone/) - *
-* [In praise of... text files and protocols](http://blog.jgc.org/2012/04/in-praise-of-text-files-and-protocols.html) - *
-* [The Art Of Launching An App: A Case Study](http://uxdesign.smashingmagazine.com/2012/04/05/art-of-launching-app-case-study/) - *
+* [The True Cost of an iPhone](http://www.mbaonline.com/cost-of-iphone/) - ★
+* [In praise of... text files and protocols](http://blog.jgc.org/2012/04/in-praise-of-text-files-and-protocols.html) - ★
+* [The Art Of Launching An App: A Case Study](http://uxdesign.smashingmagazine.com/2012/04/05/art-of-launching-app-case-study/) - ★
 
 ## March 2012
 
