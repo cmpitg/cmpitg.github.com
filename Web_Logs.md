@@ -1,8 +1,27 @@
-<title>"My static web logs"</title>
+Be<title>"My static web logs"</title>
 
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 # My static web logs
+
+## April 2012
+
+### Sat, 07 Apr 2012 +0700
+
+
+
+### Fri, 06 Apr 2012 +0700
+
+* [We got hacked for SEO, as did other major technology sites](http://thenextweb.com/insider/2012/04/05/we-got-hacked-for-seo-as-did-other-major-technology-sites/)
+* [A tough calculation - Study: Female students wary of the engineering workplace](http://web.mit.edu/newsoffice/2012/gender-engineering-profession-0404.html)
+* [Declutter your computer in three minutes](http://bit.ly/HjDb3j)
+* [Ars browser shootout: which Web browser is best for business?](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars)
+* [Ars browser shootout: which Web browser is best for business? (2)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/2)
+* [Ars browser shootout: which Web browser is best for business? (3)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/3)
+* [Ars browser shootout: which Web browser is best for business? (4)](http://arstechnica.com/business/reviews/2012/04/smb-browser-shootout.ars/4)
+* [The True Cost of an iPhone](http://www.mbaonline.com/cost-of-iphone/) - *
+* [In praise of... text files and protocols](http://blog.jgc.org/2012/04/in-praise-of-text-files-and-protocols.html) - *
+* [The Art Of Launching An App: A Case Study](http://uxdesign.smashingmagazine.com/2012/04/05/art-of-launching-app-case-study/) - *
 
 ## March 2012
 
