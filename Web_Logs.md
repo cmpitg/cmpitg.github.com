@@ -6,9 +6,18 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+### Wed, 11 Apr 2012 +0700
+
+* [Ruby concurrency explained](http://merbist.com/2011/02/22/concurrency-in-ruby-explained/) - ★
+
+### Tue, 10 Apr 2012 +0700
+
+* [Clojure performance tips](http://gnuvince.wordpress.com/2009/05/11/clojure-performance-tips/) - Good, but old and inappropriate for the state of Clojure now.
+
 ### Sat, 07 Apr 2012 +0700
 
-
+* [Microsoft and Open Source](http://codebetter.com/sebastienlambla/2012/04/05/microsoft-and-open-source-2/)
+* [Lisp Hackers: Marijn Haverbeke](http://lisp-univ-etc.blogspot.com/2012/04/lisp-hackers-marijn-haverbeke.html)
 
 ### Fri, 06 Apr 2012 +0700
 
