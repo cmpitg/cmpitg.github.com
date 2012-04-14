@@ -6,6 +6,14 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+### Fri, 13 Apr 2012 +0700
+
+* [Lucky to be a Programmer](http://duartes.org/gustavo/blog/post/lucky-to-be-a-programmer) - ★ - Brilliant entry!  But how much of the developers understand this?
+* [When will I have to jailbreak my Mac?](http://vallettaventures.com/post/20955866279/when-will-i-have-to-jailbreak-my-mac)
+* [Death to Word](http://slate.me/HPwLHt)
+* [Science has spoken: Sarcasm makes you smarter](http://bit.ly/HFI45Q)
+* [OPENTTY(3)](http://manpages.debian.net/cgi-bin/man.cgi?query=openpty&sektion=3)
+
 ### Wed, 11 Apr 2012 +0700
 
 * [Ruby concurrency explained](http://merbist.com/2011/02/22/concurrency-in-ruby-explained/) - ★
