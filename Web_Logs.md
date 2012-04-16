@@ -6,6 +6,17 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+### Sun, 16 Apr 2012 +0700
+
+* [Google BBS Terminal](http://www.masswerk.at/googleBBS/)
+* [The ugly underbelly of coder culture](http://www.infoworld.com/d/application-development/the-ugly-underbelly-of-coder-culture-190618)
+* [Light Table - a new IDE concept](http://www.chris-granger.com/2012/04/12/light-table---a-new-ide-concept/) - ★★★ - Greate great great concept!!!  I'll definitely visit and develop this many times.
+* [The Big Glossary of Open Source JavaScript and Web Frameworks with Cool Names](http://www.hanselman.com/blog/TheBigGlossaryOfOpenSourceJavaScriptAndWebFrameworksWithCoolNames.aspx)
+* [Losing the Public Debate On Global Warming - Slashdot](http://politics.slashdot.org/story/12/04/14/1559243/losing-the-public-debate-on-global-warming)
+* [FBI Says American Universities Infiltrated by Spies - Slashdot](http://it.slashdot.org/story/12/04/10/0038244/fbi-says-american-universities-infiltrated-by-spies)
+* [Woz Fears Stifling of Startups Due to Patent Wars - Slashdot](http://apple.slashdot.org/story/12/04/10/0217239/woz-fears-stifling-of-startups-due-to-patent-wars)
+* [Dental X-Rays Linked To Common Brain Tumor - Slashdot](http://science.slashdot.org/story/12/04/10/1422250/dental-x-rays-linked-to-common-brain-tumor)
+
 ### Fri, 13 Apr 2012 +0700
 
 * [Lucky to be a Programmer](http://duartes.org/gustavo/blog/post/lucky-to-be-a-programmer) - ★ - Brilliant entry!  But how much of the developers understand this?
