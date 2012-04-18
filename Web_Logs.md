@@ -6,6 +6,14 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+* [Microsoft Counted As Key Linux Contributor - Slashdot](http://linux.slashdot.org/story/12/04/03/193222/microsoft-counted-as-key-linux-contributor)
+* [Competition To Identify Sexual Predators In Chat Logs - Slashdot](http://science.slashdot.org/story/12/04/03/1734208/competition-to-identify-sexual-predators-in-chat-logs)
+* [World's Creepiest iPhone App Pulled After Outcry - Slashdot](http://apple.slashdot.org/story/12/04/02/1432257/worlds-creepiest-iphone-app-pulled-after-outcry)
+* [25 Years of IBM's OS/2 - Slashdot](http://tech.slashdot.org/story/12/04/02/1220203/25-years-of-ibms-os2)
+* [25 Years of IBM’s OS/2: The Strange Days and Surprising Afterlife of a Legendary Operating System](http://ti.me/HUTvo0)
+* [Rybka Solves the King's Gambit Chess Opening - Slashdot](http://games.slashdot.org/story/12/04/02/2043240/rybka-solves-the-kings-gambit-chess-opening)
+* [World's Best Chess Engine Outlawed and Disqualified - Slashdot](http://games.slashdot.org/story/11/06/29/1824253/worlds-best-chess-engine-outlawed-and-disqualified)
+
 ### Sun, 16 Apr 2012 +0700
 
 * [Google BBS Terminal](http://www.masswerk.at/googleBBS/)
