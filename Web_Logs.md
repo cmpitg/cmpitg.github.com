@@ -6,6 +6,16 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+### Wed, 18 Apr 2012 +0700
+
+* [Announcing the Windows 8 Editions](http://bit.ly/J8uw48) - "You need... You'll love...".  Oh come on!  "You"'ve never learnt.  "You"'ll never be Steve Jobs, M$.
+* [How 17 Equations Changed the World](http://www.brainpickings.org/index.php/2012/04/16/in-pursuit-of-the-unknown-ian-stewart/)
+* [Of parser-fetishists and semi-colons](http://christianheilmann.com/2012/04/16/of-parser-fetishists-and-semi-colons/)
+* [Prince of Persia Source Code — Found!](http://jordanmechner.com/blog/2012/03/prince-of-persia-source-code-found/)
+* [Florida Thinks Their Students Are Too Stupid To Know the Right Answers](http://bit.ly/J8VWqC)
+
+### Tue, 17 Apr 2012 +0700
+
 * [Microsoft Counted As Key Linux Contributor - Slashdot](http://linux.slashdot.org/story/12/04/03/193222/microsoft-counted-as-key-linux-contributor)
 * [Competition To Identify Sexual Predators In Chat Logs - Slashdot](http://science.slashdot.org/story/12/04/03/1734208/competition-to-identify-sexual-predators-in-chat-logs)
 * [World's Creepiest iPhone App Pulled After Outcry - Slashdot](http://apple.slashdot.org/story/12/04/02/1432257/worlds-creepiest-iphone-app-pulled-after-outcry)
