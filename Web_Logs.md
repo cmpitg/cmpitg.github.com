@@ -6,6 +6,16 @@ Be<title>"My static web logs"</title>
 
 ## April 2012
 
+### Sat, 21 Apr 2012 +0700
+
+* [Random is as random does](http://www.johndcook.com/blog/2012/04/19/random-is-as-random-does/)
+* [The Game of Go: A Programmer's Perspective](http://needforair.com/blog/2012/04/18/game-of-go/) - ★
+* [What are some things humans are better than computers at doing?](http://curiosity.discovery.com/question/humans-better-than-computers)
+* [Programming Is a Culture](http://blog.paracode.com/2012/04/19/programming-is-a-culture/)
+* [The 501 Developer Manifesto](http://501manifesto.org/) - ★★★
+* [How LibreOffice Writer Tops MS Word: 12 Features](http://www.datamation.com/applications/how-libreoffice-writer-tops-ms-word-12-features-1.html)
+* [Power-Saving Web Pages: Real Or Myth?](http://tech.slashdot.org/story/12/04/19/2026252/power-saving-web-pages-real-or-myth)
+
 ### Wed, 18 Apr 2012 +0700
 
 * [Announcing the Windows 8 Editions](http://bit.ly/J8uw48) - "You need... You'll love...".  Oh come on!  "You"'ve never learnt.  "You"'ll never be Steve Jobs, M$.
