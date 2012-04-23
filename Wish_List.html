@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC
+    "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xml:lang='en' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/1999/xhtml'>
+<head><meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' /><title>Wish List</title></head>
+<body><title>"Wish List"</title><link href='style.css' rel='stylesheet' type='text/css' />
+<h1 id='wish_list'>Wish List</h1>
+
+<ul>
+<li>
+<p>Having an Emacs-like editor which</p>
+
+<ul>
+<li>uses GTK+/Qt widgets, current farm-built widgets visually sucks;</li>
+
+<li>has better Lisp dialect, I particularly love Clojure</li>
+</ul>
+</li>
+
+<li>
+<p>Having a GUI scripting language which</p>
+
+<ul>
+<li>is thread-safe;</li>
+
+<li>is high-performance;</li>
+
+<li>simple and direct to use;</li>
+
+<li>MVC-ed;</li>
+</ul>
+
+<p>Example: (Clojure-inspired syntax)</p>
+
+<pre><code>```clojure
+;; (set-size win 200 300)
+;; (set-layout _)
+;; (add-child _)
+;; (add-properties widget property-map)
+;; (make-window _) =&gt; (make-widget :window _)
+
+{:property &quot;main-window&quot;
+ :parent _name_
+ :size _
+ :layout _
+ :children [&quot;_&quot;, ...]}
+
+{:property &quot;button-ok&quot;
+ :parent _name_
+ :size}
+
+(def win (make-window {:size    [200 300]
+                       :layout  :fill-layout
+                       :title    &quot;Hello world&quot;
+                       ;; Implicit: :name &quot;main-window&quot;
+
+                       :children
+                         [(def button-ok    (make-button {:text &quot;OK&quot;}))
+                          (def button-quit  (make-button {:text &quot;_Quit&quot;}))]
+                      }
+          ))
+
+(add-event button-ok :clicked
+  (fn [evt] (println &quot;Said: Hello world!&quot;)))
+(add-event button-quit :clicked
+  (fn [evt] (destroy win)))
+
+(prepare-window win) ;; Pack and open
+(start-gui win)
+```</code></pre>
+
+<p>Rules:</p>
+
+<ul>
+<li>
+<p>Except for display, every widget must have a parent.</p>
+</li>
+
+<li>
+<p>Model-View-Controller is recommended way to create GUI. Enforcing?</p>
+
+<p><code>Clojure
+ ;; Hierarchy
+ (def widgets-hierarchy
+ )
+</code></p>
+</li>
+</ul>
+
+<p>Frequently used widgets:</p>
+
+<ul>
+<li>Window</li>
+
+<li>Button</li>
+
+<li>Label</li>
+
+<li>TextBox</li>
+
+<li>TextField</li>
+
+<li>Menu</li>
+
+<li>ScrollBar</li>
+
+<li>TreeView</li>
+
+<li>FileView</li>
+
+<li>Icon</li>
+
+<li>Image</li>
+
+<li>Toolbar</li>
+</ul>
+</li>
+</ul>
+</body></html>

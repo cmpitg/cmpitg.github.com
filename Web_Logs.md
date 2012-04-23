@@ -1,10 +1,24 @@
-Be<title>"My static web logs"</title>
+<title>"My static web logs"</title>
 
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 # My static web logs
 
 ## April 2012
+
+* [Spoiler Alert: Your TV Will Be Hacked - Slashdot](http://entertainment.slashdot.org/story/12/04/18/0312206/spoiler-alert-your-tv-will-be-hacked)
+* [Macbook Owner With Defective GPU Beats Apple In Court - Slashdot](http://apple.slashdot.org/story/12/04/18/1629235/macbook-owner-with-defective-gpu-beats-apple-in-court)
+* [Seattle Rex vs. Apple: The Verdict Is In](http://www.seattlerex.com/seattle-rex-vs-apple-the-verdict-is-in/) - ★★★ - You don't want to mess with a tech-savvy writer, muahahaha!
+* [Ellison Doesn't Know If Java Is Free - Slashdot](http://developers.slashdot.org/story/12/04/18/0044257/ellison-doesnt-know-if-java-is-free) - ★ - That's damn shame, Ellison!
+* [Oracle CEO Larry Ellison: I don't know if Java is free](http://news.cnet.com/8301-1035_3-57415324-94/oracle-ceo-larry-ellison-i-dont-know-if-java-is-free/)
+* [Học trường quốc tế “hết cửa” thi đại học](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2332)
+* [Học sinh trường quốc tế vẫn được thi ĐH](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2335)
+* [Zuckerberg Made Instagram Deal Alone - Slashdot](http://tech.slashdot.org/story/12/04/18/2043202/zuckerberg-made-instagram-deal-alone)
+
+### Sun, 22 Apr 2012 +0700
+
+* [How to Inherit Somebody Else’s Code](http://www.softwarequalityconnection.com/2012/04/how-to-inherit-somebody-elses-code/)
+* [Extending Java Classes Using proxy](http://www.gettingclojure.com/articles:extending-java-classes-using-proxy)
 
 ### Sat, 21 Apr 2012 +0700
 
