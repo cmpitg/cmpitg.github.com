@@ -6,6 +6,12 @@
 
 ## April 2012
 
+### Wed, 25 Apr 2012 +0700
+
+* [Racket vs. Clojure](http://programming-puzzler.blogspot.com/2010/08/racket-vs-clojure.html)
+
+### Mon, 23 Apr 2012 +0700
+
 * [Spoiler Alert: Your TV Will Be Hacked - Slashdot](http://entertainment.slashdot.org/story/12/04/18/0312206/spoiler-alert-your-tv-will-be-hacked)
 * [Macbook Owner With Defective GPU Beats Apple In Court - Slashdot](http://apple.slashdot.org/story/12/04/18/1629235/macbook-owner-with-defective-gpu-beats-apple-in-court)
 * [Seattle Rex vs. Apple: The Verdict Is In](http://www.seattlerex.com/seattle-rex-vs-apple-the-verdict-is-in/) - ★★★ - You don't want to mess with a tech-savvy writer, muahahaha!
