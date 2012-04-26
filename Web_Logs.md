@@ -6,6 +6,15 @@
 
 ## April 2012
 
+### Thu, 26 Apr 2012 +0700
+
+* [Windows 8 on the desktop—an awkward hybrid](http://arstechnica.com/microsoft/news/2012/04/windows-8-on-the-desktopan-awkward-hybrid.ars)
+* [Geeks and Repetitive Tasks](http://www.globalnerdy.com/2012/04/24/geeks-and-repetitive-tasks/) - ★★★ - Sadly, many self-claimed geeks never learn.
+* [5 things they told you not to use in JavaScript](http://mir.aculo.us/2012/04/24/5-things-they-told-you-not-to-use-in-javascript/)
+* [How I Collect Passwords](http://xato.net/passwords/how-i-collect-passwords) - ★★★
+* [I Rather Have Silly Tests Than Silly Code](http://openmymind.net/2012/4/24/I-Rather-Have-Silly-Tests-Than-Silly-Code/)
+* [Be Mindful With Your Code](http://blogs.lessthandot.com/index.php/ITProfessionals/ProfessionalDevelopment/be-mindful-with-your-code) - ★★★
+
 ### Wed, 25 Apr 2012 +0700
 
 * [Racket vs. Clojure](http://programming-puzzler.blogspot.com/2010/08/racket-vs-clojure.html)
@@ -15,7 +24,7 @@
 * [Spoiler Alert: Your TV Will Be Hacked - Slashdot](http://entertainment.slashdot.org/story/12/04/18/0312206/spoiler-alert-your-tv-will-be-hacked)
 * [Macbook Owner With Defective GPU Beats Apple In Court - Slashdot](http://apple.slashdot.org/story/12/04/18/1629235/macbook-owner-with-defective-gpu-beats-apple-in-court)
 * [Seattle Rex vs. Apple: The Verdict Is In](http://www.seattlerex.com/seattle-rex-vs-apple-the-verdict-is-in/) - ★★★ - You don't want to mess with a tech-savvy writer, muahahaha!
-* [Ellison Doesn't Know If Java Is Free - Slashdot](http://developers.slashdot.org/story/12/04/18/0044257/ellison-doesnt-know-if-java-is-free) - ★ - That's damn shame, Ellison!
+* [Ellison Doesn't Know If Java Is Free - Slashdot](http://developers.slashdot.org/story/12/04/18/0044257/ellison-doesnt-know-if-java-is-free) - ★ - That's a damn shame, Ellison!
 * [Oracle CEO Larry Ellison: I don't know if Java is free](http://news.cnet.com/8301-1035_3-57415324-94/oracle-ceo-larry-ellison-i-dont-know-if-java-is-free/)
 * [Học trường quốc tế “hết cửa” thi đại học](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2332)
 * [Học sinh trường quốc tế vẫn được thi ĐH](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2335)

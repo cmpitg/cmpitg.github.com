@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC
+    "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
+    "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
+<html xml:lang='en' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/1999/xhtml'>
+<head><meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' /><title></title></head>
+<body>
+<ul>
+<li>
+<p>How to use <code>GtkAlignment</code>:</p>
+
+<ul>
+<li>
+<p>Add container to <code>GtkAlignment</code></p>
+</li>
+
+<li>
+<p>Alignment configuration:</p>
+
+<ul>
+<li>Top-left: 0, 0, <em>,</em></li>
+
+<li>Top-right: 1, 0, <em>,</em></li>
+
+<li>Bottom-left: 0, 1, <em>,</em></li>
+
+<li>Bottom-right: 1, 1, <em>,</em></li>
+</ul>
+</li>
+
+<li>
+<p>Alignments are greedy, i.e. they fill up all the space they&#8217;re allowed to consume. So it could be use to fill space.</p>
+</li>
+</ul>
+</li>
+
+<li>
+<p><code>GtkBox</code>:</p>
+
+<ul>
+<li>Single row container</li>
+
+<li>Children are allocated equal space: <code>homogeneous = true</code> Else: <code>homogeneous = false</code></li>
+</ul>
+</li>
+
+<li>
+<p><code>GtkTable</code> are evil, (FIXME: Why?) you should use <code>GtkVBox</code> and <code>GtkHBox</code> instead.</p>
+</li>
+
+<li>
+<p>Packing explanation:</p>
+
+<p><code>pack_start object, is_cell_gived_equal_space?, does_widget_fill_cell?, padding</code></p>
+</li>
+</ul>
+</body></html>
