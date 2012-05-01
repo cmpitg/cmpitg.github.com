@@ -4,7 +4,24 @@
 
 # My static web logs
 
+## May 2012
+
+### Tue, 01 May 2012 +0700
+
+* [Where do types come from?](http://fexpr.blogspot.com/2011/11/where-do-types-come-from.html)
+* [The plumber programmer](http://www.johndcook.com/blog/2011/11/15/plumber-programmers/) - ★
+
 ## April 2012
+
+### Sun, 29 Apr 2012 +0700
+
+* [Why Qi Lisp Fails and Clojure Succeeds](http://xahlee.org/UnixResource_dir/writ/qi_lang_marketing.html)
+* [Why You should Not Use the Jargons lisp-1 lisp-2](http://xahlee.org/emacs/lisp1_vs_lisp2.html)
+
+### Sat, 28 Apr 2012 +0700
+
+* [Analytic Thinking Can Decrease Religious Belief - Slashdot](http://science.slashdot.org/story/12/04/27/1234256/analytic-thinking-can-decrease-religious-belief)
+* [Is rationality the enemy of religion?](http://science.slashdot.org/story/12/04/27/1234256/analytic-thinking-can-decrease-religious-belief)
 
 ### Thu, 26 Apr 2012 +0700
 
