@@ -6,6 +6,46 @@
 
 ## May 2012
 
+### Wed, 09 May 2012 +0700
+
+* [Hackers break into 55,000 Twitter accounts, leaving passwords bare](http://tnw.co/IP9M0w)
+* [How to Tell if Your Tech Salary is Fair](http://morganmissen.com/post/22618711183/how-to-tell-if-your-tech-salary-is-fair)
+* [60% of People Can’t Go 10 Minutes Without Lying](http://www.mentalfloss.com/blogs/archives/125840) - ★★★
+* [OrmHate](http://martinfowler.com/bliki/OrmHate.html) - ★★★ - Should be read carefully if you don't want to misunderstand it.
+* [Jury Rules Google Violated Java Copyright, Google Moves For Mistrial - Slashdot](http://bit.ly/KOy4nO)
+* [Did a Genome Copying Mistake Lead To Human Intelligence? - Slashdot](http://bit.ly/KOygU5)
+* [Philips Releases 100W-Equivalent LED Bulb, Runs On Just 23 Watts - Slashdot](http://bit.ly/KE7nIs)
+* [Universities Hold Transcripts Hostage Over Loans - Slashdot](http://bit.ly/KOzvT8) - ★
+
+### Tue, 08 May 2012 +0700
+
+* [Windows 8 Won't Play DVDs Unless You Pay For the Media Center Pack - Slashdot](http://bit.ly/JrGanq) - ★
+* [Yahoo CEO Wrongly Claimed To Have Degree In Computer Science - Slashdot](http://bit.ly/JrGDpK)
+* [Yahoo’s Response on CEO’s Computer Science ResumeGate: “Inadvertent Error”](http://allthingsd.com/20120503/yahoos-response-on-computer-science-resumegate-inadvertent-error/)
+* [Antivirus Pioneer John McAfee Arrested In Belize - Slashdot](http://bit.ly/JrHtTf)
+* [Growing Evidence of Football Causing Brain Damage - Slashdot](http://bit.ly/JrHy9K)
+* [Microsoft Using Linux To Optimize Skype Traffic - Slashdot](http://bit.ly/JrHIhp) - ★★★
+* [Skype replaces P2P supernodes with Linux boxes hosted by Microsoft (updated)](http://bit.ly/JrJ7Ew)
+* [FBI Caught On Camera Returning Seized Server - Slashdot](http://yro.slashdot.org/story/12/05/03/1815230/fbi-caught-on-camera-returning-seized-server)
+* [Mozilla Ponders Major Firefox UI Refresh - Slashdot](http://news.slashdot.org/story/12/05/03/037227/mozilla-ponders-major-firefox-ui-refresh)
+* [What’s the hardest language in the world?](http://www.fluentin3months.com/most-difficult-language/) - ★
+* [We Watched the Same YouTube Video for Ten Hours](http://slacktory.com/2011/09/we-watched-youtube-ten-hours/)
+* [Want to Watch 50 Hours of Mindless YouTube Video?](http://www.theatlanticwire.com/technology/2011/07/want-watch-50-hours-mindless-youtube-video/39813/)
+* [On the Naturalness of Software](http://lambda-the-ultimate.org/node/4513)
+
+### Mon, 07 May 2012 +0700
+
+* [Linux' Linus calls Apple's file system 'complete and utter crap,' worse than Windows](http://www.zdnet.com/blog/government/linux-linus-calls-apples-file-system-complete-and-utter-crap-worse-than-windows/10598)
+
+### Thu, 03 May 2012 +0700
+
+* [Unix and Node](http://dailyjs.com/2012/02/09/unix-node/)
+* [Is this the ‘Nerd Economy’?](http://blog.newrelic.com/2012/04/30/is-this-the-nerd-economy/)
+
+### Wed, 02 May 2012 +0700
+
+* [Eternally Confuzzled - The Art of Hashing](http://www.eternallyconfuzzled.com/tuts/algorithms/jsw_tut_hashing.aspx)
+
 ### Tue, 01 May 2012 +0700
 
 * [Where do types come from?](http://fexpr.blogspot.com/2011/11/where-do-types-come-from.html)
