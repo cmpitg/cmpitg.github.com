@@ -6,6 +6,19 @@
 
 ## May 2012
 
+### Sun, 13 May 2012 +0700
+
+* [What Greg Does](https://www.linux.com/news/featured-blogs/199:greg-kroah-hartman/547366:what-greg-does)
+* [Programming and Civility](http://peak5390.wordpress.com/2012/01/24/programming-and-civility/) - ★
+* [Research in Programming Languages](http://tagide.com/blog/2012/03/research-in-programming-languages/) - ★★★
+* [Is Gamification A Great Motivator?](http://www.informationweek.com/news/232901543)
+* [The top 8 web standards myths debunked](http://www.netmagazine.com/features/top-8-web-standards-myths-debunked)
+
+### Sat, 12 May 2012 +0700
+
+* [Programing Language: Fundamental Problems of Lisp](http://xahlee.org/UnixResource_dir/writ/lisp_problems.html) - ★
+* [The Concepts and Confusions of Prefix, Infix, Postfix and Fully Nested Notations](http://xahlee.org/UnixResource_dir/writ/lisp_problems.html) - ★★★
+
 ### Wed, 09 May 2012 +0700
 
 * [Hackers break into 55,000 Twitter accounts, leaving passwords bare](http://tnw.co/IP9M0w)
