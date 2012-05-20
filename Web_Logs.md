@@ -6,6 +6,50 @@
 
 ## May 2012
 
+### Sun, 20 May 2012 +0700
+
+* [Facebook IPO Stumbles Out of the Gate - Slashdot](http://news.slashdot.org/story/12/05/18/187246/facebook-ipo-stumbles-out-of-the-gate)
+* [The Facebook Offering: How It Compares](http://www.nytimes.com/interactive/2012/05/17/business/dealbook/how-the-facebook-offering-compares.html)
+* [Your Passwords Don't Suck — It's Your Policies - Slashdot](http://it.slashdot.org/story/12/05/18/2313235/your-passwords-dont-suck-its-your-policies)
+* [Passfault](http://passfault.com/)
+* [Password creation policies are the enemy of secure passphrases](http://www.net-security.org/secworld.php?id=12956)
+* [Geeks In the Public Forum? - Slashdot](http://politics.slashdot.org/story/12/05/18/1427247/geeks-in-the-public-forum)
+* [Why geeks should be invited to the policy party](http://www.newscientist.com/blogs/culturelab/2012/05/why-geeks-should-be-invited-to-the-policy-party.html)
+* [Wozniak's Original System Description of the Apple II - Slashdot](http://hardware.slashdot.org/story/12/05/18/2020219/wozniaks-original-system-description-of-the-apple-)
+* [System Description: The Apple-II by Stephen Wozniak](http://www.informationweek.com/byte/reviews/personal-tech/desktop-pc/240000361)
+* [UK Government Staff Caught Snooping On Citizen Data - Slashdot](http://yro.slashdot.org/story/12/05/18/0147201/uk-government-staff-caught-snooping-on-citizen-data)
+* [UK government staff caught snooping on citizen data](http://www.zdnet.com/blog/london/uk-government-staff-caught-snooping-on-citizen-data/4716)
+* [From MIT Inventor To Tea Party Leader - Slashdot](http://politics.slashdot.org/story/12/05/17/2014215/from-mit-inventor-to-tea-party-leader)
+
+### Sat, 19 May 2012 +0700
+
+* [Ergonomic Keyboards Gallery](http://xahlee.org/emacs/ergonomic_keyboards.html)
+* [Exotic Ergonomic Keyboards](http://xahlee.org/kbd/ergonomic_keyboards_2.html)
+* [Keyboard Layout: Dvorak vs Colemak: is it Worthwhile to Improve the Dvorak Layout?](http://xahlee.org/kbd/dvorak_vs_colemak.html)
+* [random linux notes 2012-04-18](http://xahlee.org/linux/linux_notes_2012-04-18.html)
+
+### Thu, 17 May 2012 +0700
+
+* [Tại sao người ta hành xử tàn ác?](http://www.nguyenvantuan.net/news/6-news/1492-tai-sao-nguoi-ta-hanh-xu-tan-ac)
+* [Man Ordered to Apologize to Wife on Facebook - Slashdot](http://yro.slashdot.org/story/12/02/22/1448242/man-ordered-to-apologize-to-wife-on-facebook)
+* [User interface design: avoid complexity](http://www.epicbagel.com/blog/view/user-interface-design-avoid-complexity.html)
+* [Goodbye, CouchDB](http://saucelabs.com/blog/index.php/2012/05/goodbye-couchdb/)
+
+### Tue, 15 May 2012 +0700
+
+* [Wozniak Calls For Open Apple - Slashdot](http://apple.slashdot.org/story/12/05/14/1426205/wozniak-calls-for-open-apple)
+* [Wozniak calls for open Apple](http://www.itnews.com.au/News/300704,wozniak-calls-for-open-apple.aspx) - ★★★
+* [Federal Patents Judge Thinks Software Patents Are Good - Slashdot](http://yro.slashdot.org/story/12/05/14/0429217/federal-patents-judge-thinks-software-patents-are-good)
+* ["Brainput" Boosts Your Brain Power By Offloading Multitasking To a Computer - Slashdot](http://hardware.slashdot.org/story/12/05/14/1458256/brainput-boosts-your-brain-power-by-offloading-multitasking-to-a-computer) - ★★★
+* [MIT’s Brainput boosts your brain power by offloading multitasking to a computer](http://www.extremetech.com/extreme/129279-mits-brainput-boosts-your-brain-power-by-offloading-multitasking-to-a-computer) - ★★★
+
+### Mon, 14 May 2012 +0700
+
+* [Richard Stallman Falls Ill At Conference - Slashdot](http://news.slashdot.org/story/12/05/10/2221202/richard-stallman-falls-ill-at-conference)
+* [Overheated Voting Machine Cast Its Own Votes - Slashdot](http://yro.slashdot.org/story/12/05/09/2249242/overheated-voting-machine-cast-its-own-votes)
+* [Don't use MongoDB](http://pastebin.com/raw.php?i=FD3xe6Jt)
+* [FreeBSD 10 To Use Clang Compiler, Deprecate GCC](http://www.phoronix.com/scan.php?page=news_item&px=MTEwMjI)
+
 ### Sun, 13 May 2012 +0700
 
 * [What Greg Does](https://www.linux.com/news/featured-blogs/199:greg-kroah-hartman/547366:what-greg-does)
@@ -13,6 +57,9 @@
 * [Research in Programming Languages](http://tagide.com/blog/2012/03/research-in-programming-languages/) - ★★★
 * [Is Gamification A Great Motivator?](http://www.informationweek.com/news/232901543)
 * [The top 8 web standards myths debunked](http://www.netmagazine.com/features/top-8-web-standards-myths-debunked)
+* [UK Home Secretary Bans US Martial Arts Expert - Slashdot](http://news.slashdot.org/story/12/05/10/0038233/uk-home-secretary-bans-us-martial-arts-expert)
+* [Why Forbes Says Immigrants Make Better Entrepreneurs - Slashdot](http://news.slashdot.org/story/12/05/10/1429204/why-forbes-says-immigrants-make-better-entrepreneurs)
+* [Why Immigrants Make Better Entrepreneurs](http://www.forbes.com/sites/georgeanders/2012/05/09/why-immigrants/)
 
 ### Sat, 12 May 2012 +0700
 
