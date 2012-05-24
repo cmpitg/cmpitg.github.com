@@ -6,6 +6,19 @@
 
 ## May 2012
 
+### Wed, 23 May 2012 +0700
+
+* [Top 5 Sci-fi Weapons that Might Actually Happen](http://bit.ly/Juf2sU)
+
+### Mon, 21 May 2012 +0700
+
+* [Programing: Why Idiomatic Programing Are Bad](http://xahlee.org/comp/language_design_and_idioms.html) - ★
+* [The Purpose of Logos and Principles of Logo Design](http://xahlee.org/UnixResource_dir/logo_design.html) - ★★★
+* [A Lambda Logo Tour](http://xahlee.org/UnixResource_dir/lambda_logo.html) - ★★★
+* [Nikola Tesla Wasn't God And Thomas Edison Wasn't The Devil](http://onforb.es/J8eF12) - ★★★
+* [One Language to Rule Them All?](http://xahlee.org/comp/what_lang_to_use_for_find_replace.html)
+* [My Experience of Emacs vs XEmacs](http://xahlee.org/emacs/emacs_vs_xemacs.html)
+
 ### Sun, 20 May 2012 +0700
 
 * [Facebook IPO Stumbles Out of the Gate - Slashdot](http://news.slashdot.org/story/12/05/18/187246/facebook-ipo-stumbles-out-of-the-gate)
