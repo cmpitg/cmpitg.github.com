@@ -6,6 +6,29 @@
 
 ## May 2012
 
+### Mon, 28 May 2012 +0700
+
+* [Thói ngụy biện ở người Việt](http://nguyenvantuan.net/education/3-edu/23-thoi-nguy-bien-o-nguoi-viet) - ★★★
+* [Are Porn and Games Basically the Same Thing?](http://www.ign.com/articles/2012/05/25/are-porn-and-games-basically-the-same-thing)
+
+
+### Sun, 27 May 2012 +0700
+
+* Read some StackOverFlow questions about Clojure, made some comments.
+* [Who Sends Google the Most Takedown Notices? Microsoft - Slashdot](http://bit.ly/KuzPsT)
+* [Dark Days Ahead For Facebook and Google? - Slashdot](http://bit.ly/KuzXst)
+* [Facebook IPO Post Mortem – Killer – but not for the reasons you think!](http://bit.ly/MRh6eo)
+* [Are Porn and Video Games Ruining a Generation? - Slashdot](http://bit.ly/MRhcCG)
+* ['The Demise of Guys': How video games and porn are ruining a generation](http://bit.ly/MRhgm4)
+
+### Sat, 26 May 2012 +0700
+
+* [Mandrake -> Gentoo a.k.a. "Mandrake Expatriate Syndrome"](http://greenfly.org/mes.html)
+
+### Thu, 24 May 2012 +0700
+
+* [Oracle v. Google: no patent infringement found](http://bit.ly/JpcTO4)
+
 ### Wed, 23 May 2012 +0700
 
 * [Top 5 Sci-fi Weapons that Might Actually Happen](http://bit.ly/Juf2sU)
