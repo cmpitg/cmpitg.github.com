@@ -10,7 +10,14 @@
 
 * [Thói ngụy biện ở người Việt](http://nguyenvantuan.net/education/3-edu/23-thoi-nguy-bien-o-nguoi-viet) - ★★★
 * [Are Porn and Games Basically the Same Thing?](http://www.ign.com/articles/2012/05/25/are-porn-and-games-basically-the-same-thing)
-
+* [Google Now Searches JavaScript - Slashdot](http://search.slashdot.org/story/12/05/26/0310246/google-now-searches-javascript)
+* [Google Now Searches JavaScript](http://bit.ly/Kxy0vC)
+* [Certain 'Personality Genes' Correlate With Longevity, Says Study - Slashdot](http://bit.ly/Kxyim0) - ★★
+* [People Born With Certain "Personality Genes" May Live Longer, Study](http://bit.ly/KxyyBE)
+* [Sound Increases the Efficiency of Boiling - Slashdot](http://bit.ly/KxyEcB)
+* [Free Desktop Software Development Dead In Windows 8 - Slashdot](http://bit.ly/KxyKRt) - ★★★ - Not to mention M$ is as stupid as usual, this is one of the many times Slashdot got a foolish title, too.
+* [No-cost desktop software development is dead on Windows 8](http://bit.ly/KxB1Mx)
+* [Can You Buy Tech With a Clean Conscience? - Slashdot](http://bit.ly/KxAx8Z) - What is this, idiots' day?
 
 ### Sun, 27 May 2012 +0700
 
