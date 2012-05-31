@@ -6,6 +6,19 @@
 
 ## May 2012
 
+### Wed, 30 May 2012 +0700
+
+* [Gambit-C vs. Bigloo vs. Chicken vs. MzScheme vs. Scheme48](http://www.iro.umontreal.ca/~gambit/bench.html)
+
+### Tue, 29 May 2012 +0700
+
+* [Fired Over Facebook: 13 Posts That Got People CANNED](http://huff.to/K6fPQl)
+* [350-Year-Old Newton's Puzzle Solved By 16-Year-Old - Slashdot](http://bit.ly/JypI8J)
+* [5 giáo viên nước ngoài khởi kiện RAFFLES Việt Nam](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2475)
+* [ĐH Công nghiệp TP.HCM áp dụng hình phạt "tàn khốc" với sinh viên](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2473)
+* [German teen Shouryya Ray solves 300-year-old mathematical riddle posed by Sir Isaac Newton](http://bit.ly/JyqsL5)
+* [The Shortage of Women In IT - Slashdot](http://it.slashdot.org/story/12/05/27/223208/the-shortage-of-women-in-it)
+
 ### Mon, 28 May 2012 +0700
 
 * [Thói ngụy biện ở người Việt](http://nguyenvantuan.net/education/3-edu/23-thoi-nguy-bien-o-nguoi-viet) - ★★★
@@ -18,6 +31,7 @@
 * [Free Desktop Software Development Dead In Windows 8 - Slashdot](http://bit.ly/KxyKRt) - ★★★ - Not to mention M$ is as stupid as usual, this is one of the many times Slashdot got a foolish title, too.
 * [No-cost desktop software development is dead on Windows 8](http://bit.ly/KxB1Mx)
 * [Can You Buy Tech With a Clean Conscience? - Slashdot](http://bit.ly/KxAx8Z) - What is this, idiots' day?
+* [We Who Value Simplicity Have Built Incomprehensible Machines](http://prog21.dadgum.com/139.html)
 
 ### Sun, 27 May 2012 +0700
 
