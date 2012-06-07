@@ -4,6 +4,20 @@
 
 # My static web logs
 
+## June 2012
+
+### Wed, 06 Jun 2012 +0700
+
+* [Mosquitos Have Little Trouble Flying in the Rain - Slashdot](http://bit.ly/LaQy51)
+* [Firefox 13 Released, Debuts Brand New Tab Page and Homepage - Slashdot](http://bit.ly/LaQPoM)
+* [NYT-“MEN invented the internet” ](http://bit.ly/LaRVAL)
+* [Searchable or Die: The New Rules for Email](http://www.wired.com/opinion/2012/06/the-new-rules-for-email/)
+* [Anders Hejlsberg Is Right: You Cannot Maintain Large Programs In JavaScript](http://bit.ly/LaTnmM) - ★★★
+
+### Fri, 01 Jun 2012 +0700
+
+* [Negotiating a damaged Linux filesystem using only shell builtins](http://bit.ly/K4qkOc) - Things get really naturally compared to the first time I read about this subject about 3 years ago.
+
 ## May 2012
 
 ### Wed, 30 May 2012 +0700
