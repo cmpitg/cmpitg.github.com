@@ -6,6 +6,20 @@
 
 ## June 2012
 
+### Thu, 14 Jun 2012 +0700
+
+* [NewEgg: Installing Linux Breaks Laptop - Slashdot](http://linux.slashdot.org/story/12/06/12/1450229/newegg-installing-linux-breaks-laptop)
+* [Newegg: Installing Linux On Your Computer Is Basically The Same As Breaking It](http://bit.ly/KXTdT0)
+* [FunnyJunk v. the Oatmeal: Copyright Infringement Complaints As Defamation - Slashdot](http://bit.ly/KXTANj)
+* [Why Smart People Are Stupid - Slashdot](http://bit.ly/KXTJR7)
+* [Why smart people are stupid](http://nyr.kr/KXTXaP)
+* [Programmer Time Translation Table](http://bit.ly/KXV7mz)
+* [eight golden rules of interface design](http://medriscoll.com/post/23051214037/ui-eight-golden-rules)
+
+### Tue, 12 Jun 2012 +0700
+
+* [How CSS Handles Errors](http://www.xanthir.com/blog/b4JF0)
+
 ### Wed, 06 Jun 2012 +0700
 
 * [Mosquitos Have Little Trouble Flying in the Rain - Slashdot](http://bit.ly/LaQy51)
@@ -35,7 +49,6 @@
 
 ### Mon, 28 May 2012 +0700
 
-* [Thói ngụy biện ở người Việt](http://nguyenvantuan.net/education/3-edu/23-thoi-nguy-bien-o-nguoi-viet) - ★★★
 * [Are Porn and Games Basically the Same Thing?](http://www.ign.com/articles/2012/05/25/are-porn-and-games-basically-the-same-thing)
 * [Google Now Searches JavaScript - Slashdot](http://search.slashdot.org/story/12/05/26/0310246/google-now-searches-javascript)
 * [Google Now Searches JavaScript](http://bit.ly/Kxy0vC)
