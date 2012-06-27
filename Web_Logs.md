@@ -6,6 +6,22 @@
 
 ## June 2012
 
+### Wed, 27 Jun 2012 +0700
+
+* [Why Aren't We Reading Turing?](http://www.furtherfield.org/features/why-arent-we-reading-turing)
+* [Programming Like Kent Beck](http://blog.iterate.no/2012/06/20/programming-like-kent-beck/) - ★★★
+* [Microsoft’s developer problem](http://www.marco.org/2012/06/22/microsoft-developer-problem)
+* [Critics of the Microsoft Surface just don’t get it](http://bit.ly/L0HJ1v) - And you are no different from them, Hal.  You don't get it.
+
+### Wed, 20 Jun 2012 +0700
+
+* [Hacked Companies Fight Back With Controversial Steps](http://bit.ly/LzrF2S)
+
+### Fri, 15 Jun 2012 +0700
+
+* [Pattern matching with Ruby](http://etorreborre.blogspot.com/2007/04/pattern-matching-with-ruby.html)
+* [Choosing Languages](https://sites.google.com/site/steveyegge2/choosing-languages)
+
 ### Thu, 14 Jun 2012 +0700
 
 * [NewEgg: Installing Linux Breaks Laptop - Slashdot](http://linux.slashdot.org/story/12/06/12/1450229/newegg-installing-linux-breaks-laptop)
