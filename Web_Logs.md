@@ -6,12 +6,30 @@
 
 ## June 2012
 
+### Fri, 29 Jun 2012 +0700
+
+* [Both true and false: a Zen moment with C](http://markshroyer.com/2012/06/c-both-true-and-false/)
+
+### Thu, 28 Jun 2012 +0700
+
+* [Còn rất nhiều nghề "hái ra tiền" mà không cần học đại học](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2570)
+* [Báo Mỹ bình luận về giáo dục Việt Nam](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2572) - ★★★ - Tiêu đề chưa hoàn toàn khớp nội dung nhưng bài viết khách quan và trung thực.
+* [Write Less Code](http://mikegrouchy.com/blog/2012/06/write-less-code.html)
+
 ### Wed, 27 Jun 2012 +0700
 
 * [Why Aren't We Reading Turing?](http://www.furtherfield.org/features/why-arent-we-reading-turing)
 * [Programming Like Kent Beck](http://blog.iterate.no/2012/06/20/programming-like-kent-beck/) - ★★★
 * [Microsoft’s developer problem](http://www.marco.org/2012/06/22/microsoft-developer-problem)
 * [Critics of the Microsoft Surface just don’t get it](http://bit.ly/L0HJ1v) - And you are no different from them, Hal.  You don't get it.
+* [Some Thoughts on Scripting](http://www.libertypages.com/clarktech/?p=3726)
+* [Wooga’s HTML5 Adventure](http://bit.ly/OuWlHm)
+* [Using an Android as a webserver](http://hackaday.com/2012/06/21/using-an-android-as-a-webserver/)
+* [Opinion: Microsoft has a credibility problem with Windows Phone 8](http://bit.ly/OuXdMd) - ★★★ - "How many times can a company abandon its users and still retain their loyalty?", I'd give M$ a finger.
+* [VIM Clutch](https://github.com/alevchuk/vim-clutch) - ★★★ - Super cool!!!
+* [What do developers do all day?](http://bit.ly/OuYHGv)
+* [Your Coding Philosophies are Irrelevant](http://prog21.dadgum.com/142.html)
+* [3 Reasons You Need To Know Something About Every Technology](http://java.dzone.com/articles/3-reasons-you-need-know)
 
 ### Wed, 20 Jun 2012 +0700
 
