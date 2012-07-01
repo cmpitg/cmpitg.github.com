@@ -4,7 +4,25 @@
 
 # My static web logs
 
+## July 2012
+
+### Sun, 01 Jul 2012 +0700
+
+* [Julian Assange Served With Extradition Notice By British Police - Slashdot](http://bit.ly/ORNG2a)
+* [Julian Assange sent extradition notice by Met Police](http://www.bbc.co.uk/news/uk-18629906)
+* [Sergey Brin Shows Project Glass Glasses to Journalists (Video) - Slashdot](http://bit.ly/OROl3t)
+* [The PHP Singularity - Slashdot](http://bit.ly/MJJ6gF) - ★★★ - I've never wanted to really learn PHP and thus never learnt it; now I know for sure I'm definitely not alone.
+* [The PHP Singularity - Coding Horror](http://www.codinghorror.com/blog/2012/06/the-php-singularity.html) - ★★★
+* [PHP: a fractal of bad design](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/) - ★★★
+* [Are Open-Source Desktops Losing Competitiveness? - Slashdot](http://bit.ly/ORPwzS)
+* [Microsoft Ignores Usability With All-Caps Menu in Visual Studio - Slashdot](http://bit.ly/MKH0jc) - LOLZ.  Rumor has it, M$ is full of shitheads.
+
 ## June 2012
+
+### Sat, 30 Jun 2012 +0700
+
+* [Những diễn biến bất ngờ sau kết luận thanh tra ở Đại học Quốc gia Hà Nội](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2577)
+* [Bị 'tố', trường mầm non quốc tế cam kết nâng chất lượng](http://tingiaoduc.org/ChiTietTinTuc.aspx?id=2576)
 
 ### Fri, 29 Jun 2012 +0700
 
