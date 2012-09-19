@@ -1,10 +1,109 @@
-<title>"My static web logs"</title>
+`<title>"My static web logs"</title>
 
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 # My static web logs
 
+## August 2012
+
+### Sat, 18 Aug 2012 +0700
+
+* [Sorting and searching at the library](http://jorendorff.github.com/hackday/2012/library/) - ★★★
+
+### Fri, 17 Aug 2012 +0700
+
+* ["The Best Programming Advice I Ever Got" with Rob Pike](http://www.informit.com/articles/article.aspx?p=1941206)
+
+### Mon, 13 Aug 2012 +0700
+
+* [You Can't Bypass the UI Formerly Known As Metro On Windows 8 - Slashdot](http://goo.gl/o4Mov) - LOL!  They never learnt =))
+* [How To Write Good Log Messages](http://www.trottercashion.com/2012/08/12/how-to-write-good-log-messages.html)
+* [The dark craft of engineering management](http://www.laurathomson.com/2012/08/the-dark-craft-of-engineering-management/) - ★★★
+* [Design Tip: Never Use Black](http://ianstormtaylor.com/design-tip-never-use-black/)
+
+### Sun, 05 Aug 2012 +0700
+
+* [RIM CEO Says Company 'Seriously' Considered Switch To Android - Slashdot](http://goo.gl/5v5Br)
+* [IT Support Pro Tells Why He Hates Live Chat - Slashdot](http://goo.gl/S0tZJ)
+* [Olympic Games and the tricky science of telling men from women](http://goo.gl/2EmE9)
+
+### Sat, 04 Aug 2012 +0700
+
+* [Adam Savage’s Blade Runner Blaster Pistol](http://dsc.discovery.com/show-news/adam-savages-blade-runner-blaster-pistol.html)
+* [How random is pseudo-random? Testing pseudo-random number generators and measuring randomness](http://goo.gl/PTh4p) - ★★★
+* [How to Choose Colours Procedurally (Algorithms)](http://devmag.org.za/2012/07/29/how-to-choose-colours-procedurally-algorithms/) - ★★★
+* [Meet the Man Who Put the ‘@’ in Your E-Mail](http://goo.gl/WDWhc)
+
+### Wed, 01 Aug 2012 +0700
+
+* [Things I Have Learned About Blog Portability](http://www.macdrifter.com/2012/07/things-i-have-learned-about-blog-portability/)
+* [I Won't Hire People Who Use Poor Grammar. Here's Why.](http://blogs.hbr.org/cs/2012/07/i_wont_hire_people_who_use_poo.html)
+* [How you should(n’t) use Monad](https://noordering.wordpress.com/2009/03/31/how-you-shouldnt-use-monad/)
+* [OAuth 2.0 and the Road to Hell](http://hueniverse.com/2012/07/oauth-2-0-and-the-road-to-hell/)
+* [Top 10 Raspberry Pi Myths and Truths](http://www.hanselman.com/blog/Top10RaspberryPiMythsAndTruths.aspx)
+
 ## July 2012
+
+### Tue, 31 Jul 2012 +0700
+
+* [Going Dynamic on JVM: JRuby vs. Groovy](http://bit.ly/Q6Dssr)
+* [The Web Is Unsustainable](http://www.shanehudson.net/2012/07/29/the-web-is-unsustainable/)
+
+### Sat, 28 Jul 2012 +0700
+
+* [Why Can’t Microsoft Count to 0?](http://madebyknight.com/why-cant-microsoft-count-to-0/) - Wanna make your life worse for fun?  Trust those idiots at M$.
+* [Analyzing Tweets To Identify Psychopaths - Slashdot](http://bit.ly/MPCFdf)
+* [Kids Still Playing Pokemon Like It's 1999 - Slashdot](http://bit.ly/Qn1brn) - Well, not just kids :-)
+
+### Thu, 26 Jul 2012 +0700
+
+* [What's Next For Superhero Movies? - Slashdot](http://bit.ly/Oo8E3V)
+* [The dark side of data](http://radar.oreilly.com/2012/07/the-dark-side-of-data.html)
+
+### Tue, 24 Jul 2012 +0700
+
+* [Will Parallel Code Ever Be Embraced?](http://www.drdobbs.com/parallel/will-parallel-code-ever-be-embraced/240003926)
+* [Unbreakable Crypto: Store a 30-character Password In Your Subconscious Mind - Slashdot](http://bit.ly/MTtdns) - ★★★ - I know many people have been using this for quite some time but this is the first scientific article I've read about it.
+* [Unbreakable crypto: Store a 30-character password in your brain’s subconscious memory](http://bit.ly/LJzlOl)
+* [Why You Shouldn't Write Off Google+ Just Yet - Slashdot](http://bit.ly/SR9OIa)
+
+### Wed, 18 Jul 2012 +0700
+
+* [The Pain of HTML5](http://blog.caplin.com/2012/07/16/the-pain-of-html5/)
+
+### Tue, 17 Jul 2012 +0700
+
+* [Scaling lessons learned at Dropbox, part 1](http://eranki.tumblr.com/post/27076431887/scaling-lessons-learned-at-dropbox-part-1) - ★★★
+* [Lisp is Not an Acceptable Lisp](http://steve-yegge.blogspot.com/2006/04/lisp-is-not-acceptable-lisp.html) - ★★★
+* [THE REAL HISTORY OF THE @REPLY ON TWITTER](http://log.maniacalrage.net/post/26935842947/the-real-history-of-the-reply-on-twitter)
+* [SQL vs. NoSQL: Which Is Better?](http://slashdot.org/topic/bi/sql-vs-nosql-which-is-better/)
+
+### Mon, 16 Jul 2012 +0700
+
+* [Friends don’t let friends reuse passwords](http://blog.agilebits.com/2012/07/12/friends-dont-let-friends-reuse-passwords/)
+
+### Fri, 13 Jul 2012 +0700
+
+* [Is It Time To End Our Love Affair With the QWERTY Keyboard? - Slashdot](http://bit.ly/P4aREj)
+* [New keyboard layout easy as ABC](http://bit.ly/P4aSIb)
+* [RIM CEO On What Went Wrong - Slashdot](http://bit.ly/P4aV71)
+
+### Tue, 10 Jul 2012 +0700
+
+* [Preparing Yourself for Modern JavaScript Development](http://www.codethinked.com/preparing-yourself-for-modern-javascript-development)
+* [Ask Slashdot: How Does Your Company Evaluate Your Performance? - Slashdot](http://bit.ly/MVwyqf)
+* [Microsoft’s Downfall: Inside the Executive E-mails and Cannibalistic Culture That Felled a Tech Giant](http://www.vanityfair.com/online/daily/2012/07/microsoft-downfall-emails-steve-ballmer)
+* [A Critical Examination of Bill Gates' Philanthropic Record - Slashdot](http://bit.ly/PBS1Fy)
+* [The Gates Foundation's Leveraged Philanthropy: Corporate Profit Versus Humanity on Three Fronts](http://bit.ly/RPB7C4) - ★★★ - Not that unexpected of you, asshole Billy!!!
+* [Copyrights To Reach Deep Space - Slashdot](http://bit.ly/NDdIkG)
+
+### Thu, 05 Jul 2012 +0700
+
+* [Robot know thyself](http://alanwinfield.blogspot.com/2012/06/robot-know-thyself.html)
+
+### Mon, 02 Jul 2012 +0700
+
+* [Why some publishers are abandoning apps and betting on the Web](http://bit.ly/N3DY93)
 
 ### Sun, 01 Jul 2012 +0700
 

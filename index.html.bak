@@ -3,9 +3,29 @@
     "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN"
     "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd">
 <html xml:lang='en' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/1999/xhtml'>
-<head><meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' /><title>200 but actually its 401 :-P</title></head>
+<head><meta content='application/xhtml+xml;charset=utf-8' http-equiv='Content-type' /><title>Yet another personal page</title></head>
 <body><title>"Yet another personal page"</title><link href='style.css' rel='stylesheet' type='text/css' />
-<h1 id='200_but_actually_its_401_p'>200 but actually it&#8217;s 401 :-P</h1>
+<h1 id='yet_another_personal_page'>Yet another personal page</h1>
+
+<h2 id='contents'>Contents</h2>
+
+<ul>
+<li>
+<p>My <a href='Web_Logs.html'>static web logs</a>, <a href='https://cmpitg.wordpress.com'>another (dynamic) one</a>.</p>
+</li>
+
+<li>
+<p>My programming languages of choice:</p>
+
+<ul>
+<li>2012: Clojure, Shen, Scala, Lua, Golang, Pharo/Smalltalk</li>
+</ul>
+</li>
+</ul>
+
+<h2 id='about_me'>About me</h2>
+
+<p>Please have a look at my <a href='https://cmpitg.wordpress.com/about'>Wordpress page</a>.</p>
 
 <h2 id='license'>License</h2>
 
