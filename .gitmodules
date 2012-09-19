@@ -1,0 +1,3 @@
+[submodule "moz-intro"]
+	path = moz-intro
+	url = git@github.com:CMPITG/sfd-hanoi-2012-mozilla-intro.git

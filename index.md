@@ -1,7 +1,10 @@
 <title>"Yet another personal page"</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 
-# 200 but actually it's 401 :-P
+# Got 200?  Actually it's 401 :-P
+
+<br />
+<br />
 
 ## License
 
