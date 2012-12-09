@@ -1,0 +1,12 @@
+@font-face {
+  font-family: ebgaramond;
+  src: url('/assets/fonts/ebgaramond.otf');
+}
+@font-face {
+  font-family: ebgaramond_cap;
+  src: url('assets/fonts/ebgaramondsc.otf');
+}
+p,
+div {
+  font-size: 14px;
+}

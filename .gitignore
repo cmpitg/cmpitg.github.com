@@ -1,0 +1,15 @@
+_site/*
+_theme_packages/*
+assets/css/*.less
+
+Thumbs.db
+.DS_Store
+
+!.gitkeep
+
+.rbenv-version
+.rvmrc
+changelog.md
+index.jekyll.md
+README.jekyll.md
+gen-everything
