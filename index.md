@@ -10,5 +10,3 @@ tagline:
 Hello folks! I've just finished my [about page](pages/about.html).
 
 To be updated rapidly later :-)
-
-(Test)
