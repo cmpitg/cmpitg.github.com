@@ -7,9 +7,9 @@ group: navigation
 {% include JB/setup %}
 
 
-My name is *Nguyễn Hà Dương*, also known as Duong “Yang” Nguyen in English, グエンヤン in Japanese, and simply *cmpitg*. Please call me "Yang" if you hate pronouncing the word :-). I'm a FOSS activist in Vietnam, where I do software development, promote the sharing culture and provide support for both users and contributors. I'm a greedy person with a wide range of interest in FOSS projects: Mozilla (as a [Mozilla Rep](https://wiki.mozilla.org/User:Cmpitg)), Fedora (also as [Fedora Ambassador](https://fedoraproject.org/wiki/User:Cmpitg)), Node.js, SpiderMonkey, ... :-).
+My name is *Nguyễn Hà Dương*, also known as Duong “Yang” Nguyen in English, グエンヤン in Japanese, and simply *cmpitg*. Please call me "Yang" if you don't want to pronounce the word :-). I'm a [FOSS](http://en.wikipedia.org/wiki/Free_and_Open_Source_Software) activist in Vietnam, where I do software development, promote the sharing culture and provide support for both users and contributors. I'm a greedy person with a wide range of interest in FOSS projects: Mozilla (as a [Mozilla Rep](https://wiki.mozilla.org/User:Cmpitg)), Fedora (also as [Fedora Ambassador](https://fedoraproject.org/wiki/User:Cmpitg)), Node.js, SpiderMonkey, ...
 
-Besides being a member of some FOSS communites (which of course you don't want me to miss HanoiLUG), I and a bunch of FOSS guys have founded [Hanoi Community Space](http://khonggiancongdong.org) - a FOSS working group and community model to promote the **philosophy and culture** of Free and Open Source Software, as well as to **bring value** to anyone who is a part of the ecosystem - in in March 2012. [Join us](https://groups.google.com/group/khonggian-congdong) if you are interested!
+Besides being a member of some FOSS communities (which of course you don't want me to miss HanoiLUG), I and a bunch of FOSS guys have founded [Hanoi Community Space](http://khonggiancongdong.org) - a FOSS working group and community model to promote the **philosophy and culture** of Free and Open Source Software, as well as to **bring value** to anyone who is a part of the ecosystem - in in March 2012. [Join us](https://groups.google.com/group/khonggian-congdong) if you are interested!
 
 To make my life more thrilled, I have developed [RSI](http://en.wikipedia.org/wiki/Repetitive_strain_injury) since July 2012. My life as a computer addict has never been more annoying. Oh well, it's a hack after all.
 
@@ -36,7 +36,7 @@ I collect programming languages as my hobby. I love and strongly believe in the 
 
 ## In Other IT Stuff
 
-I am a hardcore GNU/Linux system administrator. The first time I used GNU/Linux was in 2005, when I received a Ubuntu CD freely distributed in my school. I officially changed from Microsoft Windows® to GNU/Linux in 2008 and tried as many \*nix distrubutions as I can.
+I am a hardcore GNU/Linux system administrator. The first time I used GNU/Linux was in 2005, when I received a Ubuntu CD freely distributed in my school. I officially changed from Microsoft Windows® to GNU/Linux in 2008 and tried as many \*nix distributions as I can.
 
 - In 2005: Ubuntu
 - From mid 2005 to mid 2006: Slackware and Fedora
