@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: page_without_comments
 title: Projects
 description: Projects that I'm participating in
 group: navigation
+permalink: /
+last_updated: Thu, 13 Dec 2012 01:09:04 +0700
 ---
 {% include JB/setup %}
 
@@ -26,4 +28,4 @@ group: navigation
 
 #### [BoGoEngine](https://github.com/BoGoEngine) - A Vietnamese input method for GNU/Linux systems
 
-#### [Espada Text](/pages/espada-text.html) - Just another text editor
+#### [Espada Text](espada-text.html) - Just another text editor

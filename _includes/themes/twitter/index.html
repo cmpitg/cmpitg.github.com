@@ -1,16 +1,15 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+
 <div class="page-header">
   <h1>{{ page.title }}<h1>
   {% if page.tagline %}<h1 class='indextagline'><small class='indextagline'>{{ page.tagline }}</small></h1>{% endif %}
 </div>
 
 <div class="row">
-  <div class="span12">
-    {% include custom/last_updated %}
-    
-    {{ content }}
-    <hr />
+  <div class="span9">
+     {{ content }}
   </div>
-  <div class='span12'>
-    {% include JB/comments %}
+  <div class="span3 span_right">
+    <a href='/atom.xml'>Feed</a>
   </div>
 </div>

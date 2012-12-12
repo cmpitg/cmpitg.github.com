@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: page_without_comments
 title: About Me
 description: Self-introduction
+permalink: /about/
 group: navigation
 ---
 {% include JB/setup %}

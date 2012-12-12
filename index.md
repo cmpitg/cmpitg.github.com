@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
 ---
 {% include JB/setup %}
 
-Hello folks! I've just finished my [about page](pages/about.html).
+Hello folks! I've just finished my [about page](/about/).
 
 To be updated really soon... :-)
 
@@ -22,11 +22,5 @@ To be updated really soon... :-)
 
 ## Page that I'm Writing
 
-* [Projects](/pages/projects.html)
-* [Espada Text Editor](/pages/espada-text.html)
-
-[Feed](/atom.xml)
-
-## License
-
-Unless clearly stated, all the contents in this site are release under the terms of a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US).  Please see the footer for more details.
+* [Projects](/projects/)
+* [Espada Text Editor](/projects/espada-text.html)

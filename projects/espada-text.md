@@ -2,6 +2,7 @@
 layout: page
 title: Espada Text
 description: Thoughts about writing a new text editor
+last_updated: Thu, 13 Dec 2012 01:20:08 +0700
 ---
 {% include JB/setup %}
 
