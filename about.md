@@ -87,7 +87,7 @@ Recommended Programming Languages
 
 ## My Official Projects
 
-Please see the [projects page](/pages/projects.html).
+Please see the [projects page](/projects/).
 
 ## Reach Me?
 
@@ -97,11 +97,9 @@ Please reach me by:
 - Dropping me an email: NOTcmpitg [at] gmaildotcom, or NOTcmpitg [at] ubuntu-vndotorg. Remove the "NOT" and replace "dot" with "."
 - Or finding me on some social networks: [@cmpitg](http://twitter.com/#!/cmpitg), [Google+](https://plus.google.com/#118060248339095886143/about), [Facebook](https://www.facebook.com/cmpitg)
 
-Oh, and here are my public keys:
+My public keys:
 
 * [SSH Public Key](/ssh.public.key.txt)
 * [PGP Public Key](/public.key.txt)
 
 **Please encrypt (and sign) your message if you want to send me anything confidential.  And please don't send me document using [closed standard](http://www.gnu.org/philosophy/no-word-attachments.html).**
-
-### To be updated...

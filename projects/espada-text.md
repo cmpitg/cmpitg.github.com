@@ -12,7 +12,7 @@ This page is growing through time, if you're interested in the idea, besure to c
 
 * This page like a brain-dump, although it's more formal than a brain-dump and much less formal than an essay.
 
-* I do complain some languages at some points.  This is purely my subjective opinion, *no offense towards the language creators and the community around the languages*.  Please kindly leave me a message if you feel offended and I apologize if you feel so.
+* I do make complaints about some languages at some points below.  This is purely my subjective opinion, *no offense towards the language creators and the community around the languages*.  Please kindly leave me a message if you feel offended and I apologize if you feel so.
 
 * This is **not** an attempt to clone *Emacs*, *Vim*, *TextMate*, *Sam*, *Acme*, ... and the like.  My ambition is to combine the **best** of them all.
 
