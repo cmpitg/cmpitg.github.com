@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Just another web log
-tagline:
+title: Reference Error
+tagline: Thoughts about tech, education and open culture
 ---
 {% include JB/setup %}
 
-<link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
-
 Hello folks! I've just finished my [about page](pages/about.html).
 
-To be updated rapidly later :-)
+To be updated really soon... :-)
