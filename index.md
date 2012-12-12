@@ -2,6 +2,7 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
+last_updated: Thu, 13 Dec 2012 03:39:31 +0700
 ---
 {% include JB/setup %}
 
@@ -19,6 +20,12 @@ To be updated really soon... :-)
 * Writing some *pages*
 * Adding Emacs and Vim config
 * Adding [Awesome WM](http://awesome.naquadah.org/) config
+* Post: guide to write good blog post:
+  - Start strong
+  - Be clear and concise
+  - Interactive
+  - Visualized
+  - Growing through time
 
 ## Page that I'm Writing
 
