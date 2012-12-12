@@ -86,7 +86,7 @@ Recommended Programming Languages
 
 ## My Official Projects
 
-TO-DO
+Please see the [projects page](/pages/projects.html).
 
 ## Reach Me?
 
