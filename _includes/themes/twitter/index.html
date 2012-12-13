@@ -9,8 +9,19 @@
   <div class="span9">
      {{ content }}
   </div>
+
   <div class="span3 span_right">
-    <a href='/atom.xml'>Feed</a>
+    <p style='margin-bottom: 2px;'><a href='/atom-posts.xml'><img src='/assets/images/feed-icon.png' width='16px' style='margin-top: -3px;' /> RSS Posts</a><br />
+    <a href='/atom-pages.xml'><img src='/assets/images/feed-icon.png' width='16px' style='margin-top: -3px;' /> RSS Pages</a></p>
   </div>
+
+  <div class='span3 span_right'>
+    <p style='margin-bottom: 2px;'>Latest Changed</p>
+  </div>
+
+  <div class='span3 span_right'>
+    <p style='margin-bottom: 2px;'>Archive</p>
+  </div>
+
   {% include custom/last_updated %}
 </div>

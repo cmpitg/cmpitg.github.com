@@ -1,0 +1,30 @@
+---
+layout: nil
+title: Atom Feed Pages
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>{{ site.title }}</title>
+ <link href="{{ site.production_url }}/atom.xml" rel="self"/>
+ <link href="{{ site.production_url }}"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{{ site.production_url }}</id>
+ <author>
+   <name>{{ site.author.name }}</name>
+   <email>{{ site.author.email }}</email>
+ </author>
+
+ {% for page in site.pages %}
+   {% if page.title and page.title != "Atom Feed Pages" and page.title != "404 page not found" and page.title != "Site Map" and page.title != "Pages" and page.title != "Categories" and page.title != "Archive" and page.title != "Tags" and page.title != "Atom Feed Posts" %}
+     <entry>
+       <title>{{ page.title }}</title>
+       <link href="{{ site.production_url }}{{ page.url }}"/>
+       {% if page.last_updated %}<updated>{{ page.last_updated }}</updated>{% endif %}
+       <id>{{ site.production_url }}{{ page.id }}</id>
+       <content type="html">{{ page.content | xml_escape }}</content>
+     </entry>
+   {% endif %}
+ {% endfor %}
+ 
+</feed>

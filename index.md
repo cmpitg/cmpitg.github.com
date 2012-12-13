@@ -2,7 +2,7 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Thu, 13 Dec 2012 03:39:31 +0700
+last_updated: Thu, 13 Dec 2012 16:02:21 +0700
 ---
 {% include JB/setup %}
 
@@ -27,7 +27,8 @@ To be updated really soon... :-)
   - Visualized
   - Growing through time
 
-## Page that I'm Writing
+## Pages I'm Writing
 
 * [Projects](/projects/)
 * [Espada Text Editor](/projects/espada-text.html)
+* [Problems with Emacs and Vim](/pages/emacs-vim-problems.html)

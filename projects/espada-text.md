@@ -2,7 +2,7 @@
 layout: page
 title: Espada Text
 description: Thoughts about writing a new text editor
-last_updated: Thu, 13 Dec 2012 01:20:08 +0700
+last_updated: Thu, 13 Dec 2012 14:38:44 +0700
 ---
 {% include JB/setup %}
 
@@ -19,7 +19,7 @@ This page is growing through time, if you're interested in the idea, besure to c
 ## Reasons
 
 * Many good text editors available but all of them don't really suite my need:
-  - Emacs and Vim: see [Emacs and Vim limitations](emacs-vim-limitations.html).
+  - Emacs and Vim: see [the problems with Emacs and Vim](/pages/emacs-vim-problems.html).
   - [TextMate](http://macromates.com/): [open source](https://github.com/textmate/textmate), I have heard good things about it, no Linux port available yet (as of 2012/12).
   - [Sublime Text 2](http://www.sublimetext.com/): [not open source](problem-with-non-free.html).
   - [Gedit](TODO-homepage), [Geany](TODO-homepage), ...: if you have seen my [Emacs config](TODO), you will understand why.
