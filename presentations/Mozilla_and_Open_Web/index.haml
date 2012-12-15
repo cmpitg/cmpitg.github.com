@@ -1,0 +1,474 @@
+!!!
+%html{:lang => "vi-VN"}
+  %head
+    %title Mozilla và vai trò với Open Web
+    %meta{:charset => "UTF-8"}
+      %meta{:content => "width=1274, user-scalable=no", :name => "viewport"}
+        %link{:href => "themes/mozilla/styles/style.css", :rel => "stylesheet"}
+  %body.list
+    %header.caption
+      %h1 Mozilla và vai trò với Open Web
+      %p.footer
+        Nguyễn Hà Dương
+        (<a href='https://twitter.com/cmpitg'>@cmpitg</a>, cmpitg [at] gmailDOTcom)
+    /
+      Simply copy the whole block for each slide you want.
+      Special slides get extra classes. Each slide needs an ID
+      to allow for bookmarking and target jumping.
+      
+      Images, videos and SVG objects are automatically centred
+      when you add a class of "middle"
+      
+      If you add a "cover" class images are taking over the whole
+      screen resized to height. Add a "w" class to resize to width.
+    #cover.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla và vai trò với Open Web
+          %img.middle{:alt => "Icons of B2G, Firefox OS and Mozilla Apps", :src => "pictures/introicons.png"}
+            %footer.byline
+              Nguyễn Hà Dương
+              %br PHP Day 2012 @ Hà Nội @ 2012/12/15
+
+    #somelinks.slide
+      %div
+        %section
+          %header
+            %h2 Liên kết
+          %ul
+            %li
+              Bài trình chiếu:
+              %br
+                %a{:href => 'https://github.com/CMPITG/mozilla-and-open-web/'} https://github.com/CMPITG/mozilla-and-open-web/
+                %br hoặc
+                %a{:href => 'http://goo.gl/MbVGi'} http://goo.gl/MbVGi
+            %li
+              Tham gia với Mozilla:
+              %a{:href => 'http://goo.gl/rWmz9'} http://goo.gl/rWmz9
+
+    #intro.slide
+      %div
+        %section
+          %header
+          /
+            <img src="pictures/welcome.jpg" class="right" alt="Welcome mat">
+            ^ add your photo if wanted - 400px wide works best
+          %ul
+            %li
+              Nguyễn Hà Dương,
+              %a{:href => 'http://reference-error.org'} reference-error.org
+            %li
+              %a{:href => 'https://wiki.mozilla.org/User:Cmpitg'} Mozilla Representative
+            %li
+              %a{:href => 'https://fedoraproject.org/wiki/User:Cmpitg'} Fedora Ambassador
+            %li
+              Twitter:
+              %a{:href => "https://twitter.com/cmpitg"} @cmpitg
+            %li
+              Thành viên
+              %a{:href => 'http://khonggiancongdong.org'} Không gian cộng đồng,
+              %a{:href => 'http://wiki.hanoilug.org/'} HanoiLUG,
+              %a{:href => 'http://www.ubuntu-vn.org/'} Ubuntu-VN,
+              %a{:href => 'http://hanoicodingdojo.github.com/'} Coding Dojo Hà Nội.
+
+          %footer.notes
+            Giới thiệu bản thân; sử dụng Firefox từ thời Firebird, tham gia Mozilla chính thức từ 2011.
+
+    #agenda.slide
+      %div
+        %section
+          %header
+            %h2 Giới thiệu
+          %img.right{:width => '400px', :src => "pictures/welcome.png"}
+            %ul
+              %li Mozilla là gì?
+              %li Open Web là gì?
+              %li Mozilla đã làm những gì để hỗ trợ Open Web?
+            %small.credits
+              %a{:href => "http://en.wikipedia.org/wiki/File:Masswelcomemat.jpg"} Nguồn ảnh: Wikipedia
+            %footer.notes
+              Giới thiệu qua một chút về các chủ đề chính.
+
+    #mozillahistory1.shout.slide
+      %div
+        %section
+          %header
+            %h2
+              Mozilla
+              %br là gì?
+        %footer.notes
+          Phát Video "What_is_Mozilla"
+
+    #mozillahistory2.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla là gì?
+          %ul
+            Lich sử Mozilla:
+            %li
+              %strong 1998:
+              %ul
+                %li Mã nguồn Netscape browser suite dưới dạng tri-license, Mozilla ra đời.
+                %li "Netscape's source code as Netscape's product"
+          %footer.notes
+
+            * Netscape bao gồm: Communicator, Navigator, Messenger,
+            Collabra, Composer, ...
+
+            * M$ phát hình IE miễn phí
+
+            * Tại sao lại tri-license: MPL, GPL v2, LGPL.
+
+            * Jan, 23rd 1998: annoucement (2 points: free of charge, source code available)
+            * Mar, 31st 1998: source code was officially released by jwz
+
+    #mozillahistory3.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla là gì?
+          %img.right{:src => "pictures/ie6.png"}
+            %ul
+              %li
+                %strong 2002:
+                %ul
+                  %li Mozilla 1.0
+                  %li 90% người dùng Internet dùng IE
+                  %li Phiên bản đầu tiên của Firefox tên gốc và Phoenix
+          %footer.notes
+            Giải thích về việc IE thành trình duyệt phổ biến chiếm
+            90% thị phần do được đi kèm với Window$. --> Release để
+            chiến đấu với IE, quyết định rất mạo hiểm vì xuất phát từ
+            một công ty.
+
+    #mozillahistory4.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla là gì?
+          %ul
+            %li
+              %strong 2003:
+              %ul
+                Mozilla Foundation ra đời
+                %li
+                  %strong Openness
+                %li
+                  %strong Innovation
+                %li
+                  %strong Opportunity
+            %li
+              %strong 2004:
+              Firefox 1.0 phát hành
+          %footer.notes
+            So sánh với IE và M$ -> độc quyền web
+
+    #mozillahistory5.slide
+      %div
+        %section
+          %img.middle{:alt => "Browser Logos", :src => "pictures/browserlympics.png"}
+          %footer.notes
+
+            Cuộc chiến trình duyệt và chạy đua chuẩn web.  Thậm chí
+            đến thời điểm này IE cũng đóng góp rất nhiều.
+            Nói thêm về tính năng mới trên Firefox và `moz`
+
+    #morethanfirefox.slide
+      %div
+        %section
+          %header
+            %h2 Không chỉ là Firefox
+          %img.middle{:alt => "Mozilla is more than Firefox", :src => "pictures/mozillamore.png"}
+            %footer.notes
+              Mozilla is much more than Firefox though. We are a not-for-profit organisation to
+              promote the open web. This means we educate people on how to publish content and
+              we protect people's privacy and identity and choice on the web.
+
+    #whatisopenweb1.shout.slide
+      %div
+        %section
+          %header
+            %h2
+              Open Web
+              %br là gì?
+
+    #whatisopenweb2.slide
+      %div
+        %section
+          %header
+            %h2 Non-open Web?
+          %ul
+            %li
+              Các công ty phát triển và cố gắng biến công ty riêng thành chuẩn chung:
+              %ul
+                %li ActiveX (IE)
+                %li (Macromedia) Adobe Flash®
+                %li Microsoft Silverlight®
+            %li
+              Các vấn đề phát sinh:
+              %ul
+                %li Công nghệ đóng
+                %li
+                  Vấn đề với các ứng dụng đa nền tảng: Flash trên iThings, ...
+                %li Chi phí
+          %footer.notes
+            * Closed technology: Monopoly, Dictatorship, Loss of creativity
+            * Flash in iThings
+            * Chi phí: license, cơ sở vật chất, công cụ, phát triển, duy trì
+            * Nạn nhân: Tôi và bạn
+
+    #whatisopenweb3.slide.shout
+      %div
+        %section
+          %header
+            %h2
+              SOPA
+              %br
+                và PIPA
+          %footer.notes
+            * Stop Online Privacy Act
+            * PROTECT IP -> Preventing Real Online Threats to Economic Creativity & Theft of Intellectual Property Act
+            * Thứ Tư: 18 tháng 01: Wikipedia, Mozilla, Google
+
+    #whatisopenweb4.slide
+      %div
+        %section
+          %header
+            %h2 Chống SOPA và PIPA
+          %img.middle{:src => "pictures/wiki_en_2012_sopa_blackout.jpg",
+                      :width => "780px"}
+
+    #whatisopenweb5.slide
+      %div
+        %section
+          %header
+            %h2 Chống SOPA và PIPA
+          %img.middle{:src => "pictures/google_2012_sopa.jpg",
+                      :width => "680px"}
+
+    #whatisopenweb6.slide
+      %div
+        %section
+          %header
+            %h2 Chống SOPA và PIPA
+          %img.middle{:src => "pictures/mozilla_2012_sopa.png",
+                      :width => "680px"}
+
+    #whatisopenweb7.slide
+      %div
+        %section
+          %header
+            %h2 Open Web là gì?
+          .middle
+            %a{:href => 'http://goo.gl/s68J7'} What is open web and why is it important?
+            %br
+              %center http://goo.gl/s68J7
+
+    #whatisopenweb8.slide
+      %div
+        %section
+          %header
+            %h2 Open Web là gì?
+          %ul
+            %li Nội dung và ứng dụng tuân theo chuẩn mở
+            %li Mã nguồn sản phẩn của mã nguồn tuân theo chuẩn mở
+            %li Cách thức truy cập và sử dụng mở
+          %div
+            %strong Không
+            phải là ý tưởng mới
+          %footer.notes
+            * Tripod, GeoCities (Yahoo!), Google Pages, MySpace, ...
+            * InvisionFree, ...
+
+    #whatisopenweb9.slide
+      %div
+        %section
+          %header
+            %h2 Open Web là gì?
+          %ul
+            Tính chất của Open Web
+            %li Trong suốt
+            %li Sửa đổi theo ý muốn
+            %li Cải tiến
+            %li Đóng góp ngược
+            %li Sáng tạo
+          %footer.notes
+            Người sử dụng không chỉ đơn thuần sử dụng, mà còn góp phần định hình tất cả mọi thứ thuộc nền tảng web.
+            Ví dụ về HTML5, CSS, JavaScript, WebGL, ... video và game, Google và Vimeo, gần đầy Slideshare chuyển sang...
+            Không lệ thuộc và một công ty, tổ chức -> ví dụ về sửa lỗi, security.
+            Đóng góp cho Open Web:
+            * Google qua trình duyệt, Android, Chrome OS, ...
+            * CC về mặt pháp lý
+            * FOSS về mặt cơ sở hạ tầng, công nghệ và kỹ thuật -> Văn hóa chia sẻ
+
+    #mozillarole1.shout.slide
+      %div
+        %section
+          %header
+            %h2
+              Vai trò của Mozilla với Open Web
+
+    #mozillarole2.slide
+      %div
+        %section
+          %header
+            %h2 Vai trò của Mozilla?
+          %ul
+            %li
+              Sứ mệnh (Mozilla Mission)
+              %ul
+                %li
+                  %strong Openness
+                %li
+                  %strong Innovation
+                %li
+                  %strong Opportunity
+            %li
+              Tuyên ngôn Mozilla (Manifesto)
+              %br
+              %a{:href => 'http://www.mozilla.org/about/manifesto.en.html'} http://www.mozilla.org/about/manifesto.en.html
+          %footer.notes
+            Phát: "The Mozilla Story"
+
+    #mozillarole3.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla làm những gì?
+          %ul
+            %li
+              Firefox
+              %ul
+                %li Là một nền tảng
+                %li Vấn đề riêng tư và bảo mật được đặt lên hàng đầu
+                %li Fun và hackable
+                %li Open Web Apps
+                %li Social APIs
+
+          %footer.notes
+            Ví dụ về Pencil (có demo), Firebug, addon builder, Greasemonkey (download ảnh trên Facebook, Filckr, ..., giao diện Gmail cũ)
+            Video về Open Web Application
+            Demo ngay trên máy về responsive design view.
+            
+    #popcorn.slide
+      %div
+        %section
+          %header
+            %h2 Ánh sáng, Camera, Tương tác!
+          %img.middle{:alt => "Mozilla popcorn", :src => "pictures/popcorn.jpg"}
+            %p.demourl
+              %a{:href => "https://mozillapopcorn.org"} http://mozillapopcorn.org
+            %footer.notes
+              Tạo video, tương tác với web, đem lại trải nghiệm mới.
+              Chiếu Video Popcorn.
+
+    #mozillarole4.slide
+      %div
+        %section
+          %header
+            %h2 Mozilla làm những gì?
+          %ul
+            %li
+              Đi đầu trong thử nghiệm và chuẩn hóa công nghệ open web
+              %ul
+                %li WebGL
+                %li WebRTC
+                %li Persona (Browser ID)
+                %li JavaScript: Rhino và SpiderMonkey
+          %footer.notes
+            Video demo về BananaBread
+              
+    #firefoxos.slide.cover.w
+      %div
+        %section
+          %header
+            %h2 Powered by Firefox OS
+          %img.middle{:alt => "Firefox OS running on a phone", :src => "pictures/otoro.jpg"}
+            %footer.notes
+              Giới thiệu về Firefox OS và Marketplace:
+              What makes it so special
+              * Mid-end devices
+              * Unified platform for developers and users: Runs apps from the browser, Firefox Marketplace, Cutting down the cost, Security, ...
+
+    #firefox-os-components-detail.slide.cover.w
+      %div
+        %section
+          %img.middle{:alt => "Gonk, Gecko and Gaia", :src => "pictures/componentsflame.jpg"}
+            %small.credits
+              %a{:href => "http://www.flickr.com/photos/alesadam/3869366195/"} Photo by Alesa Dam
+            %footer.notes
+              Firefox OS is build with three components:
+              Gonk is the Linux layer talking to the hardware (the same Android uses)
+              Gecko is the rendering and JavaScript engine (same as Firefox) and
+              Gaia is the interface - everything you see - written in HTML5
+
+    #more-info.slide
+      %div
+        %section
+          %header
+            %h2 Thông tin thêm
+          %ul.longlist
+            %li
+              %strong Follow
+              %a{:href => "http://twitter.com/Boot2Gecko"} @Boot2Gecko
+              và
+              %a{:href => "http://twitter.com/mozhacks"} @mozhacks
+              trên Twitter
+            %li
+              %strong> Platform mailing list
+              \:
+              %a{:href => "http://groups.google.com/group/mozilla.dev.platform"} http://groups.google.com/group/mozilla.dev.platform
+            %li
+              %strong> Kênh IRC
+              \: irc.mozilla.org kênh #B2G
+            %li
+              %strong> B2G Repo
+              \:
+              %a{:href => "https://github.com/mozilla-b2g/B2G"} https://github.com/mozilla-b2g/B2G
+            %li
+              %strong> B2G Architecture
+              \:
+              %a{:href => "https://wiki.mozilla.org/B2G/Architecture"} https://wiki.mozilla.org/B2G/Architecture
+            %li
+              %strong> Gaia Repo
+              \:
+              %a{:href => "https://github.com/mozilla-b2g/gaia"} https://github.com/mozilla-b2g/gaia
+            %li
+              %strong> Developer Docs
+              \:
+              %a{:href => "https://developer.mozilla.org/en/Mozilla/Boot_to_Gecko"} https://developer.mozilla.org/en/Mozilla/Boot_to_Gecko
+            %li
+              %strong> Web API Docs
+              \:
+              %a{:href => "https://wiki.mozilla.org/WebAPI"} https://wiki.mozilla.org/WebAPI
+          %footer.notes
+            There are many ways to keep up to date with Firefox OS/Boot2Gecko.
+            Here are the most important ones.
+
+    #thanks.slide
+      %div
+        %section
+          %header
+            %h2 Xin chân thành cảm ơn!
+          %img.right{:alt => "Red panda (Firefox)", :src => "pictures/redpanda.jpg"}
+          %ul
+            %li
+              Tham gia với Mozilla:
+              %a{:href => 'http://goo.gl/rWmz9'} http://goo.gl/rWmz9
+
+            %li
+              Bài trình chiếu:
+              %br
+                %a{:href => 'https://github.com/CMPITG/mozilla-and-open-web/'} https://github.com/CMPITG/mozilla-and-open-web/
+                %br hoặc
+                %a{:href => 'http://goo.gl/MbVGi'} http://goo.gl/MbVGi
+
+    /
+      To hide progress bar from entire presentation
+      just remove “progress” element.
+    .progress
+      %div
+    %script{:src => "scripts/script.js"}
+    / Copyright © 2010–2012 Vadim Makeev — pepelsbey.net

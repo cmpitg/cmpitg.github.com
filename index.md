@@ -2,13 +2,13 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Thu, 13 Dec 2012 16:02:21 +0700
+last_updated: Sun, 16 Dec 2012 00:22:57 +0700
 ---
 {% include JB/setup %}
 
-Hello folks! I've just finished my [about page](/about/).
+## Latest updated
 
-To be updated really soon... :-)
+* My [presentations directory](/pages/presentations.html).
 
 ## TODO
 
