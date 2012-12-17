@@ -2,11 +2,16 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Sun, 16 Dec 2012 02:14:51 +0700
+last_updated: Tue, 18 Dec 2012 01:38:09 +0700
 ---
 {% include JB/setup %}
 
-## Latest updated
+## Latest Updated
+
+* The [Espada Text Editor](/projects/espada-text.html)
+* My [Emacs config](https://github.com/CMPITG/emacs-config) (not usable outside my Gentoo home).
+
+### Second-latest
 
 * My [presentations directory](/pages/presentations.html).
 * The [404 page](/404.html)
