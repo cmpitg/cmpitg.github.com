@@ -1,11 +1,16 @@
 <div class="page-header">
-  <h1>{{ page.title }} <small>Supporting tagline</small></h1>
+  <h1>{{ page.title }}<!-- <small>{% if page.tagline %}{{ page.tagline }}{% else %}%23%21{% endif %}</small>--></h1>
+  <h1 class='indextagline'><small class='indextagline'>{% if page.tagline %}{{ page.tagline }}{% else %}%23%21{% endif %}</small></h1>
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="span9">
+    {% if page.last_updated %}<p class='last_updated'>Last modified: {{ page.last_updated }}</p>
+    <br />
+    <br />
+    {% endif %}
     {{ content }}
-    <hr>
+    <hr />
     <div class="pagination">
       <ul>
       {% if page.previous %}
@@ -25,7 +30,7 @@
     {% include JB/comments %}
   </div>
   
-  <div class="span4">
+  <div class="span3">
     <h4>Published</h4>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
 

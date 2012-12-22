@@ -2,7 +2,7 @@
 layout: page
 title: Problems with Emacs & Vim
 description: ""
-last_updated: Thu, 13 Dec 2012 16:00:35 +0700
+last_updated: Sat, 22 Dec 2012 16:04:00 +0700
 ---
 {% include JB/setup %}
 
@@ -32,4 +32,8 @@ Some of my thoughts are already covered somewhere on the Internet, so I will jus
 
 * Starting a process in the background, and directing its standard output and standard error streams are all impossible.  Unfortunately, that's one of the most useful uses of Unix philosophy.
 
-* Ever wonder why almost all Emacs extesions, even the simplest ones, are unnecessarily large and complex?
+* Ever wonder why almost all Emacs extensions, even the simplest ones, are unnecessarily large and complex?
+
+* No internal support for tab bar.  Please, I heard enough about the *undocumented speedbar*, [ECB](http://ecb.sourceforge.net/) requiring CEDET crap, ...  *I need my tab bar!*  The third-party tab bar extension is ugly (really, there's no way to make it prettier) and overly complicated.
+
+* Working with splitted windows is unnatural.  Splitting a window makes all the buffers available on both the old one and the new one, frustrating me all the time.  Sublime Text has done this much better!
