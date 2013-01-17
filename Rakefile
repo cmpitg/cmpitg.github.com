@@ -5,7 +5,7 @@ require 'time'
 
 SOURCE = "."
 CONFIG = {
-  'version' => "0.2.13",
+  'version' => "0.2.13-cmpitg",
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
   'posts' => File.join(SOURCE, "_posts"),
@@ -61,10 +61,12 @@ task :post do
   open(filename, 'w') do |post|
     post.puts "---"
     post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/-/,' ')}\""
+    post.puts "title: #{title.gsub(/-/,' ')}"
+    post.puts "tagline: \"#!\""
     post.puts 'description: ""'
     post.puts "category: "
     post.puts "tags: []"
+    post.puts "last_updated: #{`date -R`}"
     post.puts "---"
     post.puts "{% include JB/setup %}"
   end
