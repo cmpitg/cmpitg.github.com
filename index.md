@@ -2,7 +2,7 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Fri, 18 Jan 2013 06:30:13 +0700
+last_updated: Fri, 18 Jan 2013 06:31:56 +0700
 ---
 {% include JB/setup %}
 
@@ -36,6 +36,8 @@ last_updated: Fri, 18 Jan 2013 06:30:13 +0700
 * Adding archive.
 * Adding post list.
 * Bringing my scripts directory to Github.
+* Use Google Web Font
+* Write about leaving Gentoo and the transition to ElementaryOS (upcoming Gokien)
 * Adding social sharing to the blog:
   - http://blog.florianbersier.com/implementation-social-sharing-jekyll/
   - https://github.com/plusjade/jekyll-bootstrap/pull/105
