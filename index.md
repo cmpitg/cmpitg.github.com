@@ -8,6 +8,12 @@ last_updated: Fri, 18 Jan 2013 06:31:56 +0700
 
 ## Latest Updated
 
+### Fri, 18 Jan 2013 17:25:44 +0700
+
+* Restructured site.
+* Added [post list](/posts/) and [page list](/pages/).
+* Reordered navigation bar.
+
 ### Fri, 18 Jan 2013 06:28:11 +0700
 
 * Post [Short note - Learn yourself a tool](/Misc/2013/01/18/learn-yourself-a-tool/)
@@ -34,15 +40,13 @@ last_updated: Fri, 18 Jan 2013 06:31:56 +0700
 ## TODO
 
 * Adding archive.
-* Adding post list.
 * Bringing my scripts directory to Github.
 * Use Google Web Font
-* Write about leaving Gentoo and the transition to ElementaryOS (upcoming Gokien)
+* Write about leaving Gentoo and the transition to ElementaryOS (upcoming Gokien).
 * Adding social sharing to the blog:
   - http://blog.florianbersier.com/implementation-social-sharing-jekyll/
   - https://github.com/plusjade/jekyll-bootstrap/pull/105
   - https://github.com/plusjade/jekyll-bootstrap/pull/21
-* Adding [Awesome WM](http://awesome.naquadah.org/) config
 * Post: guide to write good blog post:
   - Start strong
   - Be clear and concise
