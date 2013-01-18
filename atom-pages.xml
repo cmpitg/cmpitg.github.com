@@ -17,7 +17,7 @@ listed: false
  </author>
 
  {% for page in site.pages %}
-   {% if page.title and page.title != "Atom Feed Pages" and page.title != "404 page not found" and page.title != "Site Map" and page.title != "Pages" and page.title != "Categories" and page.title != "Archive" and page.title != "Tags" and page.title != "Atom Feed Posts" %}
+   {% if page.title and page.listed != false %}
      <entry>
        <title>{{ page.title }}</title>
        <link href="{{ site.production_url }}{{ page.url }}"/>
