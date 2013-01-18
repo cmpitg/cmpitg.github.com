@@ -3,7 +3,8 @@ layout: page_without_comments
 title: Projects
 description: Projects that I'm participating in
 group: navigation
-permalink: /
+order: 50
+permalink: /projects/
 last_updated: Thu, 13 Dec 2012 01:09:04 +0700
 ---
 {% include JB/setup %}

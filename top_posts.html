@@ -1,0 +1,12 @@
+---
+layout: page_without_comments
+title: Posts
+header: Post List
+permalink: /posts/
+group: navigation
+order: 10
+---
+{% include JB/setup %}
+
+{% assign posts_collate = site.posts %}
+{% include JB/posts_collate %}

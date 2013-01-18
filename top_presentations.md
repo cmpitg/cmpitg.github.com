@@ -1,8 +1,10 @@
 ---
 layout: page
 title: Presentations
-description: ""
+description: My presentations
 group: navigation
+order: 30
+permalink: /presentations/
 last_updated: Sun, 16 Dec 2012 00:30:40 +0700
 ---
 {% include JB/setup %}
