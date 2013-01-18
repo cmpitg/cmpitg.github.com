@@ -8,11 +8,13 @@ last_updated: Fri, 18 Jan 2013 06:31:56 +0700
 
 ## Latest Updated
 
-### Fri, 18 Jan 2013 17:25:44 +0700
+### Fri, 18 Jan 2013 17:49:36 +0700
 
 * Restructured site.
 * Added [post list](/posts/) and [page list](/pages/).
 * Reordered navigation bar.
+* Fixed [RSS pages](/atom-pages.xml).
+* Fixed validation errors caused by CC at footer and author name.
 
 ### Fri, 18 Jan 2013 06:28:11 +0700
 
