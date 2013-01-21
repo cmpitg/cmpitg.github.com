@@ -2,11 +2,15 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Fri, 18 Jan 2013 06:31:56 +0700
+last_updated: Mon, 21 Jan 2013 17:26:21 +0700
 ---
 {% include JB/setup %}
 
 ## Latest Updated
+
+### Mon, 21 Jan 2013 17:26:21 +0700
+
+* Add list of [fake FOSS companies in Vietnam](/pages/vietnam-fake-foss.html).
 
 ### Fri, 18 Jan 2013 17:49:36 +0700
 
