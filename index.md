@@ -2,11 +2,15 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Mon, 21 Jan 2013 17:26:21 +0700
+last_updated: Wed, 30 Jan 2013 22:04:40 +0700
 ---
 {% include JB/setup %}
 
 ## Latest Updated
+
+### Wed, 30 Jan 2013 22:04:40 +0700
+
+* Post [Short note - The 10x10 design process](Design/2013/01/30/10x10-design-process/).
 
 ### Mon, 21 Jan 2013 17:26:21 +0700
 
