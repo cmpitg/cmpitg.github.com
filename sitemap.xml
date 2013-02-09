@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://reference-error.org/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/posts/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/presentations/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/projects/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/about/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/Design/2013/01/30/10x10-design-process/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/vietnam-fake-foss.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/Misc/2013/01/18/learn-yourself-a-tool/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/Programming/2012/12/22/playing-with-qtruby/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/emacs-vim-problems.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/projects/espada-text.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/categories/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/Operating_System/2013/01/09/the-gokien-project/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/problems-with-non-free.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/online-tips-tricks.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/presentations/Mozilla_and_Open_Web/</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/ssh.public.key.txt</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/public.key.txt</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/archive.html</loc>
+  <lastmod>2013-02-03T06:56:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+</urlset>
