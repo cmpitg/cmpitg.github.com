@@ -2,15 +2,19 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Wed, 30 Jan 2013 22:04:40 +0700
+last_updated: Tue, 19 Feb 2013 00:13:44 +0700
 ---
 {% include JB/setup %}
 
 ## Latest Updated
 
+### Tue, 19 Feb 2013 00:13:44 +0700
+
+* Post [Putting a custom firmware to XpressMusic](/Phone_Hacking/2013/02/19/putting-a-custom-firmware-to-xpressmusic/)
+
 ### Wed, 30 Jan 2013 22:04:40 +0700
 
-* Post [Short note - The 10x10 design process](Design/2013/01/30/10x10-design-process/).
+* Post [Short note - The 10x10 design process](/Design/2013/01/30/10x10-design-process/).
 
 ### Mon, 21 Jan 2013 17:26:21 +0700
 
