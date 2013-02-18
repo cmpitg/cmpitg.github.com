@@ -2,15 +2,17 @@
 layout: index
 title: Reference Error
 tagline: Thoughts about tech, education, open culture and other trivial stuff
-last_updated: Tue, 19 Feb 2013 00:13:44 +0700
+last_updated: Tue, 19 Feb 2013 00:39:15 +0700
 ---
 {% include JB/setup %}
 
-## Latest Updated
+## Latest Updates
 
-### Tue, 19 Feb 2013 00:13:44 +0700
+### Tue, Tue, 19 Feb 2013 00:39:15 +0700
 
 * Post [Putting a custom firmware to XpressMusic](/Phone_Hacking/2013/02/19/putting-a-custom-firmware-to-xpressmusic/)
+
+* Use Google Web Fonts instead of local fonts
 
 ### Wed, 30 Jan 2013 22:04:40 +0700
 
@@ -53,9 +55,7 @@ last_updated: Tue, 19 Feb 2013 00:13:44 +0700
 
 ## TODO
 
-* Adding archive.
 * Bringing my scripts directory to Github.
-* Use Google Web Font
 * Write about leaving Gentoo and the transition to ElementaryOS (upcoming Gokien).
 * Adding social sharing to the blog:
   - http://blog.florianbersier.com/implementation-social-sharing-jekyll/
