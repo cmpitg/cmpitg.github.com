@@ -2,8 +2,8 @@
 layout: post
 title: Mockup tool and Espada update
 tagline: "#!"
-category: Misc
-tags: [espada, mockup]
+category: Design
+tags: [espada, mockup, design]
 last_updated: Thu, 21 Feb 2013 01:38:19 +0700
 ---
 {% include JB/setup %}
@@ -20,8 +20,10 @@ After a while searching, I didn't find any good FOSS piece.  I went on and tried
 
 <div style="align: center; text-align: center; font-style: italic;">
     <img src="https://raw.github.com/CMPITG/espada/experiment/concepts/text_buffer.png" alt="Espada Text Buffer" /><br />
-    Espada Text Buffer mockup<br />
+    Espada Text Buffer mockup
 </div>
+
+<br />
 
 The process took longer than I thought but sure rewarding.
 

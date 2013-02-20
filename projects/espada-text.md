@@ -2,11 +2,16 @@
 layout: page
 title: Espada Text
 description: Thoughts about writing a new text editor
-last_updated: Tue, 18 Dec 2012 01:38:35 +0700
+last_updated: Thu, 21 Feb 2013 01:41:11 +0700
 ---
 {% include JB/setup %}
 
 This page is growing through time, if you're interested in the idea, besure to check it every 3 days.  Please shoot me *constructive* comments if you have some time to kill.
+
+Current repository:
+
+* [On Github](https://github.com/CMPITG/espada)
+* [On Bitbucket](https://bitbucket.org/cmpitg/espada)
 
 ## Notes
 
