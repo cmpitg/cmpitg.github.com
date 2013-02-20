@@ -10,7 +10,7 @@ last_updated: Thu, 21 Feb 2013 01:44:53 +0700
 
 ### Thu, 21 Feb 2013 01:44:53 +0700
 
-* Post [Mockup tool and Espada update](/design/2013/02/21/mockup-tool-and-espada-update/)
+* Post [Mockup tool and Espada update](/Design/2013/02/21/mockup-tool-and-espada-update/)
 * Page: [Espada Text](/projects/espada-text.html)
 * Clean up homepage.
 
