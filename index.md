@@ -47,20 +47,17 @@ last_updated: Tue, 19 Feb 2013 00:39:15 +0700
   - This gotta be noted.
 * Adding `last_updated` to page.
 
-### Old
-
-* Homepage sidebar
-* The [Espada Text Editor](/projects/espada-text.html)
-* My [Emacs config](https://github.com/CMPITG/emacs-config) (not usable outside my Gentoo home).
-
 ## TODO
 
 * Bringing my scripts directory to Github.
+
 * Write about leaving Gentoo and the transition to ElementaryOS (upcoming Gokien).
+
 * Adding social sharing to the blog:
   - http://blog.florianbersier.com/implementation-social-sharing-jekyll/
   - https://github.com/plusjade/jekyll-bootstrap/pull/105
   - https://github.com/plusjade/jekyll-bootstrap/pull/21
+
 * Post: guide to write good blog post:
   - Start strong
   - Be clear and concise
