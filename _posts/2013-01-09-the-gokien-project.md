@@ -25,5 +25,5 @@ So why not Fedora?
 Rules:
 
 * Always use the long-term-support version of Ubuntu
-* Follow good [HCI guideline](_)
+* Follow good HCI guideline
 * Apply the best of Fedora & Debian development models

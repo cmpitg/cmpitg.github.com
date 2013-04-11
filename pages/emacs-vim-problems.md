@@ -2,6 +2,7 @@
 layout: page
 title: Problems with Emacs &amp; Vim
 last_updated: Sat, 22 Dec 2012 16:04:00 +0700
+permalink: /emacs-vim-problems/
 ---
 {% include JB/setup %}
 

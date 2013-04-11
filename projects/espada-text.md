@@ -27,9 +27,9 @@ Current repository:
 ## Reasons
 
 * Many good text editors available but all of them don't really suite my need:
-  - Emacs and Vim: see [the problems with Emacs and Vim](/pages/emacs-vim-problems.html).
+  - Emacs and Vim: see [the problems with Emacs and Vim](/pages/emacs-vim-problems/).
   - [TextMate](http://macromates.com/): [open source](https://github.com/textmate/textmate), I have heard good things about it, no Linux port available yet (as of 2012/12).
-  - [Sublime Text 2](http://www.sublimetext.com/): [not open source](problem-with-non-free.html).
+  - [Sublime Text 2](http://www.sublimetext.com/): [not open source](/pages/problems-with-non-free/).
   - [Kate](http://kate-editor.org/), [Gedit](http://projects.gnome.org/gedit/), [Geany](http://www.geany.org/), ...: if you have seen my [Emacs config](https://github.com/CMPITG/emacs-config), you will understand why.
 
 * User experience: a (not really) different way people work with text editor:
@@ -37,7 +37,7 @@ Current repository:
   - Gesture-based interaction
   - Effectively use of mouse:
     + As in Sam and Acme
-    + Preventing [RSI](pages/rsi.html)
+    + Preventing [RSI](http://en.wikipedia.org/wiki/Repetitive_stress_injury)
   - Infinite extensibility:
     + Fully hackable - full-feature programming environment. <- **target**.
     + Easily hackable.
@@ -113,7 +113,7 @@ Fragmented notes:
 ### Choosing a GUI library
 
 * First thought: something related to [Node.js](http://nodejs.org):
-  - [node-gir](TODO) is badly leaky.
+  - [node-gir](https://github.com/creationix/node-gir) is badly leaky.
 
 ### Misc
 
