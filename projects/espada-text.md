@@ -2,6 +2,7 @@
 layout: page
 title: Espada Text
 description: Thoughts about writing a new text editor
+permalink: /espada/
 last_updated: Thu, 21 Feb 2013 01:41:11 +0700
 ---
 {% include JB/setup %}
