@@ -33,7 +33,7 @@ Basically, what we needed was a bunch of software:
 * JAF (link contains pirate software and malware, so I wouldn't post it here) - for flashing
 * [Phoenix](http://www.cpkb.org/wiki/Nokia_Phoenix_Service_Software) - for flashing, we didn't use it though
 * [Navifirm](http://www.symbian-toys.com/navifirm.aspx) - for downloading original firmware
-* [Nokia Ovi Suite](http://www.comms.ovi.com/m/p/ovi/suite/index_my_my.html) - just for installing appropriate driver*
+* [Nokia Ovi Suite](http://www.comms.ovi.com/m/p/ovi/suite/index_my_my.html) - just for installing appropriate driver
 
 And firmwares:
 
