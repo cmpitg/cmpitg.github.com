@@ -16,5 +16,5 @@ last_updated: Fri, 12 Apr 2013 00:34:57 +0700
 ## Pages I'm Writing
 
 * [Projects](/projects/)
-* [Espada Text Editor](/projects/espada-text.html)
+* [Espada Text Editor](/projects/espada/)
 * [Problems with Emacs and Vim](/pages/emacs-vim-problems.html)
