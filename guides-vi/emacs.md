@@ -11,7 +11,7 @@ last_updated: Sat, 13 Apr 2013 08:23:34 +0700
 
 *Lưu ý: Trang này chưa được công bố ;-)*
 
-**Phiên bản hỗ trợ:** [GNU Emacs](http://www.gnu.org/software/emacs/) 24+.
+**Phiên bản hỗ trợ:** [GNU Emacs](http://www.gnu.org/software/emacs/) 24+
 
 ## Các khái niệm
 
