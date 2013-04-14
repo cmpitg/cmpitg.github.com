@@ -17,3 +17,4 @@ last_updated: Sat, 13 Apr 2013 08:23:34 +0700
 ## Nội dung
 
 * Về [Emacs](/guides-vi/emacs/)
+* Về [Ruby](/guides-vi/ruby/)
