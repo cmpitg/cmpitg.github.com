@@ -3,7 +3,7 @@ layout: page
 title: Espada Text
 description: Thoughts about writing a new text editor
 permalink: /espada/
-last_updated: Thu, 21 Feb 2013 01:41:11 +0700
+last_updated: Mon, 06 May 2013 09:47:20 +0700
 ---
 {% include JB/setup %}
 
@@ -13,6 +13,19 @@ Current repository:
 
 * [On Github](https://github.com/CMPITG/espada)
 * [On Bitbucket](https://bitbucket.org/cmpitg/espada)
+
+## Some new ideas for Espada after the first throw-away version
+
+* [Escudo](https://github.com/cmpitg/escudo/) is a side project to provide an usable Markdown editor for myself and evaluation of [PySide](http://qt-project.org/wiki/Category:LanguageBindings::PySide) as an alternative choice for *Espada*.
+
+* [Ruby qtbindings](https://github.com/ryanmelt/qtbindings/) is having [problem](https://github.com/ryanmelt/qtbindings/issues/50) at the moment.  Current maintainer is inactive, so Python seems to be a more practical choice than Ruby.  Let's see how it goes after some first usable versions of *Escudo*.
+
+* *Espada* interface will be inspired by Firefox:
+  - Traditional tab browser
+  - Tab grouper
+  - Sidebar bookmarks, history, and file browser
+
+* Inline code evaluation when saving, to embed *last modified* infor for example.
 
 ## Notes
 
