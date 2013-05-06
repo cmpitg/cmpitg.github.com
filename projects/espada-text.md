@@ -16,7 +16,7 @@ Current repository:
 
 ## Some new ideas for Espada after the first throw-away version
 
-* [Escudo](https://github.com/cmpitg/escudo/) is a side project to provide an usable Markdown editor for myself and evaluation of [PySide]() as an alternative choice for *Espada*.
+* [Escudo](https://github.com/cmpitg/escudo/) is a side project to provide an usable Markdown editor for myself and evaluation of [PySide](http://qt-project.org/wiki/Category:LanguageBindings::PySide) as an alternative choice for *Espada*.
 
 * [Ruby qtbindings](https://github.com/ryanmelt/qtbindings/) is having [problem](https://github.com/ryanmelt/qtbindings/issues/50) at the moment.  Current maintainer is inactive, so Python seems to be a more practical choice than Ruby.  Let's see how it goes after some first usable versions of *Escudo*.
 
