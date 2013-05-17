@@ -4,7 +4,7 @@ title: PySide Idioms
 tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
-permalink: /python/
+permalink: /pyside/
 last_updated: 
 ---
 {% include JB/setup %}
@@ -17,4 +17,20 @@ last_updated:
 
 ## Idioms
 
-### 
+### `QToolButton`
+
+#### Create a `QToolButton` with a pixmap, setting tooltip, shortcut, and action
+
+```python
+def quitAction():
+    QApplication.instance().exit()
+
+
+quitPixmap = []             # A pixmap
+
+quitButton = QToolButton()
+quitAction = QAction(quitPixmap, "Quit (Ctrl+X)", None)
+quitAction.setShortcut(QKeySequence("Ctrl+X"))
+quitAction.triggered.connect(quitApplication)
+button.setDefaultAction(quitAction)
+```
