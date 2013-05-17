@@ -17,6 +17,16 @@ last_updated:
 
 ## Idioms
 
+### Creating a shortcut associated with a widget
+
+This example will create a `pathEntry` widget and bind `Ctrl+L` to focus the `pathEntry`.
+
+```python
+pathEntry = QLineEdit()
+focusShortcut.QShortcut(QKeySequence("Ctrl+L), pathEntry)
+focusShortcut.activated.connect(pathEntry.setFocus)
+```
+
 ### `QToolButton`
 
 #### Create a `QToolButton` with a pixmap, setting tooltip, shortcut, and action
