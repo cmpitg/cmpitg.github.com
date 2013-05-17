@@ -1,3 +1,16 @@
+---
+layout: page
+title: Debian Maintenance Idioms
+tagline: "#!"
+category: Operating_System
+tags: [debion, maintenance, idiom]
+permalink: /debian_maintenance/
+last_updated: 
+---
+{% include JB/setup %}
+
+*Note: This is an unpublished page*
+
 ## Notes
 
 * This guide makes use of `sudo` instead of `su` for various reasons (TODO).
