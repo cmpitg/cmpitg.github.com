@@ -5,11 +5,9 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: 
+last_updated: Sun, 19 May 2013 19:04:11 +0700
 ---
 {% include JB/setup %}
-
-*Note: This is an unpublished page*
 
 **Supported Python version/implementation**: [CPython](http://en.wikipedia.org/wiki/Cpython) [3+](http://en.wikipedia.org/wiki/Py3k#Version_3.0)
 
