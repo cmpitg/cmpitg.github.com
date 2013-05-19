@@ -157,3 +157,7 @@ There are cases when you want the menu to be displayed so that an action `someAc
 ```python
 menu.popup(pos, someAction)
 ```
+
+##### Tearing-off the menu
+
+Tearing off a menu means "extracting" the menu into a standalone widget and vice-versa.  Qt directly supports tear-off menu with `menu.setTearOffEnable(trueOrFalse)`.  The property could be accessed via `menu.isTearOffEnabled()`.
