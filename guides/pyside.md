@@ -101,6 +101,10 @@ gotoDirAction = QAction("&Go to dir", menu)
 gotoDirAction.triggered.connect(gotoDir)
 menu.addAction(gotoDirAction)
 
+menu.addAction("&New file")
+actions = menu.actions()
+actions[len(actions) - 1].triggered.connect(newFile)
+
 action = menu.addAction("&Save file")
 action.triggered.connect(saveFile)
 
