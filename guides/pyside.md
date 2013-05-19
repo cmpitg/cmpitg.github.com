@@ -46,7 +46,9 @@ quitAction.triggered.connect(quitApplication)
 button.setDefaultAction(quitAction)
 ```
 
-### Creating an icon
+### `QIcon`
+
+#### Creating an icon
 
 Icons are managed by the `QIcon` widget.  An icon could be created from:
 
