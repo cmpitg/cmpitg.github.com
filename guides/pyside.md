@@ -29,9 +29,10 @@ focusShortcut.activated.connect(pathEntry.setFocus)
 
 ### `QToolButton`
 
-#### Create a `QToolButton` with a pixmap, setting tooltip, shortcut, and action
+This example create a `QToolButton` displaying an image from a pixmap, setting its tooltip action and assigning a shortcut.
 
 ```python
+@slot
 def quitAction():
     QApplication.instance().exit()
 
