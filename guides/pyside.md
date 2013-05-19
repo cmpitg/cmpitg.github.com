@@ -64,3 +64,11 @@ icon1 = QIcon(aPixMap)
 icon2 = QIcon(imagePath)
 icon3 = QIcon(icon1)
 ```
+
+#### Setting icon for a window
+
+This idiom is usually used to set icon for your top-level window
+
+```python
+aWindow.setWindowIcon(anIcon)
+```
