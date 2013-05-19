@@ -45,3 +45,20 @@ quitAction.setShortcut(QKeySequence("Ctrl+X"))
 quitAction.triggered.connect(quitApplication)
 button.setDefaultAction(quitAction)
 ```
+
+### Creating an icon
+
+Icons are managed by the `QIcon` widget.  An icon could be created from:
+
+* a pixmap,
+* an image file,
+* or another icon (very fast).
+
+```python
+aPixMap = []
+imagePath = "/path/to/your/image"
+
+icon1 = QIcon(aPixMap)
+icon2 = QIcon(imagePath)
+icon3 = QIcon(icon1)
+```
