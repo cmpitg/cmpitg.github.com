@@ -90,8 +90,6 @@ topMenu1 = QMenu(mainWindow)
 topMenu2 = QMenu("This is the title of the menu", mainWindow)
 ```
 
-#### Adding items
-
 ##### Adding actions
 
 There are several ways to add actions into a menu:
@@ -115,3 +113,17 @@ actionWithIcon.triggered.connect(openFile)
 There are more ways to add actions to a menu.  Visit [PySide documentation](http://srinikom.github.io/pyside-docs/PySide/QtGui/QMenu.html#PySide.QtGui.PySide.QtGui.QMenu.addAction) or [Qt documentation](http://doc-snapshot.qt-project.org/qt5-stable/qtwidgets/qmenu.html) for further info.
 
 My most recommended way of adding an action is the last example.
+
+##### Adding submenu
+
+Submenus *are* menus, so adding submenus is pretty straightforward:
+
+```python
+menu.addMenu(systemMenu)
+
+appMenu = menu.addMenu("Applications")
+# Do something with appMenu
+
+gameMenu = menu.addMenu(gameIcon, "Games")
+# Do something with gameMenu
+```
