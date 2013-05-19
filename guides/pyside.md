@@ -46,7 +46,7 @@ quitAction.triggered.connect(quitApplication)
 button.setDefaultAction(quitAction)
 ```
 
-### `QIcon`
+### Icon
 
 #### Creating an icon
 
