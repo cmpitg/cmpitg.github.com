@@ -15,6 +15,8 @@ last_updated:
 
 ## Notes
 
+This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platforms.  Specific notes for [Microsoft Windows®](http://en.wikipedia.org/wiki/Microsoft_Windows) and other non-\*nix platforms are not mentioned.
+
 ## Idioms
 
 ### Creating a shortcut associated with a widget
