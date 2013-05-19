@@ -27,22 +27,23 @@ last_updated:
 
 Assume that your home directory is `/home/hello` and `/home/johndoe/tmp/` directory exists, given the following inputs
 
-    ```"~"
-    "~johndoe"
-    "~johndoe/tmp/"
-    ```
+```python
+"~"
+"~johndoe"
+"~johndoe/tmp/"
+```
 
 would produce the following outputs:
 
-    ```
-    "/home/hello/"
-    "/home/johndoe/"
-    "/home/johndoe/tmp/"
-    ```
+```python
+"/home/hello/"
+"/home/johndoe/"
+"/home/johndoe/tmp/"
+```
 
 Function:
 
-    ```python
+```python
 from os import path as ospath
 
 def expand_path(path):
@@ -51,5 +52,4 @@ expand_path("~")          # => Your home directory
 expand_path("~johndoe")   # => "/home/johndoe/" if existed
     """
     return ospath.abspath(ospath.expanduser(path))
- 
-    ```
+```
