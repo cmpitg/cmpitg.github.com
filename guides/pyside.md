@@ -127,3 +127,33 @@ appMenu = menu.addMenu("Applications")
 gameMenu = menu.addMenu(gameIcon, "Games")
 # Do something with gameMenu
 ```
+
+##### Showing/executing a menu
+
+Showing/executing a menu means making the menu visible on the screen.  Usually, the visibility of the menu associates with the current position of the cursor/mouse. Thus,
+
+* if the menu is showed at the current mouse position:
+
+  ```python
+  menu.exec(QCursor.pos())
+  ```
+
+  or using a `QMouseEvent e`:
+
+  ```python
+  menu.exec(e.globalPos())
+  ```
+
+* if the menu is aligned to a widget:
+
+  ```python
+  menu.exec(aWidget.mapToGlobal(QPoint(0, 0)))
+  ```
+
+Although you may specify directly the list of actions the menu shows using `exec`, it's not a recommended way.
+
+There are cases when you want the menu to be displayed so that an action `someAction` will be at the specified global position `pos`.  Use `popup` then:
+
+```python
+menu.popup(pos, someAction)
+```
