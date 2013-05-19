@@ -21,7 +21,7 @@ last_updated: Sat, 13 Apr 2013 08:23:34 +0700
 
 ## Lưu ý
 
-Emacs Lisp là một [ngôn ngữ rất tồi tệ](http://emacswiki.org/emacs/WhyDoesElispSuck).  Tuy nhiên luôn có cách thức để sử dụng bất kỳ một dialect của [Lisp](http://en.wikipedia.org/wiki/Lisp_(programming_language)) một cách [đẹp đẽ](http://www.paulgraham.com/onlisptext.html).  Điểm khác biệt giữa Lisp và các ngôn ngữ khác này nói một cách ngắn gọn:
+Emacs Lisp là một [ngôn ngữ rất tồi tệ](http://emacswiki.org/emacs/WhyDoesElispSuck).  Tuy nhiên luôn có cách thức để sử dụng bất kỳ một dialect của [Lisp](http://en.wikipedia.org/wiki/Lisp_programming_language) một cách [đẹp đẽ](http://www.paulgraham.com/onlisptext.html).  Điểm khác biệt giữa Lisp và các ngôn ngữ khác này nói một cách ngắn gọn:
 
 * Mức độ mô tả chương trình của *hầu hết* các ngôn ngữ non-Lisp đều bị giới hạn bởi cú pháp.  Do đó khi giải quyết một bài toán, người giải luôn phải phân tích bài toán xuống mức độ chi tiết cần thiết, thậm chí đưa vào những thông tin làm *xấu* lời giải mới có thể lập trình được.
 

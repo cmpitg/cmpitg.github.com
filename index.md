@@ -21,4 +21,4 @@ last_updated: Sun, 19 May 2013 19:11:30 +0700
 
 * [Projects](/projects/)
 * [Espada Text Editor](/projects/espada/)
-* [Problems with Emacs and Vim](/pages/emacs-vim-problems.html)
+* [Problems with Emacs and Vim](pages/emacs-vim-problems/)

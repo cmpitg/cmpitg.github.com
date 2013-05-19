@@ -8,7 +8,7 @@ last_updated: Thu, 21 Feb 2013 01:38:19 +0700
 ---
 {% include JB/setup %}
 
-In order for the [Espada](/projects/espada-text.html) to be at its best status possible, I need a mockup tool which helps me express design perpective for myself, and for anyone who's interested in the project.  I spent the whole evening just to find a piece I felt most comfortable.
+In order for the [Espada](/projects/espada/) to be at its best status possible, I need a mockup tool which helps me express design perpective for myself, and for anyone who's interested in the project.  I spent the whole evening just to find a piece I felt most comfortable.
 
 LibreOffice Draw is not a GUI mockup tool, but it's my usual choice whenever I needed to sketch simple stuff, or make a diagram.  Fairly useful, but not reaching the standard for someone wants beauty, and the workflow is not flexible.  Up to now and I haven't found any way to change the default properties of a shape (and I doubt if it's possible at this time of writing), which copying and pasting could partly solve as an ugly solution.  No fancy widgets for GUI prototyping, and I decided to go for another piece.
 
