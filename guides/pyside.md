@@ -21,6 +21,21 @@ This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platfo
 
 ## Idioms
 
+### Catching the closing event of a widget
+
+The closing event is handled by method `closeEvent(self, event)` of a widget.  This technique is often used with a top-level widget (such as a `QMainWindow`) to change the way the application is closed.  Call `event.accept()` to let Qt do further processing to close the widget and call `event.ignore()` to prevent the widget from closing.
+
+```python
+class MyMainWindow(QWidget):
+
+    def closeEvent(self, event):
+        if self.maybeSave():
+            self.writeSettings()
+            event.accept()
+        else:
+            event.ignore()
+```
+
 ### Creating a shortcut associated with a widget
 
 This example will create a `pathEntry` widget and bind `Ctrl+L` to focus the `pathEntry`.
