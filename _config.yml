@@ -3,6 +3,11 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md",
           "README.jekyll.md", "index.jekyll.md",
           "Rakefile", "changelog.md"]
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks",
+               "autolink", "tables", "with_toc_data"]
 auto: true
 pygments: true
 
