@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Sun, 19 May 2013 19:39:00 +0700
+last_updated: Thu, 13 Jun 2013 11:36:28 +0700
 ---
 {% include JB/setup %}
 
@@ -20,6 +20,28 @@ last_updated: Sun, 19 May 2013 19:39:00 +0700
 This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platforms.  Specific notes for [Microsoft Windows®](http://en.wikipedia.org/wiki/Microsoft_Windows) and other non-\*nix platforms are not mentioned.
 
 ## Idioms
+
+### Centering a widget
+
+Centering a widget can be done by calculating the appropriate geometry for the current widget.  Notes that:
+
+* The available geometry (desktop size, minus dock/panel/unplaceable area) could be retrieved by `QApplication.instance().desktop().availableGeometry()`
+
+* To set the geometry of a widget, use `widget.setGeometry`
+
+Example code:
+
+```python
+availGeometry = QApplication.instance().desktop().availableGeometry()
+availWidth = availGeometry.width()
+availHeight = availGeometry.height()
+
+widget.setGeometry(
+    QStyle.alignedRect(Qt.LeftToRight,
+                       Qt.AlignCenter,
+                       widget.size(),
+                       availGeometry))
+```
 
 ### Catching the closing event of a widget
 
