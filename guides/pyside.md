@@ -21,6 +21,14 @@ This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platfo
 
 ## Idioms
 
+### Removing widget margin
+
+As simple as such:
+
+```python
+aWidget.setContentsMargins(0, 0, 0, 0)
+```
+
 ### Centering a widget
 
 Centering a widget can be done by calculating the appropriate geometry for the current widget.  Notes that:
