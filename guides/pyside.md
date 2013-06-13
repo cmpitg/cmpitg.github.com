@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Thu, 13 Jun 2013 11:36:28 +0700
+last_updated: Thu, 13 Jun 2013 23:39:51 +0700
 ---
 {% include JB/setup %}
 
@@ -20,6 +20,12 @@ last_updated: Thu, 13 Jun 2013 11:36:28 +0700
 This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platforms.  Specific notes for [Microsoft Windows®](http://en.wikipedia.org/wiki/Microsoft_Windows) and other non-\*nix platforms are not mentioned.
 
 ## Idioms
+
+### Retrieving the application instance
+
+```python
+QApplication.instance()
+```
 
 ### Removing widget margin
 
