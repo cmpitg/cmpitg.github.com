@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: 
+last_updated: Thu, 13 Jun 2013 23:43:27 +0700
 ---
 {% include JB/setup %}
 
@@ -20,6 +20,8 @@ last_updated:
 * I don't like Python for its unconventional and inconsistent naming convention, especially conflict naming conventions in the standard library, broken syntax, limited supported for [functional programming practice](http://stackoverflow.com/questions/1017621/why-isnt-python-very-good-for-functional-programming) (thanks to [Guido](http://www.artima.com/weblogs/viewpost.jsp?thread=98196)'s [*dictatorship*](http://en.wikipedia.org/wiki/Benevolent_Dictator_For_Life), half-ass OOP (can you *ever* be able to do `1.to_str()`?), ...), ...
 
 * Forget what I love and hate about Python, use it and have fun!
+
+* Good way to call [IPython](http://ipython.org/) is to use it with `qtconsole`, i.e. `ipython3 qtconsole`.
 
 ## Idioms
 
