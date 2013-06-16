@@ -25,6 +25,14 @@ last_updated: Thu, 13 Jun 2013 23:43:27 +0700
 
 ## Idioms
 
+### Capitalize a string
+
+```python
+def capitalizeStr(aStr):
+    """Return a copy of the capitalized version of the string."""
+    return aStr[:1].upper() + aStr[1:]
+```
+
 ### Expand path
 
 Assume that your home directory is `/home/hello` and `/home/johndoe/tmp/` directory exists, given the following inputs
