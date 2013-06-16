@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Thu, 13 Jun 2013 23:39:51 +0700
+last_updated: Sun, 16 Jun 2013 14:12:44 +0700
 ---
 {% include JB/setup %}
 
@@ -50,11 +50,10 @@ availGeometry = QApplication.instance().desktop().availableGeometry()
 availWidth = availGeometry.width()
 availHeight = availGeometry.height()
 
-widget.setGeometry(
-    QStyle.alignedRect(Qt.LeftToRight,
-                       Qt.AlignCenter,
-                       widget.size(),
-                       availGeometry))
+widget.setGeometry(QStyle.alignedRect(Qt.LeftToRight,
+                   Qt.AlignCenter,
+                   widget.size(),
+                   availGeometry))
 ```
 
 ### Catching the closing event of a widget
