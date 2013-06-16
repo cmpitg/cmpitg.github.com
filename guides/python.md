@@ -28,9 +28,9 @@ last_updated: Thu, 13 Jun 2013 23:43:27 +0700
 ### Capitalize a string
 
 ```python
-def capitalizeStr(aStr):
+def capitalize_str(str):
     """Return a copy of the capitalized version of the string."""
-    return aStr[:1].upper() + aStr[1:]
+    return str[:1].upper() + str[1:]
 ```
 
 ### Expand path
