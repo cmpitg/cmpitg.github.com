@@ -58,8 +58,8 @@ from os import path as ospath
 
 def expand_path(path):
     """Expand shell path to absolute path.  E.g.
-expand_path("~")          # => Your home directory
-expand_path("~johndoe")   # => "/home/johndoe/" if existed
+        expand_path("~")          # => Your home directory
+        expand_path("~johndoe")   # => "/home/johndoe/" if existed
     """
     return ospath.abspath(ospath.expanduser(path))
 ```
