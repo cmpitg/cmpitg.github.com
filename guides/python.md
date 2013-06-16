@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Thu, 13 Jun 2013 23:43:27 +0700
+last_updated: Sun, 16 Jun 2013 14:03:27 +0700
 ---
 {% include JB/setup %}
 
