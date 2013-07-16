@@ -43,6 +43,13 @@ class MyClass:
         return hash(self.__key())
 ```
 
+To hash a `dict`, one way is to use `frozenset`:
+
+```
+d = { "a": 1, "b": 2 }
+some_dict[frozenset(sorted(d.items()))] = 10
+```
+
 ### Capitalize a string
 
 ```python
