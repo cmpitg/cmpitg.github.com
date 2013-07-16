@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Sun, 16 Jun 2013 14:03:27 +0700
+last_updated: Tue, 16 Jul 2013 13:27:01 +0700
 ---
 {% include JB/setup %}
 
@@ -24,6 +24,24 @@ last_updated: Sun, 16 Jun 2013 14:03:27 +0700
 * Good way to call [IPython](http://ipython.org/) is to use it with `qtconsole`, i.e. `ipython3 qtconsole`.
 
 ## Idioms
+
+### Reimplement `__hash__` and `__eq__`
+
+Purpose: to make the object hashable and `==`-able.
+
+An easy and correct (though not efficient) way to implement them is to make use of tuple:
+
+```python
+class MyClass:
+    def __key(self):
+        return (self.attr1, self.attr2, self.attr3)
+
+    def __eq__(x, y):
+        return x.__key() == y.__key()
+
+    def __hash__(self):
+        return hash(self.__key())
+```
 
 ### Capitalize a string
 
