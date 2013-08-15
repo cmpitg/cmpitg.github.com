@@ -77,7 +77,7 @@ This example will create a `pathEntry` widget and bind `Ctrl+L` to focus the `pa
 
 ```python
 pathEntry = QLineEdit()
-focusShortcut.QShortcut(QKeySequence("Ctrl+L), pathEntry)
+focusShortcut = QShortcut(QKeySequence("Ctrl+L), pathEntry)
 focusShortcut.activated.connect(pathEntry.setFocus)
 ```
 
