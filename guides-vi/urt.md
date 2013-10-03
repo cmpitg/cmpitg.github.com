@@ -4,7 +4,7 @@ title: Hướng dẫn Urban Terror
 category: Games
 tags: [games, urt, urban_terror]
 permalink: /urt/
-last_updated: Sat, 13 Apr 2013 08:23:34 +0700
+last_updated: Fri, 04 Oct 2013 00:53:27 +0700
 ---
 {% include JB/setup %}
 
@@ -82,15 +82,15 @@ Lỗi do UrT được biên dịch với thư viện OpenGL cũ.
 
 ## Chạy Urban Terror trên X server khác
 
-Edit `/etc/X11/Xwrapper.config`
+Sửa `/etc/X11/Xwrapper.config`
 
-```conf
+```
 allowed_users=anybody
 ```
 
 ```sh
 xinit -- :1
-# Go to tty8
+\# Go to tty8
 urban_terror
 ```
 
