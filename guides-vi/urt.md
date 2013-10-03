@@ -44,13 +44,19 @@ một file binary chứa nhiều giá trị ngẫu nhiên.  `qkey` luôn luôn �
 sinh lại nếu Urban Terror client không tìm thấy file này.  Đường dẫn
 đến `qkey` trên GNU/Linux: `~/.q3a/qkey`
 
-## Demo, cách thu và phát demo
+## Demo
 
-* Một demo là một bản capture game.  Giống như khi bạn dùng một chương
-  trình quay màn tình (screencaster) quay lại cảnh chơi game.
+### Demo là gì?
 
-* Demo khi thu lại sẽ mặc định nằm ở `~/.q3a/q3ut4/demos/` trong
-  GNU/Linux.
+Một demo là một bản capture game.  Giống như khi bạn dùng một chương
+trình quay màn tình (screencaster) quay lại cảnh chơi game.
+
+### Demo nằm ở đâu?
+
+Demo khi thu lại sẽ mặc định nằm ở `~/.q3a/q3ut4/demos/` trong
+GNU/Linux.
+
+### Thu/phát demo như thế nào?
 
 * Để thu demo, sử dụng lệnh `/recorddemo [file_name]` hoặc nhấn `F12`.
   Nếu không có `[file_name]`, demo sẽ nhận tên mặc định.
