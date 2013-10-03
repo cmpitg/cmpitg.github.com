@@ -21,6 +21,12 @@ This guide supports Qt on [\*nix](http://en.wikipedia.org/wiki/Unix-like) platfo
 
 ## Idioms
 
+### Disabling context menu
+
+```python
+aWidget.setContextMenuPolicy(Qt.NoContextMenu)
+```
+
 ### Retrieving the application instance
 
 ```python
@@ -80,6 +86,10 @@ pathEntry = QLineEdit()
 focusShortcut = QShortcut(QKeySequence("Ctrl+L), pathEntry)
 focusShortcut.activated.connect(pathEntry.setFocus)
 ```
+
+### Disabling right-click context menu
+
+
 
 ### Tool button
 
