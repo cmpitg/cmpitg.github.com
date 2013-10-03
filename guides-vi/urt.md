@@ -36,7 +36,7 @@ last_updated: Sat, 13 Apr 2013 08:23:34 +0700
 
 * *np*: no problem
 
-## Ghi chú
+## `qkey`
 
 Urban Terror server sử dụng file `qkey` (auto-generated) để xác định
 ID của một client.  `qkey` được sinh tự động trên client, bản chất là
