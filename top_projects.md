@@ -27,6 +27,10 @@ last_updated: Mon, 20 May 2013 16:05:26 +0700
 
 ### My Own - For Fun (and Benefits)
 
-#### [BoGoEngine](https://github.com/BoGoEngine) - A Vietnamese input method for GNU/Linux systems
+#### [Bogoengine](/projects/bogoengine) - A Vietnamese input method for GNU/Linux systems
 
 #### [Espada Text](/projects/espada/) - Just another text editor
+
+#### [Blutkit](https://github.com/cmpitg/blutkit) - A hackable GUI library written purely in PySide (Python 3 + Qt)
+
+#### [Escudo](https://github.com/cmpitg/escudo) - A distraction-free Markdown editor
