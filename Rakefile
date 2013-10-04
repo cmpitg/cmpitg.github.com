@@ -40,12 +40,6 @@ module JB
   end #Path
 end #JB
 
-# Usage: rake runserver
-desc "Run a local jekyll server with port 4444"
-task :runserver do
-  `jekyll serve -w -P 4444`
-end
-
 # Usage: rake post title="A Title" [date="2012-02-09"]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
