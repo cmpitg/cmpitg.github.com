@@ -4,17 +4,17 @@ title: Rethinking Espada
 tagline: "#!"
 category: Review
 tags: [espada]
-last_updated: Fri, 12 Apr 2013 01:15:52 +0700
+last_updated: Sat, 05 Oct 2013 02:25:19 +0700
 ---
 {% include JB/setup %}
 
 This entry's title is pretty random.  Don't let the title fool you.
 
-It's been several days since the last commit to [Espada](/projects/espada/).  I have encountered several problems when extensively developing Espada in the last month.  Some problems lie in the [Qt library](https://qt-project.org/), but some of them were my own, here are my favourite 2:
+It's been several days since the last commit to [Espada](/projects/espada/).  I have encountered several problems when extensively developing Espada in the last month.  Some problems lie in the [Qt library](https://qt-project.org/), but some of them were my own, here are 2 of my favorite:
 
-* Weird behaviours in key capturing.  Detailed explanation could be found in the source code of the [TextEdit](http://goo.gl/AhqcY) widget.
+* Weird behaviors in key capturing.  Detailed explanation could be found in the source code of the [TextEdit](http://goo.gl/AhqcY) widget.
 
-* Random crash when using [QTreeView](http://qt-project.org/doc/qt-4.8/qtreeview.html) with Ruby's [qtbindings](https://github.com/ryanmelt/qtbindings).  This happaned in both my Debian Wheezy 64-bit and Ubuntu 12.04 64-bit systems.  I have filed a [bug report](https://github.com/ryanmelt/qtbindings/issues/50).  Hopefully this will be fixed soon enough, before I reconsider my language and tool of choice for Espada.
+* Random crash when using [QTreeView](http://qt-project.org/doc/qt-4.8/qtreeview.html) with Ruby's [qtbindings](https://github.com/ryanmelt/qtbindings).  This happened in both my Debian Wheezy 64-bit and Ubuntu 12.04 64-bit systems.  I have filed a [bug report](https://github.com/ryanmelt/qtbindings/issues/50).  Hopefully this will be fixed soon enough, before I reconsider my language and tool of choice for Espada.
 
 I hacked Espada everyday and loved *every minute* of it.  Writing Ruby brought me great pleasure.  However, I'm facing serious problems with the Espada project and with my own code:
 
@@ -26,7 +26,7 @@ I hacked Espada everyday and loved *every minute* of it.  Writing Ruby brought m
 
 * Not documenting everything as I have planned.
 
-* [RSI](http://en.wikipedia.org/wiki/Repetitive_stress_injury) bothered my **everyday**.  Couldn't be helped!
+* [RSI](http://en.wikipedia.org/wiki/Repetitive_stress_injury) bothered me **everyday**.  Couldn't be helped!
 
 * Too much information, too little time to process.  This classic problem is a good yet unforgivable excuse.  I seriously need to learn to focus on one thing at a time.
 
@@ -34,7 +34,7 @@ I hacked Espada everyday and loved *every minute* of it.  Writing Ruby brought m
 
 Perhaps there are more, but that's all I can think of at the moment.  Man, I gotta be strict with myself much more!
 
-And now, the babystep solution, resolutions for the next few days:
+And now, the baby-step solution, resolutions for the next few days:
 
 * Rethinking Espada:
   - With careful mockup & use case, visualized as much as possible.
