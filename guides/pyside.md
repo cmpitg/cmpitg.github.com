@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Thu, 13 Jun 2013 23:39:51 +0700
+last_updated: Sat, 05 Oct 2013 15:12:03 +0700
 ---
 {% include JB/setup %}
 
@@ -190,6 +190,88 @@ appMenu = menu.addMenu("Applications")
 
 gameMenu = menu.addMenu(gameIcon, "Games")
 # Do something with gameMenu
+```
+
+##### How to re-catch keyboard event using event filter
+
+A event filter needs to be reimplemented and installed into the current
+widget.  Here is how key stroke events work:
+
+* Each key press generates a key press event (where `event.type() == QEvent.Type.KeyPress`)
+
+* Each key release generates a key release event (where `event.type() == QEvent.Type.KeyRelease`)
+
+* Key modifiers are represented as integers:
+
+    ```python
+    [
+        Qt.NoModifier,
+        Qt.ShiftModifier,
+        Qt.ControlModifier,
+        Qt.AltModifier,
+        Qt.MetaModifier,
+        Qt.KeypadModifier,
+        Qt.GroupSwitchModifier
+    ]
+    ```
+
+* Each combination of key modifiers is produced by bit-wise `OR`-ing the
+  integers representing those modifiers.  E.g. if *Control* and *Shift* are
+  pressed, the value of this combination is `Qt.ShiftModifier | Qt.ControlModifier`.
+
+* A key event includes:
+  - the activated key, retrieving its string representation by using
+    `event.key()`
+  - the activated modifiers, is a integer produced by the bit-wise `OR`-ing
+    operation, originally stored in `event.modifiers()` and can be retrieved
+    by testing if a modifier contributes to forming `event.modifiers()`.
+
+* The event filter needs to return `False` if it delegates the event for the
+  widget itself to further processing and return `True` otherwise.
+
+To sum up, the code might look like:
+
+```python
+class SomeWidget(QWidget):
+
+    def __init__(self):
+        # Do some stuff
+        self.installEventFilter(self.eventFilter)
+
+    def eventFilter(self, sender, event):
+        """
+        This event filter will take care of managing keyboard event of the
+        TextEdit.
+        """
+        if isKeyPressEvent(event):
+            key = getKeyFromEvent(event)
+            mods = getKeymodsFromEvent(event)
+
+            # Save the modifiers for mouse chord events
+            self.pressedMods = mods
+
+            # Discard events where modifiers and keys are the same
+            if isKeymod(key):
+                return False
+
+            return self.processKey(key=key, mods=mods)
+
+        elif isKeyReleaseEvent(event):
+            # IMPORTANT: Notes that release is not caught when the window
+            # manager interferes
+
+            key = getKeyFromEvent(event)
+
+            #
+            # Used for mouse chords, release the modifier
+            #
+            if isKeymod(key) and toKeymod(key) in self.pressedMods:
+                self.pressedMods.remove(toKeymod(key))
+
+        #
+        # Let the default event handler processes the event
+        #
+        return False
 ```
 
 ##### Showing/executing a menu
