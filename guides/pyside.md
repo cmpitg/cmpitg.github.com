@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Sat, 05 Oct 2013 15:12:03 +0700
+last_updated: Sat, 05 Oct 2013 15:51:19 +0700
 ---
 {% include JB/setup %}
 
