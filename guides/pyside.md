@@ -270,6 +270,119 @@ class SomeWidget(QWidget):
         return False
 ```
 
+See [Blutkit](https://github.com/cmpitg/blutkit)'s implementation of
+[TextEdit](https://github.com/cmpitg/blutkit/blob/master/blutkit/gui/textedit.py)
+for more info about real-world use.
+
+##### Catching mouse chords
+
+Normally, catching simple mouse chords (single click, double click) is very
+easy.  Things get complicated when you want to catch multiple-cursors chords
+like `Left_Button-Right_Button` (hold down the left button, press the right
+button, then release both).  [Acme](http://acme.cat-v.org) is one of the very
+few editors that makes use of multiple-cursors mouse chords really well.  Here
+is how we're gonna try tackling this problem using PySide.
+
+At any point, we need to know *which buttons are pressed* and in **which
+order**.  Assume that we're gonna use an array `mousePressedButtons` to store
+that information.
+
+The current pressed/released button is retrieved by `event.button()`.  Buttons
+of a typical 3-button mouse are represented by the following Qt values:
+
+```python
+[
+    Qt.LeftButton,
+    Qt.MidButton,
+    Qt.RightButton
+]
+```
+
+The 2 methods we need to override are `mousePressEvent` and
+`mouseReleaseEvent`:
+
+* In `mousePressEvent`, we add the pressed button to `mousePressedButtons` and
+  delegate the processing part to a method called `processKey`
+
+* In `mouseReleaseEvent`, we remove the current activated button from
+  `mousePressedButtons`
+
+* We often want our mouse chords to be processed with keyboard modifiers, so
+  `processKey` would take currently pressed keyboard modifiers and mouse
+  buttons as its arguments.
+
+* A double-click event doesn't generate the corresponding mouse press event,
+  so you need to override it to manually add the pressed button to
+  `mousePressedButtons`
+
+* **Notes**:
+  - We usually want the widget itself furthers processing the mouse chords
+    (such as single click to move cursor to a different position, double click
+    to select word, triple click to select line), so we call
+    `super().mousePressEvent(event)` and `super().mouseReleaseEvent(event)` at
+    the end of the 2 event handlers.
+  - To correctly catch right click events, context menu needs to be disabled,
+    see the *Disabling right-click context menu* part.
+
+Here is how the code looks like:
+
+```python
+def SomeWidget(QWidget):
+    def __init__(self):
+        # Do something
+        self.mousePressedButtons = []
+
+    #
+    # Mouse chord catching
+    #
+
+    def isOneMouseButtonAlreadyPressed(self):
+        """Determine if a mouse button has already been pressed and not yet
+        released.  This function is useful when handling 2-button press
+        event.
+        """
+        return len(self.mousePressedButtons) == 1
+
+    def getMousePressedButtons(self, event):
+        """Get currently pressed mouse buttons in correct order."""
+        if not event.button() in self.mousePressedButtons:
+            return self.mousePressedButtons + [event.button()]
+        else:
+            return self.mousePressedButtons
+
+    def mouseDoubleClickEvent(self, event):
+        """Handle all double click events."""
+        if not event.button() in self.mousePressedButtons:
+            self.mousePressedButtons.append(event.button())
+        super().mouseDoubleClickEvent(event)
+
+    def mousePressEvent(self, event):
+        """Handling all kinds of mouse press events."""
+        pressedButtons = self.getMousePressedButtons(event)
+        self.mousePressedButtons.append(event.button())
+        self.processKey(mods=self.pressedMods,
+                        mouse=self.mousePressedButtons)
+        super().mousePressEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        """Handling mouse release event by unregistering the pressed
+        button."""
+        if event.button() in self.mousePressedButtons:
+            self.mousePressedButtons.remove(event.button())
+
+        # # Disable default "middle-click to paste" if necessary
+        # if len(self.getMousePressedButtons(event)) == 1 \
+        #    and event.button() == Qt.MidButton \
+        #    and not self.midClickXPaste:
+        #     return
+
+        super().mouseReleaseEvent(event)
+```
+
+See [Blutkit](https://github.com/cmpitg/blutkit)'s implementation of
+[TextEdit](https://github.com/cmpitg/blutkit/blob/master/blutkit/gui/textedit.py)
+for more info about real-world use.
+
 ##### Showing/executing a menu
 
 Showing/executing a menu means making the menu visible on the screen.  Usually, the visibility of the menu associates with the current position of the cursor/mouse. Thus,
