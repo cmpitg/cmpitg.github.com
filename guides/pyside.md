@@ -460,3 +460,28 @@ menu.popup(pos, someAction)
 ##### Tearing-off the menu
 
 Tearing off a menu means "extracting" the menu into a standalone widget and vice-versa.  Qt directly supports tear-off menu with `menu.setTearOffEnable(trueOrFalse)`.  The property could be accessed via `menu.isTearOffEnabled()`.
+
+### Text Edit widget
+
+* All text manipulation is done using a `QTextCursor`, received by
+  `textEdit.textCursor()`.  After done, the text cursor needs to be re-set to
+  replace current cursor using `textEdit.setTextCursor(cursor)`:
+
+     ```python
+     cursor = textEdit.textCursor()
+     # Do something with cursor
+     textEdit.setTextCursor(cursor)
+     ```
+
+#### Selecting current line
+
+```python
+class MyTextEdit(QTextEdit):
+
+    def selectLine(self):
+        """Select the current line."""
+        cursor = self.textCursor()
+        cursor.movePosition(QTextCursor.StartOfBlock)
+        cursor.movePosition(QTextCursor.EndOfBlock, QTextCursor.KeepAnchor)
+        self.setTextCursor(cursor)
+```
