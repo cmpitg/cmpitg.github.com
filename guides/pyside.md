@@ -485,3 +485,15 @@ class MyTextEdit(QTextEdit):
         cursor.movePosition(QTextCursor.EndOfBlock, QTextCursor.KeepAnchor)
         self.setTextCursor(cursor)
 ```
+
+### Clear current selection
+
+```python
+class MyTextEdit(QTextEdit):
+
+    def clearSelection(self):
+        """Clear the current selection."""
+        cursor = self.textCursor()
+        cursor.clearSelection()
+        self.setTextCursor(cursor)
+```
