@@ -228,6 +228,12 @@ The 2 methods we need to override are `mousePressEvent` and
     the end of the 2 event handlers.
   - To correctly catch right click events, context menu needs to be disabled,
     see the *Disabling right-click context menu* part.
+  - Double-click is a legitimate mouse press event and it does not generate a
+    mouse press event, so usually everything handled in mouse press event
+    needs to be handled in double-click event too.
+  - The click-double_click events generate a mouse release event when the
+    second button is released.  Sometimes it might interrupt the handler, so
+    this mouse release event needs to be checked and handle properly.
 
 Here is how the code looks like:
 
@@ -257,31 +263,63 @@ def SomeWidget(QWidget):
 
     def mouseDoubleClickEvent(self, event):
         """Handle all double click events."""
+        # TODO: Define away to handle double click events
+
+        # Double click means the clicked button is still pressed
         if not event.button() in self.mousePressedButtons:
             self.mousePressedButtons.append(event.button())
+
+        #
+        # If number of pressed buttons is more than 1, it's not an usual
+        # double click event -> needed to treat like single click as well
+        #
+        if len(self.mousePressedButtons) != 1:
+            self.processKeyCombination(mods=self.pressedMods,
+                                       mouse=self.mousePressedButtons)
+            return
+
         super().mouseDoubleClickEvent(event)
 
     def mousePressEvent(self, event):
         """Handling all kinds of mouse press events."""
+
         pressedButtons = self.getMousePressedButtons(event)
         self.mousePressedButtons.append(event.button())
-        self.processKey(mods=self.pressedMods,
-                        mouse=self.mousePressedButtons)
+        self.processKeyCombination(key=None,
+                                   mods=self.pressedMods,
+                                   mouse=self.mousePressedButtons)
         super().mousePressEvent(event)
 
     def mouseReleaseEvent(self, event):
         """Handling mouse release event by unregistering the pressed
         button."""
+        #
+        # Strange case: Left-Left-Middle
+        # * Expected: select word, then cut
+        # * Real: select word, cut, then paste right after Middle is
+        #   released:
+        #
+        # Cause: the Middle release event is further processed by default
+        # event handler
+        #
+        # Solution: only delegate the event to super class when number of
+        # pressed buttons before the release event is emited is 1
+        #
+
+        nButtonsBefore = len(self.mousePressedButtons)
+
         if event.button() in self.mousePressedButtons:
             self.mousePressedButtons.remove(event.button())
 
-        # # Disable default "middle-click to paste" if necessary
-        # if len(self.getMousePressedButtons(event)) == 1 \
-        #    and event.button() == Qt.MidButton \
-        #    and not self.midClickXPaste:
-        #     return
+        # Disable default "middle-click to paste" if necessary
+        if len(self.getMousePressedButtons(event)) == 1 \
+           and event.button() == Qt.MidButton \
+           and not self.midClickXPaste:
+            return
 
-        super().mouseReleaseEvent(event)
+        # Solution to strange case mentioned above
+        if nButtonsBefore == 1:
+            super().mouseReleaseEvent(event)
 ```
 
 See [Blutkit](https://github.com/cmpitg/blutkit)'s implementation of
