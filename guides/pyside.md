@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Tue, 08 Oct 2013 02:02:31 +0700
+last_updated: Tue, 08 Oct 2013 02:06:51 +0700
 ---
 {% include JB/setup %}
 
@@ -472,6 +472,23 @@ Tearing off a menu means "extracting" the menu into a standalone widget and vice
      # Do something with cursor
      textEdit.setTextCursor(cursor)
      ```
+
+#### Selecting
+
+Selecting a block of text is done by moving the text cursor to the beginning
+of the block, then move it to the end and keep its anchor.  E.g. The
+`QTextEdit`'s `selectLine` method could be implemented like so:
+
+```python
+class QTextEdit(...):
+
+    def selectLine(self):
+        """Select the current line."""
+        cursor = self.textCursor()
+        cursor.movePosition(QTextCursor.StartOfBlock)
+        cursor.movePosition(QTextCursor.EndOfBlock, QTextCursor.KeepAnchor)
+        self.setTextCursor(cursor)
+```
 
 #### Selecting current line
 
