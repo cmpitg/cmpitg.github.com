@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Sat, 05 Oct 2013 15:56:02 +0700
+last_updated: Tue, 08 Oct 2013 02:02:31 +0700
 ---
 {% include JB/setup %}
 
@@ -481,8 +481,7 @@ class MyTextEdit(QTextEdit):
     def selectLine(self):
         """Select the current line."""
         cursor = self.textCursor()
-        cursor.movePosition(QTextCursor.StartOfBlock)
-        cursor.movePosition(QTextCursor.EndOfBlock, QTextCursor.KeepAnchor)
+        cursor.select(QTextCursor.LineUnderCursor)
         self.setTextCursor(cursor)
 ```
 
