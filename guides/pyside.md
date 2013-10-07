@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Tue, 08 Oct 2013 02:06:51 +0700
+last_updated: Tue, 08 Oct 2013 02:09:35 +0700
 ---
 {% include JB/setup %}
 
@@ -499,6 +499,18 @@ class MyTextEdit(QTextEdit):
         """Select the current line."""
         cursor = self.textCursor()
         cursor.select(QTextCursor.LineUnderCursor)
+        self.setTextCursor(cursor)
+```
+
+#### Selecting current word
+
+```python
+class MyTextEdit(QTextEdit):
+
+    def selectWord(self):
+        """Select the word line."""
+        cursor = self.textCursor()
+        cursor.select(QTextCursor.WordUnderCursor)
         self.setTextCursor(cursor)
 ```
 
