@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming
 tags: [python, guide, idiom, qt, pyside]
 permalink: /pyside/
-last_updated: Tue, 08 Oct 2013 02:09:35 +0700
+last_updated: Tue, 08 Oct 2013 02:28:37 +0700
 ---
 {% include JB/setup %}
 
@@ -83,7 +83,7 @@ This example will create a `pathEntry` widget and bind `Ctrl+L` to focus the `pa
 
 ```python
 pathEntry = QLineEdit()
-focusShortcut = QShortcut(QKeySequence("Ctrl+L), pathEntry)
+focusShortcut = QShortcut(QKeySequence("Ctrl+L"), pathEntry)
 focusShortcut.activated.connect(pathEntry.setFocus)
 ```
 
