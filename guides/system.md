@@ -5,7 +5,7 @@ tagline: "#!/bin/sh"
 category: System
 tags: [system, guide, shell]
 permalink: /system/
-last_updated: Sat, 05 Oct 2013 14:53:15 +0700
+last_updated: Wed, 09 Oct 2013 17:24:19 +0700
 ---
 {% include JB/setup %}
 
@@ -21,6 +21,24 @@ last_updated: Sat, 05 Oct 2013 14:53:15 +0700
 udevadm control --reload-rules
 udevadm trigger
 ```
+
+## Power saving
+
+### Making Powertop changes permanent
+
+* Run Powertop and tweak.
+
+* Save Powertop output to a HTML file, besure to *run as root*:
+
+  ```sh
+  cd /tmp/
+  powertop --html
+  ```
+
+  This will generate a `powertop-xxxxxxxxxx-xxxxxx.html` file
+
+* Now, all the `echo` commands in the file are necessary commands to save the
+  change, copy them all and put it in a script or your `rc.local`.
 
 ## Troubleshooting
 
