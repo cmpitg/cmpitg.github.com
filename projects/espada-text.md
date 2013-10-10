@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Espada Text
-description: Thoughts about writing a new text editor
+description: Thoughts on writing a new text editor
 permalink: /espada/
-last_updated: Mon, 06 May 2013 09:47:20 +0700
+last_updated: Fri, 11 Oct 2013 04:34:41 +0700
 ---
 {% include JB/setup %}
 
