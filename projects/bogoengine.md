@@ -2,8 +2,8 @@
 layout: page
 title: *bogoengine*
 description: A Vietnamese input method for GNU/Linux systems
-permalink: /*bogoengine*/
-last_updated: Thu, 10 Oct 2013 16:32:00 +0700
+permalink: /bogoengine/
+last_updated: Thu, 10 Oct 2013 16:33:41 +0700
 ---
 {% include JB/setup %}
 
