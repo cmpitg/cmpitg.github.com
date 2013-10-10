@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Bogoengine
+title: *bogoengine*
 description: A Vietnamese input method for GNU/Linux systems
-permalink: /bogoengine/
-last_updated: Fri, 04 Oct 2013 01:41:07 +0700
+permalink: /*bogoengine*/
+last_updated: Thu, 10 Oct 2013 16:32:00 +0700
 ---
 {% include JB/setup %}
 
@@ -63,8 +63,8 @@ Không có một bộ gõ tiếng Việt nào trong số 4 bộ gõ nói trên �
 Nhằm đáp ứng 9 yêu cầu kể trên, tôi
 ([**@cmpitg**](https://github.com/cmpitg/)) đã cho ra đời engine xử lý
 nhập liệu tiếng Việt
-[Bogoengine](https://github.com/cmpitg/bogoengine) vào tháng 04
-năm 2012.  Bogoengine đã được viết lại bằng Python bởi tác giả *Ngô
+[*bogoengine*](https://github.com/cmpitg/bogoengine) vào tháng 04
+năm 2012.  *bogoengine* đã được viết lại bằng Python bởi tác giả *Ngô
 "Chin" Trung* ([**@lewtds**](https://github.com/lewtds/)) và tích hợp
 vào IBus với cái tên
 [**ibus-bogo-python**](https://github.com/BoGoEngine/ibus-bogo-python)
@@ -74,12 +74,12 @@ như một giải pháp tạm thời chạy trên GNU/Linux.  **ibus-bogo-python
 
 ## Tình hình hiện tại
 
-* Sau 9 tháng phát triển, dự án Bogoengine tạm thời dừng lại do chứng
+* Sau 9 tháng phát triển, dự án *bogoengine* tạm thời dừng lại do chứng
   [RSI](/rsi/) của tôi tái phát.  Giữa năm 2013, tôi quyết định viết
-  lại toàn bộ Bogoengine dựa trên các bài học thu được từ phiên bản
+  lại toàn bộ *bogoengine* dựa trên các bài học thu được từ phiên bản
   cũ, sử dụng hoàn toàn C nhưng một lần nữa lại phải trì hoãn do RSI.
   Đến đầu tháng 10/2013, khi các vấn đề liên quan đến sức khỏe đã dần
-  dần được cải thiện, tôi bắt đầu thử nghiệm Bogoengine với
+  dần được cải thiện, tôi bắt đầu thử nghiệm *bogoengine* với
   [Chicken Scheme](http://call-cc.org) thay vì C.
 
 * Tại thời điểm đầu tháng 10/2013, ibus-bogo-python vẫn đang được Chin
