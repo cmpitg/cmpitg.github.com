@@ -3,7 +3,7 @@ layout: page
 title: bogoengine
 description: A Vietnamese input method for GNU/Linux systems
 permalink: /bogoengine/
-last_updated: Fri, 11 Oct 2013 02:41:31 +0700
+last_updated: Fri, 11 Oct 2013 13:48:51 +0700
 ---
 {% include JB/setup %}
 
@@ -100,5 +100,5 @@ giải pháp tạm thời chạy trên GNU/Linux.  **ibus-bogo-python** đã có
   [Firefox OS](http://www.mozilla.org/en-US/firefox/os/), hiện tại quá trình
   biên dịch C thành JavaScript sử dụng
   [Emscripten](https://github.com/kripken/emscripten)
-  [gặp một vài vấn đề](https://github.com/kripken/emscripten) liên quan đến mã
-  nguồn C được sinh ra và tốc độ, chưa thể giải quyết được.
+  [gặp một vài vấn đề](https://github.com/cmpitg/bogoengine/issues/7) liên
+  quan đến mã nguồn C được sinh ra và tốc độ, chưa thể giải quyết được.
