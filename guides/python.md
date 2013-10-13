@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Tue, 16 Jul 2013 13:27:01 +0700
+last_updated: Sun, 13 Oct 2013 23:05:40 +0700
 ---
 {% include JB/setup %}
 
@@ -49,6 +49,33 @@ To hash a `dict`, one way is to use `frozenset`:
 d = { "a": 1, "b": 2 }
 some_dict[frozenset(sorted(d.items()))] = 10
 ```
+
+### Loading a Python file
+
+* The most obvious way is to `exec` the content of the file you want to load,
+  `execfile` was there in Python 2 but is removed in Python 3+, so:
+
+  ```python
+  def load_file(path, globals=None, locals=None):
+     """Load a Python script."""
+     with open(path, 'r') as script:
+         exec(compile(script, path, 'exec'), globals, locals)
+  ```
+
+* Another way is to add the file path to `sys.path` and use `import` as a safe
+  bet:
+
+  ```python
+  import os
+
+  def load_file(path):
+     """Import a Python script as a module."""
+     dirpart = os.path.dirname(path)
+     filepart = os.path.splitext(os.path.basename(path))[0]
+
+     sys.path.append(dirpart)
+     exec("import {0}".format(filepart))
+  ```
 
 ### Capitalize a string
 
