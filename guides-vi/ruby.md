@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ---
 layout: page
 title: Hướng dẫn Ruby
