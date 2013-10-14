@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Tue, 15 Oct 2013 00:40:15 +0700
+last_updated: Tue, 15 Oct 2013 00:49:58 +0700
 ---
 {% include JB/setup %}
 
@@ -33,7 +33,7 @@ last_updated: Tue, 15 Oct 2013 00:40:15 +0700
   rằng `123` là một giá trị `primitive type` nên không gọi được method; và
   điều bạn nói không sai.  Thế nhưng `primitive type` của Java không phải là
   class, và giá trị `123` không phải là object; vì vậy khẩu hiệu *đáng tự hào*
-  "Everything is an object" của Java là bốc phét nặng.
+  "Everything is an object" của Java là **bốc phét nặng**.
 
 * Ruby là một trong số 3 ngôn ngữ tôi đề xuất bạn tìm hiểu, nếu bạn *thực sự
   nghiêm túc* muốn học & sử dụng *lập trình hướng đối tượng* (OOP).  Hai ngôn
