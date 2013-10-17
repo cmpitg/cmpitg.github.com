@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Tue, 15 Oct 2013 00:49:58 +0700
+last_updated: Thu, 17 Oct 2013 22:56:39 +0700
 ---
 {% include JB/setup %}
 
@@ -61,7 +61,7 @@ last_updated: Tue, 15 Oct 2013 00:49:58 +0700
 
 ## Các kỹ thuật
 
-### Khi nào dùng `.`, khi nào dùng `::`
+### Khi nào dùng `.`, khi nào dùng `::`?
 
 Về bản chất, `.` là message operator và `::` là scope operator.  `::` cho phép
 truy cập đến scope của một class hoặc object, trong khi `.` chỉ đơn thuần là
@@ -99,3 +99,12 @@ Example.Version         # NoMethodError
 # since there is no method to respond with.
 #
 ```
+
+### Khi nào dùng `singleton`, khi nào dùng `module`?
+
+Một trong những tình huống tốt sử dụng
+[Singleton](http://en.wikipedia.org/wiki/Singleton_pattern) và module là khi
+bạn muốn đóng gói state vào trong một thực thể duy nhất.  Điểm khác nhau duy
+nhất giữa singleton và module trong trường hợp này là quá trình initialization:
+* của singleton được trì hoãn cho đến khi bạn tạo instance
+* của module diễn ra ngay khi module được khai báo
