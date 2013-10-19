@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Thu, 17 Oct 2013 22:56:39 +0700
+last_updated: Sun, 20 Oct 2013 02:36:17 +0700
 ---
 {% include JB/setup %}
 
@@ -60,6 +60,18 @@ last_updated: Thu, 17 Oct 2013 22:56:39 +0700
   Đến thời điểm viết guide này, tôi sử dụng Emacs cho Ruby hàng ngày.
 
 ## Các kỹ thuật
+
+### Duyệt tất cả các file trong thư mục
+
+Sử dụng module `find` để nội dung thư mục recursively:
+
+```ruby
+require 'find'
+
+Find.find('/tmp/') { |file|
+  puts find
+}
+```
 
 ### Khi nào dùng `.`, khi nào dùng `::`?
 
