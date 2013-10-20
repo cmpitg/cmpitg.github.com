@@ -77,6 +77,19 @@ Find.find('/tmp/') { |file|
 }
 ```
 
+### Prettify/beautify HTML
+
+Cách tốt nhất là sử dụng thư viện
+[Nokogiri-pretty](https://github.com/tobym/nokogiri-pretty) trong
+[Nokogiri](http://nokogiri.org/).
+
+```ruby
+require 'nokogiri-pretty'
+
+doc = Nokogiri::XML('<foo><bar>baz</bar><bar>buzz</bar></foo>')
+puts doc.human
+```
+
 ### Khi nào dùng `.`, khi nào dùng `::`?
 
 Về bản chất, `.` là message operator và `::` là scope operator.  `::` cho phép
