@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sun, 20 Oct 2013 02:37:51 +0700
+last_updated: Mon, 21 Oct 2013 15:26:37 +0700
 ---
 {% include JB/setup %}
 
@@ -58,6 +58,36 @@ last_updated: Sun, 20 Oct 2013 02:37:51 +0700
   [Vim](http://en.wikipedia.org/wiki/Vim_%28text_editor%29), ...  Tôi thì
   chuộng Vim và [GNU Emacs](http://en.wikipedia.org/wiki/Emacs#GNU_Emacs).
   Đến thời điểm viết guide này, tôi sử dụng Emacs cho Ruby hàng ngày.
+
+## Điểm không hay
+
+* Method của Ruby
+  [không phải là object](http://stackoverflow.com/questions/2602340/methods-in-ruby-objects-or-not).
+  Method có thể được lưu và xử lý giống object bằng cách tạo wrapper, tuy
+  nhiên:
+  - wrapper này không phải là object,
+  - wrapper được tạo mỗi lần method `method(:symbol)` được gọi, không tốt cho
+    performance,
+  - không có cách nào đồng nhất wrapper với method, method được gọi trực tiếp,
+    còn method bọc trong wrapper phải gọi bằng `.call` method:
+
+  ```ruby
+  def a_method_look_like_function(arg)
+    puts "Hello #{arg}"
+  end
+
+  # Calling directly
+  a_method_look_like_function 'world!'                # => "Hello world!"
+
+  # Making wrappers
+  wrapper_1 = method :a_method_look_like_function
+  wrapper_2 = method :a_method_look_like_function
+  puts wrapper_1 == wrapper_2                         # => true
+
+  # Calling method stored in wrapper
+  wrapper_1.call "world, inside wrapper"              # => "Hello world, inside wrapper"
+  wrapper_1 "world, inside wrapper"                   # => NoMethodError: undefined method `wrapper_1' for main:Object
+  ```
 
 ## Các kỹ thuật
 
