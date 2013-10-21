@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby"
 description: "Ruby lambda and Proc differences"
 category: Ruby
 tags: [ruby, proc, lambda, programming]
-last_updated: Mon, 21 Oct 2013 15:11:09 +0700
+last_updated: Mon, 21 Oct 2013 15:52:17 +0700
 ---
 {% include JB/setup %}
 
