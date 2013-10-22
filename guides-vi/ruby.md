@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Mon, 21 Oct 2013 15:26:37 +0700
+last_updated: Tue, 22 Oct 2013 16:25:00 +0700
 ---
 {% include JB/setup %}
 
@@ -88,6 +88,39 @@ last_updated: Mon, 21 Oct 2013 15:26:37 +0700
   wrapper_1.call "world, inside wrapper"              # => "Hello world, inside wrapper"
   wrapper_1 "world, inside wrapper"                   # => NoMethodError: undefined method `wrapper_1' for main:Object
   ```
+
+## Các vấn đề khúc mắc hay gặp
+
+### Khác nhau giữa `lambda` và `Proc`
+
+[Bài viết](/ruby/2013/10/21/ruby-lambda-and-proc/):
+
+* Bản chất của `lambda` gần như một method, mặc dù `lambda` không phải là
+  instance của class `Method`:
+  - `lambda` kiểm tra số lượng tham số truyền vào
+  - `return` khỏi `lambda` giống hệt như `return` khỏi method
+
+* `Proc` không phải là method mà là control flow:
+  - Code block về bản chất là một `Proc`
+  - `Proc` không kiểm tra số lượng tham số truyền vào
+  - `return` khỏi `Proc` là return khỏi *block chứa `Proc` đó*
+
+```ruby
+def using_lambda
+  my_lambda = lambda { return 'Return from a lambda' }
+  my_lambda.call
+  return 'End of using_lambda reached'
+end
+
+def using_proc
+  my_proc = -> { return 'Return from a Proc' }
+  my_proc.call
+  return 'End of using_proc reached'
+end
+
+puts using_lambda       # => 'End of using_lambda reached'
+puts using_proc         # => 'Return from a Proc'
+```
 
 ## Các kỹ thuật
 
