@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Tue, 22 Oct 2013 16:25:00 +0700
+last_updated: Sat, 26 Oct 2013 18:15:43 +0700
 ---
 {% include JB/setup %}
 
@@ -200,3 +200,22 @@ bạn muốn đóng gói state vào trong một thực thể duy nhất.  Điể
 nhất giữa singleton và module trong trường hợp này là quá trình initialization:
 * của singleton được trì hoãn cho đến khi bạn tạo instance
 * của module diễn ra ngay khi module được khai báo
+
+### Đặt dấu phân cách nghìn cho số
+
+Lấy dấu `,` làm dấu ngân cách, chẳng hạn:
+
+```
+1234      -> 1,234
+12345     -> 12,365
+12365678  -> 12,365,678
+```
+
+Dấu phân cách cách có thể được đặt sử dụng regular expression như sau:
+
+```ruby
+formatted_number = number.to_s.reverse.gsub(/...(?=.)/, '\&,').reverse
+```
+
+Thay dấu `,` tại tham số thứ hai của `gsub` để dùng ký tự khác làm dấu phân
+cách.
