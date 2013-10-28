@@ -4,7 +4,7 @@ title: Install Infinality font patches on Debian
 description: "Install Infinality font patches on Debian-based system"
 category: fontconfig
 tags: [fontconfig, infinality, subpixel_rendering]
-last_updated: Mon, 28 Oct 2013 16:41:37 +0700
+last_updated: Mon, 28 Oct 2013 16:46:28 +0700
 ---
 {% include JB/setup %}
 
@@ -22,7 +22,8 @@ this problem for GNU/Linux distros.
 Infinality doesn't officially support Debian but thanks to
 [Xiao-Long Chen](https://github.com/chenxiaolong) for his
 [repo](https://github.com/chenxiaolong/Debian-Packages) and
-[Hadrons](http://tinyurl.com/nlk7ou7) the excellent installation instruction,
+[Hadrons](http://tinyurl.com/nlk7ou7) the
+[excellent installation instruction](http://forums.debian.net/viewtopic.php?f=16&t=88545),
 we could now install Infinality on Debian in a couple of simple steps:
 
 ```sh

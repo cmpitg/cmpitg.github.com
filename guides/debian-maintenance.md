@@ -5,7 +5,7 @@ tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
 permalink: /debian_maintenance/
-last_updated: Mon, 28 Oct 2013 16:32:46 +0700
+last_updated: Mon, 28 Oct 2013 16:46:40 +0700
 ---
 {% include JB/setup %}
 
@@ -24,7 +24,8 @@ patches to provide better font rendering and customization.
 
 Thanks to [Xiao-Long Chen](https://github.com/chenxiaolong) for his
 [repo](https://github.com/chenxiaolong/Debian-Packages) and
-[Hadrons](http://tinyurl.com/nlk7ou7) the excellent installation instruction,
+[Hadrons](http://tinyurl.com/nlk7ou7) the
+[excellent installation instruction](http://forums.debian.net/viewtopic.php?f=16&t=88545),
 we could now install Infinality on Debian in a couple of simple steps:
 
 ```sh
