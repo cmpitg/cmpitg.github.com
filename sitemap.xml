@@ -8,188 +8,272 @@
 
 <url>
   <loc>http://reference-error.org/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/posts/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://reference-error.org/pages/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/presentations/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/projects/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/rsi/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/about/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/guides/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/fontconfig/2013/10/28/install-infinality-font-patches-on-debian/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/guides/pyside/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/lisp/2013/10/26/back-to-lisp/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/projects/espada/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/ruby/2013/10/21/ruby-lambda-and-proc/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/pages/emacs-vim-problems/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/operating_system/2013/10/04/rethinking-nix/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/categories/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/misc/2013/10/04/im-still-alive/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/review/2013/04/12/rethinking-espada/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/design/2013/02/21/mockup-tool-and-espada-update/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/phone_hacking/2013/02/19/putting-a-custom-firmware-to-xpressmusic/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/design/2013/01/30/10x10-design-process/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/misc/2013/01/18/learn-yourself-a-tool/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/operating_system/2013/01/09/the-gokien-project/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://reference-error.org/programming/2012/12/22/playing-with-qtruby/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/guides/debian_maintenance/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+  <loc>http://reference-error.org/categories/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/guides/python/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/guides-vi/urt/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/guides-vi/emacs/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/guides-vi/ruby/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/pages/problems-with-non-free/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/posts/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://reference-error.org/pages/online-tips-tricks.html</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://reference-error.org/pages/vietnam-fake-foss.html</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <loc>http://reference-error.org/guides/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/guides-vi/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/problems-with-non-free/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/vietnam-fake-foss.html</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/emacs-vim-problems/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/pages/online-tips-tricks.html</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/projects/espada/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/projects/bogoengine/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/BoGoEngine/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/python/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/debian_maintenance/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/lisp/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/pyside/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/php/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/guides/system/</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/presentations/Mozilla_and_Open_Web/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/ssh.public.key.txt</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/public.key.txt</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/archive/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.51</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://reference-error.org/tags/</loc>
-  <lastmod>2013-05-19T15:06:25+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.51</priority>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/archive/ugh.pdf</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://reference-error.org/archive/paul_graham_lisp_in_web.txt</loc>
+  <lastmod>2013-10-28T12:15:33+00:00</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
 </url>
 </urlset>
