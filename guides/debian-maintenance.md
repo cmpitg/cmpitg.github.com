@@ -5,7 +5,7 @@ tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
 permalink: /debian_maintenance/
-last_updated: Mon, 28 Oct 2013 16:46:40 +0700
+last_updated: Mon, 28 Oct 2013 17:00:18 +0700
 ---
 {% include JB/setup %}
 
@@ -60,6 +60,8 @@ sudo dpkg -i \
 # And reboot
 sudo reboot
 ```
+
+Tweak your setting in `/etc/profile.d/infinality-settings.sh`.
 
 I have [forked](https://github.com/cmpitg/infinality-debian-package) Chen's
 repository to add documentation on how to install the patches.

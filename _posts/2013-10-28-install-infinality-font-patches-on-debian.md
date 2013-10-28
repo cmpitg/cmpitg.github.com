@@ -4,7 +4,7 @@ title: Install Infinality font patches on Debian
 description: "Install Infinality font patches on Debian-based system"
 category: fontconfig
 tags: [fontconfig, infinality, subpixel_rendering]
-last_updated: Mon, 28 Oct 2013 16:46:28 +0700
+last_updated: Mon, 28 Oct 2013 16:59:32 +0700
 ---
 {% include JB/setup %}
 
@@ -59,7 +59,9 @@ sudo dpkg -i \
 sudo reboot
 ```
 
-And enjoy!
+Tweak your settings in `/etc/profile.d/infinality-settings.sh`.
+
+Enjoy!
 
 Also, I have [forked](https://github.com/cmpitg/infinality-debian-package)
 Chen's repository to add documentation on how to install the patches.
