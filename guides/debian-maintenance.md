@@ -5,7 +5,7 @@ tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
 permalink: /debian_maintenance/
-last_updated: Sun, 27 Oct 2013 02:30:18 +0700
+last_updated: Mon, 28 Oct 2013 16:32:46 +0700
 ---
 {% include JB/setup %}
 
@@ -16,6 +16,52 @@ last_updated: Sun, 27 Oct 2013 02:30:18 +0700
 * This guide makes use of `sudo` instead of `su` for various reasons (TODO).
 
 ## Tasks
+
+### Install Infinality Freetype patch
+
+[Infinality patches](http://www.infinality.net/blog/) is a collection of
+patches to provide better font rendering and customization.
+
+Thanks to [Xiao-Long Chen](https://github.com/chenxiaolong) for his
+[repo](https://github.com/chenxiaolong/Debian-Packages) and
+[Hadrons](http://tinyurl.com/nlk7ou7) the excellent installation instruction,
+we could now install Infinality on Debian in a couple of simple steps:
+
+```sh
+## We're gonna use sudo due to its superiority compared to su
+
+# Install the basic requirement: Git and devscripts
+sudo aptitude install git devscripts
+
+# Clone the repo
+cd /any/dir/
+git clone https://github.com/cmpitg/infinality-debian-package.git
+
+# Install and build dependencies
+cd infinality-debian-package/freetype-infinality/
+dpkg-checkbuilddeps
+cd ../fontconfig-infinality/
+dpkg-checkbuilddeps
+# Then install them all
+
+# Build the package
+cd ../freetype-infinality/
+./build.sh
+cd ../fontconfig-infinality/
+./build.sh
+
+# And install all the .deb files
+cd ../
+sudo dpkg -i \
+    freetype-infinality/*.deb \
+    fontconfig-infinality/*.deb
+
+# And reboot
+sudo reboot
+```
+
+I have [forked](https://github.com/cmpitg/infinality-debian-package) Chen's
+repository to add documentation on how to install the patches.
 
 ### Clean up APT cache
 
