@@ -5,7 +5,7 @@ tagline: "(void-function this)"
 description: "Lisp vs. Python mentality @ PTL (Racket) mailing list archive"
 category: lisp
 tags: [racket, lisp, python, mindset]
-last_updated: Thu, 31 Oct 2013 07:53:08 +0700
+last_updated: Thu, 31 Oct 2013 07:57:21 +0700
 ---
 {% include JB/setup %}
 
@@ -64,4 +64,4 @@ a == b
 > Next question.
 >
 
-Enough said!  Bravo Lisp!
+Enough said!  Way to go Lisp!
