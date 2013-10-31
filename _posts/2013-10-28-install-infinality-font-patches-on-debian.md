@@ -2,6 +2,7 @@
 layout: post
 title: Install Infinality font patches on Debian
 description: "Install Infinality font patches on Debian-based system"
+tagline: "Everything Debian"
 category: fontconfig
 tags: [fontconfig, infinality, subpixel_rendering]
 last_updated: Mon, 28 Oct 2013 20:01:46 +0700
