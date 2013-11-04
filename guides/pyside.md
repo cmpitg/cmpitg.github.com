@@ -473,6 +473,10 @@ Tearing off a menu means "extracting" the menu into a standalone widget and vice
      textEdit.setTextCursor(cursor)
      ```
 
+#### Moving
+
+
+
 #### Selecting
 
 Selecting a block of text is done by moving the text cursor to the beginning
