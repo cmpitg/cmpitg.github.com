@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Mon, 04 Nov 2013 16:52:27 +0700
+last_updated: Mon, 04 Nov 2013 17:20:16 +0700
 ---
 {% include JB/setup %}
 
@@ -59,7 +59,7 @@ class MyClass:
 
 To hash a `dict`, one way is to use `frozenset`:
 
-```
+```python
 d = { "a": 1, "b": 2 }
 some_dict[frozenset(sorted(d.items()))] = 10
 ```
@@ -99,33 +99,31 @@ def capitalize_str(str):
     return str[:1].upper() + str[1:]
 ```
 
-### Expand path
+### Adding `classmethod` to class dynamically
 
-Assume that your home directory is `/home/hello` and `/home/johndoe/tmp/` directory exists, given the following inputs
+By making use of `getattr` and `setattr`:
 
 ```python
-"~"
-"~johndoe"
-"~johndoe/tmp/"
+getattr(x, 'y') == (x.y)
+setattr(x, 'y', v) == (x.y = v)
 ```
 
-would produce the following outputs:
-
 ```python
-"/home/hello/"
-"/home/johndoe/"
-"/home/johndoe/tmp/"
-```
+import types
 
-Function:
+class RandomClass(object):
+    @classmethod
+    def add_method(cls, func):
+        return setattr(cls, func.__name__, types.MethodType(func, cls))
 
-```python
-from os import path as ospath
 
-def expand_path(path):
-    """Expand shell path to absolute path.  E.g.
-        expand_path("~")          # => Your home directory
-        expand_path("~johndoe")   # => "/home/johndoe/" if existed
-    """
-    return ospath.abspath(ospath.expanduser(path))
+def say_hello(self, words):
+    print(words)
+
+
+RandomClass.add_method(say_hello)
+RandomClass.say_hello('World from class!')
+
+random_instance = RandomClass()
+random_instance.say_hello('World from instance!')
 ```
