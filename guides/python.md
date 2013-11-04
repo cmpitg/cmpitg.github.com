@@ -5,13 +5,13 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Sun, 13 Oct 2013 23:05:40 +0700
+last_updated: Mon, 04 Nov 2013 16:52:27 +0700
 ---
 {% include JB/setup %}
 
-*Note: This is an unpublished page*
-
-**Supported Python version/implementation**: [CPython](http://en.wikipedia.org/wiki/Cpython) [3+](http://en.wikipedia.org/wiki/Py3k#Version_3.0)
+**Supported Python version/implementation**:
+[CPython](http://en.wikipedia.org/wiki/Cpython)
+[3+](http://en.wikipedia.org/wiki/Py3k#Version_3.0)
 
 ## Notes
 
@@ -22,6 +22,20 @@ last_updated: Sun, 13 Oct 2013 23:05:40 +0700
 * Forget what I love and hate about Python, use it and have fun!
 
 * Good way to call [IPython](http://ipython.org/) is to use it with `qtconsole`, i.e. `ipython3 qtconsole`.
+
+## (Not-so) FAQs
+
+### `classmethod` vs. `staticmethod`
+
+Stackoverflow question:
+[What is the difference between @staticmethod and @classmethod in Python?](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
+
+* `staticmethod`:
+  - knows nothing about the class or instance,
+  - basically useless, could completely be replaced by module function
+
+* `classmethod`:
+  - gets passed the class or instance it was called on,
 
 ## Idioms
 
