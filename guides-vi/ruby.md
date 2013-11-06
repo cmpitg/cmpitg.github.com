@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sat, 26 Oct 2013 18:15:43 +0700
+last_updated: Wed, 06 Nov 2013 14:25:50 +0700
 ---
 {% include JB/setup %}
 
@@ -123,6 +123,19 @@ puts using_proc         # => 'Return from a Proc'
 ```
 
 ## Các kỹ thuật
+
+### Kiểm tra xem một URL có tồn tại hay không
+
+Sử dụng `net/http` để request header và kiểm code return code có phải là 2xx
+hoặc 3xx hay không:
+
+```ruby
+def url_exists?(url)
+  url = URI.parse url
+  return_code = Net::HTTP.new(url.host, url.port).request_head(url.path).code
+  nil != ((/3../ =~ return_code) || (/2../ =~ return_code))
+end
+```
 
 ### Copy file
 
