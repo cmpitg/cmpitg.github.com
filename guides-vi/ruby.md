@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sat, 09 Nov 2013 07:14:35 +0700
+last_updated: Sat, 09 Nov 2013 10:02:10 +0700
 ---
 {% include JB/setup %}
 
@@ -159,6 +159,12 @@ puts using_proc         # => 'Return from a Proc'
   File.exists?      a_path
   FileTest.exists?  a_path
   Pathname.exists?  a_path
+  ```
+
+* Glob:
+
+  ```ruby
+  puts Dir.glob("/*")
   ```
 
 ### Kiểm tra xem một URL có tồn tại hay không
