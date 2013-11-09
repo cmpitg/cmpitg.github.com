@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sat, 09 Nov 2013 07:11:00 +0700
+last_updated: Sat, 09 Nov 2013 07:14:35 +0700
 ---
 {% include JB/setup %}
 
@@ -148,8 +148,17 @@ puts using_proc         # => 'Return from a Proc'
 
   ```ruby
   # Beware of security vulnerability, safe bet: read doc, set :secure => true
-  FileUtils.rm_r "~/tmp/foo", :secure => true, :force => true
-  FileUtils.rmtree "~/tmp/foo", :secure => true
+  FileUtils.rm_r    "~/tmp/foo", :secure => true, :force => true
+  FileUtils.rmtree  "~/tmp/foo", :secure => true
+  ```
+
+* Kiểm tra một file/thư mục có tồn tại hay không:
+
+  ```ruby
+  # All are the same
+  File.exists?      a_path
+  FileTest.exists?  a_path
+  Pathname.exists?  a_path
   ```
 
 ### Kiểm tra xem một URL có tồn tại hay không
