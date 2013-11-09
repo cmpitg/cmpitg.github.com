@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sat, 09 Nov 2013 07:06:34 +0700
+last_updated: Sat, 09 Nov 2013 07:11:00 +0700
 ---
 {% include JB/setup %}
 
@@ -142,6 +142,14 @@ puts using_proc         # => 'Return from a Proc'
 
   # Recommended
   FileUtils.mkdir_p File.expand_path("~/tmp/foo"), :mode => 0700
+  ```
+
+* Xóa cây thư mục:
+
+  ```ruby
+  # Beware of security vulnerability, safe bet: read doc, set :secure => true
+  FileUtils.rm_r "~/tmp/foo", :secure => true, :force => true
+  FileUtils.rmtree "~/tmp/foo", :secure => true
   ```
 
 ### Kiểm tra xem một URL có tồn tại hay không
