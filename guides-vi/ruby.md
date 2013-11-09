@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Wed, 06 Nov 2013 14:25:50 +0700
+last_updated: Sat, 09 Nov 2013 07:06:34 +0700
 ---
 {% include JB/setup %}
 
@@ -123,6 +123,26 @@ puts using_proc         # => 'Return from a Proc'
 ```
 
 ## Các kỹ thuật
+
+### Xử lý file và thư mục
+
+* Lấy thư mục `$HOME`:
+
+  ```ruby
+  Dir.home
+  File.expand_path "~"
+  ```
+
+* Tạo thư mục `$HOME/tmp/foo`, permission `700`:
+
+  ```ruby
+  # Ambiguous parameters, not recommended
+  Dir.mkdir File.expand_path("~/tmp/")
+  Dir.mkdir File.expand_path("~/tmp/foo"), 0700
+
+  # Recommended
+  FileUtils.mkdir_p File.expand_path("~/tmp/foo"), :mode => 0700
+  ```
 
 ### Kiểm tra xem một URL có tồn tại hay không
 
