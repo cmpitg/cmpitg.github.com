@@ -5,9 +5,16 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Wed, 06 Nov 2013 01:51:29 +0700
+last_updated: Tue, 12 Nov 2013 16:57:07 +0700
 ---
 {% include JB/setup %}
+
+## Emacs integration
+
+`#lang not enabled in the current context`
+
+`C-c C-k` to compile first, then load all except for the `#lang` line: `C-c
+C-r`.
 
 ## Idioms
 
@@ -36,3 +43,24 @@ on the Racket-user mailing list:
   (directory-list $[c:\Program Files] )        ; use paring chars as delimiters
   (regexp-split (pregexp $'\s') "two fields")  ; -> '("two" "fields")
   ```
+
+## FAQs
+
+### When to use keywords and when to use symbols
+
+From [Racket Guide](http://docs.racket-lang.org/guide/keywords.html):
+
+> **Keywords** are intended for use (unquoted) as special markers in *argument
+> lists* and in certain *syntactic forms*. For *run-time flags* and
+> *enumerations*, use **symbols** instead of keywords
+
+```scheme
+(define dir (find-system-path 'temp-dir)) ; not '#:temp-dir
+
+(with-output-to-file (build-path dir "stuff.txt")
+  (lambda () (printf "example\n"))
+  ; optional #:mode argument can be 'text or 'binary
+  #:mode 'text
+  ; optional #:exists argument can be 'replace, 'truncate, ...
+  #:exists 'replace)
+```
