@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env ruby1.9"
 category: Programming_Language
 tags: [ruby, guide]
 permalink: /ruby/
-last_updated: Sat, 09 Nov 2013 10:02:10 +0700
+last_updated: Wed, 13 Nov 2013 11:32:12 +0700
 ---
 {% include JB/setup %}
 
@@ -30,10 +30,10 @@ last_updated: Sat, 09 Nov 2013 10:02:10 +0700
   Ruby và
   [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk_programming_language) thì
   cú pháp tương ứng là `123.to_s` và `123 printString`.  Bạn có thể tranh cãi
-  rằng `123` là một giá trị `primitive type` nên không gọi được method; và
-  điều bạn nói không sai.  Thế nhưng `primitive type` của Java không phải là
-  class, và giá trị `123` không phải là object; vì vậy khẩu hiệu *đáng tự hào*
-  "Everything is an object" của Java là **bốc phét nặng**.
+  rằng `123` là một giá trị `primitive type` nên không gọi được method.  Đúng,
+  nhưng `primitive type` của Java không phải là class, và giá trị `123` không
+  phải là object; vì vậy khẩu hiệu "Everything is an object" của Java là **bốc
+  phét**!
 
 * Ruby là một trong số 3 ngôn ngữ tôi đề xuất bạn tìm hiểu, nếu bạn *thực sự
   nghiêm túc* muốn học & sử dụng *lập trình hướng đối tượng* (OOP).  Hai ngôn
