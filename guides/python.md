@@ -15,13 +15,22 @@ last_updated: Wed, 13 Nov 2013 11:28:16 +0700
 
 ## Notes
 
-* I like Python to some extent, mostly for its relatively clean syntax, healthy community, practical uses, and well-supported in the *desktop* land.
+* I like Python to some extent, mostly for its relatively clean syntax,
+  healthy community, practical uses, and well-supported in the *desktop* land.
 
-* I don't like Python for its unconventional and inconsistent naming convention, especially conflict naming conventions in the standard library, broken syntax, limited supported for [functional programming practice](http://stackoverflow.com/questions/1017621/why-isnt-python-very-good-for-functional-programming) (thanks to [Guido](http://www.artima.com/weblogs/viewpost.jsp?thread=98196)'s [*dictatorship*](http://en.wikipedia.org/wiki/Benevolent_Dictator_For_Life), half-ass OOP (can you *ever* be able to do `1.to_str()`?), ...), ...
+* I don't like Python for its unconventional and inconsistent naming
+  convention, especially conflict naming conventions in the standard library,
+  broken syntax, limited supported for
+  [functional programming practice](http://stackoverflow.com/questions/1017621/why-isnt-python-very-good-for-functional-programming)
+  (thanks to
+  [Guido](http://www.artima.com/weblogs/viewpost.jsp?thread=98196)'s
+  [*dictatorship*](http://en.wikipedia.org/wiki/Benevolent_Dictator_For_Life),
+  half-ass OOP (can you *ever* be able to do `1.to_str()`?), ...), ...
 
 * Forget what I love and hate about Python, use it and have fun!
 
-* Good way to call [IPython](http://ipython.org/) is to use it with `qtconsole`, i.e. `ipython3 qtconsole`.
+* Good way to call [IPython](http://ipython.org/) is to use it with
+  `qtconsole`, i.e. `ipython3 qtconsole`.
 
 ## (Not-so) FAQs
 
