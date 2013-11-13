@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Mon, 04 Nov 2013 17:20:16 +0700
+last_updated: Wed, 13 Nov 2013 11:28:16 +0700
 ---
 {% include JB/setup %}
 
@@ -36,6 +36,82 @@ Stackoverflow question:
 
 * `classmethod`:
   - gets passed the class or instance it was called on,
+
+### Decorator explanation
+
+A decorator is **a callable** that **takes a function** as an argument and
+**returns a replacement function**.  This is best illustrated with the
+following code snippet:
+
+```python
+#
+# function()
+# -> replacement()
+#
+
+print("Case #1: function() -> replacement()")
+
+def a_decorator(a_func):
+    def replacement():
+        ret = a_func()
+        print("Result before decorated: {}".format(ret))
+        return ret + 1
+    return replacement
+
+
+@a_decorator
+def just_return_1():
+    return 1
+
+
+print("Result after decorated: {}".format(just_return_1()))
+
+#
+# function(an_arg)
+# -> replacement()
+#
+
+print()
+print("Case #2: function(an_arg) -> replacement()")
+
+def one_becomes_zero_decorator(a_func):
+    def replacement():
+        ret = a_func(10)
+        print("No more argument, a_func(10) is called.")
+        return ret
+    return replacement
+
+
+@one_becomes_zero_decorator
+def just_return_x(x):
+    return x
+
+
+print("Result after decorated: {}".format(just_return_x()))
+
+#
+# function(an_arg)
+# -> replacement(same_arg)
+#
+
+print()
+print("Case #3: function(an_arg) -> replacement(same_arg)")
+
+def keeping_argument_decorator(a_func):
+    def replacement(same_arg):
+        ret = a_func(same_arg)
+        print("Result before decorated: {}".format(ret))
+        return ret - 100
+    return replacement
+
+
+@keeping_argument_decorator
+def just_return_x_squared(x):
+    return x * x
+
+
+print("Result after decorated: {}".format(just_return_x_squared(20)))
+```
 
 ## Idioms
 
