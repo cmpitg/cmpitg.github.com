@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Tue, 12 Nov 2013 16:57:07 +0700
+last_updated: Wed, 13 Nov 2013 15:40:31 +0700
 ---
 {% include JB/setup %}
 
@@ -64,3 +64,11 @@ From [Racket Guide](http://docs.racket-lang.org/guide/keywords.html):
   ; optional #:exists argument can be 'replace, 'truncate, ...
   #:exists 'replace)
 ```
+
+### `print` vs. `write` vs. `display`
+
+From [Racket Guide](http://docs.racket-lang.org/guide/read-write.html):
+
+* `print` displays a value in its normal form,
+* `write` displays a value in a form that `read` uses to read,
+* `display` displays a value in human-readable form.
