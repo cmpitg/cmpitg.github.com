@@ -101,13 +101,13 @@ Theo
 
 * Khi bạn set:
 
-  ```lisp
+  ```scheme
   (global-set-key (kbd "C-c") 'a-function)
   ```
 
   Điều này tương đương với:
 
-  ```lisp
+  ```scheme
   (define-key (current-global-map) (kbd "C-c") 'a-function)
   ```
 
@@ -117,7 +117,7 @@ Theo
 * Để remap key thực hiện function `kill-line` sang
   function `my-kill-line`, dùng:
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
 
   ;; or with global keybinding
@@ -126,7 +126,7 @@ Theo
 
 * Remap chỉ hoạt động ở *một mức*, tức là nếu bạn dùng:
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
   (define-key some-mode-map [remap my-kill-line] 'my-other-kill-line)
   ```
@@ -136,7 +136,7 @@ Theo
 
 * Để undo một remap, remap lại key thành nil:
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] nil)
   ```
 
@@ -145,7 +145,7 @@ Theo
 Tham số thứ hai của `shell-command` định rõ output buffer, nếu là `t` thì
 output sẽ được đưa ra buffer hiện tại:
 
-```lisp
+```scheme
 (with-temp-buffer
   (shell-command "cat ~/.emacs.d/init.el" t))
 ```
@@ -155,7 +155,7 @@ output sẽ được đưa ra buffer hiện tại:
 Hiểu cách thức `interactive`
 [hoạt động](http://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html).
 
-```lisp
+```scheme
 (interactive (list ($read-string "File name (~/bin/): "
                            :initial-input "~/bin/")))
 ```
