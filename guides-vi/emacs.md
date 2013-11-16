@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 16 Nov 2013 10:54:24 +0700
+last_updated: Sat, 16 Nov 2013 10:57:44 +0700
 ---
 {% include JB/setup %}
 
@@ -101,13 +101,13 @@ Theo
 
 * Khi bạn set:
 
-  ```elisp
+  ```lisp
   (global-set-key (kbd "C-c") 'a-function)
   ```
 
   Điều này tương đương với:
 
-  ```elisp
+  ```lisp
   (define-key (current-global-map) (kbd "C-c") 'a-function)
   ```
 
@@ -117,7 +117,7 @@ Theo
 * Để remap key thực hiện function `kill-line` sang
   function `my-kill-line`, dùng:
 
-  ```elisp
+  ```lisp
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
 
   ;; or with global keybinding
@@ -126,7 +126,7 @@ Theo
 
 * Remap chỉ hoạt động ở *một mức*, tức là nếu bạn dùng:
 
-  ```elisp
+  ```lisp
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
   (define-key some-mode-map [remap my-kill-line] 'my-other-kill-line)
   ```
@@ -136,7 +136,7 @@ Theo
 
 * Để undo một remap, remap lại key thành nil:
 
-  ```elisp
+  ```lisp
   (define-key some-mode-map [remap kill-line] nil)
   ```
 
@@ -145,7 +145,7 @@ Theo
 Tham số thứ hai của `shell-command` định rõ output buffer, nếu là `t` thì
 output sẽ được đưa ra buffer hiện tại:
 
-```elisp
+```lisp
 (with-temp-buffer
   (shell-command "cat ~/.emacs.d/init.el" t))
 ```
@@ -155,7 +155,7 @@ output sẽ được đưa ra buffer hiện tại:
 Hiểu cách thức `interactive`
 [hoạt động](http://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html).
 
-```elisp
+```lisp
 (interactive (list ($read-string "File name (~/bin/): "
                            :initial-input "~/bin/")))
 ```
