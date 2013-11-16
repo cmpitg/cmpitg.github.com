@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 16 Nov 2013 15:28:33 +0700
+last_updated: Sat, 16 Nov 2013 15:33:28 +0700
 ---
 {% include JB/setup %}
 
@@ -148,6 +148,26 @@ output sẽ được đưa ra buffer hiện tại:
 ```scheme
 (with-temp-buffer
   (shell-command "cat ~/.emacs.d/init.el" t))
+```
+
+### Bỏ nonpane buffer (cửa sổ phụ bên dưới) khi khởi động Sunrise Commander
+
+```scheme
+(defun sunrise-without-nonpane-buffer ()
+  "Open Sunrise Commander without the nonpane buffer."
+  (unless sr-running
+    (sunrise)
+    (sr-setup-windows)  ; Make sure windows are setup properly
+    (windmove-down)
+    (delete-window)))
+
+(defun sunrise-cd-without-nonpane-buffer ()
+  "Open sunrise-cd without the nonpane buffer."
+  (unless sr-running
+    (sunrise-cd)
+    (sr-setup-windows)  ; Make sure windows are setup properly
+    (windmove-down)
+    (delete-window)))
 ```
 
 ### Dùng `interactive` với giá trị mặc định
