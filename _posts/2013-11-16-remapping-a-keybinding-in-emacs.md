@@ -4,7 +4,7 @@ title: Remapping a keybinding in Emacs
 tagline: "Emacs Rocks"
 category: Emacs
 tags: [emacs, emacs_lisp, elisp, keybinding]
-last_updated: Sat, 16 Nov 2013 10:58:59 +0700
+last_updated: Sat, 16 Nov 2013 11:08:38 +0700
 ---
 {% include JB/setup %}
 
@@ -14,7 +14,7 @@ here are just some quick notes:
 
 * To remap a keybinding, use the `remap` event:
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
   
   ;; or with global keybinding
@@ -23,7 +23,7 @@ here are just some quick notes:
 
 * Remap works on **one level** only, if the following snippet is `eval`-ed
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
   (define-key some-mode-map [remap my-kill-line] 'my-other-kill-line)
   ```
@@ -33,19 +33,19 @@ here are just some quick notes:
 
 * To undo remapping, remap again to `nil`:
 
-  ```lisp
+  ```scheme
   (define-key some-mode-map [remap kill-line] nil)
   ```
 
 A small note about `global-set-key`: using
 
-```lisp
+```scheme
 (global-set-key (kbd "C-c") 'a-function)
 ```
 
 is equivalent to:
 
-```lisp
+```scheme
 (define-key (current-global-map) (kbd "C-c") 'a-function)
 ```
 
