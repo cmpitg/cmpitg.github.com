@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 16 Nov 2013 10:40:39 +0700
+last_updated: Sat, 16 Nov 2013 10:54:24 +0700
 ---
 {% include JB/setup %}
 
@@ -114,11 +114,14 @@ Theo
   Nghĩa là bất kỳ keybinding global nào được set bằng `global-set-key` cũng có
   thể được set bằng `define-key`.
 
-* Remap hoạt động theo mode, để remap key thực hiện function `kill-line` sang
+* Để remap key thực hiện function `kill-line` sang
   function `my-kill-line`, dùng:
 
   ```elisp
   (define-key some-mode-map [remap kill-line] 'my-kill-line)
+
+  ;; or with global keybinding
+  (global-set-key [remap kill-line] 'my-kill-line)
   ```
 
 * Remap chỉ hoạt động ở *một mức*, tức là nếu bạn dùng:
