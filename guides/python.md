@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Wed, 13 Nov 2013 11:28:16 +0700
+last_updated: Sat, 16 Nov 2013 11:20:44 +0700
 ---
 {% include JB/setup %}
 
@@ -121,6 +121,43 @@ def just_return_x_squared(x):
 
 print("Result after decorated: {}".format(just_return_x_squared(20)))
 ```
+
+### How to install Python 3 version of package via `pip`
+
+From
+[my answer at Stack Overflow](http://stackoverflow.com/questions/10763440/how-to-install-python3-version-of-package-via-pip/17266254#17266254):
+
+* Install `setuptools` for Python 3 in case it's not installed yet.  For Debian-based:
+
+  ```sh
+  sudo aptitude install python3-setuptools
+
+  # or
+  su -c 'aptitude install python3-setuptools' -
+
+  # or
+  sudo apt-get install python3-setuptools
+  ```
+
+* With Python 2.4+, `easy_install` could be invoked with specific Python
+  version by `python -m easy_install`, so `pip` for Python 3 could be
+  installed by:
+
+  ```sh
+  sudo python3 -m easy_install pip
+
+  # or
+  su -c 'python3 -m easy_install pip' -
+  ```
+
+* Now you got `pip` 3, invoke it with its specific version, e.g.
+
+  ```sh
+  sudo pip-3.2 install pygments
+
+  # or
+  su -c 'pip-3.2 install pygments' -
+  ```
 
 ## Idioms
 
