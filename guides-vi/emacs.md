@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Wed, 13 Nov 2013 16:02:19 +0700
+last_updated: Sat, 16 Nov 2013 10:40:39 +0700
 ---
 {% include JB/setup %}
 
@@ -83,3 +83,80 @@ Emacs package manager là tính năng quản lý gói của Emacs, có sẵn t�
 * Xác định xem một gói đã được cài hay chưa: Dùng hàm `(package-installed-p
   package-name)`.  Tôi thì lại thích đặt alias thành `($package-installed?
   package-name)`.
+
+## Các kỹ thuật
+
+Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt vời và cẩn thận của của
+[Xah Lee](http://xahlee.org/):
+
+* [Emacs Lisp Tutorial by Example](http://ergoemacs.org/emacs/elisp_basics.html)
+* [Common Emacs Lisp Functions](http://ergoemacs.org/emacs/elisp_common_functions.html)
+* [Emacs Lisp Idioms for Text_Editor Processing in Batch Style](http://ergoemacs.org/emacs/elisp_idioms_batch.html)
+* [Emacs Lisp Idioms for Writing Interactive Commands](http://ergoemacs.org/emacs/elisp_idioms.html)
+
+### Remap lại key dựa trên tên function
+
+Theo
+[GNU Emacs Lisp Reference](http://www.gnu.org/software/emacs/manual/html_node/elisp/Remapping-Commands.html):
+
+* Khi bạn set:
+
+  ```elisp
+  (global-set-key (kbd "C-c") 'a-function)
+  ```
+
+  Điều này tương đương với:
+
+  ```elisp
+  (define-key (current-global-map) (kbd "C-c") 'a-function)
+  ```
+
+  Nghĩa là bất kỳ keybinding global nào được set bằng `global-set-key` cũng có
+  thể được set bằng `define-key`.
+
+* Remap hoạt động theo mode, để remap key thực hiện function `kill-line` sang
+  function `my-kill-line`, dùng:
+
+  ```elisp
+  (define-key some-mode-map [remap kill-line] 'my-kill-line)
+  ```
+
+* Remap chỉ hoạt động ở *một mức*, tức là nếu bạn dùng:
+
+  ```elisp
+  (define-key some-mode-map [remap kill-line] 'my-kill-line)
+  (define-key some-mode-map [remap my-kill-line] 'my-other-kill-line)
+  ```
+
+  Thì dòng remap thứ hai **không có tác dụng***, nghĩa là `kill-line` chỉ được
+  remap thành `my-kill-line`.
+
+* Để undo một remap, remap lại key thành nil:
+
+  ```elisp
+  (define-key some-mode-map [remap kill-line] nil)
+  ```
+
+### Thi hành shell command, đưa output ra temp buffer
+
+Tham số thứ hai của `shell-command` định rõ output buffer, nếu là `t` thì
+output sẽ được đưa ra buffer hiện tại:
+
+```elisp
+(with-temp-buffer
+  (shell-command "cat ~/.emacs.d/init.el" t))
+```
+
+### Dùng `interactive` với giá trị mặc định
+
+Hiểu cách thức `interactive`
+[hoạt động](http://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Interactive.html).
+
+```elisp
+(interactive (list ($read-string "File name (~/bin/): "
+                           :initial-input "~/bin/")))
+```
+
+### Sử dụng keyword argument giống Common Lisp
+
+http://curiousprogrammer.wordpress.com/2009/08/16/elisp-keyword-params/
