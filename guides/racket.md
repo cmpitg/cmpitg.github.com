@@ -26,7 +26,7 @@ on the Racket-user mailing list:
 
 * Using [Scribble](http://docs.racket-lang.org/scribble/)'s `@` syntax:
 
-  ```scheme
+  ```racket
   #lang at-exp racket
 
   (define s_ string-append)
@@ -36,7 +36,7 @@ on the Racket-user mailing list:
 * Using [a library](https://github.com/jarnaldich/with-raw-string) written by
   Joan Arnaldich ([@jarnaldich](https://github.com/jarnaldich)):
 
-  ```scheme
+  ```racket
   #lang with-raw-string racket #\$
 
   (directory-list $"\\SERVER\Share")           ; list unc paths under windows
@@ -54,7 +54,7 @@ From [Racket Guide](http://docs.racket-lang.org/guide/keywords.html):
 > lists* and in certain *syntactic forms*. For *run-time flags* and
 > *enumerations*, use **symbols** instead of keywords
 
-```scheme
+```racket
 (define dir (find-system-path 'temp-dir)) ; not '#:temp-dir
 
 (with-output-to-file (build-path dir "stuff.txt")
