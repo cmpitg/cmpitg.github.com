@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 16 Nov 2013 10:57:44 +0700
+last_updated: Sat, 16 Nov 2013 15:28:33 +0700
 ---
 {% include JB/setup %}
 
@@ -86,7 +86,7 @@ Emacs package manager là tính năng quản lý gói của Emacs, có sẵn t�
 
 ## Các kỹ thuật
 
-Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt vời và cẩn thận của của
+Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt vời và cẩn thận của
 [Xah Lee](http://xahlee.org/):
 
 * [Emacs Lisp Tutorial by Example](http://ergoemacs.org/emacs/elisp_basics.html)
