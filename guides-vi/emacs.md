@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 16 Nov 2013 15:33:28 +0700
+last_updated: Mon, 18 Nov 2013 13:12:58 +0700
 ---
 {% include JB/setup %}
 
@@ -93,6 +93,12 @@ Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt v�
 * [Common Emacs Lisp Functions](http://ergoemacs.org/emacs/elisp_common_functions.html)
 * [Emacs Lisp Idioms for Text_Editor Processing in Batch Style](http://ergoemacs.org/emacs/elisp_idioms_batch.html)
 * [Emacs Lisp Idioms for Writing Interactive Commands](http://ergoemacs.org/emacs/elisp_idioms.html)
+
+### Bỏ tính năng tự động nhảy vào thư mục của `helm-find-files`
+
+```scheme
+(setq-default helm-ff-auto-update-initial-value nil)
+```
 
 ### Remap lại key dựa trên tên function
 
