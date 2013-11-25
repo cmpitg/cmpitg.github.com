@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Mon, 25 Nov 2013 14:24:26 +0700
+last_updated: Mon, 25 Nov 2013 17:25:12 +0700
 ---
 {% include JB/setup %}
 
@@ -93,6 +93,21 @@ Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt v�
 * [Common Emacs Lisp Functions](http://ergoemacs.org/emacs/elisp_common_functions.html)
 * [Emacs Lisp Idioms for Text_Editor Processing in Batch Style](http://ergoemacs.org/emacs/elisp_idioms_batch.html)
 * [Emacs Lisp Idioms for Writing Interactive Commands](http://ergoemacs.org/emacs/elisp_idioms.html)
+
+### Tạo global mode cho một minor mode
+
+Sử dụng `define-globalized-minor-mode`.  Chẳng hạn với
+[`autopair`](https://github.com/capitaomorte/autopair), global mode được tạo
+như sau:
+
+```scheme
+(define-globalized-minor-mode
+  autopair-global-mode autopair-mode autopair-on)
+```
+
+`autopair-on` là hàm không nhận tham số, được gọi khi mode được kích hoạt.
+Tham khảo trong documentation của `define-globalized-minor-mode` để biết thêm
+chi tiết.
 
 ### Đặt docstring cho hàm của Emacs Lisp
 
