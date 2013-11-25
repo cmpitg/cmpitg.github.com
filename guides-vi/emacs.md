@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Mon, 18 Nov 2013 13:12:58 +0700
+last_updated: Mon, 25 Nov 2013 14:24:26 +0700
 ---
 {% include JB/setup %}
 
@@ -93,6 +93,50 @@ Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt v�
 * [Common Emacs Lisp Functions](http://ergoemacs.org/emacs/elisp_common_functions.html)
 * [Emacs Lisp Idioms for Text_Editor Processing in Batch Style](http://ergoemacs.org/emacs/elisp_idioms_batch.html)
 * [Emacs Lisp Idioms for Writing Interactive Commands](http://ergoemacs.org/emacs/elisp_idioms.html)
+
+### Đặt docstring cho hàm của Emacs Lisp
+
+Theo
+[entry "Programmatically Setting Lisp Docstrings"](http://nullprogram.com/blog/2012/08/02/).
+
+Thông thường, một hàm Emacs Lisp sẽ nhận tham số `docstring` ngay sau khi danh
+sách tham số được khai báo:
+
+```scheme
+(defun this-is-a-dummy-function (&rest args)
+  "And this is its docstring."
+  nil)
+```
+
+Docstring *của một hàm* được lưu trong thuộc tính `function-documentation` của
+symbol tên hàm đó.  Docstring *của một hàm* có thể được truy cập với hàm
+`documentation`.
+
+```scheme
+(documentation 'this-is-a-dummy-function)
+;; => And this is its docstring.
+
+(documentation 'format)
+;; => ...
+```
+
+Để đặt lại docstring cho một hàm, ta chỉ việc đặt lại thuộc tính
+`function-documentation` của symbol tên hàm.
+
+```scheme
+(put 'this-is-a-dummy-function 'function-documentation
+  "Hola mundo.")
+(documentation 'this-is-a-dummy-function)    ;; => Hola mundo.
+```
+
+Tuy nhiên cần chú ý: sau khi đặt docstring sử dụng `put`, mỗi lần khai báo lại
+hàm cần đặt lại docstring bằng `put` hoặc dùng
+
+```scheme
+(put 'name-of-the-function 'function-documentation nil)
+```
+
+thì docstring mới mới có hiệu lực.
 
 ### Bỏ tính năng tự động nhảy vào thư mục của `helm-find-files`
 
