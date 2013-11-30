@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 30 Nov 2013 13:48:34 +0700
+last_updated: Sat, 30 Nov 2013 13:53:45 +0700
 ---
 {% include JB/setup %}
 
@@ -105,6 +105,19 @@ Lisp:
      (add-hook 'emacs-lisp-mode-hook        'turn-on-eldoc-mode)
      (add-hook 'lisp-interaction-mode-hook  'turn-on-eldoc-mode)
      (add-hook 'ielm-mode-hook              'turn-on-eldoc-mode)))
+```
+
+### Luôn sử dụng Sunrise Commander thay cho Dired
+
+Có thể bạn chưa biết,
+[Sunrise Commander](http://www.emacswiki.org/emacs/Sunrise_Commander) là một
+file browser rất tuyệt cho Emacs.  Tuy nhiên, người dùng Sunrise có thể gặp
+vấn đề: khi chuyển thư mục với `j`, mode tự động nhảy sang Dired rất phiền
+toái.  Tính năng của Sunrise hoàn toàn có thể thay thế Dired và hơn thế nữa.
+Để thay thế Dired bằng Sunrise khi mở thư mục thông thường, dùng:
+
+```scheme
+(setq-default find-directory-functions (cons 'sr-dired find-directory-functions))
 ```
 
 ### Kiểm tra dấu ngoặc thừa/thiếu
