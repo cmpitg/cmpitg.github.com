@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 30 Nov 2013 13:42:24 +0700
+last_updated: Sat, 30 Nov 2013 13:48:34 +0700
 ---
 {% include JB/setup %}
 
@@ -93,6 +93,19 @@ Cách tốt nhất để bắt đầu là đọc các hướng dẫn tuyệt v�
 * [Common Emacs Lisp Functions](http://ergoemacs.org/emacs/elisp_common_functions.html)
 * [Emacs Lisp Idioms for Text_Editor Processing in Batch Style](http://ergoemacs.org/emacs/elisp_idioms_batch.html)
 * [Emacs Lisp Idioms for Writing Interactive Commands](http://ergoemacs.org/emacs/elisp_idioms.html)
+
+Khi cấu hình một thư viện, cách tốt nhất là đặt code cấu hình trong
+`eval-after-load` để đảm bảo Emacs vẫn chạy ngay cả khi thư viện ấy chưa được
+cài đặt.  Chẳng hạn để kích hoạt `eldoc-mode` trong các mode liên quan đến
+Lisp:
+
+```scheme
+(eval-after-load 'eldoc
+  '(progn
+     (add-hook 'emacs-lisp-mode-hook        'turn-on-eldoc-mode)
+     (add-hook 'lisp-interaction-mode-hook  'turn-on-eldoc-mode)
+     (add-hook 'ielm-mode-hook              'turn-on-eldoc-mode)))
+```
 
 ### Kiểm tra dấu ngoặc thừa/thiếu
 
