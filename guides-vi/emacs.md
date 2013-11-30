@@ -109,7 +109,7 @@ Lisp:
 
 ### Kiểm tra dấu ngoặc thừa/thiếu
 
-Sử dụng command/hàm `check-parens`
+Sử dụng command/hàm `check-parens`.
 
 ### Chèn header vào đầu file
 
