@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Mon, 02 Dec 2013 14:02:25 +0700
+last_updated: Mon, 02 Dec 2013 14:37:01 +0700
 ---
 {% include JB/setup %}
 
@@ -296,6 +296,10 @@ Hiểu cách thức `interactive`
 (interactive (list ($read-string "File name (~/bin/): "
                            :initial-input "~/bin/")))
 ```
+
+### Đóng Emacs
+
+Sử dụng command/hàm `(kill-emacs)` hoặc `(save-buffers-kill-emacs)`.
 
 ### Sử dụng keyword argument giống Common Lisp
 
