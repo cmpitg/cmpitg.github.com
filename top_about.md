@@ -9,19 +9,19 @@ permalink: /about/
 {% include JB/setup %}
 
 
-My name is *Nguyễn Hà Dương*, also known as Duong “Yang” Nguyen in English, グ
-エンヤン in Japanese, and simply *cmpitg*. Please call me "Yang" if you don't
-want to pronounce the word :-). I'm a
-[FOSS](http://en.wikipedia.org/wiki/Free_and_Open_Source_Software) activist in
-Vietnam, where I do software development, promote the sharing culture and
-provide support for both users and contributors. I'm a greedy person with a
-wide range of interest in FOSS projects: Mozilla (as a
+My name is *Nguyễn Hà Dương*, also known as Duong "Near" Nguyen in English, グ
+エンヤン in Japanese, and simply *cmpitg*. I'm a
+[FOSS](http://en.wikipedia.org/wiki/Free_and_Open_Source_Software) activist
+and language teacher in Vietnam, where I do software development, promote the
+sharing culture and provide support for both users and contributors. I'm a
+greedy [Lisper](http://en.wikipedia.org/wiki/Lisp_%28programming_language%29)
+with a wide range of interest in FOSS projects: Mozilla (as a
 [Mozilla Rep](https://wiki.mozilla.org/User:Cmpitg)), Fedora (also as
-[Fedora Ambassador](https://fedoraproject.org/wiki/User:Cmpitg)), Node.js,
-SpiderMonkey, ...
+[Fedora Ambassador](https://fedoraproject.org/wiki/User:Cmpitg)), Node.js, ...
 
 Besides being a member of some FOSS communities (which of course you don't
-want me to miss HanoiLUG), I and a bunch of FOSS guys have founded
+want me to miss [HanoiLUG](http://lists.hanoilug.org/listinfo)), I and a bunch
+of FOSS guys have founded
 [Hanoi Community Space](http://khonggiancongdong.org) - a FOSS working group
 and community model to promote the **philosophy and culture** of Free and Open
 Source Software, as well as to **bring value** to anyone who is a part of the
@@ -31,19 +31,23 @@ you are interested!
 
 To make my life more thrilled, I have developed
 [RSI](http://en.wikipedia.org/wiki/Repetitive_strain_injury) since
-July 2012. My life as a computer addict has never been more annoying. Oh well,
-it's a hack after all.
+July 2012. My life as a computer addict has never been more excitingly
+annoying.
+
+Well, it's a hack after all.
 
 ## My Geek Code
 
 As of 2012:
 
-    -----BEGIN GEEK CODE BLOCK-----
-    Version: 3.12
-    GIT/CS/CC/ED/P/TW d++ s:(-:-) !a C+++(++++) ULU++++ P-- L+++ E@
-    W++>+++ N+ o+ K w--- O- M@ V- PS+ PE++ Y+>++ PGP++ t+ 5 X+ R- tv+ b+++
-    DI+++ D++ G++ e* h* r* y-
-    -----END GEEK CODE BLOCK-----
+```
+-----BEGIN GEEK CODE BLOCK-----
+Version: 3.12
+GIT/CS/CC/ED/P/TW d++ s:(-:-) !a C+++(++++) ULU++++ P-- L+++ E@
+W++>+++ N+ o+ K w--- O- M@ V- PS+ PE++ Y+>++ PGP++ t+ 5 X+ R- tv+ b+++
+DI+++ D++ G++ e* h* r* y-
+-----END GEEK CODE BLOCK-----
+```
 
 ## In Programming
 
@@ -51,7 +55,12 @@ I collect programming languages as my hobby. I love and strongly believe in
 the art of designing programs. No matter how difficult a problem is,
 *programmers should always be the masters*.
 
-## In Other IT Stuff
+### Programming Style
+
+Clean, concise, functional-style code **and documentation**.  Find
+[me](https://github.com/cmpitg) on Github.
+
+## In Other IT-related Work
 
 I am a hardcore GNU/Linux system administrator. The first time I used
 GNU/Linux was in 2005, when I received a Ubuntu CD freely distributed in my
@@ -61,14 +70,14 @@ tried as many \*nix distributions as I can.
 - In 2005: Ubuntu
 - From mid 2005 to mid 2006: Slackware and Fedora
 - In second half of 2006: Debian GNU/Linux
-- From 2007 to mid 2008: openSUSE and Fedora
-- From 2009 to 2012: FreeBSD, Ubuntu
-- From 2009 to present (2012): Fedora
-- From early 2010 to Jun 2011: Arch Linux
+- From 2007 to mid 2008: openSUSE (and briefly Fedora in 2007)
+- From 2009 to 2010: FreeBSD
+- From 2010 to 2012: Ubuntu
+- From 2009 to present (2014): Fedora
+- From early 2010 to Jun 2010: Arch Linux
+- From Jun 2010 to 2012: Gentoo GNU/Linux.
 - From early 2010 to the end of 2011, 2012 to present (2014): Debian GNU/Linux
   as my main system.
-- From mid 2010 to Jun 2011: OpenBSD
-- From mid 2010 to 2012: Gentoo GNU/Linux.
 
 I’m a language, keyboard, and typeface lover. I speak Vietnamese (native),
 English (fluent), French (intermediate), Japanese (intermediate), and a bit of
