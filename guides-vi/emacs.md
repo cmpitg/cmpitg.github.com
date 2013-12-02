@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 30 Nov 2013 13:53:45 +0700
+last_updated: Mon, 02 Dec 2013 14:02:25 +0700
 ---
 {% include JB/setup %}
 
@@ -83,6 +83,23 @@ Emacs package manager là tính năng quản lý gói của Emacs, có sẵn t�
 * Xác định xem một gói đã được cài hay chưa: Dùng hàm `(package-installed-p
   package-name)`.  Tôi thì lại thích đặt alias thành `($package-installed?
   package-name)`.
+
+## Các vấn đề gặp phải khi sử dụng Emacs
+
+### Lỗi Helm: `Symbol's function definition is void: helm-log-eval-internal`
+
+Theo cách xử lý
+[issue đã được report trên Github](https://github.com/emacs-helm/helm/issues/354):
+chuyển đến thư mục của Helm (thông thường là `~/.emacs.d/elpa/helm-[version]`
+nếu bạn cài Helm từ ELPA), chạy `make` lại hoặc xóa hết các file `.elc` và
+load lại `helm.el` là được:
+
+```
+# M-x eshell
+cd ~/.emacs.d/elpa/helm-*/
+rm -rf *.elc
+load helm.el
+```
 
 ## Các kỹ thuật
 
