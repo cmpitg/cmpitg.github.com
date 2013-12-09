@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Wed, 13 Nov 2013 15:40:31 +0700
+last_updated: Mon, 09 Dec 2013 22:00:51 +0700
 ---
 {% include JB/setup %}
 
@@ -43,6 +43,26 @@ on the Racket-user mailing list:
   (directory-list $[c:\Program Files] )        ; use paring chars as delimiters
   (regexp-split (pregexp $'\s') "two fields")  ; -> '("two" "fields")
   ```
+
+### Redirecting standard output
+
+According to
+[The Racket Guide](http://docs.racket-lang.org/guide/default-ports.html),
+default ports could be retrieved with `(current-input-port)`,
+`(current-output-port)`, and `(current-error-port)`.  They are actually
+parameters, and thus could be `parameterize`d:
+
+```racket
+#lang racket
+
+(define (display-to-string)
+  (let ([output-port (open-output-string)])
+    (parameterize ([current-output-port output-port])
+      (display "Hello World"))
+    (get-output-string output-port)))
+
+(display (format "Result: ~a" (display-to-string)))
+```
 
 ## FAQs
 
