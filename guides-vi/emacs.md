@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Mon, 02 Dec 2013 14:37:01 +0700
+last_updated: Sat, 28 Dec 2013 21:35:55 +0700
 ---
 {% include JB/setup %}
 
@@ -122,6 +122,19 @@ Lisp:
      (add-hook 'emacs-lisp-mode-hook        'turn-on-eldoc-mode)
      (add-hook 'lisp-interaction-mode-hook  'turn-on-eldoc-mode)
      (add-hook 'ielm-mode-hook              'turn-on-eldoc-mode)))
+```
+
+### Sử dụng `C-u` và gọi command khi viết Emacs Lisp
+
+Về bản chất, `C-u` gọi hàm `universal-argument`, hàm này sẽ đặt giá trị
+`current-prefix-arg` bằng số lần nhấn `C-u` sử dụng
+[dynamic binding](http://en.wikipedia.org/wiki/Dynamic_binding) và trả lại giá
+trị `nil` sau khi command được thực hiện xong.  Do đó, để viết Emacs Lisp thực
+hiện lại quá trình này, mã nguồn sẽ có dạng sau:
+
+```scheme
+(let ((current-prefix-arg 1))
+  (call-interactively 'some-function))
 ```
 
 ### Luôn sử dụng Sunrise Commander thay cho Dired
