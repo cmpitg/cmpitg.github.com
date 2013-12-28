@@ -5,7 +5,7 @@ tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
 permalink: /debian_maintenance/
-last_updated: Mon, 28 Oct 2013 17:00:18 +0700
+last_updated: Sat, 28 Dec 2013 21:19:01 +0700
 ---
 {% include JB/setup %}
 
@@ -92,3 +92,12 @@ Simple mount your disk to a temporarily separated mount point and examine it.
 * Then use `baobab` to examine the mount point.
 
 * (Optional) Unmount when done.
+
+### Zsh complains about `__rvm_cleanse_variables`
+
+It's due to Zsh's auto-completion cache.  Removing the cache solves the
+problem:
+
+```sh
+rm -f ~/.zcompdump
+```
