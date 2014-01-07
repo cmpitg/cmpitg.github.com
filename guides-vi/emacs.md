@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 28 Dec 2013 21:35:55 +0700
+last_updated: Tue, 07 Jan 2014 21:12:31 +0700
 ---
 {% include JB/setup %}
 
@@ -313,6 +313,74 @@ Hiểu cách thức `interactive`
 ### Đóng Emacs
 
 Sử dụng command/hàm `(kill-emacs)` hoặc `(save-buffers-kill-emacs)`.
+
+### Tạo menu
+
+Có 2 loại menu chính cần quan tâm:
+
+* Submenu: bản chất là một container, chứa các menu item hoặc các submenu
+  khác.
+
+* Menu item: là... menu item.
+
+Trong Emacs thì menu (cả submenu và menu item) về bản chất đều là một
+*keybinding*, trong đó:
+
+* *Keymap* chứa binding này là *keymap* thuộc về một mode.  Đây là mode mà
+  menu được hiển thị.
+
+* *Key stroke* của binding đóng vai trò là ID của menu, có dạng
+  `[parent-menu1 parent-menu2 this-menu-id]`; key stroke này còn gọi là *fake
+  keybinding*.
+
+* *Command* của binding có dạng:
+  - `'("Menu title" . action)` với menu thường và
+  - `'("Menu title" "Tooltip" . action)` với menu có tooltip.
+  Giống với keybinding, `action` là một hàm `interactive`.
+
+Do vậy, bản chất việc thêm, sửa, xóa menu là các thao tác thêm, sửa, xóa
+keymap hoặc keybinding tương ứng.
+
+Chú ý khi tạo menu:
+
+* Với submenu: `make-sparse-keymap` cần nhận thêm một string (gọi là *overall
+  prompt string*).  String này thường rất ngắn gọn, mô tả mục đích/hoạt động
+  của submenu.
+
+* `define-key-after` thường được dùng thay cho `define-key` vì bạn có thể chèn
+  menu vào vị trí mong muốn.
+
+**Ví dụ:**
+
+* Tạo/sửa một submenu:
+
+  ```lisp
+  (define-key-after mode-where-menu-is-visible
+                    menu-id
+                    `("Submenu" . ,(make-sparse-keymap "Purpose of menu"))))
+  ;; Or
+  (define-key-after mode-where-menu-is-visible
+                    menu-id
+                    `("Submenu" "Tooltip". ,(make-sparse-keymap "Purpose of menu")))
+  ```
+
+* Tạo/sửa một menu item:
+
+  ```lisp
+  (define-key-after mode-where-menu-is-visible
+                    menu-id
+                    '("Menu item" . its-action))
+  ;; Or
+  (define-key mode-where-menu-is-visible
+              menu-id
+              '("Menu item" "Tooltip". its-action))
+  ```
+
+* Xóa một menu:
+
+  ```lisp
+  (define-key-after mode-where-menu-is-visible menu-id nil)
+  ```
 
 ### Sử dụng keyword argument giống Common Lisp
 
