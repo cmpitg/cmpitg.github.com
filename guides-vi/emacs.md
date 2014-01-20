@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Tue, 07 Jan 2014 21:12:31 +0700
+last_updated: Mon, 20 Jan 2014 23:19:06 +0700
 ---
 {% include JB/setup %}
 
@@ -361,7 +361,7 @@ Chú ý khi tạo menu:
   ;; Or
   (define-key-after mode-where-menu-is-visible
                     menu-id
-                    `("Submenu" "Tooltip". ,(make-sparse-keymap "Purpose of menu")))
+                    `("Submenu" "Tooltip" . ,(make-sparse-keymap "Purpose of menu")))
   ```
 
 * Tạo/sửa một menu item:
@@ -373,7 +373,7 @@ Chú ý khi tạo menu:
   ;; Or
   (define-key mode-where-menu-is-visible
               menu-id
-              '("Menu item" "Tooltip". its-action))
+              '("Menu item" "Tooltip" . its-action))
   ```
 
 * Xóa một menu:
@@ -382,6 +382,18 @@ Chú ý khi tạo menu:
   (define-key-after mode-where-menu-is-visible menu-id nil)
   ```
 
-### Sử dụng keyword argument giống Common Lisp
+### Tìm command tương ứng với một ke sequence ###
+
+Có 2 hàm giúp làm được điều này:
+
+* `(key-binding key-sequence)` tìm trong tất cả các active keymaps và trả lại
+  command tương ứng.
+
+* `(lookup-key keymap key-sequence)` tìm trong một keymap nào đó.
+
+Chú ý rằng menu về bản chất cũng là keybinding nên 2 hàm này có thể áp dụng
+để tìm command cho menu.
+
+### Sử dụng keyword argument giống Common Lisp ###
 
 http://curiousprogrammer.wordpress.com/2009/08/16/elisp-keyword-params/
