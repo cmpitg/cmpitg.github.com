@@ -12,16 +12,22 @@ In descending order of priority:
 
 ## Scripting
 
-* newLISP and Racket
-* Ruby
-* Python
+* newLISP and Racket (for personal use)
+* Ruby and Python (for deployment)
 
 ## General Purposes
 
 * Racket
-* Clojure
+* Clojure (when making use of huge Java ecosystem)
 * Ruby and Python
-* JavaScript
+* JavaScript (for speed)
+* Pascal (size, speed, and safety)
+
+## Education
+
+* Pascal
+* Smalltalk
+* Racket (for Lispers only)
 
 ## GUI programming
 
