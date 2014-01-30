@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Mon, 20 Jan 2014 23:19:06 +0700
+last_updated: Thu, 30 Jan 2014 07:24:51 +0700
 ---
 {% include JB/setup %}
 
@@ -397,3 +397,7 @@ Chú ý rằng menu về bản chất cũng là keybinding nên 2 hàm này có 
 ### Sử dụng keyword argument giống Common Lisp ###
 
 http://curiousprogrammer.wordpress.com/2009/08/16/elisp-keyword-params/
+
+### Chuyển nhanh đến một thư viện đã được cài đặt ###
+
+Sử dụng command `find-library`.
