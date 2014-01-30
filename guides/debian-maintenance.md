@@ -5,7 +5,7 @@ tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
 permalink: /debian_maintenance/
-last_updated: Mon, 06 Jan 2014 15:02:38 +0700
+last_updated: Thu, 30 Jan 2014 07:00:11 +0700
 ---
 {% include JB/setup %}
 
@@ -128,4 +128,25 @@ problem:
 
 ```sh
 rm -f ~/.zcompdump
+```
+
+### Debian - Release file is expired ###
+
+This might happen due to the most 2 common reasons:
+
+* Your mirror is broken, go ahead and check it, also check for the timestamp
+* Your clock is wrong
+
+One quick workaround is to run `aptitude` with
+`Acquire::Check-Valid-Until=false`:
+
+```sh
+aptitude -o 'Acquire::Check-Valid-Until=false' update
+```
+
+And to make that change permanently, create a file in `/etc/apt/apt.conf.d/`
+(e.g. `/etc/apt/apt.conf.d/99disablecheckvaliduntil`)
+
+```
+Acquire::Check-Valid-Until "false";
 ```
