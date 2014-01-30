@@ -26,15 +26,18 @@ last_updated: Thu, 30 Jan 2014 12:30:58 +0700
 
 * Main programming languages:
   - Compiled: Golang.
-  - Interpreted: Racket.
+  - Interpreted: Racket and TypeScript
 
 * Inter-program communication:
 
   - There is a server that collects and dispatches messages:
     * Like DBus or Plan 9's plumber.
-    * Message format? JSON or REST?
 
   - Each program implements the same IPC protocol.  TODO: make a graphics.
+
+  - Server types: Named pipe, or HTTP (lightweight?), or Unix domain socket?
+
+  - Message protocol: JSON or REST?
 
 * GUI programming:
   - Scriptable.
