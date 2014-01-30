@@ -5,7 +5,7 @@ tagline: "#!/bin/sh"
 category: System
 tags: [system, guide, shell]
 permalink: /system/
-last_updated: Thu, 30 Jan 2014 06:59:07 +0700
+last_updated: Thu, 30 Jan 2014 07:00:14 +0700
 ---
 {% include JB/setup %}
 
@@ -55,24 +55,3 @@ udevadm trigger
 
   - Run `compaudit` to check which directories are considered insecure.
   - `chmod 755` (try w/out `-R`) to fix the permision.
-
-### Debian - Release file is expired ###
-
-This might happen due to the most 2 common reasons:
-
-* Your mirror is broken, go ahead and check it, also check for the timestamp
-* Your clock is wrong
-
-One quick workaround is to run `aptitude` with
-`Acquire::Check-Valid-Until=false`:
-
-```sh
-aptitude -o 'Acquire::Check-Valid-Until=false' update
-```
-
-And to make that change permanently, create a file in `/etc/apt/apt.conf.d/`
-(e.g. `/etc/apt/apt.conf.d/99disablecheckvaliduntil`)
-
-```
-Acquire::Check-Valid-Until "false";
-```
