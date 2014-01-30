@@ -4,7 +4,7 @@ title: My Ideal System
 tagline: "#!/usr/bin/env"
 tags: [random, system]
 permalink: /ideal-system/
-last_updated: Thu, 30 Jan 2014 12:30:58 +0700
+last_updated: Thu, 30 Jan 2014 13:53:46 +0700
 ---
 {% include JB/setup %}
 
@@ -47,8 +47,10 @@ last_updated: Thu, 30 Jan 2014 12:30:58 +0700
     * Explanation of Unix domain socket and named pipe:
       http://unix.stackexchange.com/questions/75904/are-fifo-pipe-unix-domain-socket-the-same-thing-in-linux-kernel
 
+  - Protocol: RESTful?
 
-  - Message protocol: JSON or REST?
+  - Message format: JSON or BSON?
+    * JSON doesn't support binary data by default.
 
 * GUI programming:
   - Scriptable.
