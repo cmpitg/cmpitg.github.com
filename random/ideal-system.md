@@ -36,6 +36,17 @@ last_updated: Thu, 30 Jan 2014 12:30:58 +0700
   - Each program implements the same IPC protocol.  TODO: make a graphics.
 
   - Server types: Named pipe, or HTTP (lightweight?), or Unix domain socket?
+    * Unix domain socket is better (more flexible) than named pipe?
+      http://stackoverflow.com/questions/9475442/unix-domain-socket-vs-named-pipes
+      - You can use them for more than two processes communicating (eg. a
+        server process with potentially multiple client processes connecting);
+      - They are bidirectional;
+      - They support passing kernel-verified UID / GID credentials between processes;
+      - They support passing file descriptors between processes; They support
+        packet and sequenced packet modes.
+    * Explanation of Unix domain socket and named pipe:
+      http://unix.stackexchange.com/questions/75904/are-fifo-pipe-unix-domain-socket-the-same-thing-in-linux-kernel
+
 
   - Message protocol: JSON or REST?
 
