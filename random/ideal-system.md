@@ -22,6 +22,34 @@ last_updated: Fri, 31 Jan 2014 07:41:29 +0700
   - Arguments are either *subcommands* or *modifiers*.  *Subcommands* and
     *modifiers* may take further arguments.
 
+    Main arguments go first.  Optional modifiers take keyword forms:
+
+    Some commands in Racket style:
+
+    ```racket
+    (list-dirs "./")
+    (list-dirs "./" #:n-columns 1)
+    (list-dirs "./" #:colorize #t)
+    (copy {/tmp/file-a.rkt} {/tmp/file-b.rkt} {/tmp/new/})
+    (copy {/tmp/new} {/tmp/new.backup} #:mode 'backup)      ; Recursively, keep permission, ...
+    (copy (glob "/tmp/*") "/mnt/backup/tmp" #:recursive #t)
+    ```
+
+    Outer-most brackets maybe ignored.
+
+    And how its settings look like:
+
+    ```racket
+    (colorize-list-dirs  #t)
+    (colorize-everything #t)
+    (alias 'copy (copy #:recursive #t))
+    ```
+
+    Note the use of `{}` for raw string.
+
+    --> Clear and human-readable, could be understood fairly easily.  Be
+    visually pleased is much more important than being stupidly short
+
   - Smart job management with task killer and all.
 
 * Main programming languages:
