@@ -4,7 +4,7 @@ title: My Ideal System
 tagline: "#!/usr/bin/env"
 tags: [random, system]
 permalink: /ideal-system/
-last_updated: Thu, 30 Jan 2014 13:53:46 +0700
+last_updated: Fri, 31 Jan 2014 07:41:29 +0700
 ---
 {% include JB/setup %}
 
@@ -49,8 +49,14 @@ last_updated: Thu, 30 Jan 2014 13:53:46 +0700
 
   - Protocol: RESTful?
 
-  - Message format: JSON or BSON?
+  - Message format: JSON or BSON or YAML?
     * JSON doesn't support binary data by default.
+    * YAML has [anchor](http://www.yaml.org/spec/1.2/spec.html#id2765878),
+      particular useful to define reletional structure:
+      - Do I really need it?
+    * YAML is a superset of JSON --> No reason to not use YAML if JSON is good
+    * YAML supports binary data with base64
+      - A bit of overhead, but seem fine since it's mostly small and offline though
 
 * GUI programming:
   - Scriptable.
