@@ -1,6 +1,7 @@
-# Just another web log
+# Just another web log #
 
-This repository is a customized version of [Jekyll Bootstrap](http://jekyllbootstrap.com/) with a lot of enhancements:
+This repository is a customized version of
+[Jekyll Bootstrap](http://jekyllbootstrap.com/) with a lot of enhancements:
 
 * More layout for pages: `page` (with comments - default) and `page_without_comments`
 
@@ -15,4 +16,6 @@ This repository is a customized version of [Jekyll Bootstrap](http://jekyllboots
 
 * And more... (TODO)
 
-Copyright (C) 2012-2013 by Nguyễn Hà Dương <cmpitg@gmail.com>
+## License ##
+
+Copyright (C) 2012-2014 by Duong Nguyen ([@cmpitg](https://github.com/cmpitg/))
