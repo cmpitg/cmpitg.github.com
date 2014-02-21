@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Fri, 21 Feb 2014 15:00:29 +0700
+last_updated: Fri, 21 Feb 2014 16:55:29 +0700
 ---
 {% include JB/setup %}
 
@@ -107,3 +107,40 @@ From [Racket Guide](http://docs.racket-lang.org/guide/read-write.html):
 * `print` displays a value in its normal form,
 * `write` displays a value in a form that `read` uses to read,
 * `display` displays a value in human-readable form.
+
+## Pitfalls ##
+
+### `copy-directory/files` copies directory contents, not the directory itself ###
+
+Demonstration:
+
+```sh
+ls /tmp/hello/
+# -> hello.js hello.css
+```
+
+```racket
+(copy-directory/files "/tmp/hello/" "/tmp/world/")
+```
+
+```sh
+ls /tmp/world/
+# -> hello.js hello.css
+```
+
+But we actually expect the `hello/` directory is copied itself, not its
+contents.  To fix this, create `/tmp/world/hello/` first then do the copy:
+
+```racket
+(make-directory* "/tmp/world/hello")
+(copy-directory/files "/tmp/hello/" "/tmp/world/")
+```
+
+And we're gonna have our desire behavior:
+
+```sh
+ls /tmp/world/
+# -> hello
+ls /tmp/world/hello/
+# -> hello.js hello.css
+```
