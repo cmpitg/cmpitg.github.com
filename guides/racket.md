@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Mon, 09 Dec 2013 22:00:51 +0700
+last_updated: Fri, 21 Feb 2014 15:00:29 +0700
 ---
 {% include JB/setup %}
 
@@ -62,6 +62,21 @@ parameters, and thus could be `parameterize`d:
     (get-output-string output-port)))
 
 (display (format "Result: ~a" (display-to-string)))
+```
+
+### Retrieve path of current running file ###
+
+Thanks to
+[StackOverflow](http://stackoverflow.com/questions/16842811/racket-how-to-retrieve-the-path-of-the-running-file):
+
+```racket
+#lang racket
+
+(require racket/runtime-path)
+
+(define-runtime-path +this-directory+ ".")
+
+(displayln (~a +this-directory+))
 ```
 
 ## FAQs
