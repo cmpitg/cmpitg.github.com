@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Sat, 22 Feb 2014 20:02:23 +0700
+last_updated: Sat, 22 Feb 2014 20:06:45 +0700
 ---
 {% include JB/setup %}
 
@@ -401,3 +401,7 @@ http://curiousprogrammer.wordpress.com/2009/08/16/elisp-keyword-params/
 ### Chuyển nhanh đến một thư viện đã được cài đặt ###
 
 Sử dụng command `find-library`.
+
+### Thêm một file local variable ###
+
+Sử dụng command `add-file-local-variable`.
