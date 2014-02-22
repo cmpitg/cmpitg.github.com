@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env emacs24"
 category: Text_Editor
 tags: [emacs, guide]
 permalink: /emacs/
-last_updated: Thu, 30 Jan 2014 07:24:51 +0700
+last_updated: Sat, 22 Feb 2014 20:02:23 +0700
 ---
 {% include JB/setup %}
 
@@ -382,7 +382,7 @@ Chú ý khi tạo menu:
   (define-key-after mode-where-menu-is-visible menu-id nil)
   ```
 
-### Tìm command tương ứng với một ke sequence ###
+### Tìm command tương ứng với một key sequence ###
 
 Có 2 hàm giúp làm được điều này:
 
