@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Fri, 21 Feb 2014 16:55:29 +0700
+last_updated: Sat, 22 Feb 2014 19:51:16 +0700
 ---
 {% include JB/setup %}
 
@@ -77,6 +77,20 @@ Thanks to
 (define-runtime-path +this-directory+ ".")
 
 (displayln (~a +this-directory+))
+```
+
+### Change current directory ###
+
+By `parameterize`ing `current-directory`:
+
+```racket
+#lang racket
+
+(define (list-dir)
+  (system* (find-executable-path "ls") "-lahF"))
+
+(parameterize ([current-directory "/tmp/"])
+  (list-dir))
 ```
 
 ## FAQs
