@@ -4,7 +4,7 @@ title: Loading main function in Racket
 tagline: "(contract-violation)"
 category: Programming
 tags: [racket, beginner, programming]
-last_updated: Mon, 24 Feb 2014 02:53:49 +0700
+last_updated: Mon, 24 Feb 2014 02:54:13 +0700
 ---
 {% include JB/setup %}
 
@@ -30,7 +30,7 @@ Meaning your Python module could be executed as script.
 script.
 
 The same technique could be performed by Rubyists though it's highly
-discouraged since the standard Ruby design pattern is to separate modules as
+discouraged since the standard Ruby design pattern is to separate modules and
 scripts:
 
 ```ruby
