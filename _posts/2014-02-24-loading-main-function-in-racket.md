@@ -4,7 +4,7 @@ title: Loading main function in Racket
 tagline: "(contract-violation)"
 category: Programming
 tags: [racket, beginner, programming]
-last_updated: Mon, 24 Feb 2014 02:47:19 +0700
+last_updated: Mon, 24 Feb 2014 02:53:49 +0700
 ---
 {% include JB/setup %}
 
@@ -29,7 +29,7 @@ Meaning your Python module could be executed as script.
 `run_this_module_as_script()` is called only when this module is treated as
 script.
 
-The same technique could be performed with Rubyists though it's highly
+The same technique could be performed by Rubyists though it's highly
 discouraged since the standard Ruby design pattern is to separate modules as
 scripts:
 
