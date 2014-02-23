@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Sat, 22 Feb 2014 19:51:16 +0700
+last_updated: Mon, 24 Feb 2014 02:38:45 +0700
 ---
 {% include JB/setup %}
 
@@ -93,9 +93,48 @@ By `parameterize`ing `current-directory`:
   (list-dir))
 ```
 
-## FAQs
+### Run `main` function ###
 
-### When to use keywords and when to use symbols
+Suppose we have this simple Racket module:
+
+```racket
+#lang racket
+
+(provide main)
+
+(define (main)
+  (displayln "¡Hola mundo!"))
+```
+
+Reading `racket --help`, one might be tempted to use:
+
+```sh
+racket -m a-module.rkt
+```
+
+to run the `main` function, which fails, and it seems unexpected.  However,
+the [Racket doc](http://docs.racket-lang.org/guide/racket.html) shows that for
+Racket to process `-m`, you need to explicitly tell Racket to `require` and do
+so with `-t`:
+
+```sh
+racket -tm a-module.rkt
+```
+
+Personally, I consider it as a bad design decision, but this is how it's
+supposed to work.
+
+**Small but important note:**
+[Unexperienced Racket programmers](http://stackoverflow.com/questions/6380327/how-do-you-load-a-file-into-racket-via-command-line)
+might tell you to remove the `#lang` line and change it to a `require`.  This
+works but your file is no longer a module, which most of the time is a
+horrible idea.  If you don't know what it means, go read
+[Racket references](http://docs.racket-lang.org/reference/module.html).
+Unless you know exactly what you're doing, do **NOT** write non-module Racket.
+
+## FAQs ##
+
+### When to use keywords and when to use symbols ###
 
 From [Racket Guide](http://docs.racket-lang.org/guide/keywords.html):
 
