@@ -125,7 +125,7 @@ Personally, I consider it as a bad design decision, but this is how it's
 supposed to work.
 
 **Small but important note:**
-[Unexperienced Racket programmers](http://stackoverflow.com/questions/6380327/how-do-you-load-a-file-into-racket-via-command-line)
+[Inexperienced Racket programmers](http://stackoverflow.com/questions/6380327/how-do-you-load-a-file-into-racket-via-command-line)
 might tell you to remove the `#lang` line and change it to a `require`.  This
 works but your file is no longer a module, which most of the time is a
 horrible idea.  If you don't know what it means, go read
