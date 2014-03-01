@@ -4,9 +4,30 @@ title: Loading main function in Racket
 tagline: "(contract-violation)"
 category: Programming
 tags: [racket, beginner, programming]
-last_updated: Mon, 24 Feb 2014 02:54:13 +0700
+last_updated: Sat, 01 Mar 2014 23:44:02 +0700
 ---
 {% include JB/setup %}
+
+**Updated on Sat, 01 Mar 2014 23:37:57 +0700**: Thanks to
+[Takikawa-san](https://github.com/takikawa) (asumu on IRC) for pointing out
+the use of `main` submodule.  Now all you have to do is to declare a `main`
+submodule:
+
+```racket
+#lang racket
+
+(module+ main
+  (displayln "¡Hola mundo!"))
+```
+
+And you can run `racket` command without any argument to achieve the same
+effect:
+
+```sh
+racket a-module.rkt
+```
+
+---
 
 This is the question I've encountered several times helping people learning
 Racket.  The default behavior is a little unexpected, so I think I'd note it
