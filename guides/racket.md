@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Mon, 24 Feb 2014 02:38:45 +0700
+last_updated: Sat, 01 Mar 2014 23:45:54 +0700
 ---
 {% include JB/setup %}
 
@@ -94,6 +94,27 @@ By `parameterize`ing `current-directory`:
 ```
 
 ### Run `main` function ###
+
+#### New method ####
+
+Thanks to suggestion from [Takikawa-san](https://github.com/takikawa) (asumu
+on IRC):
+
+```racket
+#lang racket
+
+(module+ main
+  (displayln "¡Hola mundo!"))
+```
+
+And you can run `racket` command without any argument to execute the `main`
+submodule:
+
+```sh
+racket a-module.rkt
+```
+
+#### Old method ####
 
 Suppose we have this simple Racket module:
 
