@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Sat, 19 Apr 2014 14:16:23 +0700
+last_updated: Sat, 19 Apr 2014 14:23:10 +0700
 ---
 {% include JB/setup %}
 
@@ -158,6 +158,29 @@ From
   # or
   su -c 'pip-3.2 install pygments' -
   ```
+
+### Fully install PIL in `virtualenv` ###
+
+PIL (Python Image Library) fails to detect some image processing libraries in
+some systems when being installed inside a `virtualenv`.  This is due to
+non-standard library location (they are stored in
+`/usr/lib/<your-arch>-linux-gnu/<library-name>.so` instead of `/usr/lib/`).
+The fix is simple and straightforward thanks to
+[StackOverflow](http://goo.gl/NOZtUu).
+
+The following script works for Debian-based systems with `aptitude` installed,
+thus you might need to adjust the paths or command a bit if you use a
+different one.
+
+```sh
+sudo aptitude install libjpeg-dev
+
+sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
+
+pip install -I PIL
+```
 
 ## Idioms
 
