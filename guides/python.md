@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Sat, 16 Nov 2013 11:20:44 +0700
+last_updated: Sat, 19 Apr 2014 14:16:23 +0700
 ---
 {% include JB/setup %}
 
@@ -248,4 +248,17 @@ RandomClass.say_hello('World from class!')
 
 random_instance = RandomClass()
 random_instance.say_hello('World from instance!')
+```
+
+### Starting a REPL programmatically ###
+
+```python
+import readline # optional
+import code
+
+
+vars = globals().copy()
+vars.update(locals())
+shell = code.InteractiveConsole(vars)
+shell.interact()
 ```
