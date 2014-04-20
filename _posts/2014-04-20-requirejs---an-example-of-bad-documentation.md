@@ -5,7 +5,7 @@ tagline: "#!"
 description: "Quick notes about an example of bad documentation - RequireJS"
 category: Documentation
 tags: [javascript, requirejs, bad_documentation]
-last_updated: Sun, 20 Apr 2014 23:33:58 +0700
+last_updated: Mon, 21 Apr 2014 00:57:05 +0700
 ---
 {% include JB/setup %}
 
@@ -36,7 +36,7 @@ Here are some quick notes:
 
   > Note: If you are using jQuery, there is a targeted jQuery tutorial
 
-  This is where things get interesting:
+  This is where things seem to get ambiguous:
 
   > jQuery registers itself as the global variables "$" and "jQuery", even
   > when it detects AMD/RequireJS
@@ -112,9 +112,9 @@ Here are some quick notes:
   > express their dependencies. Shim config does not work after optimization
   > builds with CDN resources.
 
-  Again, messing with their own jargon for new users.  I have no idea whatever
-  what `define` does and I start to get the feeling I don't want to, no more.
-  Anyway, let's
+  Again, messing with their own jargon for new users.  I have no idea
+  whatsoever what `define` does and I start to get the feeling I don't want
+  to, no more.  Anyway, let's
   [follow their example](https://github.com/requirejs/example-jquery-cdn)
 
   > This example shows one way to load jQuery and jQuery plugins with
