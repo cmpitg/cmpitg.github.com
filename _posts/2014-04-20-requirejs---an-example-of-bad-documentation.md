@@ -5,7 +5,7 @@ tagline: "#!"
 description: "Quick notes about an example of bad documentation - RequireJS"
 category: Documentation
 tags: [javascript, requirejs, bad_documentation]
-last_updated: Mon, 21 Apr 2014 00:57:05 +0700
+last_updated: Mon, 21 Apr 2014 03:29:56 +0700
 ---
 {% include JB/setup %}
 
@@ -144,6 +144,10 @@ Here are some quick notes:
   useful.  The code example is extremely brief and it explains nothing how I
   could make use of RequireJS (or require.js?) in a web page full of
   JavaScript modules.
+
+* Tickering around the website and read API reference as well as other
+  documents.  Same problems: jargon-y terms, overly-simple examples with
+  overly-complicated logic, illogical flow of reading, ...
 
   I gave up.
 
