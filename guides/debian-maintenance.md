@@ -4,7 +4,7 @@ title: Debian Maintenance Idioms
 tagline: "#!"
 category: Operating_System
 tags: [debion, maintenance, idiom]
-permalink: /debian_maintenance/
+permalink: /debian-maintenance/
 last_updated: Thu, 30 Jan 2014 07:00:11 +0700
 ---
 {% include JB/setup %}
