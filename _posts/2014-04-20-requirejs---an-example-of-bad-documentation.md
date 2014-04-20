@@ -5,7 +5,7 @@ tagline: "#!"
 description: "Quick notes about an example of bad documentation - RequireJS"
 category: Documentation
 tags: [javascript, requirejs, bad_documentation]
-last_updated: Mon, 21 Apr 2014 03:29:56 +0700
+last_updated: Mon, 21 Apr 2014 03:30:27 +0700
 ---
 {% include JB/setup %}
 
@@ -151,12 +151,11 @@ Here are some quick notes:
 
   I gave up.
 
-Take more time to write docs.  Documentation is a way to communicate with
-people.  Give clear explanation, give examples, lots of examples with good
-comments.
+Take more time to write docs!  Documentation is a way to communicate with
+people.  Give clear explanation, give lots of examples with good comments.
 
 Writing is hard, good writing is even harder; but it shows how much you care
-for your users.  Don't ever take it lightly.
+for your users.  **Don't ever take it lightly**.
 
 P.S. Please note that this entry is valid at this point it's written.  It
 might be improved anytime and all my points might no longer be relevant.
