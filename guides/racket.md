@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Sat, 01 Mar 2014 23:45:54 +0700
+last_updated: Mon, 31 Mar 2014 12:47:55 +0700
 ---
 {% include JB/setup %}
 
@@ -174,13 +174,23 @@ From [Racket Guide](http://docs.racket-lang.org/guide/keywords.html):
   #:exists 'replace)
 ```
 
-### `print` vs. `write` vs. `display`
+### `print` vs. `write` vs. `display` ###
 
 From [Racket Guide](http://docs.racket-lang.org/guide/read-write.html):
 
 * `print` displays a value in its normal form,
 * `write` displays a value in a form that `read` uses to read,
 * `display` displays a value in human-readable form.
+
+### `require`ing a module multiple times ###
+
+From [Racket reference](http://docs.racket-lang.org/reference/require.html):
+
+> No identifier can be bound multiple times in a given phase level by an
+> import, unless all of the bindings refer to the same original definition in
+> the same module.
+
+This is a rather vague, highly-abstracted sentence.  Let's take
 
 ## Pitfalls ##
 
