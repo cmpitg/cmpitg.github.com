@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:09:31 +0700
+last_updated: Tue, 29 Apr 2014 03:11:09 +0700
 ---
 {% include JB/setup %}
 
@@ -26,8 +26,9 @@ last_updated: Tue, 29 Apr 2014 03:09:31 +0700
 
 * Chris Granger is not satisfied with what we have in programming.
 
-So I decided to begin experimenting LightTable in all ways possible, starting
-with this page.  I'll try to keep this page as concise as helpful as possible.
+So I decided to begin experimenting LightTable (LT) in all ways possible,
+starting with this page.  I'll try to keep this page as concise as helpful as
+possible.
 
 ### Getting started ###
 
@@ -64,3 +65,13 @@ Basic keybinding:
 * `Ctrl-.` to jump to definition, and
 
   `Ctrl-,` to jump back
+
+* `Ctrl-D` to look up inline documentation, and
+
+  `Ctrl-Shift-D` for documentation searcher
+
+* `Ctrl-Shift-F` for `grep`-like searching
+
+Basic concepts
+
+* LT
