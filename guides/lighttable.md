@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:11:22 +0700
+last_updated: Tue, 29 Apr 2014 03:21:23 +0700
 ---
 {% include JB/setup %}
 
@@ -74,4 +74,25 @@ Basic keybinding:
 
 Basic concepts
 
-* LT
+* LT is organized around **behaviors**, **objects**, and **tags** (BOT):
+
+  * Read more about them
+    [here](http://www.chris-granger.com/2013/01/24/the-ide-as-data/)
+
+  * BOT model is more or less the same as Golang's OOP model:
+
+    * *Objects* are simply hashtables
+
+    * *Behaviors* are fundamentally *methods*
+
+    * Behaviors *don't reside in objects*
+
+    * Which behaviors could be applied upon which objects is defined by
+      *tagging*:
+
+      - Each object has a set of *tags*, which can be added or removed
+
+      - Each tag has a set of behaviors, which can also be added or removed
+
+      - If a behavior belongs to a tag, which in turns belongs to an object,
+        that behavior could be called upon that object
