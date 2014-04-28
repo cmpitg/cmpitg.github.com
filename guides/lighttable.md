@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:30:05 +0700
+last_updated: Tue, 29 Apr 2014 03:39:49 +0700
 ---
 {% include JB/setup %}
 
@@ -88,6 +88,8 @@ Basic concepts
     [object-oriented programming](http://en.wikipedia.org/wiki/Object-oriented_programming)
     (OOP) model:
 
+    * *Object templates* are fundamentally classes
+
     * *Objects* are simply hashtables (actually they are
       [*atoms*](http://clojure.org/atoms) that hold hashtables)
 
@@ -122,3 +124,26 @@ Basic concepts
     * Allows much rapid development due to quick and easy ways of
       introspection mentioned above.
 
+  * Operations:
+
+    Taken from `src/lt/objs/jump_stack.cljs` as examples.
+
+    - Create an object template with `lt.object/object*`
+
+      ```clojure
+      (lt.object/object* ::jump-stack
+                         :tags [:jump-stack]
+                         :stack [])
+      ```
+
+      Explanation:
+
+      * `::jump-stack` is the name of the object template (or class name if
+        you want to use traditional OOP term)
+
+      * `:tags` is a vector of tag names, which is used to control its
+        objects' *behaviors*.  `::jump-stack` will react to all *behaviors*
+        added to `:jump-stack` tag.
+
+      * `:stack` is its custom field, initially takes an empty vector as its
+        value.
