@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:02:54 +0700
+last_updated: Tue, 29 Apr 2014 03:09:31 +0700
 ---
 {% include JB/setup %}
 
@@ -28,3 +28,39 @@ last_updated: Tue, 29 Apr 2014 03:02:54 +0700
 
 So I decided to begin experimenting LightTable in all ways possible, starting
 with this page.  I'll try to keep this page as concise as helpful as possible.
+
+### Getting started ###
+
+Sources:
+
+* LightTable's
+  [readme](https://github.com/LightTable/LightTable/blob/master/README.md)
+
+* Basic setup:
+
+  ```sh
+  # Install lein
+  mkdir ~/bin
+  wget --no-check-certificate \
+      -O ~/bin/lein \
+      https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+  chmod +x ~/bin/lein
+  echo 'export PATH=$HOME/bin:$PATH' >> ~/.profile
+  export PATH=$HOME/bin:$PATH
+  lein
+
+  git clone https://github.com/LightTable/LightTable.git
+  cd LightTable
+  ./linux_deps.sh
+  ./deploy/LightTable
+  ```
+
+Basic keybinding:
+
+* `Ctrl-Enter` to eval an expression
+
+* `Ctrl-O` to open a file
+
+* `Ctrl-.` to jump to definition, and
+
+  `Ctrl-,` to jump back
