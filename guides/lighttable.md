@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:39:49 +0700
+last_updated: Tue, 29 Apr 2014 03:40:59 +0700
 ---
 {% include JB/setup %}
 
@@ -128,7 +128,7 @@ Basic concepts
 
     Taken from `src/lt/objs/jump_stack.cljs` as examples.
 
-    - Create an object template with `lt.object/object*`
+    - An object template is created with `lt.object/object*`
 
       ```clojure
       (lt.object/object* ::jump-stack
@@ -147,3 +147,5 @@ Basic concepts
 
       * `:stack` is its custom field, initially takes an empty vector as its
         value.
+
+   -
