@@ -2,7 +2,7 @@
 layout: page
 title: LightTable experiment
 category: Editor
-tags: [editor, ide, lighttable]
+tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
 last_updated: Tue, 29 Apr 2014 03:30:05 +0700
 ---
@@ -72,6 +72,11 @@ Basic keybinding:
 
 * `Ctrl-Shift-F` for `grep`-like searching
 
+Basic components of LT:
+
+* LT uses [CodeMirror](http://codemirror.net/) for all the syntax highlighting
+  and editing functionalities
+
 Basic concepts
 
 * LT is organized around **behaviors**, **objects**, and **tags** (BOT):
@@ -116,3 +121,4 @@ Basic concepts
 
     * Allows much rapid development due to quick and easy ways of
       introspection mentioned above.
+
