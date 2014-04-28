@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:11:09 +0700
+last_updated: Tue, 29 Apr 2014 03:11:22 +0700
 ---
 {% include JB/setup %}
 
