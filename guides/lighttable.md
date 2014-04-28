@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:21:23 +0700
+last_updated: Tue, 29 Apr 2014 03:30:05 +0700
 ---
 {% include JB/setup %}
 
@@ -79,9 +79,12 @@ Basic concepts
   * Read more about them
     [here](http://www.chris-granger.com/2013/01/24/the-ide-as-data/)
 
-  * BOT model is more or less the same as Golang's OOP model:
+  * BOT model is more or less the same as Golang's
+    [object-oriented programming](http://en.wikipedia.org/wiki/Object-oriented_programming)
+    (OOP) model:
 
-    * *Objects* are simply hashtables
+    * *Objects* are simply hashtables (actually they are
+      [*atoms*](http://clojure.org/atoms) that hold hashtables)
 
     * *Behaviors* are fundamentally *methods*
 
@@ -96,3 +99,20 @@ Basic concepts
 
       - If a behavior belongs to a tag, which in turns belongs to an object,
         that behavior could be called upon that object
+
+    This model:
+
+    * Is a re-implementation and a better version (IMHO) of OOP.  Actually
+      it's **is** OOP,
+
+    * Allows much more flexible type of method/behavior dispatching compared
+      to the poor OOP models of C++, Java, PHP, Python, ...  (Have you used
+      [CLOS](http://en.wikipedia.org/wiki/Common_Lisp_Object_System)?),
+
+    * Allows adding/removing methods dynamically (just add/remove them from
+      *tags*) without any special techniques or special runtime penalty,
+
+    * Allows much better ways to instropect an object and its behaviors,
+
+    * Allows much rapid development due to quick and easy ways of
+      introspection mentioned above.
