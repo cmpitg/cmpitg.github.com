@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 03:40:59 +0700
+last_updated: Tue, 29 Apr 2014 20:03:26 +0700
 ---
 {% include JB/setup %}
 
@@ -13,6 +13,7 @@ last_updated: Tue, 29 Apr 2014 03:40:59 +0700
 ### Reasoning ###
 
 * I always want a better system than Emacs:
+
   - More beautiful
   - Supports concurrent programming
   - Uses a better Lisp (Clojure **is** a **better** Lisp, from my personal
@@ -88,41 +89,90 @@ Basic concepts
     [object-oriented programming](http://en.wikipedia.org/wiki/Object-oriented_programming)
     (OOP) model:
 
-    * *Object templates* are fundamentally classes
+    - *Object templates* are fundamentally classes
 
-    * *Objects* are simply hashtables (actually they are
+    - *Objects* are simply hashtables (actually they are
       [*atoms*](http://clojure.org/atoms) that hold hashtables)
 
-    * *Behaviors* are fundamentally *methods*
+    - *Behaviors* are fundamentally *methods*
 
-    * Behaviors *don't reside in objects*
+    - Behaviors *don't reside in objects*
 
-    * Which behaviors could be applied upon which objects is defined by
+    - Behaviors are not called directly but rather via their *triggers*, which
+      act like in an event system
+
+    - Which behaviors could be applied upon which objects is defined by
       *tagging*:
 
-      - Each object has a set of *tags*, which can be added or removed
+      * Each object has a set of *tags*, which can be added or removed
 
-      - Each tag has a set of behaviors, which can also be added or removed
+      * Each tag has a set of behaviors, which can also be added or removed
 
-      - If a behavior belongs to a tag, which in turns belongs to an object,
+      * If a behavior belongs to a tag, which in turns belongs to an object,
         that behavior could be called upon that object
 
     This model:
 
-    * Is a re-implementation and a better version (IMHO) of OOP.  Actually
+    - Is a re-implementation and a better version (IMHO) of OOP.  Actually
       it's **is** OOP,
 
-    * Allows much more flexible type of method/behavior dispatching compared
+    - Allows much more flexible type of method/behavior dispatching compared
       to the poor OOP models of C++, Java, PHP, Python, ...  (Have you used
       [CLOS](http://en.wikipedia.org/wiki/Common_Lisp_Object_System)?),
 
-    * Allows adding/removing methods dynamically (just add/remove them from
+    - Allows adding/removing methods dynamically (just add/remove them from
       *tags*) without any special techniques or special runtime penalty,
 
-    * Allows much better ways to instropect an object and its behaviors,
+    - Allows much better ways to instropect an object and its behaviors,
 
-    * Allows much rapid development due to quick and easy ways of
+    - Allows much rapid development due to quick and easy ways of
       introspection mentioned above.
+
+    - Helps managing global states effectively.
+
+  * My attempt in simplifying things:
+
+    - *Object templates* ~ classes,
+
+      *Objects* ~ objects,
+
+      *Behaviors* ~ methods
+
+    - To add a behavior to an object:
+
+      * Add a *tag* (a Clojure's
+        [keyword](http://clojure.org/data_structures#Data%20Structures-Keywords))
+        to the object (TODO: how)
+
+      * Add that behavior to that tag (TODO: how)
+
+    - To call a behavior: use `(lt.object/raise object trigger & args)`, the
+      `trigger` is a *keyword* which is in that behavior's `:triggers`
+      set.
+
+      E.g. if I have this object `silly-object`:
+
+      ```clojure
+      (def silly-object (lt.object/create
+                          (lt.object/object* :silly-object
+                                             :tags [:silly-tag]
+                                             :my-value "¡Hola mundo!")))
+      ```
+
+      and a behavior:
+
+      ```clojure
+      (lt.macros/behavior :silly-behavior
+                          :triggers #{:be-silly}
+                          :reaction (fn [this and-then]
+                                       (println (:my-value) " " and-then)))
+      ```
+
+      To make that `silly-object` accept `:silly-behavior` behavior:
+
+      ```clojure
+      (lt.objcet)
+      ```
 
   * Operations:
 
@@ -148,4 +198,22 @@ Basic concepts
       * `:stack` is its custom field, initially takes an empty vector as its
         value.
 
-   -
+   - A LT object is created and registered with a globally unique ID with
+     `lt.object/create`:
+
+     ```clojure
+     (def jump-stack (lt.object/create
+                       (lt.object/object* ::jump-stack
+                                          :tags [:jump-stack]
+                                          :stack [])))
+     ```
+
+     Note that `jump-stack` is an *atom*, means it could be `deref` anytime
+     with `@jump-stack`.
+
+   - A *behavior* is defined with `lt.macros/behavior`:
+
+     ```clojure
+     (lt.macros/behavior ::jump-stack.push
+                         :trigger #{:jump-stack.push!})
+     ```
