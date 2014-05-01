@@ -11,10 +11,12 @@ exclude: [ ".rvmrc",
 
 # markdown: maruku
 
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks",
-               "autolink", "tables", "with_toc_data"]
+# markdown: redcarpet
+# redcarpet:
+#   extensions: ["no_intra_emphasis", "fenced_code_blocks",
+#                "autolink", "tables", "with_toc_data"]
+
+markdown: kramdown
 
 pygments: true
 relative_permalinks: true
