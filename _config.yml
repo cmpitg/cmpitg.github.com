@@ -1,4 +1,9 @@
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title
+# TODO
+relative_permalinks: true
+
+paginate_path: 'page:num'
+paginate: nil
 
 exclude: [ ".rvmrc",
            ".rbenv-version",
@@ -11,15 +16,38 @@ exclude: [ ".rvmrc",
 
 # markdown: maruku
 
+# Not using - max nested list crap
 # markdown: redcarpet
 # redcarpet:
 #   extensions: ["no_intra_emphasis", "fenced_code_blocks",
 #                "autolink", "tables", "with_toc_data"]
 
+# pygments doesn't work
+# markdown: rdiscount
+rdiscount:
+  extensions:
+    - autolink      # greedily urlify links
+    - footnotes     # footnotes
+    - smart         # typographic substitutions with SmartyPants
+
 markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: true
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: table
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
 
 pygments: true
-relative_permalinks: true
 
 title: Reference Error
 tagline: Thoughts on tech, education, open culture and other trivial stuff
