@@ -38,7 +38,8 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: true
+  use_coderay: false
+  hard_wrap: false
   coderay:
     coderay_wrap: div
     coderay_line_numbers: table
@@ -48,6 +49,7 @@ kramdown:
     coderay_css: style
 
 pygments: true
+paginate: nil
 
 title: Reference Error
 tagline: Thoughts on tech, education, open culture and other trivial stuff
