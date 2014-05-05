@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
-last_updated: Tue, 29 Apr 2014 20:05:35 +0700
+last_updated: Tue, 06 May 2014 01:12:02 +0700
 ---
 {% include JB/setup %}
 
@@ -157,7 +157,7 @@ Basic concepts
       (def shouter (lt.object/create :shouter-template))
       ```
 
-      You can combine `lt.object/create` and `lt.object/object*`:
+      `lt.object/create` and `lt.object/object*` could be combined:
 
       ```clojure
       (def loud-shouter (lt.object/create
@@ -173,11 +173,9 @@ Basic concepts
       ```clojure
       (lt.object/by-tag :shouter)
 
-      ;; Or if you now the object ID
-      ;; It's recommended NOT to use this function since object IDs are valid
-      ;; within a session
-      (lt.object/by-id 104)
-      ```
+      ;; Or if you now the object ID.  It's recommended NOT to use this
+      ;; function since object IDs are only valid within a session
+      (lt.object/by-id 104) ```
 
     * To create a behavior, use `lt.macros/behavior`:
 
