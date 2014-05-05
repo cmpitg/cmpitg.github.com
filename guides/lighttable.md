@@ -4,7 +4,7 @@ title: LightTable experiment
 category: Editor
 tags: [editor, ide, lighttable, experiment]
 permalink: /lighttable/
-last_updated: Tue, 06 May 2014 01:12:02 +0700
+last_updated: Tue, 06 May 2014 01:16:31 +0700
 ---
 {% include JB/setup %}
 
@@ -168,14 +168,26 @@ Basic concepts
                                                      (println "> A silly object is created")))))
       ```
 
-      This object and its siblings now can be referred using:
+      This object and its siblings now can be referred to:
 
-      ```clojure
-      (lt.object/by-tag :shouter)
+      * By their tag:
+      
+        ```clojure
+        (lt.object/by-tag :shouter)                     ;; Returns a list of objects
+        ```
 
-      ;; Or if you now the object ID.  It's recommended NOT to use this
-      ;; function since object IDs are only valid within a session
-      (lt.object/by-id 104) ```
+      * By their ID (NOT recommended, since object IDS are only valid within a
+        session):
+
+        ```clojure
+        (lt.object/by-id 104)                           ;; Returns the object
+        ```
+
+      * Or by their type:
+
+        ```clojure
+        (lt.object/instances-by-type :shouter-template) ;; Returns a list of objects
+        ```
 
     * To create a behavior, use `lt.macros/behavior`:
 
@@ -195,6 +207,13 @@ Basic concepts
                                                        "!!!")]
                                         (println words)
                                         words)))
+      ```
+
+      Behaviors can then be retrieved using `lt.object/->behavior`:
+
+      ```clojure
+      (lt.object/->behavior :shout)
+      (lt.object/->behavior :greet-then-shout)
       ```
 
     * To add behaviors to an object, there are several ways:
@@ -218,6 +237,9 @@ Basic concepts
          ```clojure
          (lt.object/add-behavior! shouter :greet-then-shout)
          ```
+    * To call a behavior upon an object:
+
+      - 
 
   - Some constraints:
 
