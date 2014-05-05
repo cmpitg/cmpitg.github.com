@@ -119,8 +119,9 @@ Basic concepts
       to the poor OOP models of C++, Java, PHP, Python, ...  (Have you used
       [CLOS](http://en.wikipedia.org/wiki/Common_Lisp_Object_System)?),
 
-    * Allows adding/removing methods dynamically (just add/remove them from
-      *tags*) without any special techniques or special runtime penalty,
+    * Allows adding/removing/redefining methods dynamically (just add/remove
+      *them from tags*) without any special techniques or special runtime
+      penalty.
 
     * Allows much better ways to instropect an object and its behaviors,
 
@@ -133,86 +134,97 @@ Basic concepts
 
     * *Object templates* ~ classes,
 
-      *Objects* ~ objects,
+      *Objects* ~ objects (class instances),
 
       *Behaviors* ~ methods
 
-    * To add a behavior to an object:
-
-      - Add a *tag* (a Clojure's
-        [keyword](http://clojure.org/data_structures#Data%20Structures-Keywords))
-        to the object (TODO: how)
-
-      - Add that behavior to that tag (TODO: how)
-
-    * To call a behavior: use `(lt.object/raise object trigger & args)`, the
-      `trigger` is a *keyword* which is in that behavior's `:triggers`
-      set.
-
-      E.g. if I have this object `silly-object`:
+    * To create an *object template*:
 
       ```clojure
-      (def silly-object (lt.object/create
-                          (lt.object/object* :silly-object
-                                             :tags [:silly-tag]
-                                             :my-value "¡Hola mundo!")))
+      (lt.object/object* :shouter-template
+                         :tags #{:shouter}
+                         :words "¡Hola mundo!"
+                         :init (fn [this]
+                                 (println "> A silly object is created")))
       ```
 
-      and a behavior:
+      The object template `:silly-obj-template` can now be used to create new
+      objects.
+
+    * To create an object from *object template*:
 
       ```clojure
-      (lt.macros/behavior :silly-behavior
-                          :triggers #{:be-silly}
-                          :reaction (fn [this and-then]
-                                       (println (:my-value) " " and-then)))
+      (def shouter (lt.object/create :shouter-template))
       ```
 
-      To make that `silly-object` accept `:silly-behavior` behavior:
+      You can combine `lt.object/create` and `lt.object/object*`:
 
       ```clojure
-      (lt.objcet)
+      (def loud-shouter (lt.object/create
+                          (lt.object/object* :shouter-template
+                                             :tags #{:shouter}
+                                             :words "¡Hola mundo!"
+                                             :init (fn [this]
+                                                     (println "> A silly object is created")))))
       ```
 
-  - Operations:
-
-    Taken from `src/lt/objs/jump_stack.cljs` as examples.
-
-    * An object template is created with `lt.object/object*`
+      This object and its siblings now can be referred using:
 
       ```clojure
-      (lt.object/object* ::jump-stack
-                         :tags [:jump-stack]
-                         :stack [])
+      (lt.object/by-tag :shouter)
+
+      ;; Or if you now the object ID
+      ;; It's recommended NOT to use this function since object IDs are valid
+      ;; within a session
+      (lt.object/by-id 104)
       ```
 
-      Explanation:
+    * To create a behavior, use `lt.macros/behavior`:
 
-      - `::jump-stack` is the name of the object template (or class name if
-        you want to use traditional OOP term)
+      ```clojure
+      (lt.macros/behavior :shout
+                          :triggers #{:do-shout}
+                          :reaction (fn [this]
+                                      (let [words (str (:words @this) "!!!")]
+                                        (println words)
+                                        words)))
 
-      - `:tags` is a vector of tag names, which is used to control its
-        objects' *behaviors*.  `::jump-stack` will react to all *behaviors*
-        added to `:jump-stack` tag.
+      (lt.macros/behavior :greet-then-shout
+                          :triggers #{:do-greet-then-shout}
+                          :reaction (fn [this]
+                                      (let [words (str "Hola, "
+                                                       (:words @this)
+                                                       "!!!")]
+                                        (println words)
+                                        words)))
+      ```
 
-      - `:stack` is its custom field, initially takes an empty vector as its
-        value.
+    * To add behaviors to an object, there are several ways:
 
-   * A LT object is created and registered with a globally unique ID with
-     `lt.object/create`:
+      1. Add a *tag* (a Clojure's
+         [keyword](http://clojure.org/data_structures#Data%20Structures-Keywords))
+         to the *object*, then add behaviors to that tag.
 
-     ```clojure
-     (def jump-stack (lt.object/create
-                       (lt.object/object* ::jump-stack
-                                          :tags [:jump-stack]
-                                          :stack [])))
-     ```
+         E.g.
 
-     Note that `jump-stack` is an *atom*, means it could be `deref` anytime
-     with `@jump-stack`.
+         ```clojure
+         ;; Add tag to object
+         (lt.object/add-tags shouter [:throwaway-tag])
 
-   * A *behavior* is defined with `lt.macros/behavior`:
+         ;; Tag behaviors
+         (lt.object/tag-behaviors :throwaway-tag :shout)
+         ```
 
-     ```clojure
-     (lt.macros/behavior ::jump-stack.push
-                         :trigger #{:jump-stack.push!})
-     ```
+      1. Add behavior directly:
+
+         ```clojure
+         (lt.object/add-behavior! shouter :greet-then-shout)
+         ```
+
+  - Some constraints:
+
+    * *Tags* can be added to *objects* only.  Adding tags to *object
+      templates* will not change their instances' *tags*.
+
+
+## Tips and tricks ##
