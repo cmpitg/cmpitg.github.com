@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Sat, 19 Apr 2014 14:23:10 +0700
+last_updated: Tue, 03 Jun 2014 14:53:38 +0700
 ---
 {% include JB/setup %}
 
@@ -284,4 +284,20 @@ vars = globals().copy()
 vars.update(locals())
 shell = code.InteractiveConsole(vars)
 shell.interact()
+```
+
+### Get directory of current file ###
+
+Source:
+http://stackoverflow.com/questions/5137497/find-current-directory-and-files-directory
+
+```python
+import path
+
+
+# Path to current file
+print(os.path.realpath(__file__))
+
+# Path to directory of current file
+print(os.path.dirname(os.path.realpath(__file__)))
 ```
