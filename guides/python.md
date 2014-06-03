@@ -5,7 +5,7 @@ tagline: "#!/usr/bin/env python3"
 category: Programming_Language
 tags: [python, guide]
 permalink: /python/
-last_updated: Tue, 03 Jun 2014 14:53:38 +0700
+last_updated: Tue, 03 Jun 2014 15:14:23 +0700
 ---
 {% include JB/setup %}
 
@@ -301,3 +301,70 @@ print(os.path.realpath(__file__))
 # Path to directory of current file
 print(os.path.dirname(os.path.realpath(__file__)))
 ```
+
+### Scripting and module ###
+
+Supposed we have this directory structure:
+
+```python
+top_level/
+   __init__.py
+   say_hello.py
+   main.py
+```
+
+With the following code as the content of `say_hello.py` and `main.py`
+respectively:
+
+```python
+# top_level/say_hello.py
+def say_hello_world():
+    print("¡Hola mundo!")
+
+```
+
+```python
+# top_level/main.py
+#!/usr/bin/env python
+from top_level.say_hello import say_hello_world
+
+
+say_hello_world()
+
+```
+
+Then in `top_level/`, you execute `main.py` as a script:
+
+```sh
+python main.py
+```
+
+And it happens:
+
+```
+ImportError: No module named top_level.say_hello
+```
+
+There are 2 ways to resolve:
+
+* Directly call the module with `python -m`:
+
+  ```sh
+  # Inside top_level/
+  cd ..
+
+  # Now we're outside
+  python -m top_level.main
+  ```
+
+* Or poorly learn from the Ruby world be creating a wrapper *outside*
+  `top_level/`:
+
+  ```python
+  # top_level/../run-script.sh
+
+  if __file__ == "__main__":
+      import top_level.main
+  ```
+
+See?  Python sucks.
