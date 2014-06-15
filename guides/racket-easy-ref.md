@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket-easy-ref/
-last_updated: Sun, 15 Jun 2014 19:45:56 +0700
+last_updated: Sun, 15 Jun 2014 20:17:31 +0700
 ---
 {% include JB/setup %}
 
@@ -57,4 +57,25 @@ Original link: http://docs.racket-lang.org/reference/let.html
   ; x: undefined;
   ;  cannot reference undefined identifier
   ; [,bt for context]
+  ```
+
+* `let proc-id`:
+
+  ```racket
+  (let proc-id ([id init-expr] ...)
+    body ...+)
+  ```
+
+  This form binds `proc-id` to a function `(λ (id init-expr ...) body ...+)`
+  with `id`s as its arguments that take initial values `init-expr`s.  The
+  binding process works as in `let`.
+
+  E.g.
+
+  ```racket
+  (let fact ([n 10])
+    (if (zero? n)
+        1
+        (* n (fact (sub1 n)))))
+  ;; => 3628800
   ```
