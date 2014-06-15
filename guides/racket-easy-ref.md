@@ -5,9 +5,12 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket-easy-ref/
-last_updated: Sun, 15 Jun 2014 17:56:49 +0700
+last_updated: Sun, 15 Jun 2014 19:45:56 +0700
 ---
 {% include JB/setup %}
+
+This is a version of the Racket reference with *better* understanding and
+useful examples.
 
 ## 3. Syntactic Forms ##
 
