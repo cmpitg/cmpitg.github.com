@@ -5,7 +5,7 @@ tagline: "(contract violation)"
 category: Programming_Language
 tags: [racket, guide]
 permalink: /racket/
-last_updated: Mon, 31 Mar 2014 12:47:55 +0700
+last_updated: Sat, 19 Jul 2014 23:24:05 +0700
 ---
 {% include JB/setup %}
 
@@ -191,6 +191,17 @@ From [Racket reference](http://docs.racket-lang.org/reference/require.html):
 > the same module.
 
 This is a rather vague, highly-abstracted sentence.  Let's take
+
+### Setting current working directory ###
+
+Racket has this parameter called `current-directory` which determines exactly
+that.  To do something with current working directory changed, dynamically
+bind `current-directory` to the path you want:
+
+```racket
+(parameterize ([current-directory "/some/path/"])
+  ...)
+```
 
 ## Pitfalls ##
 
