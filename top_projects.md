@@ -5,7 +5,7 @@ description: Projects that I'm participating in
 group: navigation
 order: 50
 permalink: /projects/
-last_updated: Thu, 10 Oct 2013 16:30:45 +0700
+last_updated: Mon, 21 Jul 2014 17:59:46 +0700
 ---
 {% include JB/setup %}
 
@@ -27,7 +27,9 @@ last_updated: Thu, 10 Oct 2013 16:30:45 +0700
 
 ### My Own - For Fun (and Benefits)
 
-#### [bogoengine](/projects/bogoengine) - A Vietnamese input method for GNU/Linux systems
+#### [bogoengine](/projects/bogoengine/) - A Vietnamese input method for GNU/Linux systems
+
+#### [Ulquikit](/projects/ulquikit/) - Bring fun to literate programming again
 
 #### [Espada Text](/projects/espada/) - Just another text editor
 
@@ -35,4 +37,3 @@ last_updated: Thu, 10 Oct 2013 16:30:45 +0700
 
 #### [Escudo](https://github.com/cmpitg/escudo) - A distraction-free Markdown editor
 
-#### [Ulquikit](https://github.com/cmpitg/ulquikit) - Bring fun to literate programming again, born in the need for a literate programming tool for [bogoengine](/projects/bogoengine)
