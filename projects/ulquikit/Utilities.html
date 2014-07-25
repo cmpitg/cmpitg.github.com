@@ -686,17 +686,105 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 21
 22
 23
-24</div></td><td class="code"><span class="tok-c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</div></td><td class="code"><span class="tok-c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span class="tok-c1">;; Implementation</span>
 <span class="tok-c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">get-all-adocs</span> <span class="tok-nv">path</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">read-file</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">call-with-input-file </span><span class="tok-nv">%</span> <span class="tok-nv">port-&gt;string</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">get-relative-path</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">simple-form-path</span> <span class="tok-p">(</span><span class="tok-nb">apply </span><span class="tok-nv">build-path</span> <span class="tok-nv">%&amp;</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">get-temp-dir</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">find-system-path </span><span class="tok-ss">&#39;temp-dir</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">remove-dir</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">delete-directory/files</span> <span class="tok-nv">%</span> <span class="tok-kd">#:must-exist?</span> <span class="tok-no">#f</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">create-dir</span> <span class="tok-nv">make-directory*</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">create-empty-file</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">with-output-to-file </span><span class="tok-nv">%1</span>
+      <span class="tok-p">(</span><span class="tok-err">λ</span> <span class="tok-p">()</span> <span class="tok-p">(</span><span class="tok-nb">display </span><span class="tok-s">&quot;&quot;</span><span class="tok-p">))</span>
+      <span class="tok-kd">#:mode</span> <span class="tok-ss">&#39;text</span>
+      <span class="tok-kd">#:exists</span> <span class="tok-ss">&#39;truncate/replace</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">let </span><span class="tok-p">([</span><span class="tok-nf">random-file</span> <span class="tok-p">(</span><span class="tok-nf">get-relative-path</span> <span class="tok-p">(</span><span class="tok-nf">get-temp-dir</span><span class="tok-p">)</span>
+                                        <span class="tok-s">&quot;___random-file.txt&quot;</span><span class="tok-p">)])</span>
+    <span class="tok-p">(</span><span class="tok-nf">create-empty-file</span> <span class="tok-nv">random-file</span><span class="tok-p">)</span>
+    <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nb">file-exists? </span><span class="tok-nv">random-file</span><span class="tok-p">)</span> <span class="tok-no">#t</span><span class="tok-p">)</span>
+    <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">read-file</span> <span class="tok-nv">random-file</span><span class="tok-p">)</span> <span class="tok-s">&quot;&quot;</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">list-all-adocs</span> <span class="tok-nv">path</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-k">with-handlers </span><span class="tok-p">([</span><span class="tok-nf">exn:fail?</span> <span class="tok-p">(</span><span class="tok-err">λ</span> <span class="tok-p">(</span><span class="tok-nf">exn</span><span class="tok-p">)</span> <span class="tok-o">&#39;</span><span class="tok-p">())])</span>
-   <span class="tok-p">(</span><span class="tok-nf">find-files</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">string-ends-with?</span> <span class="tok-nv">%</span> <span class="tok-s">&quot;.adoc&quot;</span><span class="tok-p">)</span> <span class="tok-p">(</span><span class="tok-nb">expand-user-path </span><span class="tok-nv">path</span><span class="tok-p">))))</span>
+    <span class="tok-p">(</span><span class="tok-nf">~&gt;&gt;</span> <span class="tok-p">(</span><span class="tok-nf">find-files</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">string-ends-with?</span> <span class="tok-nv">%</span> <span class="tok-s">&quot;.adoc&quot;</span><span class="tok-p">)</span> <span class="tok-p">(</span><span class="tok-nb">expand-user-path </span><span class="tok-nv">path</span><span class="tok-p">))</span>
+      <span class="tok-p">(</span><span class="tok-nb">map </span><span class="tok-nv">path-&gt;string</span><span class="tok-p">))))</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">get-relative-path</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">simple-form-path</span> <span class="tok-p">(</span><span class="tok-nb">apply </span><span class="tok-nv">build-path</span> <span class="tok-nv">%&amp;</span><span class="tok-p">)))</span>
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">temp-dir</span> <span class="tok-p">(</span><span class="tok-nf">get-relative-path</span> <span class="tok-p">(</span><span class="tok-nf">get-temp-dir</span><span class="tok-p">)</span>
+                                      <span class="tok-s">&quot;./ulquikit-tmp&quot;</span><span class="tok-p">)]</span>
+         <span class="tok-p">[</span><span class="tok-nf">filenames</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello-world.adoc&quot;</span>
+                      <span class="tok-s">&quot;hola-mundo.adoc&quot;</span>
+                      <span class="tok-s">&quot;mostly-harmless.adoc&quot;</span>
+                      <span class="tok-s">&quot;42.adoc&quot;</span><span class="tok-p">)]</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">get-directory-path</span>
+         <span class="tok-p">[</span><span class="tok-nf">filenames/fullpath</span> <span class="tok-p">(</span><span class="tok-nf">for/list</span> <span class="tok-p">([</span><span class="tok-nf">name</span> <span class="tok-p">(</span><span class="tok-nf">in-list</span> <span class="tok-nv">filenames</span><span class="tok-p">)])</span>
+                               <span class="tok-p">(</span><span class="tok-nb">format </span><span class="tok-s">&quot;~a/~a&quot;</span> <span class="tok-nv">temp-dir</span> <span class="tok-nv">name</span><span class="tok-p">))])</span>
+    <span class="tok-p">(</span><span class="tok-k">with-handlers </span><span class="tok-p">([</span><span class="tok-nf">exn:fail?</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">remove-dir</span> <span class="tok-nv">temp-dir</span><span class="tok-p">)])</span>
+      <span class="tok-p">(</span><span class="tok-nf">remove-dir</span> <span class="tok-nv">temp-dir</span><span class="tok-p">)</span>
+      <span class="tok-p">(</span><span class="tok-nf">create-dir</span> <span class="tok-nv">temp-dir</span><span class="tok-p">)</span>
+      <span class="tok-p">(</span><span class="tok-nf">for</span> <span class="tok-p">([</span><span class="tok-nf">path</span> <span class="tok-p">(</span><span class="tok-nf">in-list</span> <span class="tok-nv">filenames/fullpath</span><span class="tok-p">)])</span>
+        <span class="tok-p">(</span><span class="tok-nf">create-empty-file</span> <span class="tok-nv">path</span><span class="tok-p">))</span>
+
+      <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">sort</span> <span class="tok-p">(</span><span class="tok-nf">list-all-adocs</span> <span class="tok-nv">temp-dir</span><span class="tok-p">)</span> <span class="tok-nv">string&lt;?</span><span class="tok-p">)</span>
+                    <span class="tok-p">(</span><span class="tok-nf">sort</span> <span class="tok-nv">filenames/fullpath</span> <span class="tok-nv">string&lt;?</span><span class="tok-p">))</span>
+      <span class="tok-p">(</span><span class="tok-nf">remove-dir</span> <span class="tok-nv">temp-dir</span><span class="tok-p">))))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">path-&gt;directory</span>
   <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">if-let</span> <span class="tok-p">[</span><span class="tok-nf">path</span> <span class="tok-p">(</span><span class="tok-nf">file-name-from-path</span> <span class="tok-nv">%</span><span class="tok-p">)]</span>
       <span class="tok-p">(</span><span class="tok-nf">~&gt;&gt;</span> <span class="tok-nv">path</span>
         <span class="tok-nv">path-&gt;string</span>
@@ -705,8 +793,8 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
       <span class="tok-nv">%</span><span class="tok-p">))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">get-directory-path</span> <span class="tok-s">&quot;/tmp/tmp.rkt&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;/tmp/&quot;</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">get-directory-path</span> <span class="tok-s">&quot;/tmp/tmp/&quot;</span><span class="tok-p">)</span>    <span class="tok-s">&quot;/tmp/tmp/&quot;</span><span class="tok-p">))</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">path-&gt;directory</span> <span class="tok-s">&quot;/tmp/tmp.rkt&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;/tmp/&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">path-&gt;directory</span> <span class="tok-s">&quot;/tmp/tmp/&quot;</span><span class="tok-p">)</span>    <span class="tok-s">&quot;/tmp/tmp/&quot;</span><span class="tok-p">))</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">create-directory-tree</span>
   <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">system</span> <span class="tok-p">(</span><span class="tok-nb">format </span><span class="tok-p">(</span><span class="tok-nf">~a</span> <span class="tok-s">&quot;mkdir -p &quot;</span> <span class="tok-nv">%</span><span class="tok-p">))))</span>
@@ -736,7 +824,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-21 17:35:53 ICT
+Last updated 2014-07-26 02:08:20 ICT
 </div>
 </div>
 </body>
