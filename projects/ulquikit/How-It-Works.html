@@ -871,11 +871,17 @@ appropriate keywords and values.</p>
 12
 13
 14
-15</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
+15
+16
+17
+18</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
 
 <span class="tok-c1">;; include::use-rackjure</span>
 
 <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../command-core.rkt&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/path.rkt&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/string.rkt&quot;</span><span class="tok-p">)</span>
 
 <span class="tok-c1">;; (provide run</span>
 <span class="tok-c1">;;          help)</span>
@@ -946,6 +952,10 @@ appropriate keywords and values.</p>
 <code>create-block</code>.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><code>extract-blocks</code> relies on <code>extract-block</code>, which only extracts from one file
+at a time.</p>
 </div>
 <div class="listingblock">
 <div class="title">code::extract-blocks</div>
@@ -1065,11 +1075,36 @@ appropriate keywords and values.</p>
 113
 114
 115
-116</div></td><td class="code"><span class="tok-c1">;; lang racket</span>
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131</div></td><td class="code"><span class="tok-c1">;; lang racket</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">extract-blocks</span> <span class="tok-nv">from-dir</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-nf">for</span> <span class="tok-p">([</span><span class="tok-nf">file</span> <span class="tok-p">(</span><span class="tok-nf">list-all-adocs</span> <span class="tok-p">(</span><span class="tok-nf">standardize-path</span> <span class="tok-nv">from-dir</span><span class="tok-p">))])</span>
-    <span class="tok-p">(</span><span class="tok-nf">extract-block</span> <span class="tok-nv">file</span><span class="tok-p">)))</span>
+<span class="tok-nv">last-line</span>
+<span class="tok-nv">block-content</span>
+<span class="tok-nv">block-name</span>
+<span class="tok-nv">inside-block?</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">extract-block</span> <span class="tok-nv">path</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">content</span> <span class="tok-p">(</span><span class="tok-nf">read-file</span> <span class="tok-nv">path</span><span class="tok-p">)]</span>
+         <span class="tok-p">[</span><span class="tok-nf">lines</span> <span class="tok-p">(</span><span class="tok-nf">string-split</span> <span class="tok-nv">content</span> <span class="tok-s">&quot;\n&quot;</span> <span class="tok-kd">#:trim?</span> <span class="tok-no">#f</span><span class="tok-p">)])</span>
+    <span class="tok-p">(</span><span class="tok-nf">for</span> <span class="tok-p">([</span><span class="tok-nf">line-num</span>    <span class="tok-p">(</span><span class="tok-nf">in-naturals</span> <span class="tok-mi">1</span><span class="tok-p">)]</span>
+          <span class="tok-p">[</span><span class="tok-nf">line</span>        <span class="tok-p">(</span><span class="tok-nf">in-list</span> <span class="tok-nv">lines</span><span class="tok-p">)])</span>
+      <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">demiliter?</span>  <span class="tok-p">(</span><span class="tok-nf">is-block-delimiter?</span> <span class="tok-nv">line</span><span class="tok-p">)]</span>
+
+             <span class="tok-p">[</span><span class="tok-nf">new-block-name</span> <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">)])))))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
   <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">temp-dir</span> <span class="tok-p">(</span><span class="tok-nf">get-relative-path</span> <span class="tok-p">(</span><span class="tok-nf">get-temp-dir</span><span class="tok-p">)</span>
@@ -1181,8 +1216,52 @@ appropriate keywords and values.</p>
         <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-nv">code-block</span> <span class="tok-nv">expected-code-blocks</span><span class="tok-p">)</span>
         <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-nv">file-block</span> <span class="tok-nv">expected-file-blocks</span><span class="tok-p">))</span>
       <span class="tok-p">(</span><span class="tok-nf">remove-dir</span> <span class="tok-nv">temp-dir</span><span class="tok-p">))))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">extract-blocks</span> <span class="tok-nv">from-dir</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">for/fold</span> <span class="tok-p">([</span><span class="tok-nf">block</span> <span class="tok-p">{}])</span>
+      <span class="tok-p">([</span><span class="tok-nf">file</span> <span class="tok-p">(</span><span class="tok-nf">list-all-adocs</span> <span class="tok-p">(</span><span class="tok-nf">standardize-path</span> <span class="tok-nv">from-dir</span><span class="tok-p">))])</span>
+    <span class="tok-p">(</span><span class="tok-nf">dict-merge</span> <span class="tok-nv">block</span> <span class="tok-p">(</span><span class="tok-nf">extract-block</span> <span class="tok-nv">file</span><span class="tok-p">))))</span>
 </td></tr></table></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The way <code>extract-block</code> works is very simple:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It will first read the content of a file and break it into lines while
+preserving line numbers (thus the call to <code>string-split</code> with <code>#:trim? #f</code>).</p>
+</li>
+<li>
+<p>If the current line is a block delimiter, one of the following things could
+happen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>the current line is the <em>beginning</em> of a code block.  In this case,</p>
+<div class="ulist">
+<ul>
+<li>
+<p>if the previous line is a block title, we&#8217;re about to enter a code block,
+save the previous line as the block name (<code>block-name</code>) and mark that we&#8217;re
+inside a named block (<code>inside-named-block</code> is <code>#t</code>); otherwise,</p>
+</li>
+<li>
+<p>if the previous line is <em>not</em> a block title, ignore this.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>the current line is the <code>end</code> of a code block.  In this case, if we&#8217;re
+inside a named block (when <code>inside-named-block</code> is <code>#t</code>), we reset
+(i.e. <code>inside-named-block</code> becomes <code>#f</code>); oth</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Each is code block is stored with the following format:</p>
@@ -1338,7 +1417,7 @@ header is necessary.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-26 02:07:56 ICT
+Last updated 2014-07-28 12:12:03 ICT
 </div>
 </div>
 </body>
