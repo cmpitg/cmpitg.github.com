@@ -455,21 +455,43 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <div class="listingblock">
 <div class="title">file::utils/utils.rkt</div>
 <div class="content">
-<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
 
 <span class="tok-c1">;; include::utils/use-rackjure</span>
 
 <span class="tok-p">(</span><span class="tok-k">provide </span><span class="tok-p">(</span><span class="tok-nf">all-defined-out</span><span class="tok-p">))</span>
 
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
+
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">inc</span> <span class="tok-p">(</span><span class="tok-nf">partial</span> <span class="tok-nv">+</span> <span class="tok-mi">1</span><span class="tok-p">))</span>
+
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">dec</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">- </span><span class="tok-nv">%</span> <span class="tok-mi">1</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">box-set!</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">box-swap!</span> <span class="tok-nv">%1</span> <span class="tok-p">(</span><span class="tok-err">λ</span> <span class="tok-p">(</span><span class="tok-nf">_</span><span class="tok-p">)</span> <span class="tok-nv">%2</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-p">(</span><span class="tok-nb">box </span><span class="tok-mi">0</span><span class="tok-p">)</span> <span class="tok-mi">1</span><span class="tok-p">))</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-p">(</span><span class="tok-nb">box </span><span class="tok-s">&quot;a&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;b&quot;</span><span class="tok-p">))</span> <span class="tok-s">&quot;b&quot;</span><span class="tok-p">))</span>
 </td></tr></table></code></pre>
 </div>
 </div>
@@ -569,8 +591,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 53
 54
 55
-56
-57</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
+56</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
 
 <span class="tok-c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span class="tok-c1">;; Implementation</span>
@@ -615,12 +636,11 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">string-ends-with?</span> <span class="tok-s">&quot;abcdef&quot;</span> <span class="tok-s">&quot;dee&quot;</span><span class="tok-p">)</span> <span class="tok-no">#f</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">string-ends-with?</span> <span class="tok-s">&quot;$ab$$c&quot;</span> <span class="tok-s">&quot;b$$c&quot;</span><span class="tok-p">)</span> <span class="tok-no">#t</span><span class="tok-p">))</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">string-rest</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">~&gt;</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;list </span><span class="tok-nv">%</span><span class="tok-p">)</span>
-                        <span class="tok-p">((</span><span class="tok-err">λ</span> <span class="tok-p">(</span><span class="tok-nf">lst</span><span class="tok-p">)</span>
-                           <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">empty?</span> <span class="tok-nv">lst</span><span class="tok-p">)</span>
-                               <span class="tok-nv">lst</span>
-                               <span class="tok-p">(</span><span class="tok-nf">rest</span> <span class="tok-nv">lst</span><span class="tok-p">))))</span>
-                        <span class="tok-nv">list-&gt;string</span><span class="tok-p">))</span>
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">string-empty?</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">zero? </span><span class="tok-p">(</span><span class="tok-nb">string-length </span><span class="tok-nv">%</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">string-rest</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">string-empty?</span> <span class="tok-nv">%</span><span class="tok-p">)</span>
+                          <span class="tok-s">&quot;&quot;</span>
+                          <span class="tok-p">(</span><span class="tok-nb">substring </span><span class="tok-nv">%</span> <span class="tok-mi">1</span><span class="tok-p">)))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">string-rest</span> <span class="tok-s">&quot;&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;&quot;</span><span class="tok-p">)</span>
@@ -875,7 +895,7 @@ TODO: give example.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-28 11:42:07 ICT
+Last updated 2014-07-28 17:44:44 ICT
 </div>
 </div>
 </body>
