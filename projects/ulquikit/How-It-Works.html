@@ -439,18 +439,18 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#section/extract-snippets">2.1. Extracting snippets</a></li>
 <li><a href="#section/include-snippets">2.2. Including snippets into each other</a></li>
 <li><a href="#_generating_source_code">2.3. Generating source code</a></li>
-<li><a href="#_command_code_generate_src_code_generating_source_code">2.4. Command: <code>generate-src</code> - generating source code</a></li>
-</ul>
-</li>
-<li><a href="#_commands">3. Commands</a></li>
+<li><a href="#_anatomy_of_a_ulquikit_command">2.4. Anatomy of a Ulquikit command</a></li>
 <li>
-<ul class="sectlevel2">
-<li><a href="#_core_functions_to_implement_commands">3.1. Core functions to implement commands</a></li>
+<ul class="sectlevel3">
+<li><a href="#_parsing_command_line_arguments_code_parse_command_args_code">2.4.1. Parsing command line arguments <code>parse-command-args</code></a></li>
 </ul>
 </li>
-<li><a href="#_utility_functions">4. Utility functions</a></li>
-<li><a href="#_misc">5. Misc</a></li>
-<li><a href="#_license_header">6. License header</a></li>
+<li><a href="#_command_code_generate_src_code">2.5. Command: <code>generate-src</code></a></li>
+</ul>
+</li>
+<li><a href="#_utility_functions">3. Utility functions</a></li>
+<li><a href="#_misc">4. Misc</a></li>
+<li><a href="#_license_header">5. License header</a></li>
 </ul>
 </div>
 </div>
@@ -1952,9 +1952,9 @@ are short and easily implemented like so:</p>
                                    <span class="tok-ss">&#39;processed?</span> <span class="tok-no">#t</span><span class="tok-p">}}})))</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">is-include-directive?</span>
-  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^[#;/-]{2} include::.*&quot;</span> <span class="tok-p">(</span><span class="tok-nf">trim</span> <span class="tok-nv">%</span><span class="tok-p">))</span>
-        <span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^&lt;!-- include::.* --&gt;&quot;</span> <span class="tok-p">(</span><span class="tok-nf">trim</span> <span class="tok-nv">%</span><span class="tok-p">))</span>
-        <span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^/\\* include::.* \\*/&quot;</span> <span class="tok-p">(</span><span class="tok-nf">trim</span> <span class="tok-nv">%</span><span class="tok-p">))))</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^[#;/-]{2} include::.*&quot;</span> <span class="tok-p">(</span><span class="tok-nf">string-trim</span> <span class="tok-nv">%</span><span class="tok-p">))</span>
+        <span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^&lt;!-- include::.* --&gt;&quot;</span> <span class="tok-p">(</span><span class="tok-nf">string-trim</span> <span class="tok-nv">%</span><span class="tok-p">))</span>
+        <span class="tok-p">(</span><span class="tok-nb">regexp-match? </span><span class="tok-sr">#px&quot;^/\\* include::.* \\*/&quot;</span> <span class="tok-p">(</span><span class="tok-nf">string-trim</span> <span class="tok-nv">%</span><span class="tok-p">))))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">is-include-directive?</span> <span class="tok-s">&quot;  ;; include::&quot;</span><span class="tok-p">)</span> <span class="tok-no">#t</span><span class="tok-p">)</span>
@@ -1969,7 +1969,7 @@ are short and easily implemented like so:</p>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">get-included-snippet-name</span> <span class="tok-nv">line</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">is-include-directive?</span> <span class="tok-nv">line</span><span class="tok-p">)</span>
-      <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">line</span> <span class="tok-p">(</span><span class="tok-nf">trim</span> <span class="tok-nv">line</span><span class="tok-p">)]</span>
+      <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">line</span> <span class="tok-p">(</span><span class="tok-nf">string-trim</span> <span class="tok-nv">line</span><span class="tok-p">)]</span>
              <span class="tok-p">[</span><span class="tok-nf">line-2</span> <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">string-ends-with?</span> <span class="tok-nv">line</span> <span class="tok-s">&quot; --&gt;&quot;</span><span class="tok-p">)</span>
                          <span class="tok-p">(</span><span class="tok-nf">first</span> <span class="tok-p">(</span><span class="tok-nf">string-split</span> <span class="tok-nv">line</span> <span class="tok-s">&quot; --&gt;&quot;</span><span class="tok-p">))</span>
                          <span class="tok-nv">line</span><span class="tok-p">)]</span>
@@ -2037,7 +2037,7 @@ below.</p>
 
 <span class="tok-c1">;; include::include-snippet</span>
 
-<span class="tok-c1">;; include::include-file-snippets</span>
+<span class="tok-c1">;; include::generate-snippets-helpers</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">generate-src</span> <span class="tok-kd">#:from</span> <span class="tok-p">[</span><span class="tok-nf">from</span> <span class="tok-s">&quot;src&quot;</span><span class="tok-p">]</span>
                       <span class="tok-kd">#:to</span>   <span class="tok-p">[</span><span class="tok-nf">to</span>   <span class="tok-s">&quot;generated-src&quot;</span><span class="tok-p">])</span>
@@ -2053,10 +2053,12 @@ below.</p>
 need to include other snippets into file snippets.  <code>include-file-snippets</code>
 does exactly that.  This function takes a hash of snippets as a result of the
 call to <code>extract-snippets</code> and returns a hash of snippets with all file
-snippets <a href="#section/include-snippets">included</a>.</p>
+snippets <a href="#section/include-snippets">included</a>.  Let&#8217;s combine the implement
+of <code>include-file-snippets</code> and <code>generate-src-files</code> to make a complete set of
+helpers for <code>generate-src</code>.</p>
 </div>
 <div class="listingblock">
-<div class="title">code::include-file-snippets</div>
+<div class="title">code::generate-snippets-helpers</div>
 <div class="content">
 <pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
  2
@@ -2097,172 +2099,84 @@ snippets <a href="#section/include-snippets">included</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_command_code_generate_src_code_generating_source_code">2.4. Command: <code>generate-src</code> - generating source code</h3>
+<h3 id="_anatomy_of_a_ulquikit_command">2.4. Anatomy of a Ulquikit command</h3>
 <div class="paragraph">
-<p>Each command has to export at least 2 functions: <code>run</code> and <code>help</code>.</p>
+<p>Ulquikit commands are actually a Racket modules, residing in <code>commands/</code>.  The
+name of the module (without <code>.rkt</code> extension of course) is the actual command.
+E.g. <code>commands/generate-src.rkt</code> implements <code>generate-src</code> command.</p>
 </div>
-<div class="listingblock">
-<div class="title">file::commands/generate-src.rkt</div>
-<div class="content">
-<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
-
-<span class="tok-c1">;; include::use-rackjure</span>
-
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../command-core.rkt&quot;</span><span class="tok-p">)</span>
-
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/utils.rkt&quot;</span><span class="tok-p">)</span>
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/path.rkt&quot;</span><span class="tok-p">)</span>
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/string.rkt&quot;</span><span class="tok-p">)</span>
-
-<span class="tok-c1">;; (provide run</span>
-<span class="tok-c1">;;          help)</span>
-
-<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
-  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
-
-<span class="tok-c1">;; include::generate-src</span>
-
-<span class="tok-c1">;; include::commands/generate-src/run</span>
-
-<span class="tok-c1">;; include::commands/generate-src/help</span>
-</td></tr></table></code></pre>
+<div class="paragraph">
+<p>As a rule of thumb, each command has to provide at least 2 functions: <code>run</code>
+and <code>help</code>:</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_commands">3. Commands</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Each command is a Racket module defined in <code>commands/</code> directory, with the
-base file name as command name.</p>
-<div class="paragraph">
-<p>E.g. <code>commands/new-project.rkt</code> is for <code>ulqui new-project</code> command.</p>
-</div>
-</li>
-<li>
-<p>Each module implementing a command must export a function with the name
-<code>run</code>.  Arguments passing through <code>run</code> are actual command line arguments
-passing to the command.</p>
-<div class="paragraph">
-<p>Named arguments are translated into Racket&#8217;s keyword arguments.</p>
-</div>
+<p>Command line arguments are parsed and passed through <code>run</code> function.  Named
+arguments are automatically converted to either boolean or number and passed
+as Racket keywords.</p>
 <div class="paragraph">
 <p>E.g.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Executing <code>ulqui generate-src</code> calls <code>commands/generate-src</code>'s <code>(run)</code>.</p>
+<p><code>ulqui generate-src</code> calls <code>commands/generate-src</code>'s <code>(run)</code>.</p>
 </li>
 <li>
-<p>Executing <code>ulqui generate-src some-file</code> calls
-<code>commands/generate-src</code>'s <code>(run "some-file")</code>.</p>
+<p><code>ulqui generate-src some-file</code> calls <code>commands/generate-src</code>'s <code>(run "some-file")</code>.</p>
 </li>
 <li>
-<p>Executing <code>ulqui generate-src --from file1 --to file2</code> calls
+<p><code>ulqui generate-src --from file1 --to file2</code> calls
 <code>commands/generate-src</code>'s <code>(run #:from "file1" #:to "file2")</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
+<p>When <code>ulqui help command-name</code> or <code>ulqui command-name --help</code> is invoked,
+the <code>help</code> function that belongs to <code>commands/command-name.rkt</code> module is
+called.  The same effect could be achieved by calling <code>(run #:help #t)</code>.
+This the <code>help</code> function takes no arguments and returns a string that would
+be displayed as help.</p>
+</li>
+<li>
 <p>All commands must import <code>command-core.rkt</code> (relative to command directory:
 <code>../command-core.rkt</code>).</p>
 </li>
-<li>
-<p>All commands must export a <code>help</code> function returning a string, which serves
-as documentation for that command when running from the command line with
-<code>ulqui command-name --help</code> or <code>ulqui help command-name</code>.</p>
-</li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_core_functions_to_implement_commands">3.1. Core functions to implement commands</h3>
+<div class="paragraph">
+<p>With all that has been said, let&#8217;s move on to the function which is used to
+parse command line arguments.</p>
+</div>
+<div class="sect3">
+<h4 id="_parsing_command_line_arguments_code_parse_command_args_code">2.4.1. Parsing command line arguments <code>parse-command-args</code></h4>
+<div class="paragraph">
+<p>This function takes all arguments passed to the command line as a list of
+string and returns a map of following format:</p>
+</div>
 <div class="listingblock">
-<div class="title">file::command-core.rkt</div>
 <div class="content">
-<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
-
-<span class="tok-kn">#lang rackjure</span>
-
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">srfi/1</span><span class="tok-p">)</span>
-
-<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;utils/string.rkt&quot;</span><span class="tok-p">)</span>
-
-<span class="tok-p">(</span><span class="tok-k">provide </span><span class="tok-p">(</span><span class="tok-nf">all-defined-out</span><span class="tok-p">))</span>
-
-<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
-  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
-
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">display-command</span> <span class="tok-nv">title</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-nb">displayln </span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-s">&quot;----&gt; &quot;</span> <span class="tok-nv">title</span><span class="tok-p">)))</span>
-
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">run-help</span> <span class="tok-nv">command</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-nb">eval </span><span class="tok-o">`</span><span class="tok-p">(</span><span class="tok-nf">local-require</span> <span class="tok-o">,</span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-nv">command</span> <span class="tok-s">&quot;.rkt&quot;</span><span class="tok-p">)))</span>
-  <span class="tok-p">(</span><span class="tok-nb">eval </span><span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-nv">help</span><span class="tok-p">)))</span>
-
-<span class="tok-c1">;; include::command/parse-command-args</span>
-
-<span class="tok-c1">;; include::command/run-command</span>
-</td></tr></table></code></pre>
+<pre class="pygments highlight"><code class="racket language-racket"><span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-nv">list-of-arguments</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+ <span class="tok-ss">&#39;options</span>   <span class="tok-nv">hash-of-options</span><span class="tok-p">}</span>   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Two of the most important functions in <code>command-core</code> module are
-<code>run-command</code> and <code>parse-command-args</code>.</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>main arguments collected as a list, with the same order as they are at the
+command line</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>options are collected a hash; options that have no values are set to <code>#t</code></td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p><code>parse-command-args</code> will transform command line arguments into a list of
-appropriate keywords and values.</p>
-</div>
-<div class="listingblock">
-<div class="title">code::command/parse-command-args</div>
+<div id="func/parse-command-args" class="listingblock">
+<div class="title">code::parse-command-args</div>
 <div class="content">
 <pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
  2
@@ -2322,33 +2236,113 @@ appropriate keywords and values.</p>
 56
 57
 58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
+59</div></td><td class="code"><span class="tok-c1">;; include::parse-command-args-helpers</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-nv">args</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-k">let </span><span class="tok-p">([</span><span class="tok-nf">arguments</span> <span class="tok-p">(</span><span class="tok-nf">takef</span> <span class="tok-nv">args</span> <span class="tok-nv">is-argument?</span><span class="tok-p">)]</span>
+        <span class="tok-p">[</span><span class="tok-nf">rest-args</span> <span class="tok-p">(</span><span class="tok-nf">dropf</span> <span class="tok-nv">args</span> <span class="tok-nv">is-argument?</span><span class="tok-p">)])</span>
+    <span class="tok-p">(</span><span class="tok-k">let </span><span class="tok-nv">parse-options</span> <span class="tok-p">([</span><span class="tok-nf">rest-args</span>  <span class="tok-nv">rest-args</span><span class="tok-p">]</span>
+                        <span class="tok-p">[</span><span class="tok-nf">options</span>    <span class="tok-p">{}])</span>
+      <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">empty?</span> <span class="tok-nv">rest-args</span><span class="tok-p">)</span>
+          <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-nv">arguments</span>
+           <span class="tok-ss">&#39;options</span>   <span class="tok-nv">options</span><span class="tok-p">}</span>
+          <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">option-name</span>   <span class="tok-p">(</span><span class="tok-nf">first</span> <span class="tok-nv">rest-args</span><span class="tok-p">)]</span>
+                 <span class="tok-p">[</span><span class="tok-nf">option-values</span> <span class="tok-p">(</span><span class="tok-nf">takef</span> <span class="tok-p">(</span><span class="tok-nf">drop</span> <span class="tok-nv">rest-args</span> <span class="tok-mi">1</span><span class="tok-p">)</span> <span class="tok-nv">is-argument?</span><span class="tok-p">)]</span>
+                 <span class="tok-p">[</span><span class="tok-nf">rest-args</span>     <span class="tok-p">(</span><span class="tok-nf">dropf</span> <span class="tok-p">(</span><span class="tok-nf">rest</span> <span class="tok-nv">rest-args</span><span class="tok-p">)</span>   <span class="tok-nv">is-argument?</span><span class="tok-p">)]</span>
+
+                 <span class="tok-p">[</span><span class="tok-nf">option-values/converted</span> <span class="tok-p">(</span><span class="tok-nb">map </span><span class="tok-nv">try-convert-value</span> <span class="tok-nv">option-values</span><span class="tok-p">)]</span>
+
+                 <span class="tok-p">[</span><span class="tok-nf">name</span>   <span class="tok-p">(</span><span class="tok-nf">option-&gt;keyword</span> <span class="tok-nv">option-name</span><span class="tok-p">)]</span>
+                 <span class="tok-p">[</span><span class="tok-nf">values</span> <span class="tok-p">(</span><span class="tok-k">cond </span><span class="tok-p">[(</span><span class="tok-nb">zero? </span><span class="tok-p">(</span><span class="tok-nb">length </span><span class="tok-nv">option-values/converted</span><span class="tok-p">))</span>
+                                <span class="tok-no">#t</span><span class="tok-p">]</span>
+                               <span class="tok-p">[(</span><span class="tok-nb">= </span><span class="tok-p">(</span><span class="tok-nb">length </span><span class="tok-nv">option-values/converted</span><span class="tok-p">)</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
+                                <span class="tok-p">(</span><span class="tok-nf">first</span> <span class="tok-nv">option-values/converted</span><span class="tok-p">)]</span>
+                               <span class="tok-p">[</span><span class="tok-nf">else</span>
+                                <span class="tok-nv">option-values/converted</span><span class="tok-p">])])</span>
+            <span class="tok-p">(</span><span class="tok-nf">parse-options</span> <span class="tok-nv">rest-args</span>
+                           <span class="tok-p">(</span><span class="tok-nf">options</span> <span class="tok-nv">name</span> <span class="tok-nv">values</span><span class="tok-p">)))))))</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">())</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">()</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello-world&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello-world&quot;</span><span class="tok-p">)</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span><span class="tok-p">)</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;--help&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">()</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{</span><span class="tok-o">&#39;</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span><span class="tok-p">}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;--help&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span><span class="tok-p">)</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{</span><span class="tok-o">&#39;</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span><span class="tok-p">}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;--help&quot;</span> <span class="tok-s">&quot;world&quot;</span> <span class="tok-s">&quot;args&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span><span class="tok-p">)</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{</span><span class="tok-o">&#39;</span><span class="tok-kd">#:help</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;world&quot;</span> <span class="tok-s">&quot;args&quot;</span><span class="tok-p">)}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;--help&quot;</span> <span class="tok-s">&quot;hello&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">()</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{</span><span class="tok-o">&#39;</span><span class="tok-kd">#:help</span> <span class="tok-s">&quot;hello&quot;</span><span class="tok-p">}})</span>
+
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span> <span class="tok-s">&quot;--help&quot;</span> <span class="tok-s">&quot;--set-tab&quot;</span> <span class="tok-s">&quot;4&quot;</span><span class="tok-p">))</span>
+                <span class="tok-p">{</span><span class="tok-ss">&#39;arguments</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span><span class="tok-p">)</span>
+                 <span class="tok-ss">&#39;options</span>   <span class="tok-p">{</span><span class="tok-o">&#39;</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span>
+                             <span class="tok-o">&#39;</span><span class="tok-kd">#:set-tab</span> <span class="tok-mi">4</span><span class="tok-p">}}))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As always, it&#8217;s a good style to implement some helpers for
+<a href="#func/parse-command-args"><code>parse-command-args</code></a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">code::parse-command-args-helpers</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">is-argument?</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">not </span><span class="tok-p">(</span><span class="tok-nf">string-starts-with?</span> <span class="tok-nv">%</span> <span class="tok-s">&quot;-&quot;</span><span class="tok-p">)))</span>
 
@@ -2368,86 +2362,126 @@ appropriate keywords and values.</p>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">is-option?</span> <span class="tok-s">&quot;--a&quot;</span><span class="tok-p">)</span>  <span class="tok-no">#t</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">is-option?</span> <span class="tok-s">&quot;-&quot;</span><span class="tok-p">)</span>    <span class="tok-no">#t</span><span class="tok-p">))</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">parse-keyword</span>
-  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">string-&gt;keyword </span><span class="tok-p">(</span><span class="tok-nf">~&gt;&gt;</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;list </span><span class="tok-nv">%</span><span class="tok-p">)</span>
-                       <span class="tok-p">(</span><span class="tok-nf">drop-while</span> <span class="tok-p">(</span><span class="tok-err">λ</span> <span class="tok-p">(</span><span class="tok-nf">ch</span><span class="tok-p">)</span> <span class="tok-p">(</span><span class="tok-nb">eq? </span><span class="tok-sc">#\-</span> <span class="tok-nv">ch</span><span class="tok-p">)))</span>
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">option-&gt;keyword</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">string-&gt;keyword </span><span class="tok-p">(</span><span class="tok-nf">~&gt;</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;list </span><span class="tok-nv">%</span><span class="tok-p">)</span>
+                       <span class="tok-p">(</span><span class="tok-nf">dropf</span> <span class="tok-p">(</span><span class="tok-err">λ</span> <span class="tok-p">(</span><span class="tok-nf">ch</span><span class="tok-p">)</span> <span class="tok-p">(</span><span class="tok-nb">eq? </span><span class="tok-sc">#\-</span> <span class="tok-nv">ch</span><span class="tok-p">)))</span>
                        <span class="tok-nv">list-&gt;string</span><span class="tok-p">)))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-keyword</span> <span class="tok-s">&quot;-h&quot;</span><span class="tok-p">)</span>      <span class="tok-o">&#39;</span><span class="tok-kd">#:h)</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-keyword</span> <span class="tok-s">&quot;--help&quot;</span><span class="tok-p">)</span>  <span class="tok-o">&#39;</span><span class="tok-kd">#:help)</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-keyword</span> <span class="tok-s">&quot;---help&quot;</span><span class="tok-p">)</span> <span class="tok-o">&#39;</span><span class="tok-kd">#:help))</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">option-&gt;keyword</span> <span class="tok-s">&quot;-h&quot;</span><span class="tok-p">)</span>      <span class="tok-o">&#39;</span><span class="tok-kd">#:h)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">option-&gt;keyword</span> <span class="tok-s">&quot;--help&quot;</span><span class="tok-p">)</span>  <span class="tok-o">&#39;</span><span class="tok-kd">#:help)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">option-&gt;keyword</span> <span class="tok-s">&quot;---help&quot;</span><span class="tok-p">)</span> <span class="tok-o">&#39;</span><span class="tok-kd">#:help))</span>
 
-<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-nv">args</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-k">let </span><span class="tok-nv">parse</span> <span class="tok-p">([</span><span class="tok-nf">last-keyword</span> <span class="tok-nv">null</span><span class="tok-p">]</span>
-              <span class="tok-p">[</span><span class="tok-nf">args</span>         <span class="tok-p">(</span><span class="tok-nf">string-split</span> <span class="tok-nv">args</span> <span class="tok-s">&quot; &quot;</span><span class="tok-p">)]</span>
-              <span class="tok-p">[</span><span class="tok-nf">result</span>       <span class="tok-o">&#39;</span><span class="tok-p">()])</span>
-    <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">empty?</span> <span class="tok-nv">args</span><span class="tok-p">)</span>
-        <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nb">null? </span><span class="tok-nv">last-keyword</span><span class="tok-p">)</span>
-            <span class="tok-nv">result</span>
-            <span class="tok-p">(</span><span class="tok-nb">append </span><span class="tok-nv">result</span> <span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-nv">last-keyword</span> <span class="tok-no">#t</span><span class="tok-p">))))</span>
-        <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">current-arg</span> <span class="tok-p">(</span><span class="tok-nf">first</span> <span class="tok-nv">args</span><span class="tok-p">)]</span>
-               <span class="tok-p">[</span><span class="tok-nf">more</span>        <span class="tok-p">(</span><span class="tok-nf">rest</span> <span class="tok-nv">args</span><span class="tok-p">)]</span>
-
-               <span class="tok-p">[</span><span class="tok-nf">next-keyword</span> <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">is-argument?</span> <span class="tok-nv">current-arg</span><span class="tok-p">)</span>
-                                 <span class="tok-nv">null</span>
-                                 <span class="tok-p">(</span><span class="tok-nf">parse-keyword</span> <span class="tok-nv">current-arg</span><span class="tok-p">))]</span>
-               <span class="tok-p">[</span><span class="tok-nf">arg/converted</span> <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">is-argument?</span> <span class="tok-nv">current-arg</span><span class="tok-p">)</span>
-                                  <span class="tok-p">(</span><span class="tok-nf">if-let</span> <span class="tok-p">[</span><span class="tok-nf">value</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;number </span><span class="tok-nv">current-arg</span><span class="tok-p">)]</span>
-                                    <span class="tok-nv">value</span>
-                                    <span class="tok-nv">current-arg</span><span class="tok-p">)</span>
-                                  <span class="tok-p">(</span><span class="tok-nf">parse-keyword</span> <span class="tok-nv">current-arg</span><span class="tok-p">))]</span>
-               <span class="tok-p">[</span><span class="tok-nf">next-result-value</span>
-                <span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-k">and </span><span class="tok-p">(</span><span class="tok-nf">is-argument?</span> <span class="tok-nv">current-arg</span><span class="tok-p">)</span>
-                         <span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-k">and </span><span class="tok-p">(</span><span class="tok-nb">null? </span><span class="tok-nv">last-keyword</span><span class="tok-p">)</span>
-                                  <span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-nv">arg/converted</span><span class="tok-p">))</span>
-                             <span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-nv">last-keyword</span> <span class="tok-nv">arg/converted</span><span class="tok-p">))))</span>
-
-                    <span class="tok-p">(</span><span class="tok-k">and </span><span class="tok-p">(</span><span class="tok-nf">is-option?</span> <span class="tok-nv">current-arg</span><span class="tok-p">)</span>
-                         <span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-k">and </span><span class="tok-p">(</span><span class="tok-nb">null? </span><span class="tok-nv">last-keyword</span><span class="tok-p">)</span>
-                                  <span class="tok-o">&#39;</span><span class="tok-p">())</span>
-                             <span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-p">(</span><span class="tok-nb">list </span><span class="tok-nv">last-keyword</span> <span class="tok-no">#t</span><span class="tok-p">)))))])</span>
-          <span class="tok-p">(</span><span class="tok-nf">parse</span> <span class="tok-nv">next-keyword</span>
-                 <span class="tok-nv">more</span>
-                 <span class="tok-p">(</span><span class="tok-nb">append </span><span class="tok-nv">result</span> <span class="tok-nv">next-result-value</span><span class="tok-p">))))))</span>
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">try-convert-value</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">if-let</span> <span class="tok-p">[</span><span class="tok-nf">value</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;number </span><span class="tok-nv">%</span><span class="tok-p">)]</span>
+      <span class="tok-nv">value</span>
+      <span class="tok-nv">%</span><span class="tok-p">))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;&quot;</span><span class="tok-p">)</span> <span class="tok-o">&#39;</span><span class="tok-p">())</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;hello-world&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello-world&quot;</span><span class="tok-p">))</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;hello world&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span><span class="tok-p">))</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;--help&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">([</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span><span class="tok-p">]))</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;hello --help&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-p">[</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span><span class="tok-p">]))</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;--help hello&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">([</span><span class="tok-kd">#:help</span> <span class="tok-s">&quot;hello&quot;</span><span class="tok-p">]))</span>
-
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">parse-command-args</span> <span class="tok-s">&quot;hello world --help --set-tab 4&quot;</span><span class="tok-p">)</span>
-                <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;hello&quot;</span> <span class="tok-s">&quot;world&quot;</span>
-                  <span class="tok-p">[</span><span class="tok-kd">#:help</span> <span class="tok-no">#t</span><span class="tok-p">]</span>
-                  <span class="tok-p">[</span><span class="tok-kd">#:set-tab</span> <span class="tok-mi">4</span><span class="tok-p">])))</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;1&quot;</span><span class="tok-p">)</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">))</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><code>run-command</code> the result of parse-command-args and perform the actual call to
-<code>run</code> function of the module implementing the command.</p>
+<p>With all necessary functions implemented, <code>command-core</code> comes down to this
+little piece below:</p>
 </div>
 <div class="listingblock">
-<div class="title">code::command/run-command</div>
+<div class="title">file::command-core.rkt</div>
 <div class="content">
-<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3</div></td><td class="code"><span class="tok-c1">;; (define (run-command . arguments)</span>
-<span class="tok-c1">;;   (void)</span>
-<span class="tok-c1">;;   )</span>
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
+
+<span class="tok-c1">;; include::use-rackjure</span>
+
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;utils/string.rkt&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-k">provide </span><span class="tok-p">(</span><span class="tok-nf">all-defined-out</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">display-command</span> <span class="tok-nv">title</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">displayln </span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-s">&quot;----&gt; &quot;</span> <span class="tok-nv">title</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">run-help</span> <span class="tok-nv">command</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">eval </span><span class="tok-o">`</span><span class="tok-p">(</span><span class="tok-nf">local-require</span> <span class="tok-o">,</span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-nv">command</span> <span class="tok-s">&quot;.rkt&quot;</span><span class="tok-p">)))</span>
+  <span class="tok-p">(</span><span class="tok-nb">eval </span><span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-nv">help</span><span class="tok-p">)))</span>
+
+<span class="tok-c1">;; include::parse-command-args</span>
+
+<span class="tok-c1">;; include::run-command</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_command_code_generate_src_code">2.5. Command: <code>generate-src</code></h3>
+<div class="listingblock">
+<div class="title">file::commands/generate-src.rkt</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
+
+<span class="tok-c1">;; include::use-rackjure</span>
+
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../command-core.rkt&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/utils.rkt&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/path.rkt&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/string.rkt&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-c1">;; (provide run</span>
+<span class="tok-c1">;;          help)</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
+
+<span class="tok-c1">;; include::generate-src</span>
+
+<span class="tok-c1">;; include::commands/generate-src/run</span>
+
+<span class="tok-c1">;; include::commands/generate-src/help</span>
 </td></tr></table></code></pre>
 </div>
 </div>
@@ -2455,7 +2489,7 @@ appropriate keywords and values.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_utility_functions">4. Utility functions</h2>
+<h2 id="_utility_functions">3. Utility functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="Utilities.html">Utilities</a>.</p>
@@ -2463,7 +2497,7 @@ appropriate keywords and values.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_misc">5. Misc</h2>
+<h2 id="_misc">4. Misc</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">code::use-rackjure</div>
@@ -2479,7 +2513,7 @@ appropriate keywords and values.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license_header">6. License header</h2>
+<h2 id="_license_header">5. License header</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Of course, since Ulquikit is distributed under the terms of GPLv3, the license
@@ -2514,7 +2548,7 @@ header is necessary.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-30 02:47:18 ICT
+Last updated 2014-07-31 01:34:21 ICT
 </div>
 </div>
 </body>
