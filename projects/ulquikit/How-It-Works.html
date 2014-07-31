@@ -447,6 +447,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 <li><a href="#_putting_all_command_things_together">2.4.3. Putting all command things together</a></li>
 </ul>
 </li>
+<li><a href="#_generating_html">2.5. Generating HTML</a></li>
 </ul>
 </li>
 <li><a href="#_utility_functions">3. Utility functions</a></li>
@@ -2133,8 +2134,8 @@ helpers for <code>generate-src</code>.</p>
 
 Generate source code from a location to another location.
 
-  --from Location of the literate source code, default: &quot;src&quot;
-  --to   Location of the generated source code, default: &quot;generated-src&quot;
+  --from location where literate source code is stored, default: &quot;src&quot;
+  --to   location where source are generated, default: &quot;generated-src&quot;
 
 Examples
 
@@ -2460,7 +2461,14 @@ command line</td>
 35
 36
 37
-38</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
+38
+39
+40
+41
+42
+43
+44
+45</div></td><td class="code"><span class="tok-c1">;; #lang racket</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">is-argument?</span> <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">not </span><span class="tok-p">(</span><span class="tok-nf">string-starts-with?</span> <span class="tok-nv">%</span> <span class="tok-s">&quot;-&quot;</span><span class="tok-p">)))</span>
 
@@ -2493,11 +2501,18 @@ command line</td>
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">try-convert-value</span>
   <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">if-let</span> <span class="tok-p">[</span><span class="tok-nf">value</span> <span class="tok-p">(</span><span class="tok-nb">string-&gt;number </span><span class="tok-nv">%</span><span class="tok-p">)]</span>
       <span class="tok-nv">value</span>
-      <span class="tok-nv">%</span><span class="tok-p">))</span>
+      <span class="tok-p">(</span><span class="tok-k">cond </span><span class="tok-p">[(</span><span class="tok-nb">string=? </span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nv">%</span><span class="tok-p">)</span>
+             <span class="tok-no">#t</span><span class="tok-p">]</span>
+            <span class="tok-p">[(</span><span class="tok-nb">string=? </span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nv">%</span><span class="tok-p">)</span>
+             <span class="tok-no">#f</span><span class="tok-p">]</span>
+            <span class="tok-p">[</span><span class="tok-nf">else</span>
+             <span class="tok-nv">%</span><span class="tok-p">])))</span>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
   <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;1&quot;</span><span class="tok-p">)</span> <span class="tok-mi">1</span><span class="tok-p">)</span>
-  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">))</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;a&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;true&quot;</span><span class="tok-p">)</span>  <span class="tok-no">#t</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">try-convert-value</span> <span class="tok-s">&quot;false&quot;</span><span class="tok-p">)</span> <span class="tok-no">#f</span><span class="tok-p">))</span>
 </td></tr></table></code></pre>
 </div>
 </div>
@@ -2629,6 +2644,192 @@ other commands have to <code>required</code> comes down to this little piece bel
 </td></tr></table></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>The next big piece of Ulquikit is the <code>generate-html</code> command which generates
+HTML documents with some default options.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generating_html">2.5. Generating HTML</h3>
+<div class="paragraph">
+<p>First, let&#8217;s decide upon how this command is used:</p>
+</div>
+<div class="listingblock">
+<div class="title">file::commands/generate-html.help.txt</div>
+<div class="content">
+<pre class="pygments highlight"><code class="text language-text"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</div></td><td class="code">Usage: generate-html [--from from] [--to to]
+
+Generate HTMLs from a location containing AsciiDoc recursively.
+
+  --from       location where AsciiDoc documents are stored, default: &quot;src&quot;
+  --to         location where HTMLs are generated, default: &quot;generated-html&quot;
+
+Examples
+
+Generate HTMLs from src/ to generated-html/ recursively
+  ulqui generate-html
+
+or explicitly
+  ulqui generate-html --from src/ --to generated-html/
+
+Generate HTMLs from literate-source/ to generated-documents/
+  ulqui generate-html \
+    --from literate-source/ \
+    --to generated-documents
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As in other commands, <code>generate-html</code> also has a main function, which is named
+<code>generate-html</code> as well, taking 2 optional directories: source (of AsciiDoc
+documents) and destination (where HTML documents are generated), namedly
+<code>:from</code> and <code>:to</code> as in <a href="#func/generate-src"><code>generate-src</code></a>.</p>
+</div>
+<div class="listingblock">
+<div class="title">code::generate-html</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8
+9</div></td><td class="code"><span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">generate-html</span> <span class="tok-kd">#:from</span>      <span class="tok-p">[</span><span class="tok-nf">from</span> <span class="tok-s">&quot;src&quot;</span><span class="tok-p">]</span>
+                       <span class="tok-kd">#:to</span>        <span class="tok-p">[</span><span class="tok-nf">to</span> <span class="tok-s">&quot;generated-html&quot;</span><span class="tok-p">])</span>
+  <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">from</span>  <span class="tok-p">(</span><span class="tok-nf">get-path</span> <span class="tok-nv">from</span><span class="tok-p">)]</span>
+         <span class="tok-p">[</span><span class="tok-nf">to</span>    <span class="tok-p">(</span><span class="tok-nf">get-path</span> <span class="tok-nv">to</span><span class="tok-p">)]</span>
+         <span class="tok-p">[</span><span class="tok-nf">docs</span>  <span class="tok-p">(</span><span class="tok-nf">list-all-adocs</span> <span class="tok-nv">from</span><span class="tok-p">)])</span>
+    <span class="tok-p">(</span><span class="tok-k">parameterize </span><span class="tok-p">([</span><span class="tok-nf">current-directory</span> <span class="tok-nv">from</span><span class="tok-p">])</span>
+      <span class="tok-p">(</span><span class="tok-nf">for</span> <span class="tok-p">([</span><span class="tok-nf">doc</span> <span class="tok-nv">docs</span><span class="tok-p">])</span>
+        <span class="tok-p">(</span><span class="tok-nf">render-asciidoc</span> <span class="tok-nv">doc</span>
+                         <span class="tok-p">(</span><span class="tok-nf">get-relative-path</span> <span class="tok-nv">to</span> <span class="tok-p">(</span><span class="tok-nf">get-output-file</span> <span class="tok-nv">doc</span><span class="tok-p">)))))))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s dig into some helpers for this function.  The first helper to notice is
+<code>render-asciidoc</code>, used to build and run rendering command with AsciiDoctor.</p>
+</div>
+<div class="paragraph">
+<p>By default, AsciiDoctor is invoked with <code>--doctype book</code>.  Customization could
+be added later.</p>
+</div>
+<div class="listingblock">
+<div class="title">code::render-asciidoc</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6</div></td><td class="code"><span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">asciidoctor-format-command</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nb">format </span><span class="tok-s">&quot;asciidoctor ~a -d book -o ~a&quot;</span> <span class="tok-nv">%1</span> <span class="tok-nv">%2</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">render-asciidoc</span> <span class="tok-nv">input-file</span> <span class="tok-nv">output-file</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">displayln </span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-s">&quot;-&gt; &quot;</span> <span class="tok-nv">input-file</span> <span class="tok-s">&quot; =&gt; &quot;</span> <span class="tok-nv">output-file</span><span class="tok-p">))</span>
+  <span class="tok-p">(</span><span class="tok-nf">system</span> <span class="tok-p">(</span><span class="tok-nf">asciidoctor-format-command</span> <span class="tok-nv">input-file</span> <span class="tok-nv">output-file</span><span class="tok-p">)))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And last but not least, for <code>generate-html</code> to be ready, we need a function to
+extract file name and replace <code>.adoc</code> extension with <code>.html</code> extension.</p>
+</div>
+<div class="listingblock">
+<div class="title">code::get-output-file</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8</div></td><td class="code"><span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-nv">get-output-file</span>
+  <span class="tok-o">#</span><span class="tok-err">λ</span><span class="tok-p">(</span><span class="tok-nf">~&gt;</span> <span class="tok-p">(</span><span class="tok-nf">file-name-from-path</span> <span class="tok-nv">%</span><span class="tok-p">)</span>
+      <span class="tok-nv">path-&gt;string</span>
+      <span class="tok-p">(</span><span class="tok-nf">string-replace</span> <span class="tok-s">&quot;.adoc&quot;</span> <span class="tok-s">&quot;.html&quot;</span><span class="tok-p">)))</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">get-output-file</span> <span class="tok-s">&quot;/tmp/tmp.adoc&quot;</span><span class="tok-p">)</span>   <span class="tok-s">&quot;tmp.html&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">check-equal?</span> <span class="tok-p">(</span><span class="tok-nf">get-output-file</span> <span class="tok-s">&quot;/tmp/world.adoc&quot;</span><span class="tok-p">)</span> <span class="tok-s">&quot;world.html&quot;</span><span class="tok-p">))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code for command <code>generate-html</code> is as simple as followed:</p>
+</div>
+<div class="listingblock">
+<div class="title">file::commands/generate-html.rkt</div>
+<div class="content">
+<pre class="pygments highlight"><code class="racket language-racket"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</div></td><td class="code"><span class="tok-c1">;; include::license-header</span>
+
+<span class="tok-c1">;; include::use-rackjure</span>
+
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../command-core.rkt&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-s">&quot;../utils/path.rkt&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-k">provide </span><span class="tok-nv">run</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">test</span>
+  <span class="tok-p">(</span><span class="tok-k">require </span><span class="tok-nv">rackunit</span><span class="tok-p">))</span>
+
+<span class="tok-c1">;; include::render-asciidoc</span>
+
+<span class="tok-c1">;; include::get-output-file</span>
+
+<span class="tok-c1">;; include::generate-html</span>
+
+<span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">run</span> <span class="tok-kd">#:from</span> <span class="tok-p">[</span><span class="tok-nf">from</span> <span class="tok-s">&quot;src&quot;</span><span class="tok-p">]</span>
+             <span class="tok-kd">#:to</span>   <span class="tok-p">[</span><span class="tok-nf">to</span>   <span class="tok-s">&quot;generated-html&quot;</span><span class="tok-p">])</span>
+  <span class="tok-p">(</span><span class="tok-nf">display-command</span> <span class="tok-s">&quot;Generating HTML&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nf">generate-html</span> <span class="tok-kd">#:from</span> <span class="tok-nv">from</span>
+                 <span class="tok-kd">#:to</span>   <span class="tok-nv">to</span><span class="tok-p">))</span>
+</td></tr></table></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2693,7 +2894,7 @@ header is necessary.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-07-31 23:11:19 ICT
+Last updated 2014-08-01 02:02:39 ICT
 </div>
 </div>
 </body>
