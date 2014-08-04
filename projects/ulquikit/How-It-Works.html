@@ -451,14 +451,15 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 </li>
 <li><a href="#_generating_html">5. Generating HTML</a></li>
 <li><a href="#_the_code_ulqui_code_script">6. The <code>ulqui</code> script</a></li>
-<li><a href="#_misc">7. Misc</a></li>
-<li><a href="#_license_header">8. License header</a></li>
-<li><a href="#_extras">9. Extras</a></li>
-<li><a href="#_utility_functions">10. Utility functions</a></li>
+<li><a href="#_packaging">7. Packaging</a></li>
+<li><a href="#_misc">8. Misc</a></li>
+<li><a href="#_license_header">9. License header</a></li>
+<li><a href="#_extras">10. Extras</a></li>
+<li><a href="#_utility_functions">11. Utility functions</a></li>
 <li>
 <ul class="sectlevel2">
-<li><a href="#_command_list">10.1. Command list</a></li>
-<li><a href="#_story_how_the_racket_version_of_ulquikit_was_actually_developed">10.2. Story: How the Racket version of Ulquikit was actually developed</a></li>
+<li><a href="#_command_list">11.1. Command list</a></li>
+<li><a href="#_story_how_the_racket_version_of_ulquikit_was_actually_developed">11.2. Story: How the Racket version of Ulquikit was actually developed</a></li>
 </ul>
 </li>
 </ul>
@@ -797,6 +798,18 @@ Content of the code block
 ----                            <i class="conum" data-value="4"></i><b>(4)</b></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[source]                        <i class="conum" data-value="2"></i><b>(2)</b>
+.code::title-of-the-code-block  <i class="conum" data-value="1"></i><b>(1)</b>
+----                            <i class="conum" data-value="3"></i><b>(3)</b>
+Content of the code block
+----                            <i class="conum" data-value="4"></i><b>(4)</b></pre>
+</div>
+</div>
 </li>
 <li>
 <p>A <em>file snippet</em> shares the same structure as a <em>code snippet</em>:</p>
@@ -804,6 +817,18 @@ Content of the code block
 <div class="content">
 <pre>.file::title-of-the-code-block  <i class="conum" data-value="1"></i><b>(1)</b>
 [source]                        <i class="conum" data-value="2"></i><b>(2)</b>
+----                            <i class="conum" data-value="3"></i><b>(3)</b>
+Content of the code block
+----                            <i class="conum" data-value="4"></i><b>(4)</b></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[source]                        <i class="conum" data-value="2"></i><b>(2)</b>
+.file::title-of-the-code-block  <i class="conum" data-value="1"></i><b>(1)</b>
 ----                            <i class="conum" data-value="3"></i><b>(3)</b>
 Content of the code block
 ----                            <i class="conum" data-value="4"></i><b>(4)</b></pre>
@@ -959,14 +984,18 @@ name and add a new snippet.  Otherwise</p>
 48
 49
 50
-51</div></td><td class="code"><span class="tok-c1">;; include::extract-snippets-from-file-helpers</span>
+51
+52
+53
+54
+55</div></td><td class="code"><span class="tok-c1">;; include::extract-snippets-from-file-helpers</span>
 
 <span class="tok-p">(</span><span class="tok-k">define </span><span class="tok-p">(</span><span class="tok-nf">extract-snippets-from-file</span> <span class="tok-nv">path</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">file-content</span> <span class="tok-p">(</span><span class="tok-nf">read-file</span> <span class="tok-nv">path</span><span class="tok-p">)]</span>
          <span class="tok-p">[</span><span class="tok-nf">lines</span>        <span class="tok-p">(</span><span class="tok-nf">string-split</span> <span class="tok-nv">file-content</span> <span class="tok-s">&quot;\n&quot;</span> <span class="tok-kd">#:trim?</span> <span class="tok-no">#f</span><span class="tok-p">)]</span>
 
          <span class="tok-p">[</span><span class="tok-nf">snippets</span>        <span class="tok-p">(</span><span class="tok-nb">box </span><span class="tok-p">{</span><span class="tok-ss">&#39;file</span> <span class="tok-p">{}</span>
-                                <span class="tok-ss">&#39;code</span> <span class="tok-p">{}})]</span>
+                                      <span class="tok-ss">&#39;code</span> <span class="tok-p">{}})]</span>
 
          <span class="tok-p">[</span><span class="tok-nf">prev-prev-line</span>  <span class="tok-p">(</span><span class="tok-nb">box </span><span class="tok-s">&quot;&quot;</span><span class="tok-p">)]</span>
          <span class="tok-p">[</span><span class="tok-nf">prev-line</span>       <span class="tok-p">(</span><span class="tok-nb">box </span><span class="tok-s">&quot;&quot;</span><span class="tok-p">)]</span>
@@ -997,13 +1026,17 @@ name and add a new snippet.  Otherwise</p>
                                         <span class="tok-kd">#:lines</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">snippet-lines</span><span class="tok-p">)))]</span>
             <span class="tok-p">[(</span><span class="tok-nf">is-block-delimiter?</span> <span class="tok-nv">line</span><span class="tok-p">)</span>
 
-             <span class="tok-p">(</span><span class="tok-k">when </span><span class="tok-p">(</span><span class="tok-nf">is-block-title?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">))</span>
-               <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">inside-snippet</span> <span class="tok-no">#t</span><span class="tok-p">)</span>
+             <span class="tok-p">(</span><span class="tok-k">when </span><span class="tok-p">(</span><span class="tok-k">or </span><span class="tok-p">(</span><span class="tok-nf">is-block-title?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">))</span>
+                       <span class="tok-p">(</span><span class="tok-nf">is-block-title?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-line</span><span class="tok-p">)))</span>
+               <span class="tok-p">(</span><span class="tok-k">let </span><span class="tok-p">([</span><span class="tok-nf">title-line</span> <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">is-block-title?</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">))</span>
+                                     <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">)</span>
+                                     <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-line</span><span class="tok-p">))])</span>
+                 <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">inside-snippet</span> <span class="tok-no">#t</span><span class="tok-p">)</span>
 
-               <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-type</span> <span class="tok-p">(</span><span class="tok-nf">get-snippet-type</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">)))</span>
-               <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-name</span> <span class="tok-p">(</span><span class="tok-nf">get-snippet-name</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-prev-line</span><span class="tok-p">)))</span>
-               <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-lines</span> <span class="tok-o">&#39;</span><span class="tok-p">())</span>
-               <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-linenum</span> <span class="tok-p">(</span><span class="tok-nf">dec</span> <span class="tok-nv">line-num</span><span class="tok-p">)))])</span>
+                 <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-type</span> <span class="tok-p">(</span><span class="tok-nf">get-snippet-type</span> <span class="tok-nv">title-line</span><span class="tok-p">))</span>
+                 <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-name</span> <span class="tok-p">(</span><span class="tok-nf">get-snippet-name</span> <span class="tok-nv">title-line</span><span class="tok-p">))</span>
+                 <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-lines</span> <span class="tok-o">&#39;</span><span class="tok-p">())</span>
+                 <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">snippet-linenum</span> <span class="tok-p">(</span><span class="tok-nf">dec</span> <span class="tok-nv">line-num</span><span class="tok-p">))))])</span>
 
       <span class="tok-c1">;; Always update previous line</span>
       <span class="tok-p">(</span><span class="tok-nf">box-set!</span> <span class="tok-nv">prev-prev-line</span> <span class="tok-p">(</span><span class="tok-nb">unbox </span><span class="tok-nv">prev-line</span><span class="tok-p">))</span>
@@ -1390,8 +1423,8 @@ format</a> defined above.</p>
                          <span class="tok-s">&quot;&quot;</span>
                          <span class="tok-s">&quot;Just a hello world program&quot;</span>
                          <span class="tok-s">&quot;&quot;</span>
-                         <span class="tok-s">&quot;.file::/tmp/tmp.rkt&quot;</span>
                          <span class="tok-s">&quot;[source,racket,linenums]&quot;</span>
+                         <span class="tok-s">&quot;.file::/tmp/tmp.rkt&quot;</span>
                          <span class="tok-s">&quot;----&quot;</span>
                          <span class="tok-p">(</span><span class="tok-nf">expected-file-snippets</span> <span class="tok-s">&quot;/tmp/tmp.rkt&quot;</span><span class="tok-p">)</span>
                          <span class="tok-s">&quot;----&quot;</span>
@@ -3052,8 +3085,21 @@ and all functions which are imported need to be <code>require</code>d manually:<
 </div>
 </div>
 <div class="paragraph">
-<p>Finally, putting all things mentioned above together, we have this <code>ulqui</code>
-script:</p>
+<p>Putting all things mentioned above together, we have the following <code>ulqui</code>
+script.  To make the script as practical as possible, certain things should be
+clarified:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>By default, running <code>ulqui</code> alone usually means users need some help.  Thus
+running <code>ulqui</code> is equivalent to running <code>ulqui help</code>.</p>
+</li>
+<li>
+<p>If users execute invalid command, this script also fallbacks to <code>ulqui
+help</code> with a small error message.</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="title">file::bin/ulqui</div>
@@ -3085,7 +3131,11 @@ script:</p>
 25
 26
 27
-28</div></td><td class="code"><span class="tok-o">#</span><span class="tok-nv">!/usr/bin/env</span> <span class="tok-nv">racket</span>
+28
+29
+30
+31
+32</div></td><td class="code"><span class="tok-o">#</span><span class="tok-nv">!/usr/bin/env</span> <span class="tok-nv">racket</span>
 
 <span class="tok-c1">;; include::license-header</span>
 
@@ -3101,7 +3151,8 @@ script:</p>
 
 <span class="tok-p">(</span><span class="tok-nf">module+</span> <span class="tok-nv">main</span>
   <span class="tok-p">(</span><span class="tok-nf">void</span>
-   <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">arguments</span> <span class="tok-p">(</span><span class="tok-nb">vector-&gt;list </span><span class="tok-p">(</span><span class="tok-nf">current-command-line-arguments</span><span class="tok-p">))]</span>
+   <span class="tok-p">(</span><span class="tok-k">let* </span><span class="tok-p">([</span><span class="tok-nf">command-list</span> <span class="tok-p">(</span><span class="tok-nf">list-commands</span><span class="tok-p">)]</span>
+          <span class="tok-p">[</span><span class="tok-nf">arguments</span> <span class="tok-p">(</span><span class="tok-nb">vector-&gt;list </span><span class="tok-p">(</span><span class="tok-nf">current-command-line-arguments</span><span class="tok-p">))]</span>
           <span class="tok-p">[</span><span class="tok-nf">arg-list</span>  <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">empty?</span> <span class="tok-nv">arguments</span><span class="tok-p">)</span>
                          <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-s">&quot;help&quot;</span><span class="tok-p">)</span>
                          <span class="tok-nv">arguments</span><span class="tok-p">)]</span>
@@ -3111,6 +3162,9 @@ script:</p>
             <span class="tok-p">(</span><span class="tok-k">if </span><span class="tok-p">(</span><span class="tok-nf">empty?</span> <span class="tok-nv">args</span><span class="tok-p">)</span>
                 <span class="tok-p">(</span><span class="tok-nf">display-help</span><span class="tok-p">)</span>
                 <span class="tok-p">(</span><span class="tok-nf">run-help</span> <span class="tok-p">(</span><span class="tok-nf">first</span> <span class="tok-nv">args</span><span class="tok-p">)))]</span>
+           <span class="tok-p">[(</span><span class="tok-nb">not </span><span class="tok-p">(</span><span class="tok-nb">member </span><span class="tok-nv">command</span> <span class="tok-nv">command-list</span><span class="tok-p">))</span>
+            <span class="tok-p">(</span><span class="tok-nb">displayln </span><span class="tok-p">(</span><span class="tok-nf">str</span> <span class="tok-s">&quot;-&gt; Invalid command &quot;</span> <span class="tok-nv">command</span> <span class="tok-s">&quot;.\n&quot;</span><span class="tok-p">))</span>
+            <span class="tok-p">(</span><span class="tok-nf">display-help</span><span class="tok-p">)]</span>
            <span class="tok-p">[</span><span class="tok-nf">else</span>
             <span class="tok-p">(</span><span class="tok-nf">run-command</span> <span class="tok-nv">command</span> <span class="tok-nv">args</span><span class="tok-p">)]))))</span>
 </td></tr></table></code></pre>
@@ -3119,7 +3173,13 @@ script:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_misc">7. Misc</h2>
+<h2 id="_packaging">7. Packaging</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_misc">8. Misc</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="title">code::use-rackjure</div>
@@ -3135,7 +3195,7 @@ script:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license_header">8. License header</h2>
+<h2 id="_license_header">9. License header</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Of course, since Ulquikit is distributed under the terms of GPLv3, the license
@@ -3168,23 +3228,23 @@ header is necessary.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_extras">9. Extras</h2>
+<h2 id="_extras">10. Extras</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_utility_functions">10. Utility functions</h2>
+<h2 id="_utility_functions">11. Utility functions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="Utilities.html">Utilities</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_command_list">10.1. Command list</h3>
+<h3 id="_command_list">11.1. Command list</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_story_how_the_racket_version_of_ulquikit_was_actually_developed">10.2. Story: How the Racket version of Ulquikit was actually developed</h3>
+<h3 id="_story_how_the_racket_version_of_ulquikit_was_actually_developed">11.2. Story: How the Racket version of Ulquikit was actually developed</h3>
 
 </div>
 </div>
@@ -3192,7 +3252,7 @@ header is necessary.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-08-02 11:52:08 ICT
+Last updated 2014-08-04 22:00:22 ICT
 </div>
 </div>
 </body>
