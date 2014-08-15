@@ -53,7 +53,8 @@ should always be be its masters*.
 ### Programming Style
 
 Clean, concise, functional-style code **and documentation**.  Find
-[me](https://github.com/cmpitg) on Github.
+[me](https://github.com/cmpitg) on Github.  Did I mention that I'm a huge fan
+of [literate programming](http://www.literateprogramming.com/)?
 
 ## In Other IT-related Work
 
