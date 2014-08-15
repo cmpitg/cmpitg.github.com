@@ -5,11 +5,9 @@ description: Projects that I'm participating in
 group: navigation
 order: 50
 permalink: /projects/
-last_updated: Mon, 21 Jul 2014 17:59:46 +0700
+last_updated: Fri, 15 Aug 2014 16:55:07 +0700
 ---
 {% include JB/setup %}
-
-**TODO**
 
 ### FOSS Communities
 
@@ -25,7 +23,7 @@ last_updated: Mon, 21 Jul 2014 17:59:46 +0700
 
 * As a [Fedora Ambassador](https://fedoraproject.org/wiki/User:Cmpitg)
 
-### My Own - For Fun (and Benefits)
+### My Own - For Fun (and Profit)
 
 #### [bogoengine](/projects/bogoengine/) - A Vietnamese input method for GNU/Linux systems
 
