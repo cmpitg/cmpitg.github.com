@@ -47,8 +47,8 @@ DI+++ D++ G++ e* h* r* y-
 ## In Programming
 
 I collect programming languages as my hobby. I love and strongly believe in
-the art of designing programs. No matter how difficult a problem is,
-*programmers should always be the masters*.
+the art of designing programs. No matter how bad a language is, *programmers
+should always be be its masters*.
 
 ### Programming Style
 
