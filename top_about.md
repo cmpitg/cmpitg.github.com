@@ -35,8 +35,6 @@ annoying.  It's a hack after all.
 
 ## My Geek Code
 
-As of 2012:
-
 ```
 -----BEGIN GEEK CODE BLOCK-----
 Version: 3.12
