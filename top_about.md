@@ -60,8 +60,8 @@ of [literate programming](http://www.literateprogramming.com/)?
 
 I am a hardcore GNU/Linux system administrator. The first time I used
 GNU/Linux was in 2005, when I received a Ubuntu CD freely distributed in my
-school. I officially changed from Microsoft Windows® to GNU/Linux in 2008 and
-tried as many \*nix distributions as I can.
+school. I abandoned Micro$oft Windows® and moved (without a trace) to
+GNU/Linux in 2008 and tried as many \*nix distributions as I can.
 
 - In 2005: Ubuntu
 - From mid 2005 to mid 2006: Slackware and Fedora
