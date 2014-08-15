@@ -1,6 +1,6 @@
 ---
 layout: page_without_comments
-title: \[Thuật toán\] Tình hình học tập - Nghĩa
+title: Tình hình học tập - Nghĩa
 group: navigation
 listed: false
 permalink: /report-cs-nghia/
