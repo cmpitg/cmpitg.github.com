@@ -78,8 +78,8 @@ GNU/Linux in 2008 and tried as many \*nix distributions as I can.
 I’m a language, keyboard, and typeface lover. I speak Vietnamese (native),
 English (fluent), French (intermediate), Japanese (intermediate), and a bit of
 Spanish. I used to be an advanced Vim user but officially changed to Emacs in
-2010 when I found Vim did not fit all my need. I’m left-handed and a loyal
-Programmer Dvorak user.
+2010 when I found Vim did not fit all my need. I’m a loyal Programmer Dvorak
+user.
 
 I'm a fan of a barebone window manager with pluggable desktop components,
 rather than a bloated desktop environment.  2012 was the year I tried various
