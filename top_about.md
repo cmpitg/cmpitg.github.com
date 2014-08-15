@@ -31,9 +31,7 @@ you are interested!
 To make my life more thrilled, I have developed
 [RSI](http://en.wikipedia.org/wiki/Repetitive_strain_injury) since
 July 2012. My life as a computer addict has never been more excitingly
-annoying.
-
-Well, it's a hack after all.
+annoying.  It's a hack after all.
 
 ## My Geek Code
 
