@@ -8,7 +8,6 @@ permalink: /about/
 ---
 {% include JB/setup %}
 
-
 My name is *Nguyễn Hà Dương*, also known as Duong "Near" Nguyen in English, グ
 エンヤン in Japanese, and simply *cmpitg*. I'm a
 [FOSS](http://en.wikipedia.org/wiki/Free_and_Open_Source_Software) activist
@@ -25,7 +24,7 @@ of FOSS guys have founded
 [Hanoi Community Space](http://khonggiancongdong.org) - a FOSS working group
 and community model to promote the **philosophy and culture** of Free and Open
 Source Software, as well as to **bring value** to anyone who is a part of the
-ecosystem - in in
+ecosystem - in
 March 2012. [Join us](https://groups.google.com/group/khonggian-congdong) if
 you are interested!
 
@@ -92,7 +91,7 @@ including [dwm](https://en.wikipedia.org/wiki/Dwm),
 [Awesome](http://en.wikipedia.org/wiki/Awesome_(window_manager)), and
 [Xmonad](https://en.wikipedia.org/wiki/Xmonad).  Among all, Awesome was the
 nicest with the powerful Lua configuration, rich features and wide range of
-libraries, and I used it for the longest period of time.  However, as my needs
+libraries.  I used it for the longest period of time.  However, as my needs
 grew, my Awesome config became cluttered and tedious to manage.  With
 recommendation from [@myguidingstar](https://github.com/myguidingstar/), I
 tried [i3](http://en.wikipedia.org/wiki/i3_(window_manager)) and immediately
@@ -103,8 +102,6 @@ sticked with it since then.
 Please see the [projects page](/projects/).
 
 ## Reach Me?
-
-Please reach me by:
 
 - Poking me @ [Github](https://www.github.com/cmpitg)
 - Dropping me an email: NOTcmpitg [at] gmail-dotcom, or NOThaduong [at]
