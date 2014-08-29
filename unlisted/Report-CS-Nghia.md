@@ -7,6 +7,28 @@ permalink: /report-cs-nghia/
 ---
 {% include JB/setup %}
 
+# Buổi 17 - 2014/08/29
+
+* (Hoàn thành, chưa kiểm tra) Bài toán: Tìm 02 đường đi có tổng ngắn nhất
+  - Thuật toán Bellman-Moore: Sai cơ bản điều kiện cập nhật hàng đợi.
+
+* Bài toán: Tìm k đường đi có tổng ngắn nhất
+
+* Chưa hoàn thành bất kỳ công việc ở nhà nào mặc dù một tuần trôi qua.
+
+* Vẫn không có thói quen ghi chép lại thuật toán, tổng kết, ôn tập.
+
+# Buổi 16 - 2014/08/20
+
+* Bài toán: Dãy quân bài:
+  - Vẫn còn sai những test rất đơn giản.
+  - Ngộ nhận, hiểu sai bài toán cơ bản.
+
+* (Hoàn thành) Bài toán: Mê cung (Labyrinth trên SPOJ
+  - Viết lại chương trình từ đầu.
+  - Bài toán đơn giản nhưng tiến hành còn chậm.
+  - Ban đầu sai cơ bản.
+
 # Buổi 15 - 2014/08/15
 
 * (Hoàn thành) Bài toán: Dãy ngoặc đúng (Stack)
