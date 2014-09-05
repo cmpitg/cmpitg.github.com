@@ -7,12 +7,57 @@ permalink: /report-cs-nghia/
 ---
 {% include JB/setup %}
 
+# Buổi 20 - 2014/09/05
+
+* Ôn tập - Kiến thức thi Thành phố vòng I.
+
+* (Hoàn thành) Bài toán: Cộng, trừ, nhân số lớn
+  - Bắt đầu với 200 chữ số tối đa, tăng lên 1,000,000 chữ số.
+  - Bài toán này chỉ tương đương với **một phần** *của một bài* trong kỳ thi
+    Thành phố.
+  - Chậm (hoàn thành trong 50 phút).  Thời gian làm dưới 25 phút mới đạt yêu cầu.
+  - Chưa có tư duy đi từ tổng quát đến chi tiết, chưa hình dung được các bước
+    lớn của chương trình.
+  - Chưa chịu khó sử dụng giấy bút.  Khi sử dụng giấy bút thì tìm ra lỗi sai
+    ngay.
+
+# Buổi 19 - 2014/09/04
+
+* (Hoàn thành) Bài toán: Tìm cây khung đồ thị vô hướng
+  - Ôn tập kiến thức trên trường.
+  - Hiểu sai hoàn toàn khái niệm.
+  - Thiếu sót cơ bản: Không khởi tạo biến.
+  - Sai ngay từ test đầu tiên: 1-2, 1-3, 2-3, 2-4, 3-4.
+  - Phức tạp hóa vấn đề.
+  - Chưa thực sự nắm rõ thuật toán duyệt theo chiều rộng/sâu và cách tư duy
+    trên đồ thị.
+
+* (Hoàn thành) Bài toán: Tìm cây khung đồ thị vô hướng, số lượng đỉnh lớn
+  (500,000)
+  - Tự tạo chương trình test và đối chiếu 2 thuật giải.
+
+* Tạo chương trình test và kiểm tra kết quả:
+  - Phân tích rõ điều kiện để kết quả đúng.
+
+* Vẫn chưa chịu khó đầu tư thời gian đọc sách tại nhà.
+
+# Buổi 18 - 2014/09/03
+
+* (Chưa hoàn thành) Bài toán: Tìm K đường đi có tổng ngắn nhất
+  - Vẫn hiểu sai thuật toán (thành tìm đường đi ngắn thứ K), mặc dù vấn đề này
+    đã được thảo luận và kết luận tại buổi 15.
+
+* Ôn tập:
+  - Tổng kết kiến thức và bài tập thành một file hoàn chỉnh.
+  - Không làm lại được bài đã từng làm: Bài toán ngày sinh nhật; không phân
+    tích lại được thuật toán.
+
 # Buổi 17 - 2014/08/29
 
 * (Hoàn thành, chưa kiểm tra) Bài toán: Tìm 02 đường đi có tổng ngắn nhất
   - Thuật toán Bellman-Moore: Sai cơ bản điều kiện cập nhật hàng đợi.
 
-* Bài toán: Tìm k đường đi có tổng ngắn nhất
+* Bài toán: Tìm K đường đi có tổng ngắn nhất.
 
 * Chưa hoàn thành bất kỳ công việc ở nhà nào mặc dù một tuần trôi qua.
 
@@ -38,7 +83,7 @@ permalink: /report-cs-nghia/
     Tìm đường đi ngắn nhất trên đồ thị vô hướng, không có chu trình âm.
   - Kỹ thuật tự sinh test.
   - Kiểm tra chương trình bằng thuật toán đúng đã biết (Dijkstra).
-  - Áp dụng nâng cao: Bài toán: Tìm 2 đường đi có tổng ngắn nhất.
+  - Áp dụng nâng cao: Bài toán: Tìm 02 đường đi có tổng ngắn nhất.
 
 * (Chưa hoàn thành) Bài toán: Dãy quân bài
   - Xét thiếu trường hợp.
