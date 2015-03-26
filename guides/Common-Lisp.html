@@ -486,11 +486,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_recommended_setup_objective">1. Recommended setup (objective)</a>
-<ul class="sectlevel2">
-<li><a href="#_details">1.1. Details</a></li>
-</ul>
-</li>
+<li><a href="#_recommended_setup_objective">1. Recommended setup (objective)</a></li>
 <li><a href="#_tips_and_tricks">2. Tips and tricks</a>
 <ul class="sectlevel2">
 <li><a href="#_getting_current_working_directory">2.1. Getting current working directory</a></li>
@@ -499,10 +495,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_reading_slurping_file">2.4. Reading/slurping file</a></li>
 <li><a href="#_merging_paths">2.5. Merging paths</a></li>
 <li><a href="#_getting_path_to_a_system_loaded_with_asdf">2.6. Getting path to a system loaded with ASDF</a></li>
-<li><a href="#_writing_to_file">2.7. Writing to file</a></li>
 </ul>
 </li>
-<li><a href="#__code_cd_code_to_directory_of_current_loading_file">3. <code>cd</code> to directory of current loading file</a></li>
 </ul>
 </div>
 </div>
@@ -568,10 +562,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Quicklisp as package manager</p>
 </li>
 </ul>
-</div>
-<div class="sect2">
-<h3 id="_details">1.1. Details</h3>
-
 </div>
 </div>
 </div>
@@ -732,336 +722,10 @@ file into a string:</p>
 </td></tr></table></code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_writing_to_file">2.7. Writing to file</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/newfile.txt&quot;</span> <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span><span class="tok-p">))</span>
-</td></tr></table></code></pre>
+<pre></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Checking if a file or directory exists</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (probe-file #p"/home/cmpitg")
-#P"/home/cmpitg/"
-CL-USER&gt; (cl-fad:file-exists-p #p"/home/cmpitg")
-#P"/home/cmpitg/"
-CL-USER&gt; (cl-fad:file-exists-p #p"/home/cmpit")
-NIL</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Check if a directory exists</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (cl-fad:directory-exists-p #p"/home/cmpitg")
-#P"/home/cmpitg/"
-CL-USER&gt; (cl-fad:directory-exists-p #p"/tmp/tmp.txt")
-NIL</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create and write to a temporary file</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>`cl-fad:open-temporary` opens a temporary file and returns the stream corresponding to that file.  For conveniences, `with-output-to-temporary-file` is often a better suit.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (cl-fad:with-output-to-temporary-file (out)
-           (format out "Hello World"))
-#P"/tmp/temp-yccc29mc"
-CL-USER&gt; (with-open-file (in #P"/tmp/temp-yccc29mc") (read-line in))
-"Hello World"
-T</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Extract dirname/parent directory</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>With `cl-fad` library:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (path:dirname #P"/home/cmpitg")
-#P"/home/"
-CL-USER&gt; (path:dirname #P"/home/cmpitg/")
-#P"/home/cmpitg/"</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>or another with `cl-pad`:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (cl-fad:pathname-directory-pathname #p"/home/cmpitg")
-#P"/home/"
-CL-USER&gt; (cl-fad:pathname-directory-pathname #p"/home/cmpitg/")
-#P"/home/cmpitg/"
-CL-USER&gt; (cl-fad:pathname-directory-pathname #p"/home/cmpitg/hello.txt")
-#P"/home/cmpitg/"</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>or plain old Common Lisp</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (directory-namestring "/home/cmpitg")
-"/home/"
-CL-USER&gt; (directory-namestring "/home/cmpitg/")
-"/home/cmpitg/"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Extract basename/filename part</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>With `cl-fad` library:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (path:basename #P"/home/cmpitg")
-#P"cmpitg"
-CL-USER&gt; (path:basename #P"/home/cmpitg/")
-#P""</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Or plain old Common Lisp</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (file-namestring #P"/home/cmpitg")
-"cmpitg"
-CL-USER&gt; (file-namestring #P"/home/cmpitg/")
-""</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Compare pathnames</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>With `cl-fad` library</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (equalp #P"/home/cmpitg" "/home/cmpitg")
-NIL
-CL-USER&gt; (path:= #P"/home/cmpitg" "/home/cmpitg")
-T
-#P"/home/cmpitg"
-"/home/cmpitg"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Merge pathnames</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>All with `cl-fad` library:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>CL-USER&gt; (path:catfile #P"/home/cmpitg" "tmp.txt")
-#P"/home/tmp.txt"
-CL-USER&gt; (path:catfile #P"/home/cmpitg/" "tmp.txt")
-#P"/home/cmpitg/tmp.txt"
-CL-USER&gt; (cl-fad:merge-pathnames-as-file #P"/home/cmpitg" "tmp.txt")
-#P"/home/tmp.txt"
-CL-USER&gt; (cl-fad:merge-pathnames-as-file #P"/home/cmpitg/" "tmp.txt")
-#P"/home/cmpitg/tmp.txt"</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>List directory</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">(cl-pad:list-directory #P"/tmp/")                      </dt>
-<dd>
-<p>&#8658; List</p>
-</dd>
-<dt class="hdlist1">(cl-pad:list-directory #P"/tmp/" :follow-symlinks t)   </dt>
-<dd>
-<p>&#8658; List</p>
-</dd>
-</dl>
-</div>
-<div class="paragraph">
-<p>? - Logical pathname and physical pathname</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Reference: http://www.lispworks.com/documentation/HyperSpec/Body/f_logica.htm#logical-pathname-translations</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>In practice, it's rare to distinguish between the two.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>? - What is a logical pathname?</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Reference: http://www.lispworks.com/documentation/lw51/CLHS/Body/t_logica.htm
-File system concepts: http://www.lispworks.com/documentation/lw51/CLHS/Body/20_a.htm</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>? - What is truename?</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Reference: http://www.lispworks.com/documentation/lw51/CLHS/Body/20_ac.htm</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>In modern system and practice, you don't need to care much about truename.  If there's a function that uses truenames, you should always use it.</pre>
-</div>
-</div>
-<hr>
-<div class="paragraph">
-<p>TODO: Dumping image, having everything loaded and ready.</p>
-</div>
-<hr>
-<div class="paragraph">
-<p>Shell scripting</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__code_cd_code_to_directory_of_current_loading_file">3. <code>cd</code> to directory of current loading file</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>(use-package "cl-cwd")
-(use-package "cl-fad")
-(cwd (path:basename <strong>load-truename</strong>))</p>
-</div>
-<hr>
-<div class="paragraph">
-<p>Avoid</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>osicat</code>: it requires some compilation of C code.</p>
-</li>
-</ul>
-</div>
-<hr>
-<div class="paragraph">
-<p>Libraries</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Pathnames and operating system interfaces: <code>cl-pad</code>, <code>cl-cwd</code>, (avoid: <code>osicat</code>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://weitz.de/cl-fad" class="bare">http://weitz.de/cl-fad</a></p>
-</li>
-<li>
-<p><a href="https://www.common-lisp.net/project/osicat/manual/osicat.html" class="bare">https://www.common-lisp.net/project/osicat/manual/osicat.html</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Inaimathi/cl-cwd/" class="bare">https://github.com/Inaimathi/cl-cwd/</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<hr>
-<div class="paragraph">
-<p>Resources to get started</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>(Needs review) "Land of Lisp" by Conrad Barski M.D.</p>
-</li>
-<li>
-<p>Pascal Costanza&#8217;s Highly Opinionated Guide to Lisp: <a href="http://www.p-cos.net/lisp/guide.html" class="bare">http://www.p-cos.net/lisp/guide.html</a></p>
-</li>
-<li>
-<p>"On Lisp" by Paul Graham</p>
-</li>
-<li>
-<p>"ANSI Common Lisp" by Paul Graham</p>
-</li>
-<li>
-<p>(2015/03 - Imcomplete) "Learn Lisp the hard way":</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Website: <a href="http://learnlispthehardway.org/" class="bare">http://learnlispthehardway.org/</a></p>
-</li>
-<li>
-<p>Source: <a href="https://github.com/LispTO/llthw" class="bare">https://github.com/LispTO/llthw</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>"Practical Common Lisp" by Peter Siebel</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The book loses its verse after several chapters.  Introduced functions should have brief description.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Tools to get started</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>SBCL</p>
-</li>
-<li>
-<p>Quicklisp</p>
-</li>
-<li>
-<p>Emacs + Slime</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>TO write
-
-(setf (symbol-function 'foo) (lambda (num) (* num 2)))</pre>
 </div>
 </div>
 </div>
@@ -1069,7 +733,7 @@ File system concepts: http://www.lispworks.com/documentation/lw51/CLHS/Body/20_a
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-26 13:09:42 ICT
+Last updated 2015-03-26 13:11:58 ICT
 </div>
 </div>
 </body>
