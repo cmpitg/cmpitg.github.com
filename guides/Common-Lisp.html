@@ -495,6 +495,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_reading_slurping_file">2.4. Reading/slurping file</a></li>
 <li><a href="#_merging_paths">2.5. Merging paths</a></li>
 <li><a href="#_getting_path_to_a_system_loaded_with_asdf">2.6. Getting path to a system loaded with ASDF</a></li>
+<li><a href="#_writing_to_file">2.7. Writing to file</a></li>
 </ul>
 </li>
 </ul>
@@ -503,8 +504,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>TODO: Code examples</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Code examples
+</td>
+</tr>
+</table>
 </div>
 <div class="ulist">
 <ul>
@@ -545,6 +555,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Notes about writing reader macros in practice with <a href="https://common-lisp.net/project/named-readtables/" class="bare">https://common-lisp.net/project/named-readtables/</a></p>
 </li>
+<li>
+<p>Notes about readtable:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom vector literal</p>
+</li>
+<li>
+<p><a href="https://common-lisp.net/project/named-readtables/" class="bare">https://common-lisp.net/project/named-readtables/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Good utils:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/vseloved/rutils" class="bare">https://github.com/vseloved/rutils</a></p>
+</li>
+<li>
+<p><a href="https://github.com/vseloved/rutils/blob/master/docs/ann-rutils.md" class="bare">https://github.com/vseloved/rutils/blob/master/docs/ann-rutils.md</a></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 <hr>
@@ -573,7 +609,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Avoid <code>*default-pathname-defaults*</code>, it&#8217;s implementation-dependent.</p>
+<p>Avoid <code><strong>default-pathname-defaults</strong></code>, it&#8217;s implementation-dependent.</p>
 </li>
 <li>
 <p>(SBCL) SBCL: <code>(sb-posix:getcwd)</code>.</p>
@@ -627,7 +663,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_getting_current_file">2.3. Getting current file</h3>
 <div class="paragraph">
-<p><code>*load-truename*</code> or <code>*load-pathname*</code>, returning truename and pathname,
+<p><code><strong>load-truename</strong></code> or <code><strong>load-pathname</strong></code>, returning truename and pathname,
 respectively.  In modern system and practice, two kinds of pathnames could be
 used interchangably.</p>
 </div>
@@ -648,6 +684,17 @@ not properly closed if you don&#8217;t properly handle it.  Instead, use
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-no">t</span> <span class="tok-s">&quot;~A~%&quot;</span> <span class="tok-p">(</span><span class="tok-nb">read-line</span> <span class="tok-nv">in</span><span class="tok-p">)))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reading binary:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span> <span class="tok-ss">:element-type</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-kt">unsigned-byte</span> <span class="tok-mi">8</span><span class="tok-p">))</span>
+  <span class="tok-p">(</span><span class="tok-nb">read-byte</span> <span class="tok-nv">in</span><span class="tok-p">))</span>
 </td></tr></table></code></pre>
 </div>
 </div>
@@ -722,10 +769,93 @@ file into a string:</p>
 </td></tr></table></code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_writing_to_file">2.7. Writing to file</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Write when file doesn&#8217;t exist.  The following code will signal an error if
+<code>/tmp/tmp.txt</code> exists:</p>
 <div class="listingblock">
 <div class="content">
-<pre></pre>
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span> <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-no">t</span> <span class="tok-s">&quot;Hello World~%&quot;</span><span class="tok-p">))</span>
+</td></tr></table></code></pre>
 </div>
+</div>
+</li>
+<li>
+<p>Overwrite if file exists.  Note that <code>:if-exists</code> is <code>:supersude</code>, <strong>not</strong> <code>:overwrite</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span>
+                     <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span>
+                     <span class="tok-ss">:if-exists</span> <span class="tok-ss">:supersede</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-nv">out</span> <span class="tok-s">&quot;Xin chào thế giới~%&quot;</span><span class="tok-p">))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Overwrite, starting from the beginning of the file.  Note that Note that <code>:if-exists</code> is <code>:overwrite</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span>
+                     <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span>
+                     <span class="tok-ss">:if-exists</span> <span class="tok-ss">:supersede</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-nv">out</span> <span class="tok-s">&quot;Hello world!~%&quot;</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span>
+                     <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span>
+                     <span class="tok-ss">:if-exists</span> <span class="tok-ss">:overwrite</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-nv">out</span> <span class="tok-s">&quot;Bye  &quot;</span><span class="tok-p">))</span>
+
+<span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">read-line</span> <span class="tok-nv">in</span><span class="tok-p">))</span>
+<span class="tok-c1">;;; ⇨ &quot;Bye  world!</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Write binary:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span> <span class="tok-l-Other">#P&quot;/tmp/abc.txt&quot;</span>
+                     <span class="tok-ss">:direction</span> <span class="tok-ss">:output</span>
+                     <span class="tok-ss">:element-type</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-kt">unsigned-byte</span> <span class="tok-mi">8</span><span class="tok-p">))</span>
+  <span class="tok-p">(</span><span class="tok-nb">write-byte</span> <span class="tok-mi">97</span> <span class="tok-nv">out</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">write-byte</span> <span class="tok-mi">98</span> <span class="tok-nv">out</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">write-byte</span> <span class="tok-mi">99</span> <span class="tok-nv">out</span><span class="tok-p">))</span>
+<span class="tok-c1">;;; Write out &quot;abc&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -733,7 +863,7 @@ file into a string:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-26 13:11:58 ICT
+Last updated 2015-03-27 01:46:05 ICT
 </div>
 </div>
 </body>
