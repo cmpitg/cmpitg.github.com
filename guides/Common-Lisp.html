@@ -486,16 +486,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_recommended_setup_objective">1. Recommended setup (objective)</a></li>
-<li><a href="#_tips_and_tricks">2. Tips and tricks</a>
+<li><a href="#_tips_and_tricks">1. Tips and tricks</a>
 <ul class="sectlevel2">
-<li><a href="#_getting_current_working_directory">2.1. Getting current working directory</a></li>
-<li><a href="#_changing_current_working_directory_code_cd_code">2.2. Changing current working directory/<code>cd</code></a></li>
-<li><a href="#_getting_current_file">2.3. Getting current file</a></li>
-<li><a href="#_reading_slurping_file">2.4. Reading/slurping file</a></li>
-<li><a href="#_merging_paths">2.5. Merging paths</a></li>
-<li><a href="#_getting_path_to_a_system_loaded_with_asdf">2.6. Getting path to a system loaded with ASDF</a></li>
-<li><a href="#_writing_to_file">2.7. Writing to file</a></li>
+<li><a href="#_suppressing_banner">1.1. Suppressing banner</a></li>
+<li><a href="#_getting_current_working_directory">1.2. Getting current working directory</a></li>
+<li><a href="#_changing_current_working_directory_code_cd_code">1.3. Changing current working directory/<code>cd</code></a></li>
+<li><a href="#_getting_current_file">1.4. Getting current file</a></li>
+<li><a href="#_reading_slurping_file">1.5. Reading/slurping file</a></li>
+<li><a href="#_merging_paths">1.6. Merging paths</a></li>
+<li><a href="#_getting_path_to_a_system_loaded_with_asdf">1.7. Getting path to a system loaded with ASDF</a></li>
+<li><a href="#_writing_to_file">1.8. Writing to file</a></li>
+<li><a href="#_listing_directory">1.9. Listing directory</a></li>
+<li><a href="#_checking_if_a_file_or_directory_exists">1.10. Checking if a file or directory exists</a>
+<ul class="sectlevel3">
+<li><a href="#_checking_directory_exists_only">1.10.1. Checking directory exists only</a></li>
+</ul>
+</li>
+<li><a href="#_merging_pathnames">1.11. Merging pathnames</a></li>
+<li><a href="#__code_cd_code_to_directory_of_current_loading_file">1.12. <code>cd</code> to directory of current loading file</a></li>
+<li><a href="#_using_temporary_file">1.13. Using temporary file</a></li>
+<li><a href="#_extracting_dirname_parent_directory">1.14. Extracting dirname/parent directory</a></li>
+<li><a href="#_what_is_truename">1.15. What is truename?</a></li>
+<li><a href="#_difference_between_physical_and_logical_pathname">1.16. Difference between physical and logical pathname?</a></li>
 </ul>
 </li>
 </ul>
@@ -556,6 +568,9 @@ Code examples
 <p>Notes about writing reader macros in practice with <a href="https://common-lisp.net/project/named-readtables/" class="bare">https://common-lisp.net/project/named-readtables/</a></p>
 </li>
 <li>
+<p>Notes about extracting filename and extracting file extensions.</p>
+</li>
+<li>
 <p>Notes about readtable:</p>
 <div class="ulist">
 <ul>
@@ -587,25 +602,16 @@ Code examples
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recommended_setup_objective">1. Recommended setup (objective)</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Emacs with Slime</p>
-</li>
-<li>
-<p>Quicklisp as package manager</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tips_and_tricks">2. Tips and tricks</h2>
+<h2 id="_tips_and_tricks">1. Tips and tricks</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_getting_current_working_directory">2.1. Getting current working directory</h3>
+<h3 id="_suppressing_banner">1.1. Suppressing banner</h3>
+<div class="paragraph">
+<p>For SBCL: use <code>--noinform</code> argument when starting.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_current_working_directory">1.2. Getting current working directory</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -632,7 +638,7 @@ Code examples
 </div>
 </div>
 <div class="sect2">
-<h3 id="_changing_current_working_directory_code_cd_code">2.2. Changing current working directory/<code>cd</code></h3>
+<h3 id="_changing_current_working_directory_code_cd_code">1.3. Changing current working directory/<code>cd</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -661,15 +667,14 @@ Code examples
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_current_file">2.3. Getting current file</h3>
+<h3 id="_getting_current_file">1.4. Getting current file</h3>
 <div class="paragraph">
 <p><code><strong>load-truename</strong></code> or <code><strong>load-pathname</strong></code>, returning truename and pathname,
-respectively.  In modern system and practice, two kinds of pathnames could be
-used interchangably.</p>
+respectively.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reading_slurping_file">2.4. Reading/slurping file</h3>
+<h3 id="_reading_slurping_file">1.5. Reading/slurping file</h3>
 <div class="paragraph">
 <p>Avoid using <code>open</code> and <code>close</code> as 1) it&#8217;s error-prone, and 2) the file might
 not properly closed if you don&#8217;t properly handle it.  Instead, use
@@ -747,22 +752,22 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_merging_paths">2.5. Merging paths</h3>
+<h3 id="_merging_paths">1.6. Merging paths</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
 3
-4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#p&quot;lib/misc&quot;</span> <span class="tok-l-Other">#p&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/lib/misc&quot;</span>
-<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#p&quot;lib/misc&quot;</span> <span class="tok-l-Other">#p&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/lib/misc&quot;</span>
-<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#p&quot;lib/misc&quot;</span> <span class="tok-l-Other">#p&quot;home/batman&quot;</span><span class="tok-p">)</span>   <span class="tok-c1">;; ⇨ #P&quot;home/lib/misc&quot;</span>
-<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#p&quot;lib/misc&quot;</span> <span class="tok-l-Other">#p&quot;home/batman/&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;home/batman/lib/misc&quot;</span>
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#P&quot;lib/misc&quot;</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/lib/misc&quot;</span>
+<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#P&quot;lib/misc&quot;</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/lib/misc&quot;</span>
+<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#P&quot;lib/misc&quot;</span> <span class="tok-l-Other">#P&quot;home/batman&quot;</span><span class="tok-p">)</span>   <span class="tok-c1">;; ⇨ #P&quot;home/lib/misc&quot;</span>
+<span class="tok-p">(</span><span class="tok-nb">merge-pathnames</span> <span class="tok-l-Other">#P&quot;lib/misc&quot;</span> <span class="tok-l-Other">#P&quot;home/batman/&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;home/batman/lib/misc&quot;</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_path_to_a_system_loaded_with_asdf">2.6. Getting path to a system loaded with ASDF</h3>
+<h3 id="_getting_path_to_a_system_loaded_with_asdf">1.7. Getting path to a system loaded with ASDF</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">asdf:system-source-directory</span> <span class="tok-ss">:optima</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/quicklisp/dists/quicklisp/software/optima-20150302-git/&quot;</span>
@@ -771,7 +776,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_writing_to_file">2.7. Writing to file</h3>
+<h3 id="_writing_to_file">1.8. Writing to file</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -858,12 +863,218 @@ file into a string:</p>
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_listing_directory">1.9. Listing directory</h3>
+<div class="paragraph">
+<p>With <code>cl-pad</code> library:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-pad:list-directory</span> <span class="tok-l-Other">#P&quot;/tmp/&quot;</span><span class="tok-p">)</span>                      <span class="tok-c1">;; ⇨ List</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-pad:list-directory</span> <span class="tok-l-Other">#P&quot;/tmp/&quot;</span> <span class="tok-ss">:follow-symlinks</span> <span class="tok-no">t</span><span class="tok-p">)</span>   <span class="tok-c1">;; ⇨ List</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_checking_if_a_file_or_directory_exists">1.10. Checking if a file or directory exists</h3>
+<div class="paragraph">
+<p>Either <code>probe-file</code> or <code>cl-fad&#8217;s `file-exists</code> would work.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">probe-file</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:file-exists-p</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:file-exists-p</span> <span class="tok-l-Other">#P&quot;/home/batma&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ NIL</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_checking_directory_exists_only">1.10.1. Checking directory exists only</h4>
+<div class="paragraph">
+<p>With <code>cl-fad</code> library:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:directory-exists-p</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:directory-exists-p</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ NIL</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_merging_pathnames">1.11. Merging pathnames</h3>
+<div class="paragraph">
+<p>With <code>cl-fad</code> library:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">path:catfile</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>                    <span class="tok-c1">;; ⇨ #P&quot;/home/tmp.txt&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">path:catfile</span> <span class="tok-l-Other">#P&quot;/home/cmpitg/&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>                   <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/tmp.txt&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:merge-pathnames-as-file</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/tmp.txt&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:merge-pathnames-as-file</span> <span class="tok-l-Other">#P&quot;/home/cmpitg/&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/tmp.txt&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__code_cd_code_to_directory_of_current_loading_file">1.12. <code>cd</code> to directory of current loading file</h3>
+<div class="paragraph">
+<p>With <code>cl-cwd</code> and <code>cl-fad</code> libraries:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-s">&quot;cl-cwd&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">cwd</span> <span class="tok-p">(</span><span class="tok-nv">path:basename</span> <span class="tok-vg">*load-truename*</span><span class="tok-p">))</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_temporary_file">1.13. Using temporary file</h3>
+<div class="paragraph">
+<p><code>cl-fad</code>'s <code>open-temporary</code> opens a temporary file and returns the stream
+corresponding to that file.  For conveniences, <code>with-output-to-temporary-file</code>
+is often a better suit.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:with-output-to-temporary-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-nv">out</span> <span class="tok-s">&quot;Hello World&quot;</span><span class="tok-p">))</span>
+<span class="tok-c1">;; ⇨ #P&quot;/tmp/temp-yccc29mc&quot;</span>
+
+<span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-l-Other">#P&quot;/tmp/temp-yccc29mc&quot;</span><span class="tok-p">)</span>
+  <span class="tok-p">(</span><span class="tok-nb">read-line</span> <span class="tok-nv">in</span><span class="tok-p">))</span>
+<span class="tok-c1">;; ⇨ &quot;Hello World&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extracting_dirname_parent_directory">1.14. Extracting dirname/parent directory</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Plain old Common Lisp:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">directory-namestring</span> <span class="tok-s">&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ &quot;/home/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nb">directory-namestring</span> <span class="tok-s">&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ &quot;/home/batman/&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>With <code>cl-fad</code> library:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">path:dirname</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">path:dirname</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>With <code>cl-pad</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>            <span class="tok-c1">;; ⇨ #P&quot;/home/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman/hello.txt&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>== FAQs</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_truename">1.15. What is truename?</h3>
+<div class="paragraph">
+<p>From
+<a href="http://www.lispworks.com/documentation/lw51/CLHS/Body/20_ac.htm">HyperSpec</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Truename is a pathname with any file system-level translations such as
+resolving symbolic links performed.</p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_difference_between_physical_and_logical_pathname">1.16. Difference between physical and logical pathname?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>From
+<a href="http://www.lispworks.com/documentation/lw51/CLHS/Body/t_logica.htm">HyperSpec</a>:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>(Logical pathname is) A pathname that uses a namestring syntax that is
+implementation-independent, and that has component values that are
+implementation-independent</p>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p>From <a href="http://www.gigamonkeys.com/book">Practical Common Lisp</a></p>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Logical pathnames allow Common Lisp programs to contain references to
+pathnames without naming specific files. Logical pathnames could then be
+mapped to specific locations in an actual file system when the program was
+installed by defining a "logical pathname translation" that translates logical
+pathnames matching certain wildcards to pathnames representing files in the
+file system, so-called physical pathnames.</p>
+</div>
+</blockquote>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In modern system, it&#8217;s safe to ignore the difference between logical and
+physical pathnames.</p>
+</div>
+<div class="paragraph">
+<p>Truename is a pathname with any file system-level translations such as resolving symbolic links performed.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-27 01:46:05 ICT
+Last updated 2015-03-29 08:17:34 ICT
 </div>
 </div>
 </body>
