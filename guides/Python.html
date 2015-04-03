@@ -493,7 +493,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#__code_pip_install_code_inside_python">1.3. <code>pip install</code> inside Python</a></li>
 <li><a href="#_installing_numpy_and_scipy_in_virtualenv">1.4. Installing numpy and scipy in virtualenv</a></li>
 <li><a href="#_using_temporary_file">1.5. Using temporary file</a></li>
-<li><a href="#_generating_ssh_key_pairs_on_file_system">1.6. Generating SSH key pairs on file system</a></li>
+<li><a href="#_trapping_code_ctrl_c_code_but_not_sigterm">1.6. Trapping <code>Ctrl-C</code> but not SIGTERM</a></li>
+<li><a href="#_dropping_into_ipython_pdb">1.7. Dropping into IPython PDB</a></li>
+<li><a href="#_getting_site_package_path">1.8. Getting site-package path</a></li>
+<li><a href="#_generating_ssh_key_pairs_on_file_system">1.9. Generating SSH key pairs on file system</a></li>
 </ul>
 </li>
 <li><a href="#_faqs">2. FAQs</a>
@@ -548,7 +551,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span class="tok-k">def</span> <span class="tok-nf">md5_digest</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">):</span>
     <span class="tok-sd">&quot;&quot;&quot;Calculates an MD5 digest of a string.&quot;&quot;&quot;</span>
     <span class="tok-n">m</span> <span class="tok-o">=</span> <span class="tok-n">hashlib</span><span class="tok-o">.</span><span class="tok-n">md5</span><span class="tok-p">()</span>
-    <span class="tok-n">m</span><span class="tok-o">.</span><span class="tok-n">update</span><span class="tok-p">(</span><span class="tok-s">&quot;s&quot;</span><span class="tok-p">)</span>
+    <span class="tok-n">m</span><span class="tok-o">.</span><span class="tok-n">update</span><span class="tok-p">(</span><span class="tok-n">s</span><span class="tok-p">)</span>
     <span class="tok-k">return</span> <span class="tok-n">m</span><span class="tok-o">.</span><span class="tok-n">hexdigest</span><span class="tok-p">()</span>
 </td></tr></table></code></pre>
 </div>
@@ -630,7 +633,77 @@ pip install numpy scipy
 </div>
 </div>
 <div class="sect2">
-<h3 id="_generating_ssh_key_pairs_on_file_system">1.6. Generating SSH key pairs on file system</h3>
+<h3 id="_trapping_code_ctrl_c_code_but_not_sigterm">1.6. Trapping <code>Ctrl-C</code> but not SIGTERM</h3>
+<div class="paragraph">
+<p>By using <code>KeyboardInterrupt</code> exception:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</div></td><td class="code"><span class="tok-kn">import</span> <span class="tok-nn">time</span><span class="tok-o">,</span> <span class="tok-nn">sys</span>
+
+
+<span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-mi">1</span>
+<span class="tok-k">while</span> <span class="tok-bp">True</span><span class="tok-p">:</span>
+    <span class="tok-k">try</span><span class="tok-p">:</span>
+        <span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">x</span><span class="tok-p">)</span>
+        <span class="tok-n">time</span><span class="tok-o">.</span><span class="tok-n">sleep</span><span class="tok-p">(</span><span class="tok-o">.</span><span class="tok-mi">3</span><span class="tok-p">)</span>
+        <span class="tok-n">x</span> <span class="tok-o">+=</span> <span class="tok-mi">1</span>
+    <span class="tok-k">except</span> <span class="tok-ne">KeyboardInterrupt</span><span class="tok-p">:</span>
+        <span class="tok-k">print</span> <span class="tok-s">&quot;Bye&quot;</span>
+        <span class="tok-n">sys</span><span class="tok-o">.</span><span class="tok-n">exit</span><span class="tok-p">()</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dropping_into_ipython_pdb">1.7. Dropping into IPython PDB</h3>
+<div class="paragraph">
+<p>Install <code>ipdb</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code">pip install ipdb
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then in your code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-kn">import</span> <span class="tok-nn">ipdb</span><span class="tok-p">;</span> <span class="tok-n">ipdb</span><span class="tok-o">.</span><span class="tok-n">set_trace</span><span class="tok-p">()</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_site_package_path">1.8. Getting site-package path</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4</div></td><td class="code"><span class="tok-kn">from</span> <span class="tok-nn">distutils.sysconfig</span> <span class="tok-kn">import</span> <span class="tok-n">get_python_lib</span>
+
+
+<span class="tok-k">print</span><span class="tok-p">(</span><span class="tok-n">get_python_lib</span><span class="tok-p">())</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_generating_ssh_key_pairs_on_file_system">1.9. Generating SSH key pairs on file system</h3>
 <div class="paragraph">
 <p>Requirement: Pycrypto.</p>
 </div>
@@ -827,7 +900,7 @@ bottleneck.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-04-04 01:17:17 ICT
+Last updated 2015-04-04 01:54:43 ICT
 </div>
 </div>
 </body>
