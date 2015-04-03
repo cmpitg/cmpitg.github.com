@@ -510,15 +510,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_extracting_dirname_parent_directory">1.16. Extracting dirname/parent directory</a></li>
 <li><a href="#_extracting_basename_filename">1.17. Extracting basename/filename</a></li>
 <li><a href="#_comparing_pathnames">1.18. Comparing pathnames</a></li>
+<li><a href="#_bitwise_operations">1.19. Bitwise operations</a></li>
+<li><a href="#_slime_starting_swank_server">1.20. Slime - Starting swank server</a></li>
+<li><a href="#_updating_quicklisp_systems_and_clients">1.21. Updating Quicklisp systems and clients</a></li>
 </ul>
 </li>
 <li><a href="#_faqs">2. FAQs</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_truename">2.1. What is truename?</a></li>
 <li><a href="#_difference_between_physical_and_logical_pathname">2.2. Difference between physical and logical pathname?</a></li>
+<li><a href="#_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.3. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</a></li>
 </ul>
 </li>
 <li><a href="#_useful_libraries">3. Useful libraries</a></li>
+<li><a href="#_other_interesting_pieces">4. Other interesting pieces</a></li>
 </ul>
 </div>
 </div>
@@ -1216,6 +1221,73 @@ is often a better suit.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_bitwise_operations">1.19. Bitwise operations</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</div></td><td class="code"><span class="tok-p">(</span><span class="tok-k">let</span> <span class="tok-p">((</span><span class="tok-nv">a</span> <span class="tok-mi">7</span><span class="tok-p">)</span>
+      <span class="tok-p">(</span><span class="tok-nv">b</span> <span class="tok-mi">8</span><span class="tok-p">))</span>
+  <span class="tok-c1">;; AND</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">logand</span> <span class="tok-nv">a</span> <span class="tok-nv">b</span><span class="tok-p">))</span>                  <span class="tok-c1">; ⇨ 0</span>
+
+  <span class="tok-c1">;; OR = IOR = inclusive OR</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">logior</span> <span class="tok-nv">a</span> <span class="tok-nv">b</span><span class="tok-p">))</span>                  <span class="tok-c1">; ⇨ 15</span>
+
+  <span class="tok-c1">;; XOR</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">logxor</span> <span class="tok-nv">a</span> <span class="tok-nv">b</span><span class="tok-p">))</span>                  <span class="tok-c1">; ⇨ 15</span>
+
+  <span class="tok-c1">;; NOT</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">lognot</span> <span class="tok-nv">a</span><span class="tok-p">))</span>                    <span class="tok-c1">; ⇨ -8</span>
+
+  <span class="tok-c1">;; Shift left</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">ash</span> <span class="tok-nv">a</span> <span class="tok-nv">b</span><span class="tok-p">))</span>                     <span class="tok-c1">; ⇨ 1792</span>
+
+  <span class="tok-c1">;; Shift right</span>
+  <span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-p">(</span><span class="tok-nb">ash</span> <span class="tok-nv">a</span> <span class="tok-mi">2</span><span class="tok-p">)))</span>                    <span class="tok-c1">; ⇨ 28</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_slime_starting_swank_server">1.20. Slime - Starting swank server</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">swank:create-server</span> <span class="tok-ss">:port</span> <span class="tok-mi">4005</span> <span class="tok-ss">:style</span> <span class="tok-ss">:spawn</span> <span class="tok-ss">:dont-close</span> <span class="tok-no">t</span><span class="tok-p">)</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updating_quicklisp_systems_and_clients">1.21. Updating Quicklisp systems and clients</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:update-client</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:update-dist</span> <span class="tok-s">&quot;package-name&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:update-all-dists</span><span class="tok-p">)</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1275,6 +1347,12 @@ file system, so-called physical pathnames.</p>
 physical pathnames.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.3. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</h3>
+<div class="paragraph">
+<p>Find hunchentoot/acceptor.lisp and change "errors/" to "errors".</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1283,23 +1361,144 @@ physical pathnames.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pathnames and operating system interfaces: <code>cl-pad</code>, <code>cl-cwd</code>, and <code>osicat</code></p>
+<p>Pathnames and operating system interfaces: <a href="http://weitz.de/cl-fad">cl-pad</a>,
+<a href="https://www.common-lisp.net/project/osicat/manual/osicat.html">cl-cwd</a>, and
+<a href="https://github.com/Inaimathi/cl-cwd/">Osicat</a>.</p>
+</li>
+<li>
+<p>Core dumping: <a href="https://github.com/rolpereira/trivial-dump-core">Trivial dump
+core</a>.</p>
+</li>
+<li>
+<p>Regular expression: <a href="http://weitz.de/cl-ppcre/">cl-ppcre</a>.</p>
+</li>
+<li>
+<p>Unicode utilities: <a href="http://weitz.de/cl-unicode/">cl-unicode</a> and
+<a href="https://common-lisp.net/project/trivial-utf-8/">Trivial-utf-8</a>.</p>
+</li>
+<li>
+<p>HTTP client: <a href="http://weitz.de/drakma/">Drakma</a> for the original version, and
+<a href="https://github.com/orthecreedence/drakma-async">Drakma-async</a> for async version.</p>
+</li>
+<li>
+<p>HTTP server:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://weitz.de/cl-fad" class="bare">http://weitz.de/cl-fad</a></p>
+<p><a href="http://weitz.de/hunchentoot/">Hunchentoot</a> is rock solid, feature-rich, and
+reliable.</p>
 </li>
 <li>
-<p><a href="https://www.common-lisp.net/project/osicat/manual/osicat.html" class="bare">https://www.common-lisp.net/project/osicat/manual/osicat.html</a></p>
+<p><a href="https://github.com/fukamachi/woo">Woo</a> is non-blocking, new, modern, and
+aims to be fastest web server ever written:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Built on top of <a href="http://software.schmorp.de/pkg/libev.html">libev</a>;</p>
 </li>
 <li>
-<p><a href="https://github.com/Inaimathi/cl-cwd/" class="bare">https://github.com/Inaimathi/cl-cwd/</a></p>
+<p>Beats Node.js in most benchmarks and is comparable with Go;</p>
+</li>
+<li>
+<p>Supports cluster.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Core dumping: <a href="https://github.com/rolpereira/trivial-dump-core" class="bare">https://github.com/rolpereira/trivial-dump-core</a></p>
+<p>Data structure:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Ramarren/ropes">Rope</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pattern matching: <a href="https://github.com/m2ym/optima">Optima</a>.</p>
+</li>
+<li>
+<p>YAML parser: <a href="https://github.com/eudoxia0/cl-yaml">cl-yaml</a>.</p>
+</li>
+<li>
+<p>Downloader: <a href="https://github.com/eudoxia0/trivial-download">trivial-download</a>.</p>
+</li>
+<li>
+<p>SSH client library: <a href="https://github.com/eudoxia0/trivial-ssh">trivial-ssh</a>,
+built on libssh2.</p>
+</li>
+<li>
+<p>Compress file extraction:
+<a href="https://github.com/eudoxia0/trivial-extract">trivial-extract</a>.</p>
+</li>
+<li>
+<p>Password hashing and verification:
+<a href="https://github.com/eudoxia0/cl-pass">cl-pass</a>.</p>
+</li>
+<li>
+<p>Fast HTTP parser: <a href="https://github.com/fukamachi/fast-http">fast-http</a>.</p>
+</li>
+<li>
+<p>Developing graphics demos and games in real-time:
+<a href="https://github.com/cbaggers/cepl">Code-Eval-Play-Loop</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_interesting_pieces">4. Other interesting pieces</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/robert-strandh/SICL">SICL</a> is an implementation written in
+such a way that the implementation is portable as much as possible.  Each
+SICL module could be integrated into other implementation with no or little
+change.</p>
+</li>
+<li>
+<p><a href="https://github.com/google/lisp-koans">Lisp koans</a> helps learn Common Lisp
+more efficient.</p>
+</li>
+<li>
+<p><a href="https://github.com:eudoxia0/asdf-linguist.git">asdf-linguist</a> makes ASDF
+useful as a build tool for languages other than Common Lisp.</p>
+</li>
+<li>
+<p>Common Lisp&#8217;s killer features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Macro system makes powerful construct possible:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.ai.sri.com/pkarp/loop.html">Loop macro</a>.</p>
+</li>
+<li>
+<p><a href="https://common-lisp.net/project/iterate/">Interate</a> for cleaner and better
+looping.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Powerful object system with CLOS:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://cl-cookbook.sourceforge.net/clos-tutorial/">CLOS fundamentals</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1308,7 +1507,7 @@ physical pathnames.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-31 01:22:08 ICT
+Last updated 2015-04-03 00:46:28 ICT
 </div>
 </div>
 </body>
