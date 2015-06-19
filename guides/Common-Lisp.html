@@ -491,35 +491,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_dumping_core">1.1. Dumping core</a></li>
 <li><a href="#_suppressing_banner">1.2. Suppressing banner</a></li>
 <li><a href="#_joining_strings">1.3. Joining strings</a></li>
-<li><a href="#_getting_current_working_directory">1.4. Getting current working directory</a></li>
-<li><a href="#_changing_current_working_directory_code_cd_code">1.5. Changing current working directory/<code>cd</code></a></li>
-<li><a href="#_getting_current_file">1.6. Getting current file</a></li>
-<li><a href="#_reading_slurping_file">1.7. Reading/slurping file</a></li>
-<li><a href="#_merging_paths">1.8. Merging paths</a></li>
-<li><a href="#_getting_path_to_a_system_loaded_with_asdf">1.9. Getting path to a system loaded with ASDF</a></li>
-<li><a href="#_writing_to_file">1.10. Writing to file</a></li>
-<li><a href="#_listing_directory">1.11. Listing directory</a></li>
-<li><a href="#_checking_if_a_file_or_directory_exists">1.12. Checking if a file or directory exists</a>
+<li><a href="#_splitting_a_string">1.4. Splitting a string</a></li>
+<li><a href="#_getting_current_working_directory">1.5. Getting current working directory</a></li>
+<li><a href="#_changing_current_working_directory_code_cd_code">1.6. Changing current working directory/<code>cd</code></a></li>
+<li><a href="#_getting_current_file">1.7. Getting current file</a></li>
+<li><a href="#_reading_slurping_file">1.8. Reading/slurping file</a></li>
+<li><a href="#_merging_paths">1.9. Merging paths</a></li>
+<li><a href="#_getting_path_to_a_system_loaded_with_asdf">1.10. Getting path to a system loaded with ASDF</a></li>
+<li><a href="#_writing_to_file">1.11. Writing to file</a></li>
+<li><a href="#_listing_directory">1.12. Listing directory</a></li>
+<li><a href="#_checking_if_a_file_or_directory_exists">1.13. Checking if a file or directory exists</a>
 <ul class="sectlevel3">
-<li><a href="#_checking_directory_exists_only">1.12.1. Checking directory exists only</a></li>
+<li><a href="#_checking_directory_exists_only">1.13.1. Checking directory exists only</a></li>
 </ul>
 </li>
-<li><a href="#_calculating_md5_of_a_string">1.13. Calculating MD5 of a string</a></li>
-<li><a href="#_merging_pathnames">1.14. Merging pathnames</a></li>
-<li><a href="#__code_cd_code_to_directory_of_current_loading_file">1.15. <code>cd</code> to directory of current loading file</a></li>
-<li><a href="#_using_temporary_file">1.16. Using temporary file</a></li>
-<li><a href="#_extracting_dirname_parent_directory">1.17. Extracting dirname/parent directory</a></li>
-<li><a href="#_extracting_basename_filename">1.18. Extracting basename/filename</a></li>
-<li><a href="#_comparing_pathnames">1.19. Comparing pathnames</a></li>
-<li><a href="#_bitwise_operations">1.20. Bitwise operations</a></li>
-<li><a href="#_slime_starting_swank_server">1.21. Slime - Starting swank server</a></li>
-<li><a href="#_slime_interrupt_break_infinite_loop">1.22. Slime - Interrupt/break infinite loop</a></li>
-<li><a href="#_updating_quicklisp_systems_and_clients">1.23. Updating Quicklisp systems and clients</a></li>
-<li><a href="#_add_a_local_project_to_quicklisp">1.24. Add a local project to Quicklisp</a></li>
-<li><a href="#_retrieving_current_asdf_version">1.25. Retrieving current ASDF version</a></li>
-<li><a href="#_running_external_program">1.26. Running external program</a>
+<li><a href="#_calculating_md5_of_a_string">1.14. Calculating MD5 of a string</a></li>
+<li><a href="#_merging_pathnames">1.15. Merging pathnames</a></li>
+<li><a href="#__code_cd_code_to_directory_of_current_loading_file">1.16. <code>cd</code> to directory of current loading file</a></li>
+<li><a href="#_using_temporary_file">1.17. Using temporary file</a></li>
+<li><a href="#_extracting_dirname_parent_directory">1.18. Extracting dirname/parent directory</a></li>
+<li><a href="#_extracting_basename_filename">1.19. Extracting basename/filename</a></li>
+<li><a href="#_comparing_pathnames">1.20. Comparing pathnames</a></li>
+<li><a href="#_bitwise_operations">1.21. Bitwise operations</a></li>
+<li><a href="#_slime_starting_swank_server">1.22. Slime - Starting swank server</a></li>
+<li><a href="#_slime_interrupt_break_infinite_loop">1.23. Slime - Interrupt/break infinite loop</a></li>
+<li><a href="#_updating_quicklisp_systems_and_clients">1.24. Updating Quicklisp systems and clients</a></li>
+<li><a href="#_add_a_local_project_to_quicklisp">1.25. Add a local project to Quicklisp</a></li>
+<li><a href="#_retrieving_current_asdf_version">1.26. Retrieving current ASDF version</a></li>
+<li><a href="#_running_external_program">1.27. Running external program</a>
 <ul class="sectlevel3">
-<li><a href="#_with_asdf_s_uiop">1.26.1. With ASDF&#8217;s UIOP</a></li>
+<li><a href="#_with_asdf_s_uiop">1.27.1. With ASDF&#8217;s UIOP</a></li>
 </ul>
 </li>
 </ul>
@@ -629,7 +630,7 @@ look similar to this:</p>
 <span class="tok-s">the file is read as UTF-8 string; otherwise, it&#39;s ANSI string.&quot;</span>
   <span class="tok-p">(</span><span class="tok-k">if</span> <span class="tok-nv">utf-8</span>
       <span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-nv">filespec</span> <span class="tok-ss">:element-type</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-kt">unsigned-byte</span> <span class="tok-mi">8</span><span class="tok-p">))</span>
-        <span class="tok-p">(</span><span class="tok-nv">read-utf-8-string</span> <span class="tok-nv">in</span> <span class="tok-ss">:stop-at-eof</span> <span class="tok-no">t</span><span class="tok-p">))</span>
+        <span class="tok-p">(</span><span class="tok-nv">trivial-utf-8:read-utf-8-string</span> <span class="tok-nv">in</span> <span class="tok-ss">:stop-at-eof</span> <span class="tok-no">t</span><span class="tok-p">))</span>
       <span class="tok-p">(</span><span class="tok-nb">with-open-file</span> <span class="tok-p">(</span><span class="tok-nv">in</span> <span class="tok-nv">filespec</span><span class="tok-p">)</span>
         <span class="tok-p">(</span><span class="tok-k">let</span> <span class="tok-p">((</span><span class="tok-nv">seq</span> <span class="tok-p">(</span><span class="tok-nb">make-string</span> <span class="tok-p">(</span><span class="tok-nb">file-length</span> <span class="tok-nv">in</span><span class="tok-p">))))</span>
           <span class="tok-p">(</span><span class="tok-nb">read-sequence</span> <span class="tok-nv">seq</span> <span class="tok-nv">in</span><span class="tok-p">)</span>
@@ -704,40 +705,11 @@ similar to the following:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_current_working_directory">1.4. Getting current working directory</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Avoid <code><strong>default-pathname-defaults</strong></code>, it&#8217;s implementation-dependent.</p>
-</li>
-<li>
-<p>(SBCL) SBCL: <code>(sb-posix:getcwd)</code>.</p>
-</li>
-</ul>
+<h3 id="_splitting_a_string">1.4. Splitting a string</h3>
+<div class="paragraph">
+<p><a href="https://github.com/sharplispers/split-sequence">split-sequence</a> is a library
+that serves the purpose well.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2
-3
-4
-5
-6
-7
-8</div></td><td class="code"><span class="tok-c1">;; Require just ASDF 3+</span>
-<span class="tok-p">(</span><span class="tok-nv">uiop:getcwd</span><span class="tok-p">)</span>
-
-<span class="tok-c1">;; Require cl-cwd</span>
-<span class="tok-p">(</span><span class="tok-nv">cl-cwd:get-cwd</span><span class="tok-p">)</span>
-
-<span class="tok-c1">;; Require osicat</span>
-<span class="tok-p">(</span><span class="tok-nv">osicat:current-directory</span><span class="tok-p">)</span>
-</td></tr></table></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_changing_current_working_directory_code_cd_code">1.5. Changing current working directory/<code>cd</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -750,13 +722,83 @@ similar to the following:</p>
  8
  9
 10
-11</div></td><td class="code"><span class="tok-c1">;; Only in SBCL</span>
+11</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;split-sequence&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nv">split-sequence:split-sequence</span> <span class="tok-s">&quot; &quot;</span> <span class="tok-s">&quot;foo bar&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ (&quot;foo&quot; &quot;bar&quot;), 7</span>
+<span class="tok-p">(</span><span class="tok-nv">split-sequence:split-sequence</span> <span class="tok-sc">#\Space</span> <span class="tok-s">&quot;foo bar baz&quot;</span><span class="tok-p">)</span>   <span class="tok-c1">;; ⇨ (&quot;foo&quot; &quot;bar&quot; &quot;baz&quot; &quot;&quot; &quot;quux&quot; &quot;&quot; &quot;&quot;), 19</span>
+
+<span class="tok-p">(</span><span class="tok-nb">defvar</span> <span class="tok-vg">*s*</span> <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-no">nil</span> <span class="tok-s">&quot;foo~%bar~%baz~%~%quux~%~%&quot;</span><span class="tok-p">))</span>
+<span class="tok-p">(</span><span class="tok-nv">split-sequence:split-sequence</span> <span class="tok-sc">#\Newline</span> <span class="tok-vg">*s*</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ (&quot;foo&quot; &quot;bar&quot; &quot;baz&quot; &quot;&quot; &quot;quux&quot; &quot;&quot; &quot;&quot;), 19</span>
+<span class="tok-p">(</span><span class="tok-nv">split-sequence:split-sequence</span> <span class="tok-sc">#\Newline</span> <span class="tok-vg">*s*</span>
+                               <span class="tok-ss">:count</span> <span class="tok-mi">3</span><span class="tok-p">)</span>                <span class="tok-c1">;; ⇨ (&quot;foo&quot; &quot;bar&quot; &quot;baz&quot;), 12</span>
+<span class="tok-p">(</span><span class="tok-nv">split-sequence:split-sequence</span> <span class="tok-sc">#\Newline</span> <span class="tok-vg">*s*</span>
+                               <span class="tok-ss">:remove-empty-subseqs</span> <span class="tok-no">t</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ (&quot;foo&quot; &quot;bar&quot; &quot;baz&quot; &quot;quux&quot;), 19</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_current_working_directory">1.5. Getting current working directory</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Avoid <code><strong>default-pathname-defaults</strong></code>, it&#8217;s implementation-dependent.</p>
+</li>
+<li>
+<p>(SBCL) SBCL: <code>(sb-posix:getcwd)</code>.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</div></td><td class="code"><span class="tok-c1">;; Require just ASDF 3+</span>
+<span class="tok-p">(</span><span class="tok-nv">uiop:getcwd</span><span class="tok-p">)</span>
+
+<span class="tok-c1">;; Require cl-cwd</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-cwd&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-cwd:get-cwd</span><span class="tok-p">)</span>
+
+<span class="tok-c1">;; Require osicat</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;osicat&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">osicat:current-directory</span><span class="tok-p">)</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changing_current_working_directory_code_cd_code">1.6. Changing current working directory/<code>cd</code></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</div></td><td class="code"><span class="tok-c1">;; Only in SBCL</span>
 <span class="tok-p">(</span><span class="tok-nv">sb-posix:cwd</span> <span class="tok-s">&quot;/tmp&quot;</span><span class="tok-p">)</span>
 
 <span class="tok-c1">;; Require cl-cwd</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-cwd&quot;</span><span class="tok-p">)</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-cwd:cwd</span> <span class="tok-s">&quot;/tmp&quot;</span><span class="tok-p">)</span>
 
 <span class="tok-c1">;; Require cl-cwd, when you&#39;d like to change it temporarily</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-cwd&quot;</span><span class="tok-p">)</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-cwd:with-cwd</span> <span class="tok-s">&quot;/tmp/&quot;</span>
   <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-no">t</span> <span class="tok-s">&quot;~A&quot;</span> <span class="tok-p">(</span><span class="tok-nb">directory</span> <span class="tok-p">(</span><span class="tok-nb">make-pathname</span> <span class="tok-ss">:directory</span> <span class="tok-o">&#39;</span><span class="tok-p">(</span><span class="tok-ss">:relative</span> <span class="tok-s">&quot;.&quot;</span><span class="tok-p">)</span>
                                            <span class="tok-ss">:name</span> <span class="tok-ss">:wild</span>
@@ -766,14 +808,14 @@ similar to the following:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_current_file">1.6. Getting current file</h3>
+<h3 id="_getting_current_file">1.7. Getting current file</h3>
 <div class="paragraph">
 <p><code><strong>load-truename</strong></code> or <code><strong>load-pathname</strong></code>, returning truename and pathname,
 respectively.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reading_slurping_file">1.7. Reading/slurping file</h3>
+<h3 id="_reading_slurping_file">1.8. Reading/slurping file</h3>
 <div class="paragraph">
 <p>Avoid using <code>open</code> and <code>close</code> as 1) it&#8217;s error-prone, and 2) the file might
 not properly closed if you don&#8217;t properly handle it.  Instead, use
@@ -851,7 +893,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_merging_paths">1.8. Merging paths</h3>
+<h3 id="_merging_paths">1.9. Merging paths</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -866,7 +908,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_path_to_a_system_loaded_with_asdf">1.9. Getting path to a system loaded with ASDF</h3>
+<h3 id="_getting_path_to_a_system_loaded_with_asdf">1.10. Getting path to a system loaded with ASDF</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">asdf:system-source-directory</span> <span class="tok-ss">:optima</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/quicklisp/dists/quicklisp/software/optima-20150302-git/&quot;</span>
@@ -875,7 +917,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_writing_to_file">1.10. Writing to file</h3>
+<h3 id="_writing_to_file">1.11. Writing to file</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -963,21 +1005,23 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_listing_directory">1.11. Listing directory</h3>
+<h3 id="_listing_directory">1.12. Listing directory</h3>
 <div class="paragraph">
 <p>With <code>cl-pad</code> library:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-pad:list-directory</span> <span class="tok-l-Other">#P&quot;/tmp/&quot;</span><span class="tok-p">)</span>                      <span class="tok-c1">;; ⇨ List</span>
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-pad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-pad:list-directory</span> <span class="tok-l-Other">#P&quot;/tmp/&quot;</span><span class="tok-p">)</span>                      <span class="tok-c1">;; ⇨ List</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-pad:list-directory</span> <span class="tok-l-Other">#P&quot;/tmp/&quot;</span> <span class="tok-ss">:follow-symlinks</span> <span class="tok-no">t</span><span class="tok-p">)</span>   <span class="tok-c1">;; ⇨ List</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_checking_if_a_file_or_directory_exists">1.12. Checking if a file or directory exists</h3>
+<h3 id="_checking_if_a_file_or_directory_exists">1.13. Checking if a file or directory exists</h3>
 <div class="paragraph">
 <p>Either <code>probe-file</code> or <code>cl-fad&#8217;s `file-exists</code> would work.</p>
 </div>
@@ -985,21 +1029,25 @@ file into a string:</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
-3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">probe-file</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
+3
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nb">probe-file</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:file-exists-p</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:file-exists-p</span> <span class="tok-l-Other">#P&quot;/home/batma&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ NIL</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_checking_directory_exists_only">1.12.1. Checking directory exists only</h4>
+<h4 id="_checking_directory_exists_only">1.13.1. Checking directory exists only</h4>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:directory-exists-p</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/&quot;</span>
+2
+3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:directory-exists-p</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:directory-exists-p</span> <span class="tok-l-Other">#P&quot;/tmp/tmp.txt&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ NIL</span>
 </td></tr></table></code></pre>
 </div>
@@ -1007,7 +1055,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_calculating_md5_of_a_string">1.13. Calculating MD5 of a string</h3>
+<h3 id="_calculating_md5_of_a_string">1.14. Calculating MD5 of a string</h3>
 <div class="paragraph">
 <p>With <code>ironclad</code> library:</p>
 </div>
@@ -1017,7 +1065,9 @@ file into a string:</p>
 2
 3
 4
-5</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">defun</span> <span class="tok-nv">md5</span> <span class="tok-p">(</span><span class="tok-nv">str</span><span class="tok-p">)</span>
+5
+6</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;ironclad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nb">defun</span> <span class="tok-nv">md5</span> <span class="tok-p">(</span><span class="tok-nv">str</span><span class="tok-p">)</span>
   <span class="tok-s">&quot;Calculates MD5 hash of a string.&quot;</span>
   <span class="tok-p">(</span><span class="tok-nv">ironclad:byte-array-to-hex-string</span>
    <span class="tok-p">(</span><span class="tok-nv">ironclad:digest-sequence</span> <span class="tok-ss">:md5</span>
@@ -1027,7 +1077,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_merging_pathnames">1.14. Merging pathnames</h3>
+<h3 id="_merging_pathnames">1.15. Merging pathnames</h3>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library:</p>
 </div>
@@ -1036,7 +1086,11 @@ file into a string:</p>
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
 3
-4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">path:catfile</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>                    <span class="tok-c1">;; ⇨ #P&quot;/home/tmp.txt&quot;</span>
+4
+5
+6</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nv">path:catfile</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>                    <span class="tok-c1">;; ⇨ #P&quot;/home/tmp.txt&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">path:catfile</span> <span class="tok-l-Other">#P&quot;/home/cmpitg/&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>                   <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/tmp.txt&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:merge-pathnames-as-file</span> <span class="tok-l-Other">#P&quot;/home/cmpitg&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/tmp.txt&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:merge-pathnames-as-file</span> <span class="tok-l-Other">#P&quot;/home/cmpitg/&quot;</span> <span class="tok-s">&quot;tmp.txt&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/cmpitg/tmp.txt&quot;</span>
@@ -1045,7 +1099,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_cd_code_to_directory_of_current_loading_file">1.15. <code>cd</code> to directory of current loading file</h3>
+<h3 id="__code_cd_code_to_directory_of_current_loading_file">1.16. <code>cd</code> to directory of current loading file</h3>
 <div class="paragraph">
 <p>With <code>cl-cwd</code> and <code>cl-fad</code> libraries:</p>
 </div>
@@ -1053,15 +1107,19 @@ file into a string:</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
-3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-ss">:cl-cwd</span><span class="tok-p">)</span>
-<span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-ss">:cl-fad</span><span class="tok-p">)</span>
+3
+4
+5</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-cwd&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-ss">:cl-cwd</span><span class="tok-p">)</span>
 <span class="tok-p">(</span><span class="tok-nv">cwd</span> <span class="tok-p">(</span><span class="tok-nv">path:basename</span> <span class="tok-vg">*load-truename*</span><span class="tok-p">))</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_temporary_file">1.16. Using temporary file</h3>
+<h3 id="_using_temporary_file">1.17. Using temporary file</h3>
 <div class="paragraph">
 <p><code>cl-fad</code>'s <code>open-temporary</code> opens a temporary file and returns the stream
 corresponding to that file.  For conveniences, <code>with-output-to-temporary-file</code>
@@ -1075,7 +1133,9 @@ is often a better suit.</p>
 4
 5
 6
-7</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:with-output-to-temporary-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span><span class="tok-p">)</span>
+7
+8</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:with-output-to-temporary-file</span> <span class="tok-p">(</span><span class="tok-nv">out</span><span class="tok-p">)</span>
   <span class="tok-p">(</span><span class="tok-nb">format</span> <span class="tok-nv">out</span> <span class="tok-s">&quot;Hello World&quot;</span><span class="tok-p">))</span>
 <span class="tok-c1">;; ⇨ #P&quot;/tmp/temp-yccc29mc&quot;</span>
 
@@ -1087,7 +1147,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extracting_dirname_parent_directory">1.17. Extracting dirname/parent directory</h3>
+<h3 id="_extracting_dirname_parent_directory">1.18. Extracting dirname/parent directory</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1108,7 +1168,7 @@ is often a better suit.</p>
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
 3
-4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-ss">:cl-fad</span><span class="tok-p">)</span>
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
 
 <span class="tok-p">(</span><span class="tok-nv">path:dirname</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">path:dirname</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
@@ -1122,7 +1182,11 @@ is often a better suit.</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
 2
-3</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>            <span class="tok-c1">;; ⇨ #P&quot;/home/&quot;</span>
+3
+4
+5</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>            <span class="tok-c1">;; ⇨ #P&quot;/home/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span>           <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">cl-fad:pathname-directory-pathname</span> <span class="tok-l-Other">#P&quot;/home/batman/hello.txt&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;/home/batman/&quot;</span>
 </td></tr></table></code></pre>
@@ -1133,7 +1197,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extracting_basename_filename">1.18. Extracting basename/filename</h3>
+<h3 id="_extracting_basename_filename">1.19. Extracting basename/filename</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1141,7 +1205,11 @@ is often a better suit.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
-2</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">path:basename</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;batman&quot;</span>
+2
+3
+4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-p">(</span><span class="tok-nv">path:basename</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span><span class="tok-p">)</span>  <span class="tok-c1">;; ⇨ #P&quot;batman&quot;</span>
 <span class="tok-p">(</span><span class="tok-nv">path:basename</span> <span class="tok-l-Other">#P&quot;/home/batman/&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;&quot;</span>
 </td></tr></table></code></pre>
 </div>
@@ -1162,7 +1230,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_comparing_pathnames">1.19. Comparing pathnames</h3>
+<h3 id="_comparing_pathnames">1.20. Comparing pathnames</h3>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library</p>
 </div>
@@ -1173,14 +1241,14 @@ is often a better suit.</p>
 3
 4</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nb">equalp</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span> <span class="tok-s">&quot;/home/batman&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ NIL</span>
 
-<span class="tok-p">(</span><span class="tok-nb">use-package</span> <span class="tok-ss">:cl-fad</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nv">ql:quickload</span> <span class="tok-s">&quot;cl-fad&quot;</span><span class="tok-p">)</span>
 <span class="tok-p">(</span><span class="tok-nv">path:=</span> <span class="tok-l-Other">#P&quot;/home/batman&quot;</span> <span class="tok-s">&quot;/home/batman&quot;</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ T</span>
 </td></tr></table></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bitwise_operations">1.20. Bitwise operations</h3>
+<h3 id="_bitwise_operations">1.21. Bitwise operations</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -1225,7 +1293,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_slime_starting_swank_server">1.21. Slime - Starting swank server</h3>
+<h3 id="_slime_starting_swank_server">1.22. Slime - Starting swank server</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">swank:create-server</span> <span class="tok-ss">:port</span> <span class="tok-mi">4005</span> <span class="tok-ss">:style</span> <span class="tok-ss">:spawn</span> <span class="tok-ss">:dont-close</span> <span class="tok-no">t</span><span class="tok-p">)</span>
@@ -1234,13 +1302,13 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_slime_interrupt_break_infinite_loop">1.22. Slime - Interrupt/break infinite loop</h3>
+<h3 id="_slime_interrupt_break_infinite_loop">1.23. Slime - Interrupt/break infinite loop</h3>
 <div class="paragraph">
 <p><code>M-x slime-interrupt</code> or kbd:[C-c C-b] by default.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_updating_quicklisp_systems_and_clients">1.23. Updating Quicklisp systems and clients</h3>
+<h3 id="_updating_quicklisp_systems_and_clients">1.24. Updating Quicklisp systems and clients</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -1256,7 +1324,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_a_local_project_to_quicklisp">1.24. Add a local project to Quicklisp</h3>
+<h3 id="_add_a_local_project_to_quicklisp">1.25. Add a local project to Quicklisp</h3>
 <div class="paragraph">
 <p>Add your project to <code>~/quicklisp/local-projects/</code></p>
 </div>
@@ -1285,7 +1353,7 @@ git clone &lt;some-uri&gt;
 </div>
 </div>
 <div class="sect2">
-<h3 id="_retrieving_current_asdf_version">1.25. Retrieving current ASDF version</h3>
+<h3 id="_retrieving_current_asdf_version">1.26. Retrieving current ASDF version</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">asdf:asdf-version</span><span class="tok-p">)</span>
@@ -1294,9 +1362,9 @@ git clone &lt;some-uri&gt;
 </div>
 </div>
 <div class="sect2">
-<h3 id="_running_external_program">1.26. Running external program</h3>
+<h3 id="_running_external_program">1.27. Running external program</h3>
 <div class="sect3">
-<h4 id="_with_asdf_s_uiop">1.26.1. With ASDF&#8217;s UIOP</h4>
+<h4 id="_with_asdf_s_uiop">1.27.1. With ASDF&#8217;s UIOP</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -1813,7 +1881,7 @@ looping.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-19 01:32:40 ICT
+Last updated 2015-06-19 19:11:30 ICT
 </div>
 </div>
 </body>
