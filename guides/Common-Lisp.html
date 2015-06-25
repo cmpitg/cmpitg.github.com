@@ -528,17 +528,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_faqs">2. FAQs</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_truename">2.1. What is truename?</a></li>
-<li><a href="#_why_should_not_string_be_used_directly_as_em_symbol_name_em">2.2. Why should not string be used directly as <em>symbol name</em></a></li>
-<li><a href="#_asdf_quick_start">2.3. ASDF quick start</a></li>
-<li><a href="#_difference_between_physical_and_logical_pathname">2.4. Difference between physical and logical pathname?</a></li>
-<li><a href="#_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.5. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</a></li>
-<li><a href="#_the_2_namespaces_value_cell_and_function_cell">2.6. The 2 namespaces: value cell and function cell</a></li>
-<li><a href="#__code_symbol_function_code_vs_code_fdefinition_code">2.7. <code>symbol-function</code> vs. <code>fdefinition</code></a></li>
-<li><a href="#__code_typecase_code_vs_code_etypecase_code_vs_code_ctypecase_code">2.8. <code>typecase</code> vs. <code>etypecase</code> vs. <code>ctypecase</code></a></li>
+<li><a href="#_when_to_use_keyword">2.2. When to use keyword?</a></li>
+<li><a href="#_why_should_not_string_be_used_directly_as_em_symbol_name_em">2.3. Why should not string be used directly as <em>symbol name</em></a></li>
+<li><a href="#__code_write_code_vs_code_print_code_vs_code_prin1_code_vs_code_princ_code_vs_code_pprint_code">2.4. <code>write</code> vs. <code>print</code> vs. <code>prin1</code> vs. <code>princ</code> vs. <code>pprint</code></a></li>
+<li><a href="#_asdf_quick_start">2.5. ASDF quick start</a></li>
+<li><a href="#_difference_between_physical_and_logical_pathname">2.6. Difference between physical and logical pathname?</a></li>
+<li><a href="#_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.7. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</a></li>
+<li><a href="#_the_2_namespaces_value_cell_and_function_cell">2.8. The 2 namespaces: value cell and function cell</a></li>
+<li><a href="#__code_symbol_function_code_vs_code_fdefinition_code">2.9. <code>symbol-function</code> vs. <code>fdefinition</code></a></li>
+<li><a href="#__code_typecase_code_vs_code_etypecase_code_vs_code_ctypecase_code">2.10. <code>typecase</code> vs. <code>etypecase</code> vs. <code>ctypecase</code></a></li>
 </ul>
 </li>
 <li><a href="#_useful_libraries">3. Useful libraries</a></li>
 <li><a href="#_other_interesting_pieces">4. Other interesting pieces</a></li>
+<li><a href="#_useful_references">5. Useful references</a></li>
 </ul>
 </div>
 </div>
@@ -1432,7 +1435,26 @@ resolving symbolic links performed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_why_should_not_string_be_used_directly_as_em_symbol_name_em">2.2. Why should not string be used directly as <em>symbol name</em></h3>
+<h3 id="_when_to_use_keyword">2.2. When to use keyword?</h3>
+<div class="paragraph">
+<p>Reference: <a href="http://stackoverflow.com/a/8567626/219881" class="bare">http://stackoverflow.com/a/8567626/219881</a></p>
+</div>
+<div class="paragraph">
+<p>Keywords should be used when:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>you want symbols</p>
+</li>
+<li>
+<p>the symbols are globally unique, i.e. not different per package</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_why_should_not_string_be_used_directly_as_em_symbol_name_em">2.3. Why should not string be used directly as <em>symbol name</em></h3>
 <div class="paragraph">
 <p>Try it yourself:</p>
 </div>
@@ -1459,7 +1481,34 @@ string across implementations.  So for portability reason, convert it with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_asdf_quick_start">2.3. ASDF quick start</h3>
+<h3 id="__code_write_code_vs_code_print_code_vs_code_prin1_code_vs_code_princ_code_vs_code_pprint_code">2.4. <code>write</code> vs. <code>print</code> vs. <code>prin1</code> vs. <code>princ</code> vs. <code>pprint</code></h3>
+<div class="paragraph">
+<p>From
+<a href="http://stackoverflow.com/questions/19756296/whats-the-difference-between-write-print-pprint-princ-and-prin1">lispm&#8217;s
+answer</a> on <a href="https://stackoverflow.com">StackOverflow</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>write</code> is the general entry point to the Lisp printer;</p>
+</li>
+<li>
+<p><code>prin1</code> produces output suitable for <code>read</code>ing;</p>
+</li>
+<li>
+<p><code>princ</code> is a human-readable version of  <code>prin1</code>, i.e. without escape characters;</p>
+</li>
+<li>
+<p><code>print</code> is like <code>prin1</code> with preceding newline and following space.</p>
+</li>
+<li>
+<p><code>pprint</code> produces pretty output.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_asdf_quick_start">2.5. ASDF quick start</h3>
 <div class="paragraph">
 <p>Reference: <a href="https://common-lisp.net/project/asdf/asdf.html">ASDF manual</a></p>
 </div>
@@ -1547,7 +1596,7 @@ configuration with <code>(asdf:clear-source-registry)</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_difference_between_physical_and_logical_pathname">2.4. Difference between physical and logical pathname?</h3>
+<h3 id="_difference_between_physical_and_logical_pathname">2.6. Difference between physical and logical pathname?</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1586,13 +1635,13 @@ physical pathnames.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.5. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</h3>
+<h3 id="_clisp_failed_to_load_hunchentoot_code_make_pathname_code_error">2.7. CLISP failed to load Hunchentoot: <code>MAKE-PATHNAME</code> error</h3>
 <div class="paragraph">
 <p>Find hunchentoot/acceptor.lisp and change "errors/" to "errors".</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_2_namespaces_value_cell_and_function_cell">2.6. The 2 namespaces: value cell and function cell</h3>
+<h3 id="_the_2_namespaces_value_cell_and_function_cell">2.8. The 2 namespaces: value cell and function cell</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -1633,7 +1682,7 @@ physical pathnames.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_symbol_function_code_vs_code_fdefinition_code">2.7. <code>symbol-function</code> vs. <code>fdefinition</code></h3>
+<h3 id="__code_symbol_function_code_vs_code_fdefinition_code">2.9. <code>symbol-function</code> vs. <code>fdefinition</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -1668,7 +1717,7 @@ designates a <strong>function name</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_typecase_code_vs_code_etypecase_code_vs_code_ctypecase_code">2.8. <code>typecase</code> vs. <code>etypecase</code> vs. <code>ctypecase</code></h3>
+<h3 id="__code_typecase_code_vs_code_etypecase_code_vs_code_ctypecase_code">2.10. <code>typecase</code> vs. <code>etypecase</code> vs. <code>ctypecase</code></h3>
 <div class="paragraph">
 <p>Match type → perform action.</p>
 </div>
@@ -1820,6 +1869,35 @@ built on libssh2.</p>
 </ul>
 </div>
 </li>
+<li>
+<p>Unit testing libraries:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://aperiodic.net/phil/archives/Geekery/notes-on-lisp-testing-frameworks.html">Phil!
+Gold notes</a> give good insights about some popular Common Lisp unit testing frameworks.</p>
+</li>
+<li>
+<p>In shorts:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For simple testing purpose,
+<a href="https://github.com/OdonataResearchLLC/lisp-unit">lisp-unit</a> wins</p>
+</li>
+<li>
+<p>For better features with interactive testing, use <a href="https://github.com/capitaomorte/fiasco">Fiasco</a>.</p>
+</li>
+<li>
+<p>For non-interactive and sophisticated testing,
+<a href="https://github.com/sionescu/fiveam">5am</a> might be a good choice.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -1878,10 +1956,22 @@ looping.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_useful_references">5. Useful references</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.lispworks.com/documentation/HyperSpec/Body/04_bc.htm">CLHS type specifier</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-19 19:11:30 ICT
+Last updated 2015-06-25 11:51:55 ICT
 </div>
 </div>
 </body>
