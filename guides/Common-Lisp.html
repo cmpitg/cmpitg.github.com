@@ -492,35 +492,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_suppressing_banner">1.2. Suppressing banner</a></li>
 <li><a href="#_joining_strings">1.3. Joining strings</a></li>
 <li><a href="#_splitting_a_string">1.4. Splitting a string</a></li>
-<li><a href="#_getting_current_working_directory">1.5. Getting current working directory</a></li>
-<li><a href="#_changing_current_working_directory_code_cd_code">1.6. Changing current working directory/<code>cd</code></a></li>
-<li><a href="#_getting_current_file">1.7. Getting current file</a></li>
-<li><a href="#_reading_slurping_file">1.8. Reading/slurping file</a></li>
-<li><a href="#_merging_paths">1.9. Merging paths</a></li>
-<li><a href="#_getting_path_to_a_system_loaded_with_asdf">1.10. Getting path to a system loaded with ASDF</a></li>
-<li><a href="#_writing_to_file">1.11. Writing to file</a></li>
-<li><a href="#_listing_directory">1.12. Listing directory</a></li>
-<li><a href="#_checking_if_a_file_or_directory_exists">1.13. Checking if a file or directory exists</a>
+<li><a href="#_tilde_home_directory_convenience">1.5. Tilde/home directory convenience</a></li>
+<li><a href="#_getting_current_working_directory">1.6. Getting current working directory</a></li>
+<li><a href="#_changing_current_working_directory_code_cd_code">1.7. Changing current working directory/<code>cd</code></a></li>
+<li><a href="#_getting_current_file">1.8. Getting current file</a></li>
+<li><a href="#_reading_slurping_file">1.9. Reading/slurping file</a></li>
+<li><a href="#_merging_paths">1.10. Merging paths</a></li>
+<li><a href="#_getting_path_to_a_system_loaded_with_asdf">1.11. Getting path to a system loaded with ASDF</a></li>
+<li><a href="#_writing_to_file">1.12. Writing to file</a></li>
+<li><a href="#_listing_directory">1.13. Listing directory</a></li>
+<li><a href="#_checking_if_a_file_or_directory_exists">1.14. Checking if a file or directory exists</a>
 <ul class="sectlevel3">
-<li><a href="#_checking_directory_exists_only">1.13.1. Checking directory exists only</a></li>
+<li><a href="#_checking_directory_exists_only">1.14.1. Checking directory exists only</a></li>
 </ul>
 </li>
-<li><a href="#_calculating_md5_of_a_string">1.14. Calculating MD5 of a string</a></li>
-<li><a href="#_merging_pathnames">1.15. Merging pathnames</a></li>
-<li><a href="#__code_cd_code_to_directory_of_current_loading_file">1.16. <code>cd</code> to directory of current loading file</a></li>
-<li><a href="#_using_temporary_file">1.17. Using temporary file</a></li>
-<li><a href="#_extracting_dirname_parent_directory">1.18. Extracting dirname/parent directory</a></li>
-<li><a href="#_extracting_basename_filename">1.19. Extracting basename/filename</a></li>
-<li><a href="#_comparing_pathnames">1.20. Comparing pathnames</a></li>
-<li><a href="#_bitwise_operations">1.21. Bitwise operations</a></li>
-<li><a href="#_slime_starting_swank_server">1.22. Slime - Starting swank server</a></li>
-<li><a href="#_slime_interrupt_break_infinite_loop">1.23. Slime - Interrupt/break infinite loop</a></li>
-<li><a href="#_updating_quicklisp_systems_and_clients">1.24. Updating Quicklisp systems and clients</a></li>
-<li><a href="#_add_a_local_project_to_quicklisp">1.25. Add a local project to Quicklisp</a></li>
-<li><a href="#_retrieving_current_asdf_version">1.26. Retrieving current ASDF version</a></li>
-<li><a href="#_running_external_program">1.27. Running external program</a>
+<li><a href="#_calculating_md5_of_a_string">1.15. Calculating MD5 of a string</a></li>
+<li><a href="#_merging_pathnames">1.16. Merging pathnames</a></li>
+<li><a href="#__code_cd_code_to_directory_of_current_loading_file">1.17. <code>cd</code> to directory of current loading file</a></li>
+<li><a href="#_using_temporary_file">1.18. Using temporary file</a></li>
+<li><a href="#_extracting_dirname_parent_directory">1.19. Extracting dirname/parent directory</a></li>
+<li><a href="#_extracting_basename_filename">1.20. Extracting basename/filename</a></li>
+<li><a href="#_comparing_pathnames">1.21. Comparing pathnames</a></li>
+<li><a href="#_bitwise_operations">1.22. Bitwise operations</a></li>
+<li><a href="#_slime_starting_swank_server">1.23. Slime - Starting swank server</a></li>
+<li><a href="#_slime_interrupt_break_infinite_loop">1.24. Slime - Interrupt/break infinite loop</a></li>
+<li><a href="#_updating_quicklisp_systems_and_clients">1.25. Updating Quicklisp systems and clients</a></li>
+<li><a href="#_add_a_local_project_to_quicklisp">1.26. Add a local project to Quicklisp</a></li>
+<li><a href="#_retrieving_current_asdf_version">1.27. Retrieving current ASDF version</a></li>
+<li><a href="#_running_external_program">1.28. Running external program</a>
 <ul class="sectlevel3">
-<li><a href="#_with_asdf_s_uiop">1.27.1. With ASDF&#8217;s UIOP</a></li>
+<li><a href="#_with_asdf_s_uiop">1.28.1. With ASDF&#8217;s UIOP</a></li>
 </ul>
 </li>
 </ul>
@@ -741,7 +742,35 @@ that serves the purpose well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_current_working_directory">1.5. Getting current working directory</h3>
+<h3 id="_tilde_home_directory_convenience">1.5. Tilde/home directory convenience</h3>
+<div class="paragraph">
+<p>Shamelessly refering to <a href="http://xach.livejournal.com/179622.html">Xach&#8217;s entry</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8
+9</div></td><td class="code"><span class="tok-c1">;;; For portability</span>
+<span class="tok-c1">;; Long and tedious</span>
+<span class="tok-p">(</span><span class="tok-nb">user-homedir-pathname</span><span class="tok-p">)</span>
+<span class="tok-c1">;; Shorter but does not work if file doesn&#39;t exist</span>
+<span class="tok-p">(</span><span class="tok-nb">probe-file</span> <span class="tok-s">&quot;~/some-file&quot;</span><span class="tok-p">)</span>
+
+<span class="tok-c1">;;; With SBCL and tilde: https://github.com/xach/tilde/tree/master</span>
+<span class="tok-p">(</span><span class="tok-nv">tilde:install-tilde-expander</span><span class="tok-p">)</span>
+<span class="tok-p">(</span><span class="tok-nb">print</span> <span class="tok-l-Other">#p&quot;~/hello-world&quot;</span><span class="tok-p">)</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_current_working_directory">1.6. Getting current working directory</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -778,7 +807,7 @@ that serves the purpose well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_changing_current_working_directory_code_cd_code">1.6. Changing current working directory/<code>cd</code></h3>
+<h3 id="_changing_current_working_directory_code_cd_code">1.7. Changing current working directory/<code>cd</code></h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -811,14 +840,14 @@ that serves the purpose well.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_current_file">1.7. Getting current file</h3>
+<h3 id="_getting_current_file">1.8. Getting current file</h3>
 <div class="paragraph">
 <p><code><strong>load-truename</strong></code> or <code><strong>load-pathname</strong></code>, returning truename and pathname,
 respectively.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reading_slurping_file">1.8. Reading/slurping file</h3>
+<h3 id="_reading_slurping_file">1.9. Reading/slurping file</h3>
 <div class="paragraph">
 <p>Avoid using <code>open</code> and <code>close</code> as 1) it&#8217;s error-prone, and 2) the file might
 not properly closed if you don&#8217;t properly handle it.  Instead, use
@@ -896,7 +925,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_merging_paths">1.9. Merging paths</h3>
+<h3 id="_merging_paths">1.10. Merging paths</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -911,7 +940,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_getting_path_to_a_system_loaded_with_asdf">1.10. Getting path to a system loaded with ASDF</h3>
+<h3 id="_getting_path_to_a_system_loaded_with_asdf">1.11. Getting path to a system loaded with ASDF</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">asdf:system-source-directory</span> <span class="tok-ss">:optima</span><span class="tok-p">)</span> <span class="tok-c1">;; ⇨ #P&quot;/home/batman/quicklisp/dists/quicklisp/software/optima-20150302-git/&quot;</span>
@@ -920,7 +949,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_writing_to_file">1.11. Writing to file</h3>
+<h3 id="_writing_to_file">1.12. Writing to file</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1008,7 +1037,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_listing_directory">1.12. Listing directory</h3>
+<h3 id="_listing_directory">1.13. Listing directory</h3>
 <div class="paragraph">
 <p>With <code>cl-pad</code> library:</p>
 </div>
@@ -1024,7 +1053,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_checking_if_a_file_or_directory_exists">1.13. Checking if a file or directory exists</h3>
+<h3 id="_checking_if_a_file_or_directory_exists">1.14. Checking if a file or directory exists</h3>
 <div class="paragraph">
 <p>Either <code>probe-file</code> or <code>cl-fad&#8217;s `file-exists</code> would work.</p>
 </div>
@@ -1041,7 +1070,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_checking_directory_exists_only">1.13.1. Checking directory exists only</h4>
+<h4 id="_checking_directory_exists_only">1.14.1. Checking directory exists only</h4>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library:</p>
 </div>
@@ -1058,7 +1087,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_calculating_md5_of_a_string">1.14. Calculating MD5 of a string</h3>
+<h3 id="_calculating_md5_of_a_string">1.15. Calculating MD5 of a string</h3>
 <div class="paragraph">
 <p>With <code>ironclad</code> library:</p>
 </div>
@@ -1080,7 +1109,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_merging_pathnames">1.15. Merging pathnames</h3>
+<h3 id="_merging_pathnames">1.16. Merging pathnames</h3>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library:</p>
 </div>
@@ -1102,7 +1131,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="__code_cd_code_to_directory_of_current_loading_file">1.16. <code>cd</code> to directory of current loading file</h3>
+<h3 id="__code_cd_code_to_directory_of_current_loading_file">1.17. <code>cd</code> to directory of current loading file</h3>
 <div class="paragraph">
 <p>With <code>cl-cwd</code> and <code>cl-fad</code> libraries:</p>
 </div>
@@ -1122,7 +1151,7 @@ file into a string:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_temporary_file">1.17. Using temporary file</h3>
+<h3 id="_using_temporary_file">1.18. Using temporary file</h3>
 <div class="paragraph">
 <p><code>cl-fad</code>'s <code>open-temporary</code> opens a temporary file and returns the stream
 corresponding to that file.  For conveniences, <code>with-output-to-temporary-file</code>
@@ -1150,7 +1179,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extracting_dirname_parent_directory">1.18. Extracting dirname/parent directory</h3>
+<h3 id="_extracting_dirname_parent_directory">1.19. Extracting dirname/parent directory</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1200,7 +1229,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_extracting_basename_filename">1.19. Extracting basename/filename</h3>
+<h3 id="_extracting_basename_filename">1.20. Extracting basename/filename</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1233,7 +1262,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_comparing_pathnames">1.20. Comparing pathnames</h3>
+<h3 id="_comparing_pathnames">1.21. Comparing pathnames</h3>
 <div class="paragraph">
 <p>With <code>cl-fad</code> library</p>
 </div>
@@ -1251,7 +1280,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bitwise_operations">1.21. Bitwise operations</h3>
+<h3 id="_bitwise_operations">1.22. Bitwise operations</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -1296,7 +1325,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_slime_starting_swank_server">1.22. Slime - Starting swank server</h3>
+<h3 id="_slime_starting_swank_server">1.23. Slime - Starting swank server</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">swank:create-server</span> <span class="tok-ss">:port</span> <span class="tok-mi">4005</span> <span class="tok-ss">:style</span> <span class="tok-ss">:spawn</span> <span class="tok-ss">:dont-close</span> <span class="tok-no">t</span><span class="tok-p">)</span>
@@ -1305,13 +1334,13 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_slime_interrupt_break_infinite_loop">1.23. Slime - Interrupt/break infinite loop</h3>
+<h3 id="_slime_interrupt_break_infinite_loop">1.24. Slime - Interrupt/break infinite loop</h3>
 <div class="paragraph">
 <p><code>M-x slime-interrupt</code> or kbd:[C-c C-b] by default.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_updating_quicklisp_systems_and_clients">1.24. Updating Quicklisp systems and clients</h3>
+<h3 id="_updating_quicklisp_systems_and_clients">1.25. Updating Quicklisp systems and clients</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
@@ -1327,7 +1356,7 @@ is often a better suit.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_a_local_project_to_quicklisp">1.25. Add a local project to Quicklisp</h3>
+<h3 id="_add_a_local_project_to_quicklisp">1.26. Add a local project to Quicklisp</h3>
 <div class="paragraph">
 <p>Add your project to <code>~/quicklisp/local-projects/</code></p>
 </div>
@@ -1356,7 +1385,7 @@ git clone &lt;some-uri&gt;
 </div>
 </div>
 <div class="sect2">
-<h3 id="_retrieving_current_asdf_version">1.26. Retrieving current ASDF version</h3>
+<h3 id="_retrieving_current_asdf_version">1.27. Retrieving current ASDF version</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1</div></td><td class="code"><span class="tok-p">(</span><span class="tok-nv">asdf:asdf-version</span><span class="tok-p">)</span>
@@ -1365,9 +1394,9 @@ git clone &lt;some-uri&gt;
 </div>
 </div>
 <div class="sect2">
-<h3 id="_running_external_program">1.27. Running external program</h3>
+<h3 id="_running_external_program">1.28. Running external program</h3>
 <div class="sect3">
-<h4 id="_with_asdf_s_uiop">1.27.1. With ASDF&#8217;s UIOP</h4>
+<h4 id="_with_asdf_s_uiop">1.28.1. With ASDF&#8217;s UIOP</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="lisp"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
@@ -1914,8 +1943,8 @@ SICL module could be integrated into other implementation with no or little
 change.</p>
 </li>
 <li>
-<p><a href="https://github.com/google/lisp-koans">Lisp koans</a> helps learn Common Lisp
-more efficient.</p>
+<p><a href="https://github.com/google/lisp-koans">Lisp koans</a> introduces a practical way
+to learn Common Lisp by solving <a href="https://en.wikipedia.org/wiki/K%C5%8Dan">koans</a>.</p>
 </li>
 <li>
 <p><a href="https://github.com:eudoxia0/asdf-linguist.git">asdf-linguist</a> makes ASDF
@@ -1971,7 +2000,7 @@ looping.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-25 11:51:55 ICT
+Last updated 2015-06-28 23:59:48 ICT
 </div>
 </div>
 </body>
