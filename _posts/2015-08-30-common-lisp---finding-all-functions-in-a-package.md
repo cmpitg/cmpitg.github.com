@@ -44,3 +44,20 @@ Let's try it out:
 (in-package :cl-user)
 (format t "~{~A~%~}" (all-function-symbols :foobar))
 ```
+
+This simple implementation introduces two problems: 1) it returns imported
+functions from other packages that the current package `use`s, and 2) it
+doesn't check if `package` is a package designator.  Both are easily tackled.
+
+The second problem could be solved by checking if the return value of
+`(find-package package)` is not `nil`.  The first problem is then consequently
+solved by capturing the return value of `find-package` and check if it's
+`eql`-ed to the corresponding package of `sym` using `(symbol-package sym)`.
+In short, the condition looks like:
+
+```lisp
+(when (and (fboundp sym)
+           (eql (symbol-package sym)
+                (find-package package)))
+  ...)
+```
