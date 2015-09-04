@@ -38,7 +38,7 @@ Let's try it out:
   (:export #:public-func))
 
 (in-package #:foobar)
-(defun private-func () (format t "A private function 2~%"))
+(defun private-func () (format t "A private function~%"))
 (defun public-func () (format t "A public function~%"))
 
 (in-package :cl-user)
