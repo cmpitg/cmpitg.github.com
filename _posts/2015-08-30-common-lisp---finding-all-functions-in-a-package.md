@@ -29,3 +29,18 @@ first working version below:
         (push sym res)))
     res))
 ```
+
+Let's try it out:
+
+```lisp
+(defpackage #:foobar
+  (:use :cl)
+  (:export #:public-func))
+
+(in-package #:foobar)
+(defun private-func () (format t "A private function 2~%"))
+(defun public-func () (format t "A public function~%"))
+
+(in-package :cl-user)
+(format t "~{~A~%~}" (all-function-symbols :foobar))
+```
