@@ -61,3 +61,18 @@ In short, the condition looks like:
                 (find-package package)))
   ...)
 ```
+
+Putting everything together:
+
+```lisp
+(defun all-function-symbols (package)
+  "Retrieves all functions in a package."
+  (when (find-package package)
+    (let ((res (list)))
+      (do-all-symbols (sym package)
+        (when (and (fboundp sym)
+                   (eql (symbol-package sym)
+                        (find-package package)))
+          (push sym res)))
+      res)))
+```
