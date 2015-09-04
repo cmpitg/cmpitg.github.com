@@ -21,9 +21,11 @@ which returns `t` if that symbol corresponds to a function.  We then have the
 first working version below:
 
 ```lisp
-(let ((res (list)))
-  (do-all-symbols (sym package)
-    (when (fboundp sym)
-      (push sym res)))
-  res)
+(defun all-function-symbols (package)
+  "Retrieves all functions in a package."
+  (let ((res (list)))
+    (do-all-symbols (sym package)
+      (when (fboundp sym)
+        (push sym res)))
+    res))
 ```
