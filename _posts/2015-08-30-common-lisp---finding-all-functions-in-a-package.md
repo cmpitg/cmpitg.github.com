@@ -76,3 +76,22 @@ Putting everything together:
           (push sym res)))
       res)))
 ```
+
+Afer refactoring, some optimization and error signaling, we have the final version:
+
+```lisp
+(defun all-function-symbols (package-name)
+  "Retrieves all function symbols from a package."
+  (declare ((or package string symbol) package-name))
+  (the list
+       (let ((lst (list))
+             (package (find-package package-name)))
+         (cond (package
+                (do-all-symbols (symb package)
+                  (when (and (fboundp symb)
+                             (eql (symbol-package symb) package))
+                    (push symb lst)))
+                lst)
+               (t
+                (error "~S does not designate a package" package-name))))))
+```
