@@ -6,10 +6,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thoughts & rants on tech & language, by cmpitg</title>
+    <title>Lisp Guide</title>
     <meta name="author" content="Ha-Duong Nguyen" />
     <meta name="description" content="thoughts & rants on tech & language, by cmpitg" />
-    <link rel="canonical" href="http://reference-error.org//" />
+    <link rel="canonical" href="http://reference-error.org//lisp/" />
     <!-- <link href="//fonts.googleapis.com/css?family=Nunito:400,700,300|Varela+Round" rel="stylesheet" type="text/css"> -->
     <link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu+Mono" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -48,7 +48,79 @@
           </ul>
         </nav>
       </header>
-      <hr class="fin" />
+      <article>
+        <h1 class="title">
+          Lisp Guide
+  </h1>
+        <p class="subtitle">
+          <span>
+            Series:
+          
+            
+              <a href="/#lisp">lisp</a>,
+            
+          
+            
+              <a href="/#scheme">scheme</a>,
+            
+          
+            
+              <a href="/#racket">racket</a>,
+            
+          
+            
+              <a href="/#common_lisp">common lisp</a>,
+            
+          
+            
+              <a href="/#guide">guide</a>
+          </span>
+          <span class="date">
+          </span>
+        </p>
+        <div id="post">
+          <h2 id="common-lisp">Common lisp</h2>
+          <h3 id="running-a-lisp-interpreter-with-gnu-readline">Running a Lisp interpreter with GNU Readline</h3>
+          <p><a href="www.gnu.org/software/readline/">GNU Readline</a> is a library that greatly
+supports line-editing, adding features like fast jumping, command history, …</p>
+          <p>By default many interpreter like SBCL doesn’t come with Readline support.
+Adding Readline to SBCL command line is actually very easy:</p>
+          <ul>
+            <li>
+              <p>Make user you have <code class="highlighter-rouge">rlwrap</code>.  Please refer to your OS’s package management
+system for instruction on how to install <code class="highlighter-rouge">rlwrap</code>.  On a Debian-based
+system, <code class="highlighter-rouge">rlwrap</code> could be installed with:</p>
+              <div class="language-sh highlighter-rouge">
+                <pre class="highlight"><code>su -c <span class="s1">'aptitude install rlwrap
+</span></code></pre>
+              </div>
+              <p>or</p>
+              <div class="language-sh highlighter-rouge">
+                <pre class="highlight"><code>sudo aptitude install rlwrap
+</code></pre>
+              </div>
+              <p>or</p>
+              <div class="language-sh highlighter-rouge">
+                <pre class="highlight"><code>sudo apt-get install rlwrap
+</code></pre>
+              </div>
+            </li>
+            <li>
+              <p>Instead of invoking the interpreter alone with (like <code class="highlighter-rouge">sbcl</code>), use `rlwrap</p>
+              <interpreter>`.  E.g. with SBCL:
+
+```sh
+rlwrap sbcl
+```
+
+              </interpreter>
+            </li>
+          </ul>
+          <p>This technique could be applied to many command line programs to add Readline
+support.</p>
+        </div>
+        <hr class="fin" />
+      </article>
       <footer>
         <div id="copyright-footer">© Ha-Duong Nguyen 2016.
     Unless clearly stated, all contents are released under the terms of

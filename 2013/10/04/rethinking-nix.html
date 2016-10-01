@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rethinking *nix</title>
+    <meta name="author" content="Ha-Duong Nguyen" />
+    <meta name="description" content="thoughts & rants on tech & language, by cmpitg" />
+    <link rel="canonical" href="http://reference-error.org//2013/10/04/rethinking-nix.html" />
+    <!-- <link href="//fonts.googleapis.com/css?family=Nunito:400,700,300|Varela+Round" rel="stylesheet" type="text/css"> -->
+    <link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu+Mono" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Reference Error" href="/atom.xml" />
+    <link rel="stylesheet" href="/css/site.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+        ga('create', ', 'auto');
+        ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <section>
+      <header class="navigation">
+        <div id="header-title">
+          <a href="/" class="logo" title="Reference Error">
+            Reference Error
+      </a>
+        </div>
+        <div id="social-links-header">
+          <a title="cmpitg @ github" href="https://github.com/cmpitg"><i class="fa fa-github-square"></i></a>
+          <a title="cmpitg @ linkedin" href="https://fi.linkedin.com/in/cmpitg"><i class="fa fa-linkedin-square"></i></a>
+          <a title="cmpitg @ twitter" href="https://twitter.com/cmpitg"><i class="fa fa-twitter-square"></i></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/logs">logs</a></li>
+            <li><a href="/writing">writing</a></li>
+            <li><a href="/talks">talks</a></li>
+            <li><a href="/about">about</a></li>
+            <li class="no-bullet"><a href="/atom.xml">rss</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+        <h1 class="title">
+          Rethinking *nix
+  </h1>
+        <p class="subtitle">
+          <span>
+            Series:
+          
+            
+              <a href="/#nix">nix</a>,
+            
+          
+            
+              <a href="/#os">os</a>
+          </span>
+          <span class="date">
+            October 04, 2013
+      </span>
+        </p>
+        <div id="post">
+          <p><a href="http://wayback.archive.org/web/20120120031001/http://m.simson.net/ugh.pdf">The UNIX-HATERS handbook</a> is
+a fantastic book about how suck *nix does, in terms of system design,
+workflow, and user experience.  It totally changes the way I think about how I
+work with an operating system, how the “do one thing and do it well” used to
+be good but isn’t relevant anymore.  I haven’t finished the book, and I don’t
+want to give away the thoughtful and interestingly enjoying contents.  So all
+I could say is find the book and enjoy if you really want to make use of it
+practically: think differently and boost your performance.</p>
+          <p>You can also find a copy of the book <a href="/archive/ugh.pdf">here</a>.</p>
+          <p>This serves as a brain-dump I’ve got for a while but haven’t reviewed it
+thoroughly to make decision:</p>
+          <ul>
+            <li>I want to use <strong>one</strong> programming language as a global language for my
+system.  The language needs to satisfy the following criteria:
+    
+              <ul>
+                <li>Is shell-friendly <em>and</em> can emulate shell behavior.  There are many
+reasons for this, and the 2 most important are:
+        
+                  <ul>
+                    <li>Shell-scripts could be easily ported or made use (in case of complex
+scripts) without much change.  Although this leads to another problem
+with badly-written scripts (which GRUB 2 is one clear example)</li>
+                    <li>The language has to be mature enough in terms of its eco-system.  I love
+building tools, but I need good small tools first.</li>
+                  </ul>
+                </li>
+                <li>Uses <strong>interpreters</strong> instead of compilers.  Compilers, build tools,
+stripping debugging symbols, no way to directly patch the program itself,
+…  All sucks.  Or rather, they could be much better with an interpreted
+language.</li>
+                <li>Has good packaging system, where installing, patching, making, and
+deploying packages are simple and efficient.</li>
+              </ul>
+            </li>
+            <li>
+              <p>I want to make full use of hardware I’m having, including human-interface
+devices like keyboard and mouse, especially mouse chords and mouse gestures.
+Plan 9 and its editor Sam and Acme are great examples for this.</p>
+            </li>
+            <li>
+              <p>GUI is <strike>cool</strike> <strong>good</strong>, why not?</p>
+            </li>
+            <li>And more…</li>
+          </ul>
+          <p>Having several choices at hands (Ruby, Python, Racket, and PicoLisp), I’ll
+start toying with them soon to realize the hope of a better environment.</p>
+        </div>
+        <hr class="fin" />
+      </article>
+      <footer>
+        <div id="copyright-footer">© Ha-Duong Nguyen 2016.
+    Unless clearly stated, all contents are released under the terms of
+    the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC
+    BY-SA v4.0 license</a>.</div>
+      </footer>
+      <div id="fine-print">
+        <p>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
