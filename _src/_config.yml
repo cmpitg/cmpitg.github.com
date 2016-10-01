@@ -1,0 +1,72 @@
+title: Reference Error
+description: thoughts & rants on tech & language, by cmpitg
+production_url: http://reference-error.org/
+year: 2016
+
+# When showing copyright, skip the other two
+footer_skip_related: true
+footer_skip_bio: true
+footer_skip_copyright: false
+
+author:
+  full_name: Ha-Duong Nguyen
+  handler: cmpitg
+  description: I’m a software architect, thinker, builder, λ & language lover.
+  avatar: //www.gravatar.com/avatar/14a93c30b43b559be64bafe7baced0c3?s=100
+
+header_description: Reference Error
+header_image: /assets/images/cmpitg.jpg
+header_display_type: description
+# header_display_type: image
+
+google_analytics_tracking_id: 'UA-36923550-1'
+disqus_short_name: ref-error
+
+socials:
+  - name: github
+    url: https://github.com/cmpitg
+    icon_class: fa-github-square
+  - name: linkedin
+    url: https://fi.linkedin.com/in/cmpitg
+    icon_class: fa-linkedin-square
+  - name: twitter
+    url: https://twitter.com/cmpitg
+    icon_class: fa-twitter-square
+  # - name: hn
+  #   url: https://news.ycombinator.com/user?id=cmpitg
+  #   icon_class: fa-hacker-news
+
+# https://github.com/asciidoctor/jekyll-asciidoc
+asciidoc: {}
+asciidoctor: {}
+
+lsi: false
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  hard_wrap: false
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: table
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+exclude: ["CNAME", "README.md", "Rakefile", "generate.rb", "Gemfile", "Gemfile.lock"]
+
+jekyll_tidy:
+  compress_html: false
+
+gems:
+  - jekyll-sitemap
+  - jekyll-tidy
+  - jemoji
+  - jekyll-asciidoc
