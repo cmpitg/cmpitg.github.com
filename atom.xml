@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Reference Error - thoughts & rants on tech & language, by cmpitg</title>
+    <link href="http://reference-error.org/atom.xml" rel="self" />
+    <link href="http://reference-error.org/" />
+    <updated>2016-10-01T12:54:51+03:00</updated>
+    <id>http://reference-error.org/</id>
+    <author>
+      <name>Ha-Duong Nguyen</name>
+      <email>cmpitg@gmail.com</email>
+    </author>
+    <entry>
+      <title>Common Lisp - Finding all functions in a package</title>
+      <link href="http://reference-error.org//2015/08/30/common-lisp-finding-all-functions-in-a-package.html"/>
+      <updated>2015-08-30T00:00:00+03:00</updated>
+      <id>http://reference-error.org//2015/08/30/common-lisp---finding-all-functions-in-a-package</id>
+      <content type="html">&lt;p&gt;On the way to resume the development of
+&lt;a href=&quot;https://github.com/cmpitg/ulquikit&quot;&gt;Ulquikit&lt;/a&gt;, I needed a way to retrieve all
+functions from a package so that a Ulquikit command could be automatically
+detected and invoked when necessary.  Common Lisp doesn’t provide this out of
+the box.  However, it’s very easy to build one with &lt;code class=&quot;highlighter-rouge&quot;&gt;do-all-symbols&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do-all-symbols&lt;/code&gt; takes the following form: &lt;code class=&quot;highlighter-rouge&quot;&gt;(do-all-symbols (symbol package)
+*body)&lt;/code&gt;, binding &lt;code class=&quot;highlighter-rouge&quot;&gt;symbol&lt;/code&gt; to all symbols in &lt;code class=&quot;highlighter-rouge&quot;&gt;package&lt;/code&gt; one at a time and
+execute &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; each time.  A function symbol can be checked with &lt;code class=&quot;highlighter-rouge&quot;&gt;fboundp&lt;/code&gt;,
+which returns &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt; if that symbol corresponds to a function.  We then have the
+first working version below:&lt;/p&gt;
+
+&lt;div class=&quot;language-common-lisp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;all-function-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Retrieves all functions in a package.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;do-all-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fboundp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s try it out:&lt;/p&gt;
+
+&lt;div class=&quot;language-common-lisp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defpackage&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;#:foobar&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:use&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:cl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:export&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;#:public-func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;in-package&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;#:foobar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;private-func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;A private function~%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;public-func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;A public function~%&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;in-package&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:cl-user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~{~A~%~}&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;all-function-symbols&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:foobar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This simple implementation introduces two problems: 1) it returns imported
+functions from other packages that the current package &lt;code class=&quot;highlighter-rouge&quot;&gt;use&lt;/code&gt;s, and 2) it
+doesn’t check if &lt;code class=&quot;highlighter-rouge&quot;&gt;package&lt;/code&gt; is a package designator.  Both are easily tackled.&lt;/p&gt;
+
+&lt;p&gt;The second problem could be solved by checking if the return value of
+&lt;code class=&quot;highlighter-rouge&quot;&gt;(find-package package)&lt;/code&gt; is not &lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;.  The first problem is then consequently
+solved by capturing the return value of &lt;code class=&quot;highlighter-rouge&quot;&gt;find-package&lt;/code&gt; and check if it’s
+&lt;code class=&quot;highlighter-rouge&quot;&gt;eql&lt;/code&gt;-ed to the corresponding package of &lt;code class=&quot;highlighter-rouge&quot;&gt;sym&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;(symbol-package sym)&lt;/code&gt;.
+In short, the condition looks like:&lt;/p&gt;
+
+&lt;div class=&quot;language-common-lisp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fboundp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+           &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eql&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;symbol-package&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;find-package&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Putting everything together:&lt;/p&gt;
+
+&lt;div class=&quot;language-common-lisp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;all-function-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Retrieves all functions in a package.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;find-package&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;do-all-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fboundp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eql&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;symbol-package&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;find-package&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;sym&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+      &lt;span class=&quot;nv&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Afer refactoring, some optimization and error signaling, we have the final version:&lt;/p&gt;
+
+&lt;div class=&quot;language-common-lisp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;defun&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;all-function-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;package-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Retrieves all function symbols from a package.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;declare&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;package-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lst&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;find-package&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;package-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cond&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;do-all-symbols&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;symb&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;fboundp&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;symb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                             &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eql&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;symbol-package&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;symb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;symb&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;lst&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+               &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;~S does not designate a package&quot;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;package-name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Ruby - Lambda, Proc, and code block</title>
+      <link href="http://reference-error.org//2013/10/21/ruby-lambda-proc-code-block.html"/>
+      <updated>2013-10-21T00:00:00+03:00</updated>
+      <id>http://reference-error.org//2013/10/21/ruby-lambda-proc-code-block</id>
+      <content type="html">&lt;p&gt;Reference:
+&lt;a href=&quot;http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/&quot;&gt;this excellent read&lt;/a&gt; by
+&lt;a href=&quot;http://awaxman11.github.io&quot;&gt;Adam Waxman&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Summary:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lambda and Proc are objects, code block is not (it is a… block of code).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Both lambda and Proc are &lt;code class=&quot;highlighter-rouge&quot;&gt;Proc&lt;/code&gt; objects:&lt;/p&gt;
+
+    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# ⇨ Proc &lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;class&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ⇨ Proc &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is at most one block that can appear in a argument list of a
+function/method:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lambdas check for the number of arguments, Procs don’t.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;When returning from a lambda, the lambda object reaches its end.  When
+returning from a Proc, the object enclosing the Proc (outer scope) reaches
+its end.&lt;/p&gt;
+
+    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;return_from_lambda&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a_lambda&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'returned from a lambda'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a_lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'default return value of the function'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;return_from_proc&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a_proc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'returned from a Proc'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a_proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'default return value of the function - never reaches'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_from_lambda&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ⇨ default return value of the function&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return_from_proc&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# ⇨ returned from a Proc&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Still alive</title>
+      <link href="http://reference-error.org//misc/2013/10/04/still-alive.html"/>
+      <updated>2013-10-04T00:00:00+03:00</updated>
+      <id>http://reference-error.org//misc/2013/10/04/still-alive</id>
+      <content type="html">&lt;p&gt;I’m still alive, back to email and developing fun stuff again.&lt;/p&gt;
+
+&lt;p&gt;Recently, I’ve been toying with lots of tools and ideas.  By
+far, &lt;a href=&quot;http://xiki.org&quot;&gt;Xiki&lt;/a&gt; is among the most impressive.  The idea of having
+a global text-based interface with expression-based interact has been haunting
+me in the last few months.  Still chasing a &lt;a href=&quot;/projects/espada&quot;&gt;better editor&lt;/a&gt;,
+here are the list of new ideas I have summed up to add to mine:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Everything is &lt;em&gt;beautifully formatted&lt;/em&gt; text (inspired
+by &lt;a href=&quot;http://www.gnu.org/software/emacs/&quot;&gt;Emacs&lt;/a&gt; and &lt;a href=&quot;http://xiki.org&quot;&gt;Xiki&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Actions are defined using patterns&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Full control of keyboard and mouse chords (inspired
+by &lt;a href=&quot;http://acme.cat-v.org/&quot;&gt;Acme&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Minimalism and cleanliness (inspired
+by &lt;a href=&quot;http://en.wikipedia.org/wiki/Chekhov%27s_gun&quot;&gt;Chekhov’s gun&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Incremental development (inspired by Paul
+Graham’s
+&lt;a href=&quot;http://ep.yimg.com/ty/cdn/paulgraham/bbnexcerpts.txt&quot;&gt;Lisp in Web-Based Applications&lt;/a&gt;,
+a copy version of it could be
+found &lt;a href=&quot;/archive/paul_graham_lisp_in_web.txt&quot;&gt;here&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I intended to integrate all these features
+into &lt;a href=&quot;https://github.com/cmpitg/escudo/&quot;&gt;Escudo&lt;/a&gt; and eventually ended up
+developing a &lt;a href=&quot;https://github.com/cmpitg/blutkit&quot;&gt;wrapper&lt;/a&gt; for PySide (Python
+3 + Qt) for personal use.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/projects/bogoengine&quot;&gt;Bogoengine&lt;/a&gt; is nearly dead while not being
+feature-completed.  Writing C is good but not particularly fun.  I have
+implemented a small UTF-8 and unit test libraries for Bogoengine.  No more
+bloating, no more dependencies, more more complicated build tool.  Plain
+makefiles are great!  I also want to write an experimental version
+in &lt;a href=&quot;http://call-cc.org&quot;&gt;Chicken Scheme&lt;/a&gt; which compiles to C.  Let’s see how it
+goes.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Random notes&lt;/em&gt;: Back to Lisp again, I feel I really need a boost.  A method
+for good practicing is needed, and judge system is the first thing comes to my
+mind.  Writing a new one seems to be a neat idea :-).&lt;/p&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Rethinking *nix</title>
+      <link href="http://reference-error.org//2013/10/04/rethinking-nix.html"/>
+      <updated>2013-10-04T00:00:00+03:00</updated>
+      <id>http://reference-error.org//2013/10/04/rethinking-nix</id>
+      <content type="html">&lt;p&gt;&lt;a href=&quot;http://wayback.archive.org/web/20120120031001/http://m.simson.net/ugh.pdf&quot;&gt;The UNIX-HATERS handbook&lt;/a&gt; is
+a fantastic book about how suck *nix does, in terms of system design,
+workflow, and user experience.  It totally changes the way I think about how I
+work with an operating system, how the “do one thing and do it well” used to
+be good but isn’t relevant anymore.  I haven’t finished the book, and I don’t
+want to give away the thoughtful and interestingly enjoying contents.  So all
+I could say is find the book and enjoy if you really want to make use of it
+practically: think differently and boost your performance.&lt;/p&gt;
+
+&lt;p&gt;You can also find a copy of the book &lt;a href=&quot;/archive/ugh.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This serves as a brain-dump I’ve got for a while but haven’t reviewed it
+thoroughly to make decision:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I want to use &lt;strong&gt;one&lt;/strong&gt; programming language as a global language for my
+system.  The language needs to satisfy the following criteria:
+    &lt;ul&gt;
+      &lt;li&gt;Is shell-friendly &lt;em&gt;and&lt;/em&gt; can emulate shell behavior.  There are many
+reasons for this, and the 2 most important are:
+        &lt;ul&gt;
+          &lt;li&gt;Shell-scripts could be easily ported or made use (in case of complex
+scripts) without much change.  Although this leads to another problem
+with badly-written scripts (which GRUB 2 is one clear example)&lt;/li&gt;
+          &lt;li&gt;The language has to be mature enough in terms of its eco-system.  I love
+building tools, but I need good small tools first.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Uses &lt;strong&gt;interpreters&lt;/strong&gt; instead of compilers.  Compilers, build tools,
+stripping debugging symbols, no way to directly patch the program itself,
+…  All sucks.  Or rather, they could be much better with an interpreted
+language.&lt;/li&gt;
+      &lt;li&gt;Has good packaging system, where installing, patching, making, and
+deploying packages are simple and efficient.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I want to make full use of hardware I’m having, including human-interface
+devices like keyboard and mouse, especially mouse chords and mouse gestures.
+Plan 9 and its editor Sam and Acme are great examples for this.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GUI is &lt;strike&gt;cool&lt;/strike&gt; &lt;strong&gt;good&lt;/strong&gt;, why not?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;And more…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having several choices at hands (Ruby, Python, Racket, and PicoLisp), I’ll
+start toying with them soon to realize the hope of a better environment.&lt;/p&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Rethinking Espada</title>
+      <link href="http://reference-error.org//2013/04/12/rethinking-espada.html"/>
+      <updated>2013-04-12T00:00:00+03:00</updated>
+      <id>http://reference-error.org//2013/04/12/rethinking-espada</id>
+      <content type="html">&lt;p&gt;It’s been several days since the last commit to &lt;a href=&quot;/projects/espada/&quot;&gt;Espada&lt;/a&gt;.
+I have encountered several problems when extensively developing Espada in the
+last month.  Some problems lie in the &lt;a href=&quot;https://qt-project.org/&quot;&gt;Qt library&lt;/a&gt;,
+but some of them were my own, here are 2 of my favorite:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Weird behaviors in key capturing.  Detailed explanation could be found in
+the source code of the &lt;a href=&quot;http://goo.gl/AhqcY&quot;&gt;TextEdit&lt;/a&gt; widget.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Random crash when
+using &lt;a href=&quot;http://qt-project.org/doc/qt-4.8/qtreeview.html&quot;&gt;QTreeView&lt;/a&gt; with
+Ruby’s &lt;a href=&quot;https://github.com/ryanmelt/qtbindings&quot;&gt;qtbindings&lt;/a&gt;.  This happened
+in both my Debian Wheezy 64-bit and Ubuntu 12.04 64-bit systems.  I have
+filed a &lt;a href=&quot;https://github.com/ryanmelt/qtbindings/issues/50&quot;&gt;bug report&lt;/a&gt;.
+Hopefully this will be fixed soon enough, before I reconsider my language
+and tool of choice for Espada.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hacked Espada everyday and loved &lt;em&gt;every minute&lt;/em&gt; of it.  Writing Ruby brought me great pleasure.  However, I’m facing serious problems with the Espada project and with my own code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Not following my own standard.  I was too tempted to see the result of my
+work everyday and didn’t write any test.  Thanks to my
+friend &lt;a href=&quot;http://doesnotunderstand.org/&quot;&gt;Serge&lt;/a&gt;
+and &lt;a href=&quot;http://hanoicodingdojo.github.io/&quot;&gt;Hanoi Coding Dojo gang&lt;/a&gt;, I learnt to
+appreciate the value of unit test
+and &lt;a href=&quot;http://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;TDD&lt;/a&gt;.  When Serge
+left Vietnam to come back to France, I (kinda) lost my motivation in Coding
+Dojo and I didn’t organize any session.  My coding habit’s slowly forgetting
+about tests, which resulted in a huge amount of unnecessary waste time.
+Seriously, I and Hanoi Coding Dojo need a reboot.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Horrible design.  In fact, the current version of Espada is just a bunch of
+spontaneous code with no design at all.  I haven’t thoughts deeply enough
+until I built in myself and realized how bad it would be if I continue the
+way I’m doing right now.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lost of direction.  I couldn’t count how many times I have asked myself what
+kind of text editor I would want to make.  I worked everyday with Emacs and
+Sublime Text 2 and wanted to bring &lt;strong&gt;all&lt;/strong&gt; the good parts of those two into
+Espada, but it &lt;em&gt;won’t work&lt;/em&gt;, at least for near future, until Espada is able
+to be used to program itself.  I feel my creativity was somehow restricted
+by the tools I used everyday.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Not documenting everything as I have planned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Repetitive_stress_injury&quot;&gt;RSI&lt;/a&gt; bothered me
+&lt;strong&gt;everyday&lt;/strong&gt;.  Couldn’t be helped!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Too much information, too little time to process.  This classic problem is a
+good yet unforgivable excuse.  I seriously need to learn to focus on one
+thing at a time.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Failed resolutions.  Again, and always be the greatest problem. Failed
+resolutions.  Including no blog entry :-(.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Perhaps there are more, but that’s all I can think of at the moment.  Man, I
+gotta be strict with myself much more!&lt;/p&gt;
+
+&lt;p&gt;And now, the baby-step solution, resolutions for the next few days:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Rethinking Espada:
+    &lt;ul&gt;
+      &lt;li&gt;With careful mockup &amp;amp; use case, visualized as much as possible.&lt;/li&gt;
+      &lt;li&gt;Carefully design Espada.  The current version is a failure but a good
+failure.  I don’t mind throwing away my own code as I have learnt a lot
+from them.  This time is no exception.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redesign:
+    &lt;ul&gt;
+      &lt;li&gt;My page&lt;/li&gt;
+      &lt;li&gt;Hanoi Coding Dojo homepage&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://khonggiancongdong.org/&quot;&gt;Hanoi Community Space homepage&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s about it for now…&lt;/p&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Mockup tool and Espada update</title>
+      <link href="http://reference-error.org//2013/02/21/mockup-tool-and-espada-update.html"/>
+      <updated>2013-02-21T00:00:00+02:00</updated>
+      <id>http://reference-error.org//2013/02/21/mockup-tool-and-espada-update</id>
+      <content type="html">&lt;p&gt;In order for the &lt;a href=&quot;/projects/espada/&quot;&gt;Espada&lt;/a&gt; to be at its best status
+possible, I need a mockup tool which helps me express design perpective for
+myself, and for anyone who’s interested in the project.  I spent the whole
+evening just to find a piece I felt most comfortable.&lt;/p&gt;
+
+&lt;p&gt;LibreOffice Draw is not a GUI mockup tool, but it’s my usual choice whenever I
+needed to sketch simple stuff, or make a diagram.  Fairly useful, but not
+reaching the standard for someone wants beauty, and the workflow is not
+flexible.  Up to now and I haven’t found any way to change the default
+properties of a shape (and I doubt if it’s possible at this time of writing),
+which copying and pasting could partly solve as an ugly solution.  No fancy
+widgets for GUI prototyping, and I decided to go for another piece.&lt;/p&gt;
+
+&lt;p&gt;Inkscape fell short the same way.  Very powerful tools and features for vector
+drawing, but when using to prototype GUI, for me it seemed to be overkilled.
+Same goes for GIMP.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pencil.evolus.vn/&quot;&gt;Evolus’ Pencil&lt;/a&gt; seemed to be just the tool I
+needed.  With plenty of available widgets, packaged into stencils, simple
+interface, and very easy to use.  I’ve used Pencil as a Firefox extension a
+couple years ago but left it due to its bugs and the stagnancy of development
+when
+&lt;a href=&quot;http://support.mozilla.org/en-US/questions/886836&quot;&gt;Firefox broke its addon compability&lt;/a&gt; and
+&lt;a href=&quot;http://en.wikipedia.org/wiki/History_of_Firefox#Rapid_release&quot;&gt;switched to rapid-release cycle&lt;/a&gt;.
+There had been many improvements since (thanks
+to &lt;a href=&quot;http://fedoraproject.org/wiki/User:Tuanta&quot;&gt;tuanta&lt;/a&gt; who had some nice
+discussions with &lt;a href=&quot;http://code.google.com/u/dgthanhan/&quot;&gt;Duong Thanh An&lt;/a&gt;, which
+incident I personally know) but unfortunately, the situation seemed not good
+enough for me to choose the software as my tool.  The newest version has a bug
+which prevents the document to be exported as PNG and ODT.  I have already
+tried with my Debian Wheezy 64-bit and Ubuntu 12.04 LTS 64-bit, both the
+standalone version and Firefox extension version with no difference.  The
+software is fantastic, but one significant bug makes it unusable for me.  I
+have
+&lt;a href=&quot;http://code.google.com/p/evoluspencil/issues/detail?id=545&amp;amp;sort=-id&quot;&gt;filed the bug&lt;/a&gt; and
+now waiting for the fix.  Poking around the project made me disappointed a
+bit.  There’s no information about Pencil development on the main website, I
+only found &lt;a href=&quot;http://code.google.com/p/evoluspencil&quot;&gt;its Google Code project&lt;/a&gt;
+when I clicked on “Linux Builds” in the download page.
+The &lt;a href=&quot;http://code.google.com/p/evoluspencil/issues/list&quot;&gt;issue list page&lt;/a&gt;
+contains 545 ones (including the one I submitted).  The oldest one was from
+2008 and no further information since then.  I went for another choice.&lt;/p&gt;
+
+&lt;p&gt;After a while searching, I didn’t find any good FOSS piece.  I went on and
+tried some online services.  A bit Googling took me to a couple of sites, but
+the one I liked the most was &lt;a href=&quot;https://moqups.com/&quot;&gt;Moqups&lt;/a&gt;.  Easy to get
+started, straight to use, intuitive and simple, has the ability to export to
+PDF and PNG and save to local drive, Dropbox or Google Drive.  Users can also
+upload their own images as widget to add to the sketch.  You can also share
+your piece pretty quickly when you’re done.  Registration took almost no time,
+just a few clicks and types.  For an amateur sketcher like me, Moqups is more
+than enough.  And here is the quick result of a mockup I needed for today, my
+apologies for being so bad at drawing:&lt;/p&gt;
+
+&lt;div style=&quot;align: center; text-align: center; font-style: italic;&quot;&gt;
+    &lt;img src=&quot;https://raw.github.com/CMPITG/espada/experiment/concepts/text_buffer.png&quot; alt=&quot;Espada Text Buffer&quot; /&gt;&lt;br /&gt;
+    Espada Text Buffer mockup
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The process took longer than I thought but sure rewarding.&lt;/p&gt;
+
+&lt;p&gt;A small note before this entry ends: I decided to public Espada
+via &lt;a href=&quot;https://github.com/CMPITG/espada&quot;&gt;Github&lt;/a&gt; (which is the mirror
+of &lt;a href=&quot;https://bitbucket.org/cmpitg/espada&quot;&gt;my Bitbucket repo&lt;/a&gt;).  The more I get
+familiar with &lt;a href=&quot;http://mercurial.selenic.com/&quot;&gt;Mercurial&lt;/a&gt;, the more I prefer it
+to Git.  And part of the reason why I
+chose &lt;a href=&quot;https://bitbucket.org/&quot;&gt;Bitbucket&lt;/a&gt; in the first place was because
+almost I didn’t want to make it public, and just few people knew of
+my &lt;a href=&quot;https://bitbucket.org/cmpitg&quot;&gt;Bitbucket account&lt;/a&gt; ;-).&lt;/p&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>Putting a custom firmware into an XpressMusic</title>
+      <link href="http://reference-error.org//2013/02/19/putting-a-custom-firmware-to-xpressmusic.html"/>
+      <updated>2013-02-19T00:00:00+02:00</updated>
+      <id>http://reference-error.org//2013/02/19/putting-a-custom-firmware-to-xpressmusic</id>
+      <content type="html">&lt;h2 id=&quot;foreword&quot;&gt;Foreword&lt;/h2&gt;
+
+&lt;p&gt;Last weekends, I settled things down, preparing for the first workweek of the
+Lunar New Year, helping my brother putting a custom firmware on
+his
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Nokia_5800_XpressMusic&quot;&gt;Nokia 5800 XpressMusic&lt;/a&gt;.
+Bro is no tech addicted, but his interest in tech was enough for him to get
+his hands dirty for these kinds of thing.&lt;/p&gt;
+
+&lt;p&gt;Victory loves preparation, and flashing a firmware is a dangerous process.
+Besides, my brother is a high-school student (no financial income), who has an
+XpressMusic as his only phone, which means if he bricks it, he gotta manage to
+get another one by himself.  The default Symbian version on his phone is a
+bunch of crap, especially when it has something to do with the memory card,
+with laggish performance and memory card corruption all the time.  Though
+loving his phone, he really hates his OS.  He has this desire for replacing
+the OS for a while, but after reading about the process and the consequences
+(&lt;em&gt;bricking&lt;/em&gt;) it might cause, he hesitated and merely gave up the idea.&lt;/p&gt;
+
+&lt;p&gt;The time came up when our mother (sort of) offered him a chance for a
+secondhand phone, with reasonable cost and lower hardware spec (‘cause that’s
+all she and I could afford), and encouraged him to take a shot.  With my
+support as his supervisor, he decided to spend his last holidays to flash his
+phone.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-preparation&quot;&gt;The preparation&lt;/h2&gt;
+
+&lt;p&gt;Some notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nokia Cooker and Nokia Firmware Editor serve the same purpose, so just use
+one of them.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We couldn’t install Phoenix because of the “dongle not found” crap.  Later I
+found out we need to use the pirate version to get rid of it.  All forum
+posts saying you should disable anti-virus software, … were written by
+idiots, don’t trust them!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;JAF contains malware, so we used it in KVM virtual machine, running an
+evaluation version of Windows, and deleted the whole VM when it’s done.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Basically, what we needed was a bunch of software:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.symbian-toys.com/nokiacooker.aspx&quot;&gt;Nokia Cooker&lt;/a&gt; - for modifying
+firmware&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nokiabreak.com/download-nokia-firmware-editor-v0-3.html&quot;&gt;Nokia Firmware Editor&lt;/a&gt; -
+for modifying firmware&lt;/li&gt;
+  &lt;li&gt;JAF (link contains pirate software and malware, so I wouldn’t post it
+here) - for flashing&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cpkb.org/wiki/Nokia_Phoenix_Service_Software&quot;&gt;Phoenix&lt;/a&gt; - for
+flashing, we didn’t use it though&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.symbian-toys.com/navifirm.aspx&quot;&gt;Navifirm&lt;/a&gt; - for downloading
+original firmware&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.comms.ovi.com/m/p/ovi/suite/index_my_my.html&quot;&gt;Nokia Ovi Suite&lt;/a&gt; -
+just for installing appropriate driver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And firmwares:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.symbiantweet.com/idroid-custom-firmware-for-nokia-5800-updated-to-v9-1-4&quot;&gt;iDroid 9.1.4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.symbiantweet.com/nokia-belle-custom-firmware-for-nokia-5800&quot;&gt;Nokia Belle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.symbiantweet.com/symbian-anna-custom-firmware-v7-5-for-nokia-5800&quot;&gt;Symbian Anna&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;An &lt;a href=&quot;http://symbianvn.net/showthread.php?t=19057&quot;&gt;unnamed custom firmware (CFW) for 5800&lt;/a&gt; found in a &lt;a href=&quot;http://symbianvn.net/&quot;&gt;Symbian VN forum&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And tons of guides and tutorials, although most of them were crappy, sloppily
+written!  I only found some &lt;em&gt;usable enough&lt;/em&gt; and post them here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.symbiantweet.com/video-tutorial-how-to-install-custom-firmware-on-nokia-n8&quot;&gt;How to install custom firmware on Nokia N8&lt;/a&gt;.
+This screencast made of the Pheonix Software, which we didn’t ‘cause we
+couldn’t have it installed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.symbiantweet.com/how-to-flash-symbian-custom-firmware-on-nokia-using-jaf-tool&quot;&gt;How To Flash Custom Firmware on Nokia Using “JAF” Tool&lt;/a&gt; -
+Very nice piece from &lt;a href=&quot;http://www.symbiantweet.com&quot;&gt;Symbian Tweet&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.imserba.com/forum/idroid-os-9-1-4-firmware-update-nokia-5800-a-t204158/&quot;&gt;IDroid OS 9.1.4 firmware update for Nokia 5800&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-process&quot;&gt;The process&lt;/h2&gt;
+
+&lt;p&gt;There were so much going on during session, so I would briefly describe what I
+think was useful in a followable steps:&lt;/p&gt;
+
+&lt;h3 id=&quot;what-we-actually-used&quot;&gt;What we actually used&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nokia Firmware Editor, to put Vietnamese to the firmware,&lt;/li&gt;
+  &lt;li&gt;Nokia Ovi Suite, to install drivers,&lt;/li&gt;
+  &lt;li&gt;Navifirm, to download stock firmware,&lt;/li&gt;
+  &lt;li&gt;JAF, to flash.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;steps&quot;&gt;Steps&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check our phone’s type: &lt;code class=&quot;highlighter-rouge&quot;&gt;*#0000#&lt;/code&gt; -&amp;gt; &lt;em&gt;RM-356&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install Nokia Ovi Suite, putting in the device to have appropriate drivers
+installed, then uninstall it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install/run Navifirm, choose the right model (RM-356) and the right stock
+firmware (Vietnam RED), download it and copy it to somewhere safe.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create the folder: &lt;code class=&quot;highlighter-rouge&quot;&gt;%programfiles%\Nokia\phoenix\products\RM-356&lt;/code&gt;, and copy
+the downloaded firmware files to it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run Nokia Firmware Editor:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Open the firmware containing Vietnamese (Vietnam RED and some other
+firmwares we found), and &lt;code class=&quot;highlighter-rouge&quot;&gt;Extract&lt;/code&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Wait for the files to finish loading.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to &lt;code class=&quot;highlighter-rouge&quot;&gt;Tools &amp;gt; Language Manager&lt;/code&gt; and export Vietnamese.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Open the &lt;code class=&quot;highlighter-rouge&quot;&gt;resources/fonts&lt;/code&gt; folder in the explorer and copy to somewhere
+safe.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Close and run Nokia Firmware Editor again.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Open the firmware to add Vietnamese, we did it several times, one with
+each firmware:&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;iDroid&lt;/em&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Nokia Bell&lt;/em&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Symbian Anna&lt;/em&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Replace the &lt;code class=&quot;highlighter-rouge&quot;&gt;resources/fonts&lt;/code&gt; with the version we’ve just copied.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Now &lt;code class=&quot;highlighter-rouge&quot;&gt;Repack/Rebuild&lt;/code&gt; and close it.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install JAF and run it:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Turn off the phone and connect it to the computer using the USB cable.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to the &lt;em&gt;BB5&lt;/em&gt; tab.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Check &lt;code class=&quot;highlighter-rouge&quot;&gt;Manual Flash&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Dead USB&lt;/code&gt;, choose &lt;code class=&quot;highlighter-rouge&quot;&gt;NORMAL&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;Mode&lt;/code&gt;, and leave
+everything else unchecked.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Check &lt;code class=&quot;highlighter-rouge&quot;&gt;Use INI&lt;/code&gt; and choose &lt;em&gt;RM-356&lt;/em&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Choose the appropriate product code.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Then &lt;code class=&quot;highlighter-rouge&quot;&gt;Flash&lt;/code&gt;, confirm by &lt;code class=&quot;highlighter-rouge&quot;&gt;Yes&lt;/code&gt;, then quickly hold the power button for &lt;strong&gt;1
+second&lt;/strong&gt; to turn of the phone.  The flashing process begins.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;When the message says &lt;code class=&quot;highlighter-rouge&quot;&gt;Done!&lt;/code&gt;, disconnect it from the USB cable, take out
+the battery and put it in.  Power on.  Then test our phone.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We modified firmwares and flashed them (unmodified and modified version) for a
+couple dozens times so we could find the best firmware for the device.&lt;/p&gt;
+
+&lt;h3 id=&quot;and-the-result&quot;&gt;And the result&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;iDroid&lt;/em&gt; is a EU RED version, which is incompatible with the Vietnam RED
+model, causing boot loop and then frozen while booting.  That’s so unfortunate
+as my brother expected it the most.  &lt;em&gt;Nokia Bell&lt;/em&gt; couldn’t boot.  &lt;em&gt;Symbian
+Anna&lt;/em&gt; (Ukraine RED) worked well but having problems when displaying
+Vietnamese.  We ended flashing the unnamed CFW and up to now it provides what
+my brother needs just fine.&lt;/p&gt;
+
+&lt;h2 id=&quot;afterthought&quot;&gt;Afterthought&lt;/h2&gt;
+
+&lt;p&gt;This was the first time my brother did this kind of hacking.  There were some
+problems when he tried without thoroughly understanding the process but
+luckily, everything went just as smooth as expected.  We started from Saturday
+night til Sunday afternoon.  I gave him advice as he did the real job.  At the
+end of the long session, I asked him to note everything he did and blog about
+his experience but he seemed to be out of interest :-).  So I just go ahead
+and write.&lt;/p&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>(Log) The 10x10 design process</title>
+      <link href="http://reference-error.org//2013/01/30/10x10-design-process.html"/>
+      <updated>2013-01-30T00:00:00+02:00</updated>
+      <id>http://reference-error.org//2013/01/30/10x10-design-process</id>
+      <content type="html">&lt;p&gt;While reading &lt;a href=&quot;http://elementaryos.org/journal&quot;&gt;ElementaryOS journal&lt;/a&gt; I found
+a short but interesting entry about
+the &lt;a href=&quot;http://elementaryos.org/journal/design-process&quot;&gt;10x10 design process&lt;/a&gt;.
+Gotta write it down for myself to remember and for future reference.  The
+process was stated as below:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Whenever you encounter a design problem:&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Sketch ten designs that each solve your problem in a distinct or different way.&lt;/li&gt;
+    &lt;li&gt;Get feedback from your peers, friends, coworkers etc.&lt;/li&gt;
+    &lt;li&gt;Take the favorite few designs and sketch ten variations of each.&lt;/li&gt;
+    &lt;li&gt;Get feedback on each of those.&lt;/li&gt;
+    &lt;li&gt;Choose the one you now feel works the best.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The main purposes of this process are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;10x10 (or 100) might place you beyond your limit and &lt;strong&gt;force&lt;/strong&gt; you to come
+up with &lt;strong&gt;innovative&lt;/strong&gt; ideas&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It gets you truly thinking about the &lt;em&gt;design problem rather than a single
+design solution&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </content>
+    </entry>
+    <entry>
+      <title>(Log) Learn yourself a tool</title>
+      <link href="http://reference-error.org//2013/01/18/learn-yourself-a-tool.html"/>
+      <updated>2013-01-18T00:00:00+02:00</updated>
+      <id>http://reference-error.org//2013/01/18/learn-yourself-a-tool</id>
+      <content type="html">&lt;p&gt;Learn yourself a tool and master it.  Whether you totally love it or not, it
+should be the tool you feel most comfortable working with.  I always
+have
+&lt;a href=&quot;http://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice.html&quot;&gt;problems with choices&lt;/a&gt; when
+it comes to tool.  There are so many tools to choose, and &lt;em&gt;obviously&lt;/em&gt; no tool
+is perfect, not to even mention my personal taste.&lt;/p&gt;
+
+&lt;p&gt;I &lt;em&gt;always&lt;/em&gt; have problems choosing a programming language to write some piece
+of software, unless someone forces me to, of course, with uneasy feelings.
+The language itself, the paradigms it provides and how to implement one
+beautifully yet performance is preserved, coding convention and default
+(standard) library (which, by the way the point I hate the most about Python),
+availability of external libraries and support, internal and external
+maintainability, …  There are plenty of things to consider, and I couldn’t
+find, or rather haven’t found, a combination I totally fell in love with.
+Programming is &lt;strong&gt;art&lt;/strong&gt;, but unlike art, perfection doesn’t exist.
+Perfectionism needs to be practical, not to give up the quest of seeking for
+complete beauty, but to survive in the imperfect world.&lt;/p&gt;
+      </content>
+    </entry>
+  </feed>

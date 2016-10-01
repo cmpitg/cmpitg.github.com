@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Espada Text</title>
+    <meta name="author" content="Ha-Duong Nguyen" />
+    <meta name="description" content="thoughts & rants on tech & language, by cmpitg" />
+    <link rel="canonical" href="http://reference-error.org//espada/" />
+    <!-- <link href="//fonts.googleapis.com/css?family=Nunito:400,700,300|Varela+Round" rel="stylesheet" type="text/css"> -->
+    <link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu+Mono" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Reference Error" href="/atom.xml" />
+    <link rel="stylesheet" href="/css/site.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+        ga('create', ', 'auto');
+        ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <section>
+      <header class="navigation">
+        <div id="header-title">
+          <a href="/" class="logo" title="Reference Error">
+            Reference Error
+      </a>
+        </div>
+        <div id="social-links-header">
+          <a title="cmpitg @ github" href="https://github.com/cmpitg"><i class="fa fa-github-square"></i></a>
+          <a title="cmpitg @ linkedin" href="https://fi.linkedin.com/in/cmpitg"><i class="fa fa-linkedin-square"></i></a>
+          <a title="cmpitg @ twitter" href="https://twitter.com/cmpitg"><i class="fa fa-twitter-square"></i></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/logs">logs</a></li>
+            <li><a href="/writing">writing</a></li>
+            <li><a href="/talks">talks</a></li>
+            <li><a href="/about">about</a></li>
+            <li class="no-bullet"><a href="/atom.xml">rss</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+        <h1 class="title">
+          Espada Text
+  </h1>
+        <p class="subtitle">
+          <span></span>
+        </p>
+        <div id="post">
+          <p>This page is growing through time, if you’re interested in the idea, besure to check it every 3 days.  Please shoot me <em>constructive</em> comments if you have some time to kill.</p>
+          <p>Current repository:</p>
+          <ul>
+            <li><a href="https://github.com/CMPITG/espada">On Github</a></li>
+            <li><a href="https://bitbucket.org/cmpitg/espada">On Bitbucket</a></li>
+          </ul>
+          <h2 id="some-new-ideas-for-espada-after-the-first-throw-away-version">Some new ideas for Espada after the first throw-away version</h2>
+          <ul>
+            <li>
+              <p><a href="https://github.com/cmpitg/escudo/">Escudo</a> is a side project to provide an usable Markdown editor for myself and evaluation of <a href="http://qt-project.org/wiki/Category:LanguageBindings::PySide">PySide</a> as an alternative choice for <em>Espada</em>.</p>
+            </li>
+            <li>
+              <p><a href="https://github.com/ryanmelt/qtbindings/">Ruby qtbindings</a> is having <a href="https://github.com/ryanmelt/qtbindings/issues/50">problem</a> at the moment.  Current maintainer is inactive, so Python seems to be a more practical choice than Ruby.  Let’s see how it goes after some first usable versions of <em>Escudo</em>.</p>
+            </li>
+            <li><em>Espada</em> interface will be inspired by Firefox:
+    
+              <ul>
+                <li>Traditional tab browser</li>
+                <li>Tab grouper</li>
+                <li>Sidebar bookmarks, history, and file browser</li>
+              </ul>
+            </li>
+            <li>Inline code evaluation when saving, to embed <em>last modified</em> infor for example.</li>
+          </ul>
+          <h2 id="notes">Notes</h2>
+          <ul>
+            <li>
+              <p>This page like a brain-dump, although it’s more formal than a brain-dump and much less formal than an essay.</p>
+            </li>
+            <li>
+              <p>I do make complaints about some languages at some points below.  This is purely my subjective opinion, <em>no offense towards the language creators and the community around the languages</em>.  Please kindly leave me a message if you feel offended and I apologize if you feel so.</p>
+            </li>
+            <li>
+              <p>This is <strong>not</strong> an attempt to clone <em>Emacs</em>, <em>Vim</em>, <em>TextMate</em>, <em>Sam</em>, <em>Acme</em>, … and the like.  My ambition is to combine the <strong>best</strong> of them all.</p>
+            </li>
+            <li>
+              <p>The project focuses on <strong>hackability</strong>, <strong>extendability</strong>, and <strong>elegance</strong>.</p>
+            </li>
+          </ul>
+          <h2 id="reasons">Reasons</h2>
+          <ul>
+            <li>Many good text editors available but all of them don’t really suite my need:
+    
+              <ul>
+                <li>Emacs and Vim: see <a href="/pages/emacs-vim-problems/">the problems with Emacs and Vim</a>.</li>
+                <li><a href="http://macromates.com/">TextMate</a>: <a href="https://github.com/textmate/textmate">open source</a>, I have heard good things about it, no Linux port available yet (as of 2012/12).</li>
+                <li><a href="http://www.sublimetext.com/">Sublime Text 2</a>: <a href="/pages/problems-with-non-free/">not open source</a>.</li>
+                <li><a href="http://kate-editor.org/">Kate</a>, <a href="http://projects.gnome.org/gedit/">Gedit</a>, <a href="http://www.geany.org/">Geany</a>, …: if you have seen my <a href="https://github.com/CMPITG/emacs-config">Emacs config</a>, you will understand why.</li>
+              </ul>
+            </li>
+            <li>User experience: a (not really) different way people work with text editor:
+    
+              <ul>
+                <li>Sam and Acme: TODO.</li>
+                <li>Gesture-based interaction</li>
+                <li>Effectively use of mouse:
+        
+                  <ul>
+                    <li>As in Sam and Acme</li>
+                    <li>Preventing <a href="http://en.wikipedia.org/wiki/Repetitive_stress_injury">RSI</a></li>
+                  </ul>
+                </li>
+                <li>Infinite extensibility:
+        
+                  <ul>
+                    <li>Fully hackable - full-feature programming environment. &lt;- <strong>target</strong>.</li>
+                    <li>Easily hackable.</li>
+                  </ul>
+                </li>
+                <li>Easy to use for both beginners and advanced users &lt;- <strong>target</strong>.</li>
+              </ul>
+            </li>
+            <li>Promoting good languages as a killer application:
+    
+              <ul>
+                <li>Like Emacs Lisp with Emacs.</li>
+                <li>Like Objective-C and the evil iThings.</li>
+                <li>Like Rails with Ruby.</li>
+              </ul>
+            </li>
+            <li>Promoting good programming practice:
+    
+              <ul>
+                <li><a href="http://en.wikipedia.org/wiki/Functional_programming">Functional programming</a> style (TODO: explain why it’s good)</li>
+                <li>Reducing the need for <strong>overuse</strong> of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a> without knowing exactly why it should (not) be used (TODO: explain)</li>
+              </ul>
+            </li>
+          </ul>
+          <h2 id="name">Name?</h2>
+          <p><strong>Espada</strong>:</p>
+          <ul>
+            <li>means <em>sword</em> in Spanish</li>
+            <li>I love <a href="http://en.wikipedia.org/wiki/Bleach_%28manga%29">Bleach</a> ;-)</li>
+          </ul>
+          <h2 id="difficulties">Difficulties</h2>
+          <h3 id="in-choosing-language">In choosing language</h3>
+          <ul>
+            <li>Libraries:
+    
+              <ul>
+                <li>Requirements: <a href="http://en.wikipedia.org/wiki/Rope_%28computer_science%29">Rope</a>, well-supported mid-level GUI library at beta mature level at least.</li>
+                <li>Have to be available, time and resource are good excuses, and I want to focus on the text editor itself, not the things around.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>Choosing a GUI library is actually what took most of my time, since I have to really dig into choices, try and compare.  Besides its availability and maturity significantly affect the language.</p>
+          <p>TODO: draw a table</p>
+          <ul>
+            <li>Language:
+    
+              <ul>
+                <li>Candidates: <a href="http://livescript.net/">LiveScript</a>, JavaScript, Ruby, Python, Scala.</li>
+                <li>Cleanly designed and elegant.</li>
+                <li>More difficult to write bad code than good code.</li>
+                <li>Good in performance.  This part is hard to defined. (TODO: explain)</li>
+              </ul>
+            </li>
+          </ul>
+          <h3 id="why-not-a-lisp-dialect">Why Not a Lisp Dialect?</h3>
+          <p>Candidates: Clojure, Racket, newLisp, PicoLisp.</p>
+          <p>TODO: explain</p>
+          <p>Notes:</p>
+          <ul>
+            <li>
+              <p>Macros are powerful but horribly ugly creatures.</p>
+            </li>
+            <li>
+              <p>Extremely easy to write bad Lisp than good Lisp.  Good Lisp needs really thoughtful code.</p>
+            </li>
+            <li>
+              <p>Subjective opinion: up to now (2012) I’ve never seen a problem which could be solved beautifully with macros or fexps couldn’t be solved beautifully with functional style.</p>
+            </li>
+            <li>
+              <p>Large Lisp programs tend to introduce so many layers of abstraction, which is a double-edged sword.  Otherwise you’d have ugly really Lisp programs.  This comes directly from my personal experience working with Lisp dialects, both for fun and for profit.  See <a href="http://paulgraham.com/">Paul Graham</a>’s <a href="http://www.paulgraham.com/onlisp.html">On Lisp</a> for more on this.</p>
+            </li>
+            <li>Why not Clojure?
+    
+              <ul>
+                <li>Not starting up fast enough.  Yet I have known no way to speed up.</li>
+                <li>Setting up process is a real pain.</li>
+                <li>It’s impossible not to call Java - a real pain in the neck.</li>
+              </ul>
+            </li>
+            <li>Why not newLisp?
+    
+              <ul>
+                <li>Contexts are terrible creatures, with class-like properties and global scope.  No  builtin dictionary/hash-table data structures.  I condider these two as newLisp’s biggest design flaws.</li>
+                <li>After reading newLisp’s source code, I don’t trust it anymore.</li>
+              </ul>
+            </li>
+            <li>Why not Racket?
+    
+              <ul>
+                <li>Large programs tend to be very noisy.</li>
+                <li>Very hard to keep large programs elegant and maintainable.  Perhaps <em>Espada</em> will have a community, but it surely starts from a one-man’s work.</li>
+              </ul>
+            </li>
+          </ul>
+          <h2 id="experiment-time">Experiment Time!</h2>
+          <p>Fragmented notes:</p>
+          <h3 id="choosing-a-gui-library">Choosing a GUI library</h3>
+          <ul>
+            <li>First thought: something related to <a href="http://nodejs.org">Node.js</a>:
+    
+              <ul>
+                <li><a href="https://github.com/creationix/node-gir">node-gir</a> is badly leaky.</li>
+              </ul>
+            </li>
+          </ul>
+          <h3 id="misc">Misc</h3>
+          <ul>
+            <li>
+              <p>Writing original JavaScript and preventing people from contributing bad JavaScript are probably not a very good idea.  I love JavaScript but the fact that it’s <a href="http://www.crockford.com/javascript/javascript.html">the world’s most misunderstood programming language</a> concerns me a lot.</p>
+            </li>
+            <li>
+              <p><em>LiveScript</em> is awesome, however, the language is too fragmented and it’s so easy to write bad code.</p>
+            </li>
+          </ul>
+        </div>
+        <hr class="fin" />
+      </article>
+      <footer>
+        <div id="copyright-footer">© Ha-Duong Nguyen 2016.
+    Unless clearly stated, all contents are released under the terms of
+    the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC
+    BY-SA v4.0 license</a>.</div>
+      </footer>
+      <div id="fine-print">
+        <p>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hướng dẫn Urban Terror</title>
+    <meta name="author" content="Ha-Duong Nguyen" />
+    <meta name="description" content="thoughts & rants on tech & language, by cmpitg" />
+    <link rel="canonical" href="http://reference-error.org//urt/" />
+    <!-- <link href="//fonts.googleapis.com/css?family=Nunito:400,700,300|Varela+Round" rel="stylesheet" type="text/css"> -->
+    <link href="//fonts.googleapis.com/css?family=Alegreya+Sans|Ubuntu+Mono" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="Reference Error" href="/atom.xml" />
+    <link rel="stylesheet" href="/css/site.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+        ga('create', ', 'auto');
+        ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <section>
+      <header class="navigation">
+        <div id="header-title">
+          <a href="/" class="logo" title="Reference Error">
+            Reference Error
+      </a>
+        </div>
+        <div id="social-links-header">
+          <a title="cmpitg @ github" href="https://github.com/cmpitg"><i class="fa fa-github-square"></i></a>
+          <a title="cmpitg @ linkedin" href="https://fi.linkedin.com/in/cmpitg"><i class="fa fa-linkedin-square"></i></a>
+          <a title="cmpitg @ twitter" href="https://twitter.com/cmpitg"><i class="fa fa-twitter-square"></i></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/logs">logs</a></li>
+            <li><a href="/writing">writing</a></li>
+            <li><a href="/talks">talks</a></li>
+            <li><a href="/about">about</a></li>
+            <li class="no-bullet"><a href="/atom.xml">rss</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+        <h1 class="title">
+          Hướng dẫn Urban Terror
+  </h1>
+        <p class="subtitle">
+          <span>
+            Series:
+          
+            
+              <a href="/#games">games</a>,
+            
+          
+            
+              <a href="/#urt">urt</a>,
+            
+          
+            
+              <a href="/#urban_terror">urban terror</a>
+          </span>
+          <span class="date">
+          </span>
+        </p>
+        <div id="post">
+          <p><em>Lưu ý: Trang này chưa được công bố ;-)</em></p>
+          <h2 id="thut-ng-thng-gp">Thuật ngữ thường gặp</h2>
+          <ul>
+            <li>
+              <p><em>ffs</em>: for f*** sake</p>
+            </li>
+            <li>
+              <p><em>rotf</em>: rolling on the floor</p>
+            </li>
+            <li>
+              <p><em>lmao</em>: laughing my ass out</p>
+            </li>
+            <li>
+              <p><em>gg</em>: good game/nice shot</p>
+            </li>
+            <li>
+              <p><em>gh</em>: good half</p>
+            </li>
+            <li>
+              <p><em>ns</em>: nice shot/no scope</p>
+            </li>
+            <li>
+              <p><em>n1</em>: nice one</p>
+            </li>
+            <li>
+              <p><em>gtg</em>: gotta go/good to go</p>
+            </li>
+            <li>
+              <p><em>brb</em>: be right back</p>
+            </li>
+            <li>
+              <p><em>ty</em>: thank you</p>
+            </li>
+            <li>
+              <p><em>thx</em>: thanks</p>
+            </li>
+            <li>
+              <p><em>np</em>: no problem</p>
+            </li>
+          </ul>
+          <h2 id="qkey"><code class="highlighter-rouge">qkey</code></h2>
+          <p>Urban Terror server sử dụng file <code class="highlighter-rouge">qkey</code> (auto-generated) để xác định
+ID của một client.  <code class="highlighter-rouge">qkey</code> được sinh tự động trên client, bản chất là
+một file binary chứa nhiều giá trị ngẫu nhiên.  <code class="highlighter-rouge">qkey</code> luôn luôn được
+sinh lại nếu Urban Terror client không tìm thấy file này.  Đường dẫn
+đến <code class="highlighter-rouge">qkey</code> trên GNU/Linux: <code class="highlighter-rouge">~/.q3a/qkey</code></p>
+          <h2 id="demo">Demo</h2>
+          <h3 id="demo-l-g">Demo là gì?</h3>
+          <p>Một demo là một bản capture game.  Giống như khi bạn dùng một chương
+trình quay màn tình (screencaster) quay lại cảnh chơi game.</p>
+          <h3 id="demo-nm--u">Demo nằm ở đâu?</h3>
+          <p>Demo khi thu lại sẽ mặc định nằm ở <code class="highlighter-rouge">~/.q3a/q3ut4/demos/</code> trong
+GNU/Linux.</p>
+          <h3 id="thupht-demo-nh-th-no">Thu/phát demo như thế nào?</h3>
+          <ul>
+            <li>
+              <p>Để thu demo, sử dụng lệnh <code class="highlighter-rouge">/recorddemo [file_name]</code> hoặc nhấn <code class="highlighter-rouge">F12</code>.
+Nếu không có <code class="highlighter-rouge">[file_name]</code>, demo sẽ nhận tên mặc định.</p>
+            </li>
+            <li>
+              <p>Để dừng thu demo, sử dụng <code class="highlighter-rouge">/stoprecord</code> hoặc <code class="highlighter-rouge">F12</code> một lần nữa.</p>
+            </li>
+            <li>
+              <p>Để phát lại demo, vào game, chọn <strong>Demos</strong> trên thanh menu và chọn
+tên demo.</p>
+            </li>
+            <li>
+              <p><strong>Chú ý:</strong> Urban Terror client trên Linux gặp vấn đề với tên file,
+vì vậy bạn cần chuyển tên demo sang chữ in hoa mới có thể phát lại
+được trong game.</p>
+            </li>
+            <li>
+              <p>Demo nên được đặt tên tốt, chẳng hạn
+                <code class="highlighter-rouge">datetime_timezone_player_map.xxx</code>.  Ví dụ:
+                <code class="highlighter-rouge">2013-10-02_15-26-57_UTC7_-_WOOHOO_-_UPTOWN.dm_68</code></p>
+            </li>
+          </ul>
+          <h2 id="cc-vn--thng-gp-vi-urt-trn-gnulinux">Các vấn đề thường gặp với UrT trên GNU/Linux</h2>
+          <h3 id="khng-iu-khin-c-hoc-ch-hin-th-console">Không điều khiển được, hoặc chỉ hiển thị console</h3>
+          <p>Lỗi do UrT được biên dịch với thư viện OpenGL cũ.</p>
+          <h2 id="chy-urban-terror-trn-x-server-khc">Chạy Urban Terror trên X server khác</h2>
+          <p>Sửa <code class="highlighter-rouge">/etc/X11/Xwrapper.config</code></p>
+          <div class="highlighter-rouge">
+            <pre class="highlight"><code>allowed_users=anybody
+</code></pre>
+          </div>
+          <div class="language-sh highlighter-rouge">
+            <pre class="highlight"><code>xinit -- :1
+<span class="gp">\# </span>Go to tty8
+urban_terror
+</code></pre>
+          </div>
+          <h2 id="tham-chiu">Tham chiếu</h2>
+          <ul>
+            <li>Urban Terro page @ Arch Linux wiki: https://wiki.archlinux.org/index.php/Urban_Terror</li>
+          </ul>
+        </div>
+        <hr class="fin" />
+      </article>
+      <footer>
+        <div id="copyright-footer">© Ha-Duong Nguyen 2016.
+    Unless clearly stated, all contents are released under the terms of
+    the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC
+    BY-SA v4.0 license</a>.</div>
+      </footer>
+      <div id="fine-print">
+        <p>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
