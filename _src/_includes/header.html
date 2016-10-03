@@ -1,11 +1,11 @@
 <header class="navigation">
-  {% if site.header_display_type == "image" %}
+  {% if site.header.display_type == "image" %}
     <a href="/" class="logo" title="Reference Error">
-      <img src="{{ site.header_image }}" alt="Reference Error">
+      <img src="{{ site.header.image }}" alt="Reference Error">
     </a>
   {% else %}
     <div id="header-title">
-      <a href="/" class="logo" title="Reference Error">{{ site.header_description }}</a>
+      <a href="/" class="logo" title="Reference Error">{{ site.header.description }}</a>
     </div>
   {% endif %}
 
