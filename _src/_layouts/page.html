@@ -4,11 +4,11 @@ layout: default
 
 {% include header.html %}
 
-<article>
-  <h1 class="title">
-    {{ page.title }}
-  </h1>
+<h1 class="title">
+  {{ page.title }}
+</h1>
 
+<article>
   {% assign tag_count = page.tags | size %}
   <p class="subtitle">
     {% if page.subtitle %}
