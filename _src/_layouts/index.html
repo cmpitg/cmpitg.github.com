@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<article>
+  <div id="post">{{ content }}</div>
+
+  {% unless page.skip_footer %}
+    <hr class="fin" />
+  {% endunless %}
+</article>
+
+{% unless page.skip_footer %}
+  {% include footer.html %}
+{% endunless %}
