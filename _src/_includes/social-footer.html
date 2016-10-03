@@ -1,0 +1,5 @@
+<div id="social-links">
+  {% for social in site.socials %}
+    <a title="{{ site.author.handler }} @ {{ social.name }}" href="{{ social.url }}"><i class="fa {{ social.icon_class }}"></i></a>
+  {% endfor %}
+</div>
