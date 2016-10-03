@@ -19,8 +19,11 @@ header_image: /assets/images/cmpitg.jpg
 header_display_type: description
 # header_display_type: image
 
-google_analytics_tracking_id: 'UA-36923550-1'
-disqus_short_name: ref-error
+google_analytics:
+  tracking_id: 'UA-36923550-1'
+  # user_id: ''
+disqus:
+  short_name: ref-error
 
 socials:
   - name: github
