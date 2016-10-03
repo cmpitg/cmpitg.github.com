@@ -1,0 +1,23 @@
+<header class="navigation">
+  {% if site.header_display_type == "image" %}
+    <a href="/" class="logo" title="Reference Error">
+      <img src="{{ site.header_image }}" alt="Reference Error">
+    </a>
+  {% else %}
+    <div id="header-title">
+      <a href="/" class="logo" title="Reference Error">{{ site.header_description }}</a>
+    </div>
+  {% endif %}
+
+  {% include social-header.html %}
+
+  <nav>
+    <ul>
+      <li><a href="/logs">logs</a></li>
+      <li><a href="/writing">writing</a></li>
+      <li><a href="/talks">talks</a></li>
+      <li><a href="/about">about</a></li>
+      <li class="no-bullet"><a href="/atom.xml">rss</a></li>
+    </ul>
+  </nav>
+</header>
