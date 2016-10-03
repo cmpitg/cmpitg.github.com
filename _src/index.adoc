@@ -1,0 +1,3 @@
+:page-layout: index
+:page-title: Thoughts & rants on tech & language, by cmpitg
+:page-liquid:
