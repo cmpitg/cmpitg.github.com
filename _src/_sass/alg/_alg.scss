@@ -173,6 +173,10 @@ article {
   ul {
     margin: 1em 0;
     list-style: disc;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   ol {
@@ -275,7 +279,7 @@ footer {
       left: 4px;
     }
   }
-  
+
   #copyright-footer {
     width: 100%;
     text-align: center;
