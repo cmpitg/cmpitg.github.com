@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title }}</title>
+  <meta name="author" content="{{ site.author.full_name }}" />
+  <meta name="description" content="{{ site.description }}" />
+
+  <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'index.html','' }}" />
+
+  <link href="//fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+        rel="stylesheet"
+        integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <!-- <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/atom.xml" /> -->
+
+  {% if site.github %}
+    <link rel="stylesheet" href="/assets/css/site.css?sha={{ site.github.build_revision }}">
+  {% else %}
+    <link rel="stylesheet" href="/assets/css/site.css">
+  {% endif %}
+
+  {% include google-analytics.html %}
+</head>
+
+<body>
+  <section>
+    {{ content }}
+  </section>
+
+  {% if site.github %}
+    {% include analytics.html %}
+  {% endif %}
+</body>
+
+</html>
