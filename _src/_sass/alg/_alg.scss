@@ -98,6 +98,25 @@ section {
   }
 }
 
+h1 {
+  font-family: $sans-serif-article-2;
+  font-size: 1.2em;
+  color: $accent-color;
+  margin-bottom: .4em;
+
+  @include media($medium-screen) {
+    font-size: 1.7em;
+  }
+}
+
+h1.title {
+  font-size: 1.4em;
+
+  @include media($medium-screen) {
+    font-size: 1.9em;
+  }
+}
+
 article {
   @include clearfix;
   text-align: left;
