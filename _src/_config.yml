@@ -3,21 +3,11 @@ description: thoughts & rants on tech & language, by cmpitg
 production_url: http://reference-error.org/
 year: 2016
 
-# When showing copyright, skip the other two
-footer_skip_related: true
-footer_skip_bio: true
-footer_skip_copyright: false
-
 author:
   full_name: Ha-Duong Nguyen
   handler: cmpitg
   description: I’m a software architect, thinker, builder, λ & language lover.
   avatar: //www.gravatar.com/avatar/14a93c30b43b559be64bafe7baced0c3?s=100
-
-header_description: Reference Error
-header_image: /assets/images/cmpitg.jpg
-header_display_type: description
-# header_display_type: image
 
 google_analytics:
   tracking_id: 'UA-36923550-1'
@@ -42,6 +32,18 @@ socials:
 # https://github.com/asciidoctor/jekyll-asciidoc
 asciidoc: {}
 asciidoctor: {}
+
+header:
+  description: Reference Error
+  image: /assets/images/cmpitg.jpg
+  display_type: description
+  # display_type: image
+
+# When showing copyright, skip the other two
+footer:
+  skip_related: true
+  skip_bio: true
+  skip_copyright: false
 
 lsi: false
 highlighter: rouge
