@@ -213,6 +213,8 @@ article {
 }
 
 footer {
+  font-family: $default-font-family;
+
   @include media(max-width 760px) {
     display: none;
   }
@@ -272,6 +274,11 @@ footer {
       top: 4px;
       left: 4px;
     }
+  }
+  
+  #copyright-footer {
+    width: 100%;
+    text-align: center;
   }
 
   h3 {
