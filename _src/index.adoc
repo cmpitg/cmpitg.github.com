@@ -1,3 +1,14 @@
 :page-layout: index
 :page-title: Thoughts & rants on tech & language, by cmpitg
 :page-liquid:
+
+**This site in under construction**
+
+== Projects
+
+== Talks
+
+== Latest logs
+
+== Work in progress
+
