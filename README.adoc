@@ -1,0 +1,11 @@
+My personal site, built with Jekyll under `_src` and generated into the
+repository's root directory.  The theme is a modified version of the Älg theme
+by https://github.com/swanson[@swanson] from
+https://github.com/swanson/swanson.github.com[his homepage].
+
+== License
+
+© Ha-Duong Nguyen 2016.  Unless clearly stated, all contents are released
+under the terms of the
+https://creativecommons.org/licenses/by-sa/4.0/legalcode[Creative Commons
+Attribution-ShareAlike 4.0 Unported License].
