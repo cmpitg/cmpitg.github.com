@@ -8,6 +8,7 @@
 * Bring social icon to the top
 * Increase the margin/padding values of social icons
 * Check for broken links
+* Fix sitemap: "/" -> "domain/"
 * Organization:
 ** / - 1) basic info, one line introduction; 2) work is progress; 3) projects
 ** /logs - all logs
