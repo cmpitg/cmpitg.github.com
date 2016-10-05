@@ -1,0 +1,6 @@
+= Writing
+:page-layout: page
+
+== Guides
+
+== Guides (in Vietnamese)
