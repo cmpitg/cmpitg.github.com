@@ -1,0 +1,20 @@
+deb http://deb.debian.org/debian/ bulleye main contrib non-free
+deb-src http://deb.debian.org/debian/ bulleye main contrib non-free
+
+deb http://ftp.debian.org/debian bulleye-backports main contrib non-free
+deb-src http://ftp.debian.org/debian bulleye-backports main contrib non-free
+
+deb http://security.debian.org/ bulleye/updates main contrib non-free
+deb-src http://security.debian.org/ bulleye/updates main contrib non-free
+
+deb http://deb.debian.org/debian/ bulleye-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ bulleye-updates main contrib non-free
+
+deb http://deb.debian.org/debian/ bulleye-proposed-updates main contrib non-free
+deb-src http://deb.debian.org/debian/ bulleye-proposed-updates main contrib non-free
+
+deb http://deb.debian.org/debian/ sid main contrib non-free
+deb-src http://deb.debian.org/debian/ sid main contrib non-free
+
+deb http://deb.debian.org/debian/ testing main contrib non-free
+deb-src http://deb.debian.org/debian/ testing main contrib non-free
