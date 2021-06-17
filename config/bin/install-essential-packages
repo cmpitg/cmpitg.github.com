@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-read -p "Release name (stable/testing) [stable]: " release_
-sources_list_name_="debian-${release_}.sources.list"
-
-wget -O "/tmp/${sources_list_name_}" "http://reference-error.org/config/${sources_list_name_}"
-sudo cp -aiv "/tmp/${sources_list_name_}" /etc/apt/sources.list
-
 sudo apt update
 sudo apt install aptitude
 sudo aptitude install --no-install-recommends \
@@ -17,7 +11,7 @@ sudo aptitude install --no-install-recommends \
 	pasystray \
 	runit runit-systemd \
 	software-properties-common \
-	tcl-dev tcllib tcl-thread 'tclx*' tkcon tk-dev \
+	tcl-dev tcllib tcl-thread 'tclx*' tkcon tk-dev atool \
 	rsync tmux vim zsh mosh parallel \
 	python3-pip python3-tk python3-plumbum python3-pexpect \
 	gpm consolation htop atop hwinfo dstat
